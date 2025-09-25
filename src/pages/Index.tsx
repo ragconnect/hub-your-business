@@ -39,7 +39,7 @@ const Index = () => {
             <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
           </nav>
           <div className="flex items-center gap-3">
-            <a href="#start" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
+            <a href="https://my.ragadvise.com" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
             <Button asChild>
               <a href="https://ragadvise.com/signup" aria-label="Start Free – See Value in 20 Minutes">Start Free</a>
             </Button>
