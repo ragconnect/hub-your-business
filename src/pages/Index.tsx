@@ -41,7 +41,7 @@ const Index = () => {
           <div className="flex items-center gap-3">
             <a href="https://my.ragadvise.com" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
             <Button asChild>
-              <a href="https://my.ragadvise.com" aria-label="Start Free – See Value in 20 Minutes">Start Free</a>
+              <a href="https://my.ragadvise.com/signup" aria-label="Start Free – See Value in 20 Minutes">Start Free</a>
             </Button>
           </div>
         </div>
@@ -62,7 +62,7 @@ const Index = () => {
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
-                    <a href="https://my.ragadvise.com">Start Free – See Value in 20 Minutes</a>
+                    <a href="https://my.ragadvise.com/signup">Start Free – See Value in 20 Minutes</a>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
                     <a href="#demo">Watch the 2-Minute Demo</a>
