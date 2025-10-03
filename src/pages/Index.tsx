@@ -14,6 +14,7 @@ import RoadmapFuture from "@/components/marketing/RoadmapFuture";
 import CustomerFacts from "@/components/marketing/CustomerFacts";
 import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
 import SocialProof from "@/components/marketing/SocialProof";
+import OfferBanner from "@/components/marketing/OfferBanner";
 
 const Index = () => {
   const siteUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : 'https://ragadvise.com/';
@@ -27,6 +28,8 @@ const Index = () => {
         <meta name="description" content={description} />
         <link rel="canonical" href={siteUrl} />
       </Helmet>
+
+      <OfferBanner />
 
       <header className="w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
