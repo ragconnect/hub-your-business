@@ -55,10 +55,10 @@ const Index = () => {
             <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
               <div>
                 <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-tight">
-                  AI That Handles Business Task While You Focus on Growth
+                  Grow Your Business, While AI Handles the Rest
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Think Siri or Alexa — but trained exclusively for your business. RagAdvise’s AI-powered hubs handle the calls, messages, meetings, finances, and customer follow-up you don’t have time for.
+                  Think Siri or Alexa — but trained exclusively for your business task. RagAdvise’s AI-powered hubs handle the calls, messages, meetings, finances, and customer follow-up you don’t have time for.
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
