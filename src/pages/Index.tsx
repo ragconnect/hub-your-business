@@ -18,10 +18,9 @@ import SocialProof from "@/components/marketing/SocialProof";
 import OfferBanner from "@/components/marketing/OfferBanner";
 
 const Index = () => {
-  const siteUrl = typeof window !== "undefined" ? `${window.location.origin}/` : "https://ragadvise.com/";
+  const siteUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : 'https://ragadvise.com/';
   const title = "RagAdvise — Your AI Business Companion";
-  const description =
-    "Always-on AI that handles calls, meetings, finances, and follow-up for your business in minutes.";
+  const description = "Always-on AI that handles calls, meetings, finances, and follow-up for your business in minutes.";
 
   return (
     <>
@@ -39,30 +38,16 @@ const Index = () => {
             <img src={logo} alt="RagAdvise Logo" className="h-16" />
           </a>
           <nav className="hidden md:flex gap-6 text-sm text-muted-foreground">
-            <a href="#hubs" className="hover:text-foreground transition-colors">
-              Features
-            </a>
-            <a href="#testimonials" className="hover:text-foreground transition-colors">
-              Stories
-            </a>
-            <a href="#who" className="hover:text-foreground transition-colors">
-              Who is This For
-            </a>
-            <a href="#compare" className="hover:text-foreground transition-colors">
-              Compare
-            </a>
-            <a href="#faq" className="hover:text-foreground transition-colors">
-              FAQ
-            </a>
+            <a href="#hubs" className="hover:text-foreground transition-colors">Features</a>
+            <a href="#testimonials" className="hover:text-foreground transition-colors">Stories</a>
+            <a href="#who" className="hover:text-foreground transition-colors">Who is This For</a>
+            <a href="#compare" className="hover:text-foreground transition-colors">Compare</a>
+            <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
           </nav>
           <div className="flex items-center gap-3">
-            <a href="https://my.ragadvise.com" className="text-sm text-muted-foreground hover:text-foreground">
-              Sign in
-            </a>
+            <a href="https://my.ragadvise.com" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
             <Button asChild>
-              <a href="https://my.ragadvise.com/signup" aria-label="Start Free – See Value in 20 Minutes">
-                Start Free
-              </a>
+              <a href="https://my.ragadvise.com/signup" aria-label="Start Free – See Value in 20 Minutes">Start Free</a>
             </Button>
           </div>
         </div>
@@ -79,9 +64,7 @@ const Index = () => {
                   Grow Your Business, While AI Handles the Rest
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Managing every aspect of your business can feel emotionally overwhelming—who has time for that?
-                  Streamline your growing business with ease! RagAdvise, is your all-in-one team of business assistants
-                  crafted to power your success. Let us handle the details while you focus on expanding your business.
+                  Think Siri or Alexa — but trained exclusively for your business task. RagAdvise’s AI-powered hubs handle the calls, messages, meetings, finances, and customer follow-up you don’t have time for.
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
@@ -104,6 +87,7 @@ const Index = () => {
             </div>
           </div>
         </section>
+
 
         {/* Companies */}
         <LogoMarquee />
@@ -137,18 +121,13 @@ const Index = () => {
       </main>
 
       {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "RagAdvise",
-            url: siteUrl,
-            description,
-          }),
-        }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'RagAdvise',
+        url: siteUrl,
+        description,
+      }) }} />
     </>
   );
 };
