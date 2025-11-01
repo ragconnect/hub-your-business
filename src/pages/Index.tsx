@@ -64,7 +64,7 @@ const Index = () => {
                   Grow Your Business, While AI Handles the Rest
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Think Siri or Alexa — but trained exclusively for your business task. RagAdvise’s AI-powered hubs handle the calls, messages, meetings, finances, and customer follow-up you don’t have time for.
+                  Managing every aspect of your business can feel emotionally overwhelming. RagAdvise's AI-powered business assistants handle the calls, messages, meetings, finances, and other tasks you don't have time for.
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
