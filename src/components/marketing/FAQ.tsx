@@ -8,7 +8,8 @@ const faqs = [
   { q: "What happens with bad messages?", a: "We escalate sensitive or low‑confidence cases to the owner automatically." },
   { q: "How is my data managed?", a: "Your data is isolated and used only to serve your business. You control retention and revocation." },
   { q: "Can I get a demo?", a: "Absolutely. Watch a 2‑minute demo or book a live walkthrough." },
-  { q: "Do we need engineers to set it up?", a: "No. Upload a few docs, connect channels, and you’re running in minutes." },
+  { q: "Do we need engineers to set it up?", a: "No. Upload a few docs, connect channels, and you're running in minutes." },
+  { q: "What can the Financial Hub do?", a: "Reconcile finances by having the agent assist your finances. Find out when expenses are categorized as income. See all of your balances in one place, add tags and categories for expenses and much more." },
 ];
 
 const FAQ: React.FC = () => {
@@ -38,16 +39,6 @@ const FAQ: React.FC = () => {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
-        
-        <div className="mt-12 pt-8 border-t">
-          <h3 className="text-2xl font-semibold tracking-tight mb-6">What can the Financial Hub do?</h3>
-          <div className="prose prose-muted max-w-none">
-            <p className="text-muted-foreground leading-relaxed">
-              Reconcile finances by having the agent assist your finances. Find out when expenses are categorized as income. 
-              See all of your balances in one place, add tags and categories for expenses and much more.
-            </p>
-          </div>
         </div>
       </div>
 
