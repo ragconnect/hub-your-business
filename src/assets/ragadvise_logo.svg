@@ -1,5 +1,5 @@
 <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
-  <text x="400" y="130" font-family="Caprasimo, serif" font-size="100" fill="#2D9B81" text-anchor="middle" dominant-baseline="middle">
+  <text x="400" y="130" font-family="Caprasimo, serif" font-size="100" font-weight="900" fill="#2D9B81" text-anchor="middle" dominant-baseline="middle" stroke="#2D9B81" stroke-width="1">
     RagAdvise
   </text>
 </svg>
