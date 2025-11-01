@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import heroImage from "@/assets/hero-people-collab.jpg";
+import logo from "@/assets/ragadvise_logo.svg";
 import { Button } from "@/components/ui/button";
 
 import LogoMarquee from "@/components/marketing/LogoMarquee";
@@ -33,7 +34,9 @@ const Index = () => {
 
       <header className="w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
-          <a href="#" className="font-semibold tracking-tight">RagAdvise</a>
+          <a href="#" className="flex items-center">
+            <img src={logo} alt="RagAdvise Logo" className="h-8" />
+          </a>
           <nav className="hidden md:flex gap-6 text-sm text-muted-foreground">
             <a href="#hubs" className="hover:text-foreground transition-colors">Features</a>
             <a href="#testimonials" className="hover:text-foreground transition-colors">Stories</a>

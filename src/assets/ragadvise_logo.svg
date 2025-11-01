@@ -1,0 +1,12 @@
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Caprasimo&amp;family=Momo+Trust+Display&amp;display=swap');
+    </style>
+  </defs>
+  
+  <!-- Main text with Caprasimo font -->
+  <text x="400" y="130" font-family="'Caprasimo', serif" font-size="100" fill="#2D9B81" text-anchor="middle" dominant-baseline="middle">
+    RagAdvise
+  </text>
+</svg>
