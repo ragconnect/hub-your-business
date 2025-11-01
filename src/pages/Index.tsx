@@ -35,7 +35,7 @@ const Index = () => {
       <header className="w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <a href="#" className="flex items-center">
-            <img src={logo} alt="RagAdvise Logo" className="h-16" />
+            <img src={logo} alt="RagAdvise Logo" className="h-8" />
           </a>
           <nav className="hidden md:flex gap-6 text-sm text-muted-foreground">
             <a href="#hubs" className="hover:text-foreground transition-colors">Features</a>
@@ -60,8 +60,8 @@ const Index = () => {
           <div className="container">
             <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
               <div>
-                <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-tight font-caprasimo">
-                  Grow your businss while a.i handles the rest
+                <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-tight">
+                  Grow Your Business, While AI Handles the Rest
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
                   Think Siri or Alexa — but trained exclusively for your business task. RagAdvise’s AI-powered hubs handle the calls, messages, meetings, finances, and customer follow-up you don’t have time for.
