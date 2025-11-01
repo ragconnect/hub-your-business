@@ -71,7 +71,7 @@ const Index = () => {
                     <a href="https://my.ragadvise.com/signup">Start Free – See Value in 20 Minutes</a>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
-                    <a href="#demo">Watch the 1 Minute Video</a>
+                    <a href="#demo">Watch the 1-Minute Demo</a>
                   </Button>
                 </div>
               </div>
