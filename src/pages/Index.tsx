@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import heroImage from "@/assets/hero-people-collab.jpg";
-import logo from "@/assets/ragadvise_logo.svg";
+import logo from "@/assets/ragadvise_logo.png";
 import { Button } from "@/components/ui/button";
 
 import LogoMarquee from "@/components/marketing/LogoMarquee";
