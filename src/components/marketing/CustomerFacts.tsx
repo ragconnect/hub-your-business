@@ -6,7 +6,7 @@ const facts = [
   {
     title: "Prefer live answer",
     stat: "90%",
-    desc: "Surveys show customers dislike voicemails and unanswered calls, causing them to move on.",
+    desc: "Surveys show that 90% of customers dislike voicemails and unanswered calls, causing them to move on.",
     Icon: PhoneCall,
   },
   {
