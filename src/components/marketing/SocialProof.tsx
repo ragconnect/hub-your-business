@@ -18,7 +18,7 @@ const posts = [
     handle: "@aidenbooks",
     initials: "AB",
     quote:
-      "Meeting notes to tasks in under a minute. The hubs feel like one brain for the business.",
+      "Meeting notes to tasks in under a minute. The assistants feel like one brain for the business.",
     likes: "1.2K",
     replies: "68",
   },

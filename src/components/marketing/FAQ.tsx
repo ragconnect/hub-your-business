@@ -2,14 +2,14 @@ import React from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "How fast can we get value?", a: "Most teams see benefit on day one from call handling and meeting notes, with deeper gains as hubs connect." },
+  { q: "How fast can we get value?", a: "Most teams see benefit on day one from call handling and meeting notes, with deeper gains as assistants connect." },
   { q: "What about pricing?", a: "Simple per-seat pricing with a trial. Contact us for volume or annual plans." },
-  { q: "Can I invite my team?", a: "Yes. Add teammates with roles and permissions per hub." },
+  { q: "Can I invite my team?", a: "Yes. Add teammates with roles and permissions per assistant." },
   { q: "What happens with bad messages?", a: "We escalate sensitive or low‑confidence cases to the owner automatically." },
   { q: "How is my data managed?", a: "Your data is isolated and used only to serve your business. You control retention and revocation." },
   { q: "Can I get a demo?", a: "Absolutely. Watch a 2‑minute demo or book a live walkthrough." },
   { q: "Do we need engineers to set it up?", a: "No. Upload a few docs, connect channels, and you're running in minutes." },
-  { q: "What can the Financial Hub do?", a: "Reconcile finances by having the agent assist your finances. Find out when expenses are categorized as income. See all of your balances in one place, add tags and categories for expenses and much more." },
+  { q: "What can the Financial Assistant do?", a: "Reconcile finances by having the agent assist your finances. Find out when expenses are categorized as income. See all of your balances in one place, add tags and categories for expenses and much more." },
 ];
 
 const FAQ: React.FC = () => {

@@ -12,7 +12,7 @@ const facts = [
   {
     title: "Finance momentum",
     stat: "60% → 20%",
-    desc: "See 20% gains in money management within 14 days for 60% of teams starting a finance hub.",
+    desc: "See 20% gains in money management within 14 days for 60% of teams starting a finance assistant.",
     Icon: Wallet,
   },
   {
@@ -50,7 +50,7 @@ const CustomerFacts: React.FC = () => {
           <h2 id="facts-title" className="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">
             Numbers That Tell the Story
           </h2>
-          <p className="mt-3 text-muted-foreground">Facts across comms, meetings, customers, finance, and knowledge hubs.</p>
+          <p className="mt-3 text-muted-foreground">Facts across comms, meetings, customers, finance, and knowledge assistants.</p>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

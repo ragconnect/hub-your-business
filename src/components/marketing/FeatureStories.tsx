@@ -3,7 +3,7 @@ import { MessageSquare, Wallet, Users } from "lucide-react";
 
 const items = [
   {
-    title: "Your hubs, one brain",
+    title: "Your assistants, one brain",
     desc: "Conversation, meetings, and finances connect so work moves automatically.",
     Icon: MessageSquare,
   },

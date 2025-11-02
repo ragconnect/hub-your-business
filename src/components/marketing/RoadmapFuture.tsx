@@ -5,22 +5,22 @@ import { UserPlus, Megaphone, Scale, Plane } from "lucide-react";
 
 const future = [
   {
-    title: "Hiring Hub",
+    title: "Hiring Assistant",
     desc: "Automate candidate screening, scheduling, and onboarding.",
     Icon: UserPlus,
   },
   {
-    title: "Marketing Hub",
+    title: "Marketing Assistant",
     desc: "Manage campaigns, track ROI, and generate on-brand content ideas.",
     Icon: Megaphone,
   },
   {
-    title: "Legal Hub",
+    title: "Legal Assistant",
     desc: "Draft, organize, and track agreements with built‑in reviews.",
     Icon: Scale,
   },
   {
-    title: "Travel Hub",
+    title: "Travel Assistant",
     desc: "Plan trips, optimize budgets, and centralize approvals.",
     Icon: Plane,
   },
@@ -33,7 +33,7 @@ const RoadmapFuture: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-medium text-primary/80 tracking-wide">Future Research & Development</p>
           <h2 id="roadmap-title" className="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">We're Just Getting Started</h2>
-          <p className="mt-3 text-muted-foreground">Our roadmap expands RagAdvise beyond today's five hubs with new AI assistants tailored for more of your operations. <a href="https://my.ragadvise.com/signup" className="font-medium text-primary underline-offset-4 hover:underline">Start free</a>.</p>
+          <p className="mt-3 text-muted-foreground">Our roadmap expands RagAdvise beyond today's five assistants with new AI assistants tailored for more of your operations. <a href="https://my.ragadvise.com/signup" className="font-medium text-primary underline-offset-4 hover:underline">Start free</a>.</p>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

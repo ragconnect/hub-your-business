@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import Testimonials from "@/components/marketing/Testimonials";
 
-import FiveHubs from "@/components/marketing/FiveHubs";
+import FiveAssistants from "@/components/marketing/FiveAssistants";
 import ComparisonCompact from "@/components/marketing/ComparisonCompact";
 import CTABand from "@/components/marketing/CTABand";
 import FAQ from "@/components/marketing/FAQ";
@@ -38,7 +38,7 @@ const Index = () => {
             <img src={logo} alt="RagAdvise Logo" className="h-16" />
           </a>
           <nav className="hidden md:flex gap-6 text-sm text-muted-foreground">
-            <a href="#hubs" className="hover:text-foreground transition-colors">Features</a>
+            <a href="#assistants" className="hover:text-foreground transition-colors">Features</a>
             <a href="#testimonials" className="hover:text-foreground transition-colors">Stories</a>
             <a href="#who" className="hover:text-foreground transition-colors">Who is This For</a>
             <a href="#compare" className="hover:text-foreground transition-colors">Compare</a>
@@ -92,8 +92,8 @@ const Index = () => {
         {/* Companies */}
         <LogoMarquee />
 
-        {/* Hubs */}
-        <FiveHubs />
+        {/* Assistants */}
+        <FiveAssistants />
 
         {/* Facts */}
         <CustomerFacts />
