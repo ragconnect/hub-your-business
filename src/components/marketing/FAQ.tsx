@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
@@ -14,13 +14,24 @@ const faqs = [
   { q: "What can the Money Assistant do?", a: "Reconcile finances by having the agent assist your finances. Find out when expenses are categorized as income. See all of your balances in one place, add tags and categories for expenses and much more." },
   { q: "What can the Customer Assistant do?", a: "Track your pipeline with a lightweight CRM. Manage customer relationships, deals, and interactions without complex setup or switching tools." },
   { q: "What can the Training Assistant do?", a: "Create a business wiki with docs and knowledge trained on your operations. Search, reference, and share institutional knowledge instantly." },
-  { q: "Train and Earn:", a: "When you sign up and use one or multiple of our assistants, you can earn up to $100 if you give us permission to train our model on your actions. Connect your existing bank account and earn, automatically send messages to customers and earn. To get more details sign up and email ty@ragadvise.com to be opted into the program." },
+  { q: "Train and Earn Up to $100?", a: "When you sign up and use one or multiple of our assistants, you can earn up to $100 if you give us permission to train our model on your actions. Connect your existing bank account and earn, automatically send messages to customers and earn. To get more details sign up and email ty@ragadvise.com to be opted into the program." },
   { q: "Get a demo:", a: "Message ty@ragadvise.com to schedule a personalized demo and see how RagAdvise can transform your business operations." },
   { q: "Partnerships:", a: "Interested in partnering with us? Reach out to ty@ragadvise.com to explore collaboration opportunities." },
   { q: "About us:", a: "Founded by a coalition of visionary business owners from diverse backgrounds, we are dedicated to developing innovative solutions that directly tackle our own business challenges. Our unique experiences drive us to create impactful strategies that will not only benefit us but also empower others facing similar obstacles." },
 ];
 
 const FAQ: React.FC = () => {
+  const [openItem, setOpenItem] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (window.location.hash === '#train-and-earn') {
+      setOpenItem('item-12');
+      setTimeout(() => {
+        document.getElementById('train-and-earn')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+  }, []);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -39,9 +50,13 @@ const FAQ: React.FC = () => {
       <div className="container py-16 md:py-20">
         <h2 id="faq-title" className="text-3xl font-semibold tracking-tight flex items-center justify-between">Frequently asked <a href="mailto:demo@ragadvise.com?subject=Demo Request&body=Hi, I'd like to schedule a demo of RagAdvise." className="text-sm font-normal underline text-primary">Get a demo</a></h2>
         <div className="mt-6">
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full" value={openItem} onValueChange={setOpenItem}>
             {faqs.map((f, i) => (
-              <AccordionItem key={f.q} value={`item-${i}`}>
+              <AccordionItem 
+                key={f.q} 
+                value={`item-${i}`}
+                id={i === 12 ? 'train-and-earn' : undefined}
+              >
                 <AccordionTrigger className="text-left">{f.q}</AccordionTrigger>
                 <AccordionContent>{f.a}</AccordionContent>
               </AccordionItem>
