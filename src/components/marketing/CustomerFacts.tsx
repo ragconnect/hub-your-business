@@ -5,8 +5,8 @@ import { PhoneCall, MessageSquare, Clock, Voicemail, Star, ShieldCheck, Wallet, 
 const facts = [
   {
     title: "Prefer live answer",
-    stat: "65%",
-    desc: "Customers prefer an agent picking up instead of voicemail.",
+    stat: "90%",
+    desc: "Surveys show customers dislike voicemails and unanswered calls, causing them to move on.",
     Icon: PhoneCall,
   },
   {
