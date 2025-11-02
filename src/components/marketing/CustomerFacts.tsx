@@ -18,7 +18,7 @@ const facts = [
   {
     title: "Meetings → actions",
     stat: "1 min",
-    desc: "Auto-notes with action items sent in under a minute.",
+    desc: "In less than 60 seconds, resolve tasks across meetings.",
     Icon: CalendarCheck,
   },
   {
