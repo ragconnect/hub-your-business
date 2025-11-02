@@ -14,6 +14,7 @@ const faqs = [
   { q: "What can the Money Assistant do?", a: "Reconcile finances by having the agent assist your finances. Find out when expenses are categorized as income. See all of your balances in one place, add tags and categories for expenses and much more." },
   { q: "What can the Customer Assistant do?", a: "Track your pipeline with a lightweight CRM. Manage customer relationships, deals, and interactions without complex setup or switching tools." },
   { q: "What can the Training Assistant do?", a: "Create a business wiki with docs and knowledge trained on your operations. Search, reference, and share institutional knowledge instantly." },
+  { q: "Train and Earn:", a: "When you sign up and use one or multiple of our assistants, you can earn up to $100 if you give us permission to train our model on your actions. Connect your existing bank account and earn, automatically send messages to customers and earn. To get more details sign up and email ty@ragadvise.com to be opted into the program." },
 ];
 
 const FAQ: React.FC = () => {
