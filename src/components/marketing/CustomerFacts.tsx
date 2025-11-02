@@ -30,7 +30,7 @@ const facts = [
   {
     title: "Message satisfaction",
     stat: "4★",
-    desc: "Average rating on RagAdvise message responses.",
+    desc: "On average, customers rate RagAdvise assistants with a good rating across phone, email, summary, and money interactions.",
     Icon: Star,
   },
   {
