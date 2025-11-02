@@ -11,8 +11,8 @@ const facts = [
   },
   {
     title: "Finance momentum",
-    stat: "60% → 20%",
-    desc: "See 20% gains in money management within 14 days for 60% of teams starting a finance assistant.",
+    stat: "43%",
+    desc: "Reduce expenses and taxes by up to 43%.",
     Icon: Wallet,
   },
   {
