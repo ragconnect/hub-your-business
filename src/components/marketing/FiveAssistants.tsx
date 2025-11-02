@@ -36,7 +36,7 @@ const FiveAssistants: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-medium text-primary/80 tracking-wide">Run your business on AI</p>
           <h2 id="assistants-title" className="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">The more assistants, the better.</h2>
-          <p className="mt-3 text-muted-foreground">Tap an assistant to preview. Each tile is powered by RagAdvise and works together out‑of‑the‑box.</p>
+          <p className="mt-3 text-muted-foreground">Tap an assistant to preview. Powered by RagAdvise and works together out‑of‑the‑box.</p>
         </div>
 
         {/* Tabs */}
