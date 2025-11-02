@@ -12,7 +12,7 @@ const facts = [
   {
     title: "Finance momentum",
     stat: "43%",
-    desc: "Significantly reduce your business expenses and taxes by up to 43% without an accounting.",
+    desc: "Significantly reduce your business expenses and taxes by up to 43% without an expensive accountant.",
     Icon: Wallet,
   },
   {
