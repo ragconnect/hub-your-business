@@ -22,9 +22,9 @@ const facts = [
     Icon: CalendarCheck,
   },
   {
-    title: "Callbacks are risky",
-    stat: "15%",
-    desc: "Only a fraction are okay with a callback — most move on.",
+    title: "Information Gaps are a Weakness",
+    stat: "30%",
+    desc: "Provide employees and AI assistants 30% faster access to training materials and marketing strategy documents!",
     Icon: Clock,
   },
   {
