@@ -9,7 +9,11 @@ const faqs = [
   { q: "How is my data managed?", a: "Your data is isolated and used only to serve your business. You control retention and revocation." },
   { q: "Can I get a demo?", a: "Absolutely. Watch a 2‑minute demo or book a live walkthrough." },
   { q: "Do we need engineers to set it up?", a: "No. Upload a few docs, connect channels, and you're running in minutes." },
-  { q: "What can the Financial Assistant do?", a: "Reconcile finances by having the agent assist your finances. Find out when expenses are categorized as income. See all of your balances in one place, add tags and categories for expenses and much more." },
+  { q: "What can the Conversation Assistant do?", a: "Manage calls, messages, and tasks in one unified inbox. Handle phone calls, emails, and social DMs with 24/7 responses and automatic escalation." },
+  { q: "What can the Task Assistant do?", a: "Capture auto-notes from meetings, extract action items, and manage follow-ups. Resolve tasks across meetings in less than 60 seconds." },
+  { q: "What can the Money Assistant do?", a: "Reconcile finances by having the agent assist your finances. Find out when expenses are categorized as income. See all of your balances in one place, add tags and categories for expenses and much more." },
+  { q: "What can the Customer Assistant do?", a: "Track your pipeline with a lightweight CRM. Manage customer relationships, deals, and interactions without complex setup or switching tools." },
+  { q: "What can the Training Assistant do?", a: "Create a business wiki with docs and knowledge trained on your operations. Search, reference, and share institutional knowledge instantly." },
 ];
 
 const FAQ: React.FC = () => {
