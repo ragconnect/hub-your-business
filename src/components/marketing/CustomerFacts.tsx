@@ -18,7 +18,7 @@ const facts = [
   {
     title: "Meetings → actions",
     stat: "1 min",
-    desc: "In less than 60 seconds, resolve tasks across meetings without a human note taker.",
+    desc: "In less than 60 seconds, resolve tasks across meetings without hiring a human note taker.",
     Icon: CalendarCheck,
   },
   {
