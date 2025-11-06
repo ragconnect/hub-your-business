@@ -43,7 +43,7 @@ const Index = () => {
             <a href="#who" className="hover:text-foreground transition-colors">Who is This For</a>
             <a href="#compare" className="hover:text-foreground transition-colors">Compare</a>
             <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
-            <a href="https://ragadvise.framer.website/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Blog</a>
+            <a href="https://ragadvise.framer.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Blog</a>
           </nav>
           <div className="flex items-center gap-3">
             <a href="https://my.ragadvise.com" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
