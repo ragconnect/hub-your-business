@@ -18,9 +18,9 @@ const faqs = [
   { q: "Get a demo?", a: "Message ty@ragadvise.com to schedule a personalized demo and see how RagAdvise can transform your business operations." },
   { q: "Partnerships?", a: "Interested in partnering with us? Reach out to ty@ragadvise.com to explore collaboration opportunities." },
   { q: "About us?", a: "Founded by a coalition of visionary business owners from diverse backgrounds, we are dedicated to developing innovative solutions that directly tackle our own business challenges. Our unique experiences drive us to create impactful strategies that will not only benefit us but also empower others facing similar obstacles." },
-  { q: "Contact us?", a: "Have questions or need support? Visit our contact page at https://my.ragadvise.com/contact-us to get in touch with our team." },
-  { q: "Privacy Policy?", a: "Review our Privacy Policy at https://my.ragadvise.com/privacy-policy to learn how we protect and handle your data." },
-  { q: "Terms and Conditions?", a: "Read our Terms and Conditions at https://my.ragadvise.com/terms-and-conditions to understand the terms of service." },
+  { q: "Contact us?", a: (<span>Have questions or need support? <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:no-underline">Visit our contact page</a> to get in touch with our team.</span>) },
+  { q: "Privacy Policy?", a: (<span>Review our <a href="https://my.ragadvise.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:no-underline">Privacy Policy</a> to learn how we protect and handle your data.</span>) },
+  { q: "Terms and Conditions?", a: (<span>Read our <a href="https://my.ragadvise.com/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:no-underline">Terms and Conditions</a> to understand the terms of service.</span>) },
 ];
 
 const FAQ: React.FC = () => {
