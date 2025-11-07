@@ -1,7 +1,10 @@
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
 import heroImage from "@/assets/hero-people-collab.jpg";
 import logo from "@/assets/ragadvise_logo.png";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import Testimonials from "@/components/marketing/Testimonials";
@@ -18,6 +21,7 @@ import SocialProof from "@/components/marketing/SocialProof";
 import OfferBanner from "@/components/marketing/OfferBanner";
 
 const Index = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const siteUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : 'https://ragadvise.com/';
   const title = "RagAdvise — Your AI Business Companion";
   const description = "Always-on AI that handles calls, meetings, finances, and follow-up for your business in minutes.";
@@ -45,12 +49,76 @@ const Index = () => {
             <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
             <a href="https://ragadvise.framer.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Blog</a>
           </nav>
-          <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
             <a href="https://my.ragadvise.com" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
             <Button asChild>
               <a href="https://my.ragadvise.com/signup" aria-label="Start Free – See Value in 20 Minutes">Start Free</a>
             </Button>
           </div>
+          
+          {/* Mobile Menu */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon" aria-label="Open menu">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <nav className="flex flex-col gap-6 mt-8">
+                <a 
+                  href="#assistants" 
+                  className="text-lg hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Features
+                </a>
+                <a 
+                  href="#testimonials" 
+                  className="text-lg hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Stories
+                </a>
+                <a 
+                  href="#who" 
+                  className="text-lg hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Who is This For
+                </a>
+                <a 
+                  href="#compare" 
+                  className="text-lg hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Compare
+                </a>
+                <a 
+                  href="#faq" 
+                  className="text-lg hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  FAQ
+                </a>
+                <a 
+                  href="https://ragadvise.framer.ai/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-lg hover:text-primary transition-colors"
+                >
+                  Blog
+                </a>
+                <div className="flex flex-col gap-3 mt-4 pt-6 border-t">
+                  <a href="https://my.ragadvise.com" className="text-lg hover:text-primary transition-colors">
+                    Sign in
+                  </a>
+                  <Button asChild className="w-full">
+                    <a href="https://my.ragadvise.com/signup">Start Free</a>
+                  </Button>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
 
