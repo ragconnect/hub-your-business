@@ -19,6 +19,7 @@ import CustomerFacts from "@/components/marketing/CustomerFacts";
 import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
 import SocialProof from "@/components/marketing/SocialProof";
 import OfferBanner from "@/components/marketing/OfferBanner";
+import VideoModal from "@/components/marketing/VideoModal";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -139,9 +140,11 @@ const Index = () => {
                   <Button size="lg" asChild>
                     <a href="https://my.ragadvise.com/signup">Start Free – See Value in 20 Minutes</a>
                   </Button>
-                  <Button variant="outline" size="lg" asChild>
-                    <a href="#demo">Watch the 1-Minute Demo</a>
-                  </Button>
+                  <VideoModal>
+                    <Button variant="outline" size="lg">
+                      Watch the 1-Minute Demo
+                    </Button>
+                  </VideoModal>
                 </div>
               </div>
               <div className="relative">
