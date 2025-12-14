@@ -28,7 +28,7 @@ const IntegrationsShowcase: React.FC = () => {
               Connect once. Sync everywhere.
             </h2>
             <p className="mt-3 text-muted-foreground max-w-prose">
-              RagAdvise plugs into the channels you already use—calls, email, calendar, storefront, payments—and keeps context flowing so every assistant stays up to date. <a href="https://my.ragadvise.com/signup" className="font-medium text-primary underline-offset-4 hover:underline">Start free</a>.
+              RagAdvise plugs into the channels you already use—calls, email, calendar, storefront, payments—and keeps context flowing so every assistant stays up to date. <a href="https://my.ragadvise.com/signup" className="font-medium text-primary underline-offset-4 hover:underline">Sign up</a>.
             </p>
 
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-md">
