@@ -33,7 +33,7 @@ const RoadmapFuture: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-medium text-primary/80 tracking-wide">Future Research & Development</p>
           <h2 id="roadmap-title" className="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">We're Just Getting Started</h2>
-          <p className="mt-3 text-muted-foreground">Our roadmap expands RagAdvise beyond today's five assistants with new AI assistants tailored for more of your operations. <a href="https://my.ragadvise.com/signup" className="font-medium text-primary underline-offset-4 hover:underline">Start free</a>.</p>
+          <p className="mt-3 text-muted-foreground">Our roadmap expands RagAdvise beyond today's five assistants with new AI assistants tailored for more of your operations. <a href="https://my.ragadvise.com/signup" className="font-medium text-primary underline-offset-4 hover:underline">Sign up</a>.</p>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

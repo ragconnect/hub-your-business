@@ -53,7 +53,7 @@ const Index = () => {
           <div className="hidden md:flex items-center gap-3">
             <a href="https://my.ragadvise.com" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
             <Button asChild>
-              <a href="https://my.ragadvise.com/signup" aria-label="Start Free – See Value in 20 Minutes">Start Free</a>
+              <a href="https://my.ragadvise.com/signup" aria-label="Sign Up – See Value in 20 Minutes">Sign Up</a>
             </Button>
           </div>
           
@@ -114,7 +114,7 @@ const Index = () => {
                     Sign in
                   </a>
                   <Button asChild className="w-full">
-                    <a href="https://my.ragadvise.com/signup">Start Free</a>
+                    <a href="https://my.ragadvise.com/signup">Sign Up</a>
                   </Button>
                 </div>
               </nav>
@@ -138,7 +138,7 @@ const Index = () => {
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
-                    <a href="https://my.ragadvise.com/signup">Start Free – See Value in 20 Minutes</a>
+                    <a href="https://my.ragadvise.com/signup">Sign Up – See Value in 20 Minutes</a>
                   </Button>
                   <VideoModal>
                     <Button variant="outline" size="lg">

@@ -14,7 +14,7 @@ const CTABand: React.FC = () => {
           </p>
           <div className="mt-6">
             <Button size="lg" asChild>
-              <a href="https://my.ragadvise.com/signup" aria-label="Start Free – No Credit Card Required">Start Free</a>
+              <a href="https://my.ragadvise.com/signup" aria-label="Sign Up – No Credit Card Required">Sign Up</a>
             </Button>
           </div>
         </div>
