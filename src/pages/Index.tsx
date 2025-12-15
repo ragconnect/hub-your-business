@@ -161,7 +161,7 @@ const Index = () => {
                       <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" fill="currentColor" />
                     </div>
                     <span className="mt-4 px-5 py-2.5 bg-primary text-primary-foreground font-semibold text-sm md:text-base rounded-full shadow-lg">
-                      Watch the 1-Minute Demo
+                      Watch the Demo
                     </span>
                   </div>
                 </div>
