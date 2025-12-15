@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-people-collab.jpg";
 import logo from "@/assets/ragadvise_logo.png";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Play } from "lucide-react";
 
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import Testimonials from "@/components/marketing/Testimonials";
@@ -147,15 +147,22 @@ const Index = () => {
                   </VideoModal>
                 </div>
               </div>
-              <div className="relative">
-                <img
-                  src={heroImage}
-                  alt="Small business team collaborating with RagAdvise AI assistant across devices"
-                  className="w-full h-auto rounded-lg shadow"
-                  loading="eager"
-                  decoding="async"
-                />
-              </div>
+              <VideoModal>
+                <div className="relative cursor-pointer group">
+                  <img
+                    src={heroImage}
+                    alt="Watch RagAdvise explainer video"
+                    className="w-full h-auto rounded-lg shadow transition-transform group-hover:scale-[1.02]"
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 rounded-lg transition-colors group-hover:bg-black/40">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                      <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" fill="currentColor" />
+                    </div>
+                  </div>
+                </div>
+              </VideoModal>
             </div>
           </div>
         </section>
