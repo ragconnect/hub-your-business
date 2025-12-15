@@ -156,10 +156,13 @@ const Index = () => {
                     loading="eager"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 rounded-lg transition-colors group-hover:bg-black/40">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 rounded-lg transition-colors group-hover:bg-black/40">
                     <div className="w-20 h-20 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
                       <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" fill="currentColor" />
                     </div>
+                    <span className="mt-3 px-4 py-2 bg-background/90 text-foreground font-medium text-sm md:text-base rounded-full shadow-lg">
+                      Watch the 1-Minute Demo
+                    </span>
                   </div>
                 </div>
               </VideoModal>
