@@ -156,7 +156,7 @@ const Index = () => {
                     loading="eager"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/40 via-primary/20 to-transparent transition-all group-hover:from-primary/50 group-hover:via-primary/30">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg bg-black/20 transition-all group-hover:bg-black/30">
                     <div className="w-20 h-20 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center shadow-xl ring-4 ring-primary-foreground/30 transition-transform group-hover:scale-110">
                       <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" fill="currentColor" />
                     </div>
