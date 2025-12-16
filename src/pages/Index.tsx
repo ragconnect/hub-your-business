@@ -4,7 +4,8 @@ import heroImage from "@/assets/hero-people-collab.jpg";
 import logo from "@/assets/ragadvise_logo.png";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Play } from "lucide-react";
+import { Menu, Play, Calendar } from "lucide-react";
+import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import Testimonials from "@/components/marketing/Testimonials";
@@ -140,11 +141,12 @@ const Index = () => {
                   <Button size="lg" asChild>
                     <a href="https://my.ragadvise.com/signup">Sign Up – See Value in 20 Minutes</a>
                   </Button>
-                  <VideoModal>
+                  <DemoRequestModal>
                     <Button variant="outline" size="lg">
-                      Watch the 1-Minute Demo
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule a Demo
                     </Button>
-                  </VideoModal>
+                  </DemoRequestModal>
                 </div>
               </div>
               <VideoModal>
