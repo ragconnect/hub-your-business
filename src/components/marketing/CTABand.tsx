@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import DemoRequestModal from "./DemoRequestModal";
 
 const CTABand: React.FC = () => {
   return (
@@ -17,11 +16,11 @@ const CTABand: React.FC = () => {
             <Button size="lg" asChild>
               <a href="https://my.ragadvise.com/signup" aria-label="Sign Up – No Credit Card Required">Sign Up</a>
             </Button>
-            <DemoRequestModal>
-              <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" asChild>
+              <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
                 Schedule a Demo
-              </Button>
-            </DemoRequestModal>
+              </a>
+            </Button>
           </div>
         </div>
       </div>
