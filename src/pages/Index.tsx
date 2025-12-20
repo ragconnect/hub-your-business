@@ -5,7 +5,7 @@ import logo from "@/assets/ragadvise_logo.png";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Play, Calendar } from "lucide-react";
-import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+
 
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import Testimonials from "@/components/marketing/Testimonials";
@@ -141,12 +141,12 @@ const Index = () => {
                   <Button size="lg" asChild>
                     <a href="https://my.ragadvise.com/signup">Sign Up – See Value in 20 Minutes</a>
                   </Button>
-                  <DemoRequestModal>
-                    <Button variant="outline" size="lg">
+                  <Button variant="outline" size="lg" asChild>
+                    <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
                       <Calendar className="mr-2 h-4 w-4" />
                       Schedule a Demo
-                    </Button>
-                  </DemoRequestModal>
+                    </a>
+                  </Button>
                 </div>
               </div>
               <VideoModal>

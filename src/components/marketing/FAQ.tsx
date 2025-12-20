@@ -52,7 +52,7 @@ const FAQ: React.FC = () => {
   return (
     <section id="faq" aria-labelledby="faq-title" className="border-t bg-muted/20">
       <div className="container py-16 md:py-20">
-        <h2 id="faq-title" className="text-3xl font-semibold tracking-tight flex items-center justify-between">Frequently asked <a href="mailto:demo@ragadvise.com?subject=Demo Request&body=Hi, I'd like to schedule a demo of RagAdvise." className="text-sm font-normal underline text-primary">Get a demo</a></h2>
+        <h2 id="faq-title" className="text-3xl font-semibold tracking-tight flex items-center justify-between">Frequently asked <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer" className="text-sm font-normal underline text-primary">Get a demo</a></h2>
         <div className="mt-6">
           <Accordion type="single" collapsible className="w-full" value={openItem} onValueChange={setOpenItem}>
             {faqs.map((f, i) => (
