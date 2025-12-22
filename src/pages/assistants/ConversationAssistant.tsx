@@ -35,7 +35,6 @@ import testimonialJames from "@/assets/testimonials/testimonial-james.jpg";
 import logoMariasKitchen from "@/assets/testimonials/logo-marias-kitchen.png";
 import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
 import logoVitalBalance from "@/assets/testimonials/logo-vital-balance.png";
-import ragadviseLogo from "@/assets/ragadvise_logo.svg";
 
 const oldWayProblems = [
   {
@@ -500,16 +499,11 @@ const ConversationAssistant = () => {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left - Team Photo */}
-              <div className="order-2 lg:order-1 relative">
+              <div className="order-2 lg:order-1">
                 <img
                   src={teamPhoto}
                   alt="The RagAdvise team"
                   className="rounded-2xl shadow-xl w-full"
-                />
-                <img
-                  src={ragadviseLogo}
-                  alt="RagAdvise"
-                  className="absolute bottom-4 left-4 h-10 bg-background/80 backdrop-blur-sm rounded-lg px-3 py-2"
                 />
               </div>
               
