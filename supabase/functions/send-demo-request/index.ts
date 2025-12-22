@@ -41,11 +41,12 @@ const handler = async (req: Request): Promise<Response> => {
       body: JSON.stringify({
         personalizations: [
           {
-            to: [{ email: "demos@ragadvise.com" }],
+            to: [{ email: "ty@ragadvise.com" }],
             subject: `New Demo Request from ${name}`,
           },
         ],
         from: { email: "ty@ragadvise.com", name: "RagAdvise Demo Requests" },
+        reply_to: { email, name },
         content: [
           {
             type: "text/html",
@@ -69,7 +70,10 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error(`Failed to send notification: ${errorText}`);
     }
 
-    console.log("Notification email sent successfully");
+    console.log("Notification email accepted by SendGrid:", {
+      status: notificationResponse.status,
+      messageId: notificationResponse.headers.get("x-message-id"),
+    });
 
     // Send confirmation email to the user
     const confirmationResponse = await fetch("https://api.sendgrid.com/v3/mail/send", {
@@ -82,10 +86,12 @@ const handler = async (req: Request): Promise<Response> => {
         personalizations: [
           {
             to: [{ email: email }],
+            bcc: [{ email: "ty@ragadvise.com" }],
             subject: "We received your demo request - RagAdvise",
           },
         ],
         from: { email: "ty@ragadvise.com", name: "RagAdvise" },
+        reply_to: { email: "ty@ragadvise.com", name: "RagAdvise" },
         content: [
           {
             type: "text/html",
@@ -106,7 +112,10 @@ const handler = async (req: Request): Promise<Response> => {
       console.error("SendGrid confirmation error:", errorText);
       // Don't throw here - notification was sent, just log the error
     } else {
-      console.log("Confirmation email sent successfully");
+      console.log("Confirmation email accepted by SendGrid:", {
+        status: confirmationResponse.status,
+        messageId: confirmationResponse.headers.get("x-message-id"),
+      });
     }
 
     return new Response(
