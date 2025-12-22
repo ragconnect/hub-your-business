@@ -513,11 +513,11 @@ const ConversationAssistant = () => {
                     alt="Maria S."
                     className="w-full h-56 object-cover object-top rounded-t-xl"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-4 flex items-center justify-center">
+                  <div className="bg-background border-x border-b rounded-b-xl p-6 flex items-center justify-center">
                     <img
                       src={logoMariasKitchen}
                       alt="Maria's Kitchen"
-                      className="h-12"
+                      className="h-16 max-w-[180px] object-contain"
                     />
                   </div>
                 </div>
@@ -541,11 +541,11 @@ const ConversationAssistant = () => {
                     alt="Mike R."
                     className="w-full h-56 object-cover object-top rounded-t-xl"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-4 flex items-center justify-center">
+                  <div className="bg-background border-x border-b rounded-b-xl p-6 flex items-center justify-center">
                     <img
                       src={logoRapidPlumb}
                       alt="Rapid Plumb"
-                      className="h-12"
+                      className="h-16 max-w-[180px] object-contain"
                     />
                   </div>
                 </div>
@@ -569,11 +569,11 @@ const ConversationAssistant = () => {
                     alt="James T."
                     className="w-full h-56 object-cover object-top rounded-t-xl"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-4 flex items-center justify-center">
+                  <div className="bg-background border-x border-b rounded-b-xl p-6 flex items-center justify-center">
                     <img
                       src={logoVitalBalance}
                       alt="Vital Balance"
-                      className="h-12"
+                      className="h-16 max-w-[180px] object-contain"
                     />
                   </div>
                 </div>
