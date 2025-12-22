@@ -26,6 +26,7 @@ import {
   Check,
   Send,
   DollarSign,
+  MessageCircle,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
 import testimonial1 from "@/assets/testimonials/money-testimonial-1.jpg";
@@ -78,6 +79,11 @@ const newWaySolutions = [
     icon: Zap,
     title: "Tax-ready books year-round",
     desc: "Every transaction categorized for taxes. Generate reports in seconds. Hand your accountant clean books—save money on prep fees.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Ask AI questions about your finances",
+    desc: "\"What did I spend on marketing last quarter?\" Get instant answers. Your AI knows your books inside and out.",
   },
 ];
 
