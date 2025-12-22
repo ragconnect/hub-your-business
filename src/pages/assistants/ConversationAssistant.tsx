@@ -516,7 +516,7 @@ const ConversationAssistant = () => {
                   <img
                     src={logoMariasKitchen}
                     alt="Maria's Kitchen"
-                    className="absolute bottom-8 right-8 h-12 bg-background/90 backdrop-blur-sm rounded-lg p-2 shadow-lg"
+                    className="absolute bottom-8 right-8 h-16 bg-background rounded-xl px-4 py-3 shadow-xl border"
                   />
                 </div>
                 <CardContent className="p-6">
@@ -542,7 +542,7 @@ const ConversationAssistant = () => {
                   <img
                     src={logoRapidPlumb}
                     alt="Rapid Plumb"
-                    className="absolute bottom-8 right-8 h-12 bg-background/90 backdrop-blur-sm rounded-lg p-2 shadow-lg"
+                    className="absolute bottom-8 right-8 h-16 bg-background rounded-xl px-4 py-3 shadow-xl border"
                   />
                 </div>
                 <CardContent className="p-6">
@@ -568,7 +568,7 @@ const ConversationAssistant = () => {
                   <img
                     src={logoVitalBalance}
                     alt="Vital Balance"
-                    className="absolute bottom-8 right-8 h-12 bg-background/90 backdrop-blur-sm rounded-lg p-2 shadow-lg"
+                    className="absolute bottom-8 right-8 h-16 bg-background rounded-xl px-4 py-3 shadow-xl border"
                   />
                 </div>
                 <CardContent className="p-6">
