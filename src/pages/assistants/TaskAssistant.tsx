@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Accordion,
   AccordionContent,
@@ -114,7 +115,7 @@ const TaskAssistant = () => {
   const title = "Task Assistant — AI Meeting Notes, Transcription & Action Items | RagAdvise";
   const description = "Turn any meeting into notes, summaries, and action items. Search your calls, ask AI questions, and never miss a follow-up again.";
 
-  const handleDemoSubmit = (e: React.FormEvent) => {
+  const handleDemoSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!name.trim() || !email.trim()) {
@@ -136,15 +137,32 @@ const TaskAssistant = () => {
 
     setIsSubmitting(true);
     
-    setTimeout(() => {
+    try {
+      const { error } = await supabase.functions.invoke("send-demo-request", {
+        body: { name: name.trim(), email: email.trim() },
+      });
+
+      if (error) {
+        console.error("Error sending demo request:", error);
+        throw new Error(error.message);
+      }
+
       toast({
         title: "Demo request submitted!",
         description: "We'll be in touch within 24 hours.",
       });
       setName("");
       setEmail("");
+    } catch (error: any) {
+      console.error("Demo request error:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (

@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Accordion,
   AccordionContent,
@@ -115,7 +116,7 @@ const ConversationAssistant = () => {
   const title = "Conversation Assistant — Never Miss a Customer Call Again | RagAdvise";
   const description = "Your AI answers calls, replies to messages, and follows up with customers—automatically, 24/7.";
 
-  const handleDemoSubmit = (e: React.FormEvent) => {
+  const handleDemoSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!name.trim() || !email.trim()) {
@@ -137,16 +138,32 @@ const ConversationAssistant = () => {
 
     setIsSubmitting(true);
     
-    // Simulate submission - replace with actual API call
-    setTimeout(() => {
+    try {
+      const { error } = await supabase.functions.invoke("send-demo-request", {
+        body: { name: name.trim(), email: email.trim() },
+      });
+
+      if (error) {
+        console.error("Error sending demo request:", error);
+        throw new Error(error.message);
+      }
+
       toast({
         title: "Demo request submitted!",
         description: "We'll be in touch within 24 hours.",
       });
       setName("");
       setEmail("");
+    } catch (error: any) {
+      console.error("Demo request error:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
