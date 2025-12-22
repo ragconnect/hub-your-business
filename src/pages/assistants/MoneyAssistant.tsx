@@ -484,26 +484,28 @@ const MoneyAssistant = () => {
             
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-primary/10 p-6 pb-0">
+                <div className="bg-primary/10">
                   <img
                     src={testimonial1}
                     alt="Sarah K."
-                    className="w-full h-56 object-cover object-top rounded-t-xl"
+                    className="w-full h-72 object-cover object-top"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-4 flex items-center justify-center">
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={logoPeakAccounting}
                       alt="Peak Accounting"
-                      className="h-12"
+                      className="h-16 w-16 object-contain flex-shrink-0"
                     />
+                    <div>
+                      <h3 className="text-xl font-bold">Sarah K.</h3>
+                      <p className="text-sm text-muted-foreground">Accountant, Colorado</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Saves 15+ hours per week
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">Sarah K.</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Accountant, Colorado</p>
-                  <p className="text-lg font-semibold text-primary mb-2">
-                    Saves 15+ hours per week
-                  </p>
                   <p className="text-muted-foreground">
                     "I used to spend entire weekends catching up on bookkeeping. Now RagAdvise categorizes everything automatically. I just review and approve."
                   </p>
@@ -511,26 +513,28 @@ const MoneyAssistant = () => {
               </Card>
 
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-green-500/10 p-6 pb-0">
+                <div className="bg-green-500/10">
                   <img
                     src={testimonial2}
                     alt="David M."
-                    className="w-full h-56 object-cover object-top rounded-t-xl"
+                    className="w-full h-72 object-cover object-top"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-4 flex items-center justify-center">
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={logoBudgetBros}
                       alt="Budget Bros"
-                      className="h-12"
+                      className="h-16 w-16 object-contain flex-shrink-0"
                     />
+                    <div>
+                      <h3 className="text-xl font-bold">David M.</h3>
+                      <p className="text-sm text-muted-foreground">Financial Consultant, Texas</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Found $12K in missed deductions
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">David M.</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Financial Consultant, Texas</p>
-                  <p className="text-lg font-semibold text-primary mb-2">
-                    Found $12K in missed deductions
-                  </p>
                   <p className="text-muted-foreground">
                     "First month using RagAdvise, the AI flagged expenses I'd been miscategorizing for years. Paid for itself 100x over at tax time."
                   </p>
@@ -538,26 +542,28 @@ const MoneyAssistant = () => {
               </Card>
 
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-amber-500/10 p-6 pb-0">
+                <div className="bg-amber-500/10">
                   <img
                     src={testimonial3}
                     alt="Emma L."
-                    className="w-full h-56 object-cover object-top rounded-t-xl"
+                    className="w-full h-72 object-cover object-top"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-4 flex items-center justify-center">
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={logoSunriseBakery}
                       alt="Sunrise Bakery"
-                      className="h-12"
+                      className="h-16 w-16 object-contain flex-shrink-0"
                     />
+                    <div>
+                      <h3 className="text-xl font-bold">Emma L.</h3>
+                      <p className="text-sm text-muted-foreground">Bakery Owner, California</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Never late on vendor payments
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">Emma L.</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Bakery Owner, California</p>
-                  <p className="text-lg font-semibold text-primary mb-2">
-                    Never late on vendor payments
-                  </p>
                   <p className="text-muted-foreground">
                     "I used to forget invoices and damage supplier relationships. Now AI reminds me before anything is due. My vendors love me."
                   </p>
