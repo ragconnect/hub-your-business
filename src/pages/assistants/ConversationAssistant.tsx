@@ -345,7 +345,10 @@ const ConversationAssistant = () => {
               Stop losing customers to voicemail. Let AI answer for you.
             </p>
             <Button size="lg" variant="secondary" className="mt-8" asChild>
-              <a href="https://my.ragadvise.com/signup">Start Your Free Trial</a>
+              <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+                <Calendar className="mr-2 h-4 w-4" />
+                Schedule a Demo
+              </a>
             </Button>
           </div>
         </section>
