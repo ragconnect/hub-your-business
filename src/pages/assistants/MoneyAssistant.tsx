@@ -168,9 +168,7 @@ const MoneyAssistant = () => {
                   Stop Losing Money to Messy Books and Missed Payments
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Schedule your demo to get consultation on how to configure your AI assistant for only{" "}
-                  <span className="line-through text-muted-foreground/70">$1,999</span>{" "}
-                  <span className="font-semibold text-primary">free</span> and take control of your business finances.
+                  Schedule your free demo to get consultation on how to configure your AI assistant and take control of your business finances.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button size="lg" asChild>
@@ -190,9 +188,7 @@ const MoneyAssistant = () => {
                   <div className="text-center mb-6">
                     <DollarSign className="w-10 h-10 text-primary mx-auto mb-3" />
                     <h3 className="text-2xl font-bold">
-                      Schedule Demo for{" "}
-                      <span className="line-through text-muted-foreground">$1,999</span>{" "}
-                      <span className="text-primary">Free</span> Configuration
+                      Schedule Your Free Demo
                     </h3>
                     <p className="text-muted-foreground mt-2">
                       Enter your details and we'll reach out within 24 hours
