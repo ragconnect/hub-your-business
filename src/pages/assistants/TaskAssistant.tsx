@@ -471,10 +471,10 @@ const TaskAssistant = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Real Results from Real Businesses
+              Real Results Across Industries
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              See how busy professionals are taking control of their tasks with RagAdvise.
+              From construction sites to creative studios, see how professionals are getting more done.
             </p>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -495,14 +495,14 @@ const TaskAssistant = () => {
                     />
                     <div>
                       <h3 className="text-xl font-bold">Robert C.</h3>
-                      <p className="text-sm text-muted-foreground">Construction Manager, Florida</p>
+                      <p className="text-sm text-muted-foreground">General Contractor, Florida</p>
                       <p className="text-lg font-semibold text-primary">
-                        Manages 12 projects at once
+                        Finished 2 projects early
                       </p>
                     </div>
                   </div>
                   <p className="text-muted-foreground">
-                    "I was drowning in sticky notes and missed deadlines. Now AI tells me exactly what needs attention today. My stress levels dropped 80%."
+                    "It tracks inspection deadlines, reminds me to order materials before crews need them, and coordinates sub schedules. Nothing falls through the cracks."
                   </p>
                 </CardContent>
               </Card>
@@ -524,14 +524,14 @@ const TaskAssistant = () => {
                     />
                     <div>
                       <h3 className="text-xl font-bold">Lisa P.</h3>
-                      <p className="text-sm text-muted-foreground">Creative Director, Seattle</p>
+                      <p className="text-sm text-muted-foreground">Course Creator, Online</p>
                       <p className="text-lg font-semibold text-primary">
-                        Team aligned without meetings
+                        Doubled revenue last quarter
                       </p>
                     </div>
                   </div>
                   <p className="text-muted-foreground">
-                    "We cut our weekly meetings from 5 to 1. Everyone knows what they're doing because AI keeps us coordinated automatically."
+                    "It tracks my content calendar, manages email sequences, and coordinates with freelancers. I launched two courses on time and grew my list by 3,000."
                   </p>
                 </CardContent>
               </Card>
@@ -553,14 +553,14 @@ const TaskAssistant = () => {
                     />
                     <div>
                       <h3 className="text-xl font-bold">Tom W.</h3>
-                      <p className="text-sm text-muted-foreground">Tech Startup Founder, Austin</p>
+                      <p className="text-sm text-muted-foreground">Realtor, Texas</p>
                       <p className="text-lg font-semibold text-primary">
-                        Ships features 2x faster
+                        Closed 4 forgotten deals
                       </p>
                     </div>
                   </div>
                   <p className="text-muted-foreground">
-                    "Before RagAdvise, I spent mornings figuring out what to do. Now I just follow the AI's plan and get twice as much done."
+                    "It tracks every lead, reminds me when to follow up, and prompts me to reach out to past clients. My sphere business doubled."
                   </p>
                 </CardContent>
               </Card>
