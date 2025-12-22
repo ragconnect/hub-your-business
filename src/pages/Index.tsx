@@ -42,10 +42,10 @@ const Index = () => {
             <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
               <div>
                 <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-tight">
-                  Hate Calls, Emails, and Tracking Expenses All Day?
+                  Spend All Day on Calls, Emails, and Paperwork?
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Your AI assistants do it for you. They handle calls, messages, payments, and meeting notes—automatically, 24/7.
+                  Your team of AI assistants handles it all. They answer calls, reply to messages, and follow up with customers—automatically.
                 </p>
                 <div className="relative z-10 mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
