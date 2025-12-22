@@ -45,7 +45,7 @@ const handler = async (req: Request): Promise<Response> => {
             subject: `New Demo Request from ${name}`,
           },
         ],
-        from: { email: "noreply@ragadvise.com", name: "RagAdvise Demo Requests" },
+        from: { email: "ty@ragadvise.com", name: "RagAdvise Demo Requests" },
         content: [
           {
             type: "text/html",
@@ -85,7 +85,7 @@ const handler = async (req: Request): Promise<Response> => {
             subject: "We received your demo request - RagAdvise",
           },
         ],
-        from: { email: "noreply@ragadvise.com", name: "RagAdvise" },
+        from: { email: "ty@ragadvise.com", name: "RagAdvise" },
         content: [
           {
             type: "text/html",
