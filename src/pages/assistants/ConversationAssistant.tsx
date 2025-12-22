@@ -352,8 +352,8 @@ const ConversationAssistant = () => {
                 </p>
                 <Button size="lg" asChild>
                   <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
-                    <Users className="mr-2 h-4 w-4" />
-                    Meet the Team
+                    <Calendar className="mr-2 h-4 w-4" />
+                    Schedule a Demo
                   </a>
                 </Button>
               </div>
