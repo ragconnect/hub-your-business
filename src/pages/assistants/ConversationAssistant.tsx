@@ -329,6 +329,78 @@ const ConversationAssistant = () => {
           </div>
         </section>
 
+        {/* How It Works */}
+        <section className="py-16 md:py-24 bg-muted/30">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              Set Up In Under 5 Minutes
+            </h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Step 1 */}
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                    1
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Connect your accounts</h3>
+                  <p className="text-muted-foreground">
+                    Link your email, phone number, review sites, and messaging apps. Keep your existing numbers—customers won't notice a thing.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Step 2 */}
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                    2
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Train your AI assistant</h3>
+                  <p className="text-muted-foreground">
+                    Tell the AI how to handle customers using our easy interface. Add your FAQs, upload business documents, and set your rules. No coding required.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Step 3 */}
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                    3
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Let AI handle customers</h3>
+                  <p className="text-muted-foreground">
+                    Customers call, email, or message. Your AI answers instantly, books appointments, and follows up—automatically. You focus on running your business.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Step 4 */}
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                    4
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Review and improve</h3>
+                  <p className="text-muted-foreground">
+                    Listen to call recordings and read transcripts. See what customers ask. Update your AI's answers to get even better results over time.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center mt-10">
+              <Button size="lg" asChild>
+                <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo For Set Up Consultation
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* How We Compare */}
         <section className="py-16 md:py-24">
           <div className="container max-w-5xl">
