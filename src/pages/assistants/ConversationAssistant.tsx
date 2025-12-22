@@ -55,7 +55,7 @@ const newWaySolutions = [
   {
     icon: Bot,
     title: "Your AI assistant answers every call",
-    desc: "Customer calls at 11:45 PM? Your AI picks up and answers questions. It uses your FAQ and business documents to give the right answer every time. Then it books the appointment. You wake up to new jobs.",
+    desc: "Customer calls at 9pm? Your AI picks up, answers questions, and books the appointment. You wake up to new jobs.",
   },
   {
     icon: MessageSquare,
