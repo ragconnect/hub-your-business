@@ -30,10 +30,10 @@ import {
   ClipboardList,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
-import testimonial1 from "@/assets/testimonials/task-testimonial-1.jpg";
+import testimonial1 from "@/assets/testimonials/testimonial-mike.jpg";
 import testimonial2 from "@/assets/testimonials/task-testimonial-2.jpg";
 import testimonial3 from "@/assets/testimonials/task-testimonial-3.jpg";
-import logoBuildright from "@/assets/testimonials/logo-buildright.png";
+import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
 import logoCreativeStudio from "@/assets/testimonials/logo-creative-studio.png";
 import logoTechflow from "@/assets/testimonials/logo-techflow.png";
 
@@ -508,20 +508,20 @@ const TaskAssistant = () => {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4 mb-4">
                     <img
-                      src={logoBuildright}
-                      alt="BuildRight Construction"
+                      src={logoRapidPlumb}
+                      alt="Rapid Plumb"
                       className="h-16 w-16 object-contain flex-shrink-0"
                     />
                     <div>
-                      <h3 className="text-xl font-bold">Robert C.</h3>
-                      <p className="text-sm text-muted-foreground">General Contractor, Florida</p>
+                      <h3 className="text-xl font-bold">Mike R.</h3>
+                      <p className="text-sm text-muted-foreground">Plumber, Wyoming</p>
                       <p className="text-lg font-semibold text-primary">
-                        Finished 2 projects early
+                        Never misses a follow-up
                       </p>
                     </div>
                   </div>
                   <p className="text-muted-foreground">
-                    "It tracks inspection deadlines, reminds me to order materials before crews need them, and coordinates sub schedules. Nothing falls through the cracks."
+                    "I run my whole business solo—plumber, scheduler, follow-up guy. RagAdvise tracks my quotes, reminds me to follow up with customers, and makes sure I order materials before the job."
                   </p>
                 </CardContent>
               </Card>
