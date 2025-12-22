@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Calendar } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const demoRequestSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -66,11 +67,21 @@ const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
       return;
     }
 
-    // Simulate form submission (replace with actual API call when backend is ready)
     try {
-      // For now, just simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      
+      const { data, error } = await supabase.functions.invoke("send-demo-request", {
+        body: {
+          name: result.data.name,
+          email: result.data.email,
+          company: result.data.company || undefined,
+          message: result.data.message || undefined,
+        },
+      });
+
+      if (error) {
+        console.error("Error sending demo request:", error);
+        throw new Error(error.message);
+      }
+
       toast({
         title: "Demo Request Received!",
         description: "We'll be in touch within 24 hours to schedule your demo.",
@@ -78,7 +89,8 @@ const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
       
       setFormData({ name: "", email: "", company: "", message: "" });
       setOpen(false);
-    } catch (error) {
+    } catch (error: any) {
+      console.error("Demo request error:", error);
       toast({
         title: "Something went wrong",
         description: "Please try again or email us directly.",
