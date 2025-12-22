@@ -42,7 +42,7 @@ const Index = () => {
             <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
               <div>
                 <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-tight">
-                  Spend All Day on Calls, Emails, and Paperwork?
+                  Hate Spending All Day on Calls, Emails, and Paperwork?
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
                   Your team of AI assistants handles it all. They answer calls, reply to messages, and follow up with customers—automatically.
