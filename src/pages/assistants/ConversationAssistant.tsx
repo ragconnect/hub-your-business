@@ -64,7 +64,7 @@ const newWaySolutions = [
   },
   {
     icon: Zap,
-    title: "Costs less than $500 per month",
+    title: "Cost less than a Netflix Subscription",
     desc: "Your AI works 24/7, never takes vacation, and handles 100+ customers at the same time.",
   },
 ];
