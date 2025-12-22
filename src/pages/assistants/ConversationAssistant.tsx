@@ -155,25 +155,84 @@ const ConversationAssistant = () => {
         {/* Hero */}
         <section className="relative pt-16 md:pt-24 pb-16 md:pb-24" aria-labelledby="hero-title">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_0%,hsl(var(--primary)/0.15),transparent_60%)]" />
-          <div className="container text-center max-w-4xl">
-            <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Tired of Spending All Day on Customer Calls, Emails, and Reviews?
-            </h1>
-            <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
-              Schedule your demo to get consultation on how to configure your AI assistant for only{" "}
-              <span className="line-through text-muted-foreground/70">$1,999</span>{" "}
-              <span className="font-semibold text-primary">free today</span> and manage all your customer calls, emails, and reviews.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
-              </Button>
-              <Button variant="outline" size="lg" className="bg-background" asChild>
-                <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Schedule a Demo
-                </a>
-              </Button>
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left - Hero Text */}
+              <div className="text-center lg:text-left">
+                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight">
+                  Tired of Spending All Day on Customer Calls, Emails, and Reviews?
+                </h1>
+                <p className="mt-6 text-xl text-muted-foreground">
+                  Schedule your demo to get consultation on how to configure your AI assistant for only{" "}
+                  <span className="line-through text-muted-foreground/70">$1,999</span>{" "}
+                  <span className="font-semibold text-primary">free today</span> and manage all your customer calls, emails, and reviews.
+                </p>
+                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Button size="lg" asChild>
+                    <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                  </Button>
+                  <Button variant="outline" size="lg" className="bg-background" asChild>
+                    <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule a Demo
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Right - Demo Contact Form */}
+              <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10">
+                <CardContent className="p-8">
+                  <div className="text-center mb-6">
+                    <Calendar className="w-10 h-10 text-primary mx-auto mb-3" />
+                    <h3 className="text-2xl font-bold">Schedule Your Free Demo</h3>
+                    <p className="text-muted-foreground mt-2">
+                      Enter your details and we'll reach out within 24 hours
+                    </p>
+                  </div>
+                  <form onSubmit={handleDemoSubmit} className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="demo-name">Your Name</Label>
+                      <Input
+                        id="demo-name"
+                        type="text"
+                        placeholder="John Smith"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        maxLength={100}
+                        className="bg-background"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="demo-email">Email Address</Label>
+                      <Input
+                        id="demo-email"
+                        type="email"
+                        placeholder="john@example.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        maxLength={255}
+                        className="bg-background"
+                      />
+                    </div>
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full" 
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        "Submitting..."
+                      ) : (
+                        <>
+                          <Send className="mr-2 h-4 w-4" />
+                          Request Demo
+                        </>
+                      )}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
@@ -255,60 +314,6 @@ const ConversationAssistant = () => {
                 You catch every customer. You save hours every day. You grow without hiring. Your business runs while you sleep.
               </p>
             </div>
-
-            {/* Demo Contact Form */}
-            <Card className="mt-16 max-w-lg mx-auto border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <Calendar className="w-10 h-10 text-primary mx-auto mb-3" />
-                  <h3 className="text-2xl font-bold">Schedule Your Free Demo</h3>
-                  <p className="text-muted-foreground mt-2">
-                    Enter your details and we'll reach out within 24 hours
-                  </p>
-                </div>
-                <form onSubmit={handleDemoSubmit} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="demo-name">Your Name</Label>
-                    <Input
-                      id="demo-name"
-                      type="text"
-                      placeholder="John Smith"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      maxLength={100}
-                      className="bg-background"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="demo-email">Email Address</Label>
-                    <Input
-                      id="demo-email"
-                      type="email"
-                      placeholder="john@example.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      maxLength={255}
-                      className="bg-background"
-                    />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full" 
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      "Submitting..."
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-4 w-4" />
-                        Request Demo
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
           </div>
         </section>
 
