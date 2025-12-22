@@ -64,8 +64,8 @@ const newWaySolutions = [
   },
   {
     icon: RefreshCw,
-    title: "Your AI follows up automatically",
-    desc: "Payment reminder at 3pm? Done. Appointment confirmation the night before? Done. Review request after the job? Done.",
+    title: "Never forget what customers said",
+    desc: "Every customer call is automatically transcribed—whether answered by AI or your team. Search any conversation. See exactly what was said. No more guessing or forgetting details.",
   },
   {
     icon: Zap,
