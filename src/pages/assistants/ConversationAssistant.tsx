@@ -80,6 +80,10 @@ const faqs = [
     a: "30 minutes. Connect your phone and email, tell the AI about your business, done.",
   },
   {
+    q: "Does this work? Can I trust the AI to correctly answer questions across phone, email, and reviews?",
+    a: "Yes. You control exactly what the AI says across every channel using categories and rules. You also control the system prompt and configuration—so the AI only responds the way you want it to.",
+  },
+  {
     q: "What if it makes a mistake?",
     a: "You control what it says. You can review and approve responses before they go out.",
   },
