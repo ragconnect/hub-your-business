@@ -484,26 +484,28 @@ const TaskAssistant = () => {
             
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-primary/10 p-6 pb-0">
+                <div className="bg-primary/10">
                   <img
                     src={testimonial1}
                     alt="Robert C."
-                    className="w-full h-56 object-cover object-top rounded-t-xl"
+                    className="w-full h-72 object-cover object-top"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-4 flex items-center justify-center">
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={logoBuildright}
                       alt="BuildRight Construction"
-                      className="h-12"
+                      className="h-16 w-16 object-contain flex-shrink-0"
                     />
+                    <div>
+                      <h3 className="text-xl font-bold">Robert C.</h3>
+                      <p className="text-sm text-muted-foreground">Construction Manager, Florida</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Manages 12 projects at once
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">Robert C.</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Construction Manager, Florida</p>
-                  <p className="text-lg font-semibold text-primary mb-2">
-                    Manages 12 projects at once
-                  </p>
                   <p className="text-muted-foreground">
                     "I was drowning in sticky notes and missed deadlines. Now AI tells me exactly what needs attention today. My stress levels dropped 80%."
                   </p>
@@ -511,26 +513,28 @@ const TaskAssistant = () => {
               </Card>
 
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-green-500/10 p-6 pb-0">
+                <div className="bg-green-500/10">
                   <img
                     src={testimonial2}
                     alt="Lisa P."
-                    className="w-full h-56 object-cover object-top rounded-t-xl"
+                    className="w-full h-72 object-cover object-top"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-4 flex items-center justify-center">
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={logoCreativeStudio}
                       alt="Creative Studio"
-                      className="h-12"
+                      className="h-16 w-16 object-contain flex-shrink-0"
                     />
+                    <div>
+                      <h3 className="text-xl font-bold">Lisa P.</h3>
+                      <p className="text-sm text-muted-foreground">Creative Director, Seattle</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Team aligned without meetings
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">Lisa P.</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Creative Director, Seattle</p>
-                  <p className="text-lg font-semibold text-primary mb-2">
-                    Team aligned without meetings
-                  </p>
                   <p className="text-muted-foreground">
                     "We cut our weekly meetings from 5 to 1. Everyone knows what they're doing because AI keeps us coordinated automatically."
                   </p>
@@ -538,26 +542,28 @@ const TaskAssistant = () => {
               </Card>
 
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-amber-500/10 p-6 pb-0">
+                <div className="bg-amber-500/10">
                   <img
                     src={testimonial3}
                     alt="Tom W."
-                    className="w-full h-56 object-cover object-top rounded-t-xl"
+                    className="w-full h-72 object-cover object-top"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-4 flex items-center justify-center">
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={logoTechflow}
                       alt="TechFlow Solutions"
-                      className="h-12"
+                      className="h-16 w-16 object-contain flex-shrink-0"
                     />
+                    <div>
+                      <h3 className="text-xl font-bold">Tom W.</h3>
+                      <p className="text-sm text-muted-foreground">Tech Startup Founder, Austin</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Ships features 2x faster
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">Tom W.</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Tech Startup Founder, Austin</p>
-                  <p className="text-lg font-semibold text-primary mb-2">
-                    Ships features 2x faster
-                  </p>
                   <p className="text-muted-foreground">
                     "Before RagAdvise, I spent mornings figuring out what to do. Now I just follow the AI's plan and get twice as much done."
                   </p>
