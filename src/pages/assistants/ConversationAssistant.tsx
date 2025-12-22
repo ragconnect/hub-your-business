@@ -507,26 +507,28 @@ const ConversationAssistant = () => {
             <div className="grid md:grid-cols-3 gap-8">
               {/* Testimonial 1 - Maria */}
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-primary/10 p-4 pb-0">
+                <div className="bg-primary/10">
                   <img
                     src={testimonialMaria}
                     alt="Maria S."
-                    className="w-full h-56 object-cover object-top rounded-t-xl"
+                    className="w-full h-72 object-cover object-top"
                   />
-                  <div className="bg-background rounded-b-xl flex items-center justify-center -mx-4">
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={logoMariasKitchen}
                       alt="Maria's Kitchen"
-                      className="h-32 max-w-full object-contain"
+                      className="h-16 w-16 object-contain flex-shrink-0"
                     />
+                    <div>
+                      <h3 className="text-xl font-bold">Maria S.</h3>
+                      <p className="text-sm text-muted-foreground">Restaurant Owner, New York</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Manages 50+ calls per day
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">Maria S.</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Restaurant Owner, New York</p>
-                  <p className="text-lg font-semibold text-primary mb-2">
-                    Manages 50+ calls per day
-                  </p>
                   <p className="text-muted-foreground">
                     "I used to miss half my reservation calls during the dinner rush. Now my AI handles everything—bookings, hours, even catering inquiries."
                   </p>
@@ -535,26 +537,28 @@ const ConversationAssistant = () => {
 
               {/* Testimonial 2 - Mike */}
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-green-500/10 p-4 pb-0">
+                <div className="bg-green-500/10">
                   <img
                     src={testimonialMike}
                     alt="Mike R."
-                    className="w-full h-56 object-cover object-top rounded-t-xl"
+                    className="w-full h-72 object-cover object-top"
                   />
-                  <div className="bg-background rounded-b-xl flex items-center justify-center -mx-4">
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={logoRapidPlumb}
                       alt="Rapid Plumb"
-                      className="h-32 max-w-full object-contain"
+                      className="h-16 w-16 object-contain flex-shrink-0"
                     />
+                    <div>
+                      <h3 className="text-xl font-bold">Mike R.</h3>
+                      <p className="text-sm text-muted-foreground">Plumber, Wyoming</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Handles 10+ emergency calls weekly
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">Mike R.</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Plumber, Wyoming</p>
-                  <p className="text-lg font-semibold text-primary mb-2">
-                    Handles 10+ emergency calls weekly
-                  </p>
                   <p className="text-muted-foreground">
                     "Emergency calls at 2 AM used to wake the whole family. Now the AI books them, texts me the details, and I sleep through the night."
                   </p>
@@ -563,26 +567,28 @@ const ConversationAssistant = () => {
 
               {/* Testimonial 3 - James */}
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-amber-500/10 p-4 pb-0">
+                <div className="bg-amber-500/10">
                   <img
                     src={testimonialJames}
                     alt="James T."
-                    className="w-full h-56 object-cover object-top rounded-t-xl"
+                    className="w-full h-72 object-cover object-top"
                   />
-                  <div className="bg-background rounded-b-xl flex items-center justify-center -mx-4">
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={logoVitalBalance}
                       alt="Vital Balance"
-                      className="h-32 max-w-full object-contain"
+                      className="h-16 w-16 object-contain flex-shrink-0"
                     />
+                    <div>
+                      <h3 className="text-xl font-bold">James T.</h3>
+                      <p className="text-sm text-muted-foreground">Wellness Brand Founder, Online</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Manages 1,000+ customer emails
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">James T.</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Wellness Brand Founder, Online</p>
-                  <p className="text-lg font-semibold text-primary mb-2">
-                    Manages 1,000+ customer emails
-                  </p>
                   <p className="text-muted-foreground">
                     "Scaling my wellness brand meant drowning in customer emails. RagAdvise handles product questions, refunds, and reviews automatically."
                   </p>
