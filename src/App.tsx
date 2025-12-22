@@ -8,6 +8,8 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ConversationAssistant from "./pages/assistants/ConversationAssistant";
+import MoneyAssistant from "./pages/assistants/MoneyAssistant";
+import TaskAssistant from "./pages/assistants/TaskAssistant";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/assistants/conversation" element={<ConversationAssistant />} />
+            <Route path="/assistants/money" element={<MoneyAssistant />} />
+            <Route path="/assistants/task" element={<TaskAssistant />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
