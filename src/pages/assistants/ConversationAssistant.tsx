@@ -183,7 +183,7 @@ const ConversationAssistant = () => {
               </div>
 
               {/* Right - Demo Contact Form */}
-              <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10">
+              <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
                     <Calendar className="w-10 h-10 text-primary mx-auto mb-3" />
@@ -206,7 +206,7 @@ const ConversationAssistant = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         maxLength={100}
-                        className="bg-background"
+                        className="bg-background rounded-xl"
                       />
                     </div>
                     <div className="space-y-2">
@@ -218,13 +218,13 @@ const ConversationAssistant = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         maxLength={255}
-                        className="bg-background"
+                        className="bg-background rounded-xl"
                       />
                     </div>
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full" 
+                      className="w-full rounded-xl" 
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
