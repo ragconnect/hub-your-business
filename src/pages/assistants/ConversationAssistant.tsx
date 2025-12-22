@@ -9,136 +9,82 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  PhoneOff,
+  Phone,
   Mail,
   Clock,
   DollarSign,
-  MessageCircle,
-  UserCheck,
+  Bot,
+  MessageSquare,
+  RefreshCw,
   Zap,
-  Bell,
-  AlertTriangle,
-  Phone,
   Calendar,
-  CheckCircle,
-  Smile,
-  Target,
-  BookOpen,
-  Globe,
-  FolderOpen,
   Play,
+  X,
+  Check,
 } from "lucide-react";
 
-const problems = [
+const oldWayProblems = [
   {
-    icon: PhoneOff,
-    title: "Missing calls means missing money",
-    desc: "Every unanswered call is a lost customer. When you're with one customer, three more go to voicemail.",
+    icon: Phone,
+    title: "You answer every call yourself",
+    desc: "You're helping one customer. Three more calls go straight to voicemail. They call your competitor instead.",
   },
   {
     icon: Mail,
-    title: "Email piles up faster than you can respond",
-    desc: 'Simple questions like "Are you open?" or "Do you deliver?" take time away from real work.',
+    title: "You reply to emails one by one",
+    desc: 'Customers ask "Are you open?" or "What\'s your price?" You type the same answer 20 times a day.',
   },
   {
     icon: Clock,
-    title: "Follow-ups fall through the cracks",
-    desc: "You mean to call back, but the day gets busy. Customers move on to competitors who respond faster.",
+    title: "You forget to follow up",
+    desc: 'You write down "call John back at 3pm" on a sticky note. By 5pm, you forgot. John hired someone else.',
   },
   {
     icon: DollarSign,
-    title: "Hiring help is expensive",
-    desc: "A full-time receptionist costs $30,000+ per year. You need coverage but can't afford another person.",
+    title: "You hire expensive help",
+    desc: "A receptionist costs $2,500 per month. They don't work nights, weekends, or holidays.",
   },
 ];
 
-const solutions = [
+const newWaySolutions = [
   {
-    icon: MessageCircle,
-    title: "Answer every call and message instantly",
-    desc: "Your AI picks up the phone, replies to emails, texts, and social media messages in under 60 seconds—even at 2am.",
+    icon: Bot,
+    title: "Your AI assistant answers every call",
+    desc: "Customer calls at 9pm? Your AI picks up, answers questions, and books the appointment. You wake up to new jobs.",
   },
   {
-    icon: UserCheck,
-    title: "Qualify leads while you work",
-    desc: "The assistant asks customers the right questions, books appointments, and sends you only the qualified leads ready to close.",
+    icon: MessageSquare,
+    title: "Your AI replies to all emails and messages",
+    desc: 'Customer texts "Do you deliver?" AI responds in 30 seconds with the answer. Works on email, text, WhatsApp, and social media.',
+  },
+  {
+    icon: RefreshCw,
+    title: "Your AI follows up automatically",
+    desc: "Payment reminder at 3pm? Done. Appointment confirmation the night before? Done. Review request after the job? Done.",
   },
   {
     icon: Zap,
-    title: "Handle simple questions automatically",
-    desc: "Pricing, hours, availability, order status—your AI answers instantly using your business knowledge.",
-  },
-  {
-    icon: Bell,
-    title: "Follow up with every customer",
-    desc: "Payment reminders, appointment confirmations, review requests—all sent automatically so nothing slips through.",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Smart escalation when you're needed",
-    desc: "The assistant knows when to hand off to you for complex issues or high-value customers.",
-  },
-];
-
-const features = [
-  "Answer 100% of calls and messages",
-  "Qualify leads automatically",
-  "Book appointments 24/7",
-  "Send payment reminders",
-  "Handle customer service across phone, email, text, WhatsApp, and social media",
-  "Escalate complex issues to you",
-  "Track every conversation",
-  "Customize responses for your business",
-];
-
-const microAssistants = [
-  {
-    icon: Smile,
-    title: "Sentiment Detector",
-    desc: "Notices when a customer is frustrated or upset and automatically escalates to you.",
-  },
-  {
-    icon: Target,
-    title: "Lead Qualifier",
-    desc: "Asks the right questions to identify serious buyers vs. tire kickers.",
-  },
-  {
-    icon: BookOpen,
-    title: "Knowledge Bridge",
-    desc: "Finds gaps in your customer service responses and suggests better answers over time.",
-  },
-  {
-    icon: Globe,
-    title: "Language Detector",
-    desc: "Automatically responds in the customer's language—no setup required.",
-  },
-  {
-    icon: FolderOpen,
-    title: "Category Router",
-    desc: "Sorts incoming messages by type (returns, shipping, pricing) and applies the right rules to each.",
+    title: "Costs less than $500 per month",
+    desc: "Your AI works 24/7, never takes vacation, and handles 100+ customers at the same time.",
   },
 ];
 
 const faqs = [
   {
-    q: "How long does setup take?",
-    a: "Most businesses are live in under 30 minutes. Connect your phone and email, configure your categories, and you're done.",
+    q: "How long to set up?",
+    a: "30 minutes. Connect your phone and email, tell the AI about your business, done.",
   },
   {
-    q: "What if the AI gives a wrong answer?",
-    a: "You control what the assistant says. Set rules for each category, review responses, and the AI learns from your feedback.",
+    q: "What if it makes a mistake?",
+    a: "You control what it says. You can review and approve responses before they go out.",
   },
   {
-    q: "Can I use my existing phone number?",
-    a: "Yes. Forward your current number to RagAdvise or get a new number through the platform.",
+    q: "Can I keep my phone number?",
+    a: "Yes. Your customers call the same number. The AI just answers it for you.",
   },
   {
-    q: "How much does it cost compared to hiring someone?",
-    a: "The Conversation Assistant costs less than $500/month. A full-time receptionist costs $2,500+ per month, doesn't work nights or weekends, and takes vacations.",
-  },
-  {
-    q: "What happens to complex customer issues?",
-    a: "The assistant knows when to escalate. You'll get a notification with the full conversation context so you can jump in.",
+    q: "What if a customer needs me?",
+    a: "The AI knows when to get you. Complex problems come straight to you with all the details.",
   },
 ];
 
@@ -163,7 +109,7 @@ const ConversationAssistant = () => {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_0%,hsl(var(--primary)/0.15),transparent_60%)]" />
           <div className="container text-center max-w-4xl">
             <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Tired of Spending All Day on Customer Calls, Emails, and Reviews?
+              Never Miss Another Customer Call or Email
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
               Schedule your demo to get consultation on how to configure your AI assistant for only{" "}
@@ -184,36 +130,20 @@ const ConversationAssistant = () => {
           </div>
         </section>
 
-        {/* Solutions */}
+        {/* The Old Way */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              How the Conversation Assistant Helps
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {solutions.map((solution) => (
-                <Card key={solution.title} className="border-primary/20 bg-primary/5">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                      <solution.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="font-semibold text-lg mb-2">{solution.title}</h3>
-                    <p className="text-muted-foreground">{solution.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 text-destructive mb-4">
+                <X className="w-6 h-6" />
+                <span className="text-lg font-semibold">The Old Way</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                What Most Businesses Do
+              </h2>
             </div>
-          </div>
-        </section>
-
-        {/* Problems */}
-        <section className="py-16 md:py-24">
-          <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              The Problems You Face Every Day
-            </h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {problems.map((problem) => (
+              {oldWayProblems.map((problem) => (
                 <Card key={problem.title} className="border-destructive/20 bg-destructive/5">
                   <CardContent className="p-6">
                     <div className="flex gap-4">
@@ -231,102 +161,82 @@ const ConversationAssistant = () => {
                 </Card>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Video Section */}
-        <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">See It In Action</h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Watch the Conversation Assistant handle real customer calls and emails
-            </p>
-            <div className="max-w-3xl mx-auto aspect-video bg-muted rounded-xl flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
-              <div className="text-center p-8">
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Play className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" />
-                </div>
-                <p className="text-muted-foreground">Demo video coming soon</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Micro Assistants */}
-        <section className="py-16 md:py-24">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Micro Assistants: Your AI Gets Smarter Every Day
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                The Conversation Assistant works with specialized micro assistants that handle specific tasks:
+            <div className="mt-10 text-center max-w-2xl mx-auto">
+              <p className="text-lg font-semibold text-destructive mb-2">Why this sucks:</p>
+              <p className="text-muted-foreground">
+                You lose customers. You waste time. You can't afford help. Your business stays small.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {microAssistants.map((ma) => (
-                <Card key={ma.title}>
+          </div>
+        </section>
+
+        {/* The New Way */}
+        <section className="py-16 md:py-24">
+          <div className="container">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 text-primary mb-4">
+                <Check className="w-6 h-6" />
+                <span className="text-lg font-semibold">The New Way</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                What RagAdvise Does For You
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {newWaySolutions.map((solution) => (
+                <Card key={solution.title} className="border-primary/20 bg-primary/5">
                   <CardContent className="p-6">
-                    <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center mb-4">
-                      <ma.icon className="w-5 h-5 text-accent-foreground" />
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <solution.icon className="w-6 h-6 text-primary" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-2">{solution.title}</h3>
+                        <p className="text-muted-foreground">{solution.desc}</p>
+                      </div>
                     </div>
-                    <h3 className="font-semibold mb-2">{ma.title}</h3>
-                    <p className="text-sm text-muted-foreground">{ma.desc}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
-            <p className="text-center text-muted-foreground mt-8 max-w-2xl mx-auto">
-              These micro assistants work together to make your Conversation Assistant smarter, faster, and more helpful—without you lifting a finger.
-            </p>
-          </div>
-        </section>
-
-        {/* Features Checklist */}
-        <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What You Get</h2>
-            <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>{feature}</span>
-                </div>
-              ))}
+            <div className="mt-10 text-center max-w-2xl mx-auto">
+              <p className="text-lg font-semibold text-primary mb-2">Why this works:</p>
+              <p className="text-muted-foreground">
+                You catch every customer. You save hours every day. You grow without hiring. Your business runs while you sleep.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 md:py-24">
+        {/* Demo CTAs */}
+        <section className="py-16 md:py-24 bg-muted/30">
           <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Ready to Stop Missing Customers?
-            </h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="border-primary">
+              <Card className="border-primary bg-primary/5">
                 <CardContent className="p-8 text-center">
-                  <Calendar className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Schedule a Demo</h3>
+                  <Play className="w-12 h-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-xl font-bold mb-2">Watch a 2-Minute Demo</h3>
                   <p className="text-muted-foreground mb-6">
-                    See the Conversation Assistant handle real customer scenarios from your business.
+                    See the AI answer real customer calls and emails
                   </p>
-                  <Button size="lg" variant="outline" className="w-full" asChild>
-                    <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
-                      Book a 15-minute demo →
-                    </a>
+                  <Button size="lg" variant="outline" className="w-full bg-background" asChild>
+                    <a href="#demo-video">Watch Demo Video →</a>
                   </Button>
                 </CardContent>
               </Card>
-              <Card className="border-primary bg-primary/5">
+              <Card className="border-green-500/50 bg-green-500/5">
                 <CardContent className="p-8 text-center">
-                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Start Free Trial</h3>
+                  <Calendar className="w-12 h-12 text-green-600 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold mb-2">Schedule a Free Demo</h3>
                   <p className="text-muted-foreground mb-6">
-                    Answer every call and email starting today. No credit card required.
+                    We'll show you how it works with your actual business
                   </p>
-                  <Button size="lg" className="w-full" asChild>
-                    <a href="https://my.ragadvise.com/signup">Sign up now →</a>
+                  <Button size="lg" className="w-full bg-green-600 hover:bg-green-700" asChild>
+                    <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+                      Book 15-Minute Demo →
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -335,9 +245,9 @@ const ConversationAssistant = () => {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 md:py-24 bg-muted/30">
+        <section className="py-16 md:py-24">
           <div className="container max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Common Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Questions?</h2>
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, i) => (
                 <AccordionItem key={i} value={`item-${i}`}>
@@ -355,7 +265,7 @@ const ConversationAssistant = () => {
         <section className="py-16 md:py-24 bg-primary text-primary-foreground">
           <div className="container text-center">
             <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto">
-              Your customers expect instant responses. Give them what they want—automatically.
+              Stop losing customers to voicemail. Let AI answer for you.
             </p>
             <Button size="lg" variant="secondary" className="mt-8" asChild>
               <a href="https://my.ragadvise.com/signup">Start Your Free Trial</a>
