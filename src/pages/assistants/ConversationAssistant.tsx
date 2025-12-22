@@ -367,27 +367,34 @@ const ConversationAssistant = () => {
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4">Works with calls, texts & emails</td>
+                    <td className="py-4 px-4">Calls, texts, emails, social & reviews</td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Calls only</span></td>
                     <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">DIY</span></td>
                     <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Calls/texts</span></td>
                   </tr>
                   <tr className="bg-muted/30">
+                    <td className="py-4 px-4">Built-in CRM</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                  </tr>
+                  <tr>
                     <td className="py-4 px-4">Flat, predictable pricing</td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
                   </tr>
-                  <tr>
+                  <tr className="bg-muted/30">
                     <td className="py-4 px-4">Built for small business</td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
                   </tr>
-                  <tr className="bg-muted/30">
+                  <tr>
                     <td className="py-4 px-4">Live in 24 hours</td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Weeks</span></td>
