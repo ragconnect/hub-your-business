@@ -132,10 +132,10 @@ const Index = () => {
             <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
               <div>
                 <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-tight">
-                  Grow Your Business, While AI Handles the Rest
+                  Hate Answering Calls and Emails All Day?
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Managing every aspect of your business can feel emotionally overwhelming. RagAdvise's AI-powered business assistants handle the calls, messages, meetings, finances, and other tasks you don't have time for.
+                  Your AI assistants do it for you. They handle calls, messages, payments, and meeting notes—automatically, 24/7.
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
