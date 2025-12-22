@@ -16,6 +16,7 @@ import CustomerFacts from "@/components/marketing/CustomerFacts";
 import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
 import OfferBanner from "@/components/marketing/OfferBanner";
 import VideoModal from "@/components/marketing/VideoModal";
+import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 
 const Index = () => {
   const siteUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : 'https://ragadvise.com/';
@@ -51,12 +52,12 @@ const Index = () => {
                   <Button size="lg" asChild>
                     <a href="https://my.ragadvise.com/signup">Sign Up – See Value in 20 Minutes</a>
                   </Button>
-                  <Button variant="outline" size="lg" className="bg-background" asChild>
-                    <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+                  <DemoRequestModal>
+                    <Button variant="outline" size="lg" className="bg-background">
                       <Calendar className="mr-2 h-4 w-4" />
                       Schedule a Demo
-                    </a>
-                  </Button>
+                    </Button>
+                  </DemoRequestModal>
                 </div>
               </div>
               <VideoModal>
