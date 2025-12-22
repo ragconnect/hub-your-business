@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 import {
   Accordion,
   AccordionContent,
@@ -192,12 +193,12 @@ const TaskAssistant = () => {
                   <Button size="lg" asChild>
                     <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
                   </Button>
-                  <Button variant="outline" size="lg" className="bg-background" asChild>
-                    <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+                  <DemoRequestModal>
+                    <Button variant="outline" size="lg" className="bg-background">
                       <Calendar className="mr-2 h-4 w-4" />
                       Schedule a Demo
-                    </a>
-                  </Button>
+                    </Button>
+                  </DemoRequestModal>
                 </div>
               </div>
 
@@ -396,12 +397,12 @@ const TaskAssistant = () => {
             </div>
 
             <div className="text-center mt-10">
-              <Button size="lg" asChild>
-                <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+              <DemoRequestModal>
+                <Button size="lg">
                   <Calendar className="mr-2 h-4 w-4" />
                   Schedule Demo For Set Up Consultation
-                </a>
-              </Button>
+                </Button>
+              </DemoRequestModal>
             </div>
           </div>
         </section>
@@ -475,12 +476,12 @@ const TaskAssistant = () => {
             </div>
             
             <div className="text-center mt-10">
-              <Button size="lg" asChild>
-                <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+              <DemoRequestModal>
+                <Button size="lg">
                   <Calendar className="mr-2 h-4 w-4" />
                   Schedule a Demo
-                </a>
-              </Button>
+                </Button>
+              </DemoRequestModal>
             </div>
           </div>
         </section>
@@ -611,12 +612,12 @@ const TaskAssistant = () => {
                 <p className="text-muted-foreground mb-8">
                   And that's to not give up till your AI assistant is organizing your work smoothly. Our customers say working with us is easy. This is why they trust us to manage their most important tasks.
                 </p>
-                <Button size="lg" asChild>
-                  <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+                <DemoRequestModal>
+                  <Button size="lg">
                     <Calendar className="mr-2 h-4 w-4" />
                     Schedule a Demo
-                  </a>
-                </Button>
+                  </Button>
+                </DemoRequestModal>
               </div>
             </div>
           </div>
@@ -645,12 +646,12 @@ const TaskAssistant = () => {
             <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto">
               Stop drowning in tasks. Let AI organize your work.
             </p>
-            <Button size="lg" variant="secondary" className="mt-8" asChild>
-              <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+            <DemoRequestModal>
+              <Button size="lg" variant="secondary" className="mt-8">
                 <Calendar className="mr-2 h-4 w-4" />
                 Schedule a Demo
-              </a>
-            </Button>
+              </Button>
+            </DemoRequestModal>
           </div>
         </section>
       </main>

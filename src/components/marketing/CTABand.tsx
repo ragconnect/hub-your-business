@@ -1,5 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Calendar } from "lucide-react";
+import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 
 const CTABand: React.FC = () => {
   return (
@@ -16,11 +18,12 @@ const CTABand: React.FC = () => {
             <Button size="lg" asChild>
               <a href="https://my.ragadvise.com/signup" aria-label="Sign Up – No Credit Card Required">Sign Up</a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+            <DemoRequestModal>
+              <Button size="lg" variant="outline">
+                <Calendar className="mr-2 h-4 w-4" />
                 Schedule a Demo
-              </a>
-            </Button>
+              </Button>
+            </DemoRequestModal>
           </div>
         </div>
       </div>
