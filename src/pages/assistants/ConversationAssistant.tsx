@@ -32,6 +32,9 @@ import teamPhoto from "@/assets/team-photo.jpg";
 import testimonialMaria from "@/assets/testimonials/testimonial-maria.jpg";
 import testimonialMike from "@/assets/testimonials/testimonial-mike.jpg";
 import testimonialJames from "@/assets/testimonials/testimonial-james.jpg";
+import logoMariasKitchen from "@/assets/testimonials/logo-marias-kitchen.png";
+import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
+import logoVitalBalance from "@/assets/testimonials/logo-vital-balance.png";
 
 const oldWayProblems = [
   {
@@ -478,6 +481,11 @@ const ConversationAssistant = () => {
                   />
                 </div>
                 <CardContent className="p-6">
+                  <img
+                    src={logoMariasKitchen}
+                    alt="Maria's Kitchen"
+                    className="h-10 mb-4"
+                  />
                   <h3 className="text-xl font-bold mb-1">Maria S.</h3>
                   <p className="text-sm text-muted-foreground mb-4">Restaurant Owner, New York</p>
                   <p className="text-lg font-semibold text-primary mb-2">
@@ -499,6 +507,11 @@ const ConversationAssistant = () => {
                   />
                 </div>
                 <CardContent className="p-6">
+                  <img
+                    src={logoRapidPlumb}
+                    alt="Rapid Plumb"
+                    className="h-10 mb-4"
+                  />
                   <h3 className="text-xl font-bold mb-1">Mike R.</h3>
                   <p className="text-sm text-muted-foreground mb-4">Plumber, Wyoming</p>
                   <p className="text-lg font-semibold text-primary mb-2">
@@ -520,6 +533,11 @@ const ConversationAssistant = () => {
                   />
                 </div>
                 <CardContent className="p-6">
+                  <img
+                    src={logoVitalBalance}
+                    alt="Vital Balance"
+                    className="h-10 mb-4"
+                  />
                   <h3 className="text-xl font-bold mb-1">James T.</h3>
                   <p className="text-sm text-muted-foreground mb-4">Wellness Brand Founder, Online</p>
                   <p className="text-lg font-semibold text-primary mb-2">
