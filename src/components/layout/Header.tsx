@@ -29,16 +29,6 @@ const assistants = [
     href: "/assistants/money",
     description: "Track expenses, send invoices, and manage payments.",
   },
-  {
-    title: "Knowledge Assistant",
-    href: "/assistants/knowledge",
-    description: "Your business knowledge at your fingertips.",
-  },
-  {
-    title: "Customer Assistant",
-    href: "/assistants/customer",
-    description: "Customer insights and relationship management.",
-  },
 ];
 
 const Header = () => {
