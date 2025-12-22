@@ -507,17 +507,17 @@ const ConversationAssistant = () => {
             <div className="grid md:grid-cols-3 gap-8">
               {/* Testimonial 1 - Maria */}
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-primary/10 p-6 pb-0">
+                <div className="bg-primary/10 p-4 pb-0">
                   <img
                     src={testimonialMaria}
                     alt="Maria S."
                     className="w-full h-56 object-cover object-top rounded-t-xl"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl flex items-center justify-center">
+                  <div className="bg-background rounded-b-xl flex items-center justify-center -mx-4">
                     <img
                       src={logoMariasKitchen}
                       alt="Maria's Kitchen"
-                      className="h-32 max-w-[240px] object-contain"
+                      className="h-32 max-w-full object-contain"
                     />
                   </div>
                 </div>
@@ -535,17 +535,17 @@ const ConversationAssistant = () => {
 
               {/* Testimonial 2 - Mike */}
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-green-500/10 p-6 pb-0">
+                <div className="bg-green-500/10 p-4 pb-0">
                   <img
                     src={testimonialMike}
                     alt="Mike R."
                     className="w-full h-56 object-cover object-top rounded-t-xl"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl flex items-center justify-center">
+                  <div className="bg-background rounded-b-xl flex items-center justify-center -mx-4">
                     <img
                       src={logoRapidPlumb}
                       alt="Rapid Plumb"
-                      className="h-32 max-w-[240px] object-contain"
+                      className="h-32 max-w-full object-contain"
                     />
                   </div>
                 </div>
@@ -563,17 +563,17 @@ const ConversationAssistant = () => {
 
               {/* Testimonial 3 - James */}
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-amber-500/10 p-6 pb-0">
+                <div className="bg-amber-500/10 p-4 pb-0">
                   <img
                     src={testimonialJames}
                     alt="James T."
                     className="w-full h-56 object-cover object-top rounded-t-xl"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl flex items-center justify-center">
+                  <div className="bg-background rounded-b-xl flex items-center justify-center -mx-4">
                     <img
                       src={logoVitalBalance}
                       alt="Vital Balance"
-                      className="h-32 max-w-[240px] object-contain"
+                      className="h-32 max-w-full object-contain"
                     />
                   </div>
                 </div>
