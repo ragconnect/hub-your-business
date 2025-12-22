@@ -163,10 +163,10 @@ const ConversationAssistant = () => {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_0%,hsl(var(--primary)/0.15),transparent_60%)]" />
           <div className="container text-center max-w-4xl">
             <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Never Miss a Customer Call or Email Again
+              Spend All Day on Calls, Emails, and Paperwork?
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
-              Your AI answers calls, replies to messages, and follows up with customers—automatically, 24/7.
+              Your team of AI assistants handles it all. They answer calls, reply to messages, and follow up with customers—automatically.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
