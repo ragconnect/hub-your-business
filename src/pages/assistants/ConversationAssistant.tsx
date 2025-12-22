@@ -513,7 +513,7 @@ const ConversationAssistant = () => {
                     alt="Maria S."
                     className="w-full h-56 object-cover object-top rounded-t-xl"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-8 flex items-center justify-center">
+                  <div className="bg-background border-x border-b rounded-b-xl flex items-center justify-center">
                     <img
                       src={logoMariasKitchen}
                       alt="Maria's Kitchen"
@@ -541,7 +541,7 @@ const ConversationAssistant = () => {
                     alt="Mike R."
                     className="w-full h-56 object-cover object-top rounded-t-xl"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-8 flex items-center justify-center">
+                  <div className="bg-background border-x border-b rounded-b-xl flex items-center justify-center">
                     <img
                       src={logoRapidPlumb}
                       alt="Rapid Plumb"
@@ -569,7 +569,7 @@ const ConversationAssistant = () => {
                     alt="James T."
                     className="w-full h-56 object-cover object-top rounded-t-xl"
                   />
-                  <div className="bg-background border-x border-b rounded-b-xl p-8 flex items-center justify-center">
+                  <div className="bg-background border-x border-b rounded-b-xl flex items-center justify-center">
                     <img
                       src={logoVitalBalance}
                       alt="Vital Balance"
