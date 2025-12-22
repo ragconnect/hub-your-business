@@ -168,9 +168,7 @@ const TaskAssistant = () => {
                   Drowning in Tasks You Can't Keep Track Of?
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Schedule your demo to get consultation on how to configure your AI assistant for only{" "}
-                  <span className="line-through text-muted-foreground/70">$1,999</span>{" "}
-                  <span className="font-semibold text-primary">free</span> and finally get your tasks under control.
+                  Schedule your free demo to get consultation on how to configure your AI assistant and finally get your tasks under control.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button size="lg" asChild>
@@ -188,11 +186,8 @@ const TaskAssistant = () => {
               <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
-                    <ClipboardList className="w-10 h-10 text-primary mx-auto mb-3" />
                     <h3 className="text-2xl font-bold">
-                      Schedule Demo for{" "}
-                      <span className="line-through text-muted-foreground">$1,999</span>{" "}
-                      <span className="text-primary">Free</span> Configuration
+                      Schedule Your Free Demo
                     </h3>
                     <p className="text-muted-foreground mt-2">
                       Enter your details and we'll reach out within 24 hours
