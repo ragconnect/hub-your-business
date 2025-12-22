@@ -323,6 +323,92 @@ const ConversationAssistant = () => {
           </div>
         </section>
 
+        {/* How We Compare */}
+        <section className="py-16 md:py-24">
+          <div className="container max-w-5xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              See How RagAdvise Compares
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Built for small businesses who want AI that works out of the box—not a developer project.
+            </p>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-4 px-4 font-medium text-muted-foreground">Feature</th>
+                    <th className="text-center py-4 px-4 font-bold text-primary">RagAdvise</th>
+                    <th className="text-center py-4 px-4 font-medium">Vapi</th>
+                    <th className="text-center py-4 px-4 font-medium">OpenAI API</th>
+                    <th className="text-center py-4 px-4 font-medium">Google Voice</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-muted/30">
+                    <td className="py-4 px-4">No coding required</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-4">AI-powered conversations</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                  </tr>
+                  <tr className="bg-muted/30">
+                    <td className="py-4 px-4">White-glove setup support</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-4">Works with calls, texts & emails</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Calls only</span></td>
+                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">DIY</span></td>
+                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Calls/texts</span></td>
+                  </tr>
+                  <tr className="bg-muted/30">
+                    <td className="py-4 px-4">Flat, predictable pricing</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-4">Built for small business</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                  </tr>
+                  <tr className="bg-muted/30">
+                    <td className="py-4 px-4">Live in 24 hours</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Weeks</span></td>
+                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Weeks+</span></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="text-center mt-10">
+              <Button size="lg" asChild>
+                <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule a Demo
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* Our Team */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container">
