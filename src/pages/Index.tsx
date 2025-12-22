@@ -45,7 +45,7 @@ const Index = () => {
                   Hate Spending All Day on Calls, Emails, and Paperwork?
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Your team of AI assistants handles it all. They answer calls, reply to messages, and follow up with customers—automatically.
+                  Your team of AI assistants handles it all. They can manage up to 100 customer calls at once, reply to thousands of emails within minutes, and store all business transactions in one place—automatically.
                 </p>
                 <div className="relative z-10 mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
