@@ -109,7 +109,7 @@ const ConversationAssistant = () => {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_0%,hsl(var(--primary)/0.15),transparent_60%)]" />
           <div className="container text-center max-w-4xl">
             <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Spending All Day on Customer Calls, Emails, and Reviews?
+              Tired of Spending All Day on Customer Calls, Emails, and Reviews?
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
               Schedule your demo to get consultation on how to configure your AI assistant for only{" "}
