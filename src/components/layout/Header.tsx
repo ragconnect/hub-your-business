@@ -25,8 +25,8 @@ const assistants = [
     description: "Automatic meeting notes, action items, and follow-ups.",
   },
   {
-    title: "Finance Assistant",
-    href: "/assistants/finance",
+    title: "Money Assistant",
+    href: "/assistants/money",
     description: "Track expenses, send invoices, and manage payments.",
   },
   {
