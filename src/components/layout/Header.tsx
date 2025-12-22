@@ -20,9 +20,9 @@ const assistants = [
     description: "AI that handles calls, emails, texts, and social messages 24/7.",
   },
   {
-    title: "Meeting Assistant",
-    href: "/assistants/meeting",
-    description: "Automatic meeting notes, action items, and follow-ups.",
+    title: "Task Assistant",
+    href: "/assistants/task",
+    description: "AI that captures tasks, prioritizes your day, and keeps your team aligned.",
   },
   {
     title: "Money Assistant",
