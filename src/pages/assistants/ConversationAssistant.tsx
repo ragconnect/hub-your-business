@@ -507,19 +507,19 @@ const ConversationAssistant = () => {
             <div className="grid md:grid-cols-3 gap-8">
               {/* Testimonial 1 - Maria */}
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-primary/10 p-6">
+                <div className="bg-primary/10 p-6 relative">
                   <img
                     src={testimonialMaria}
                     alt="Maria S."
                     className="w-full h-64 object-cover object-top rounded-xl"
                   />
-                </div>
-                <CardContent className="p-6">
                   <img
                     src={logoMariasKitchen}
                     alt="Maria's Kitchen"
-                    className="h-10 mb-4"
+                    className="absolute bottom-8 right-8 h-12 bg-background/90 backdrop-blur-sm rounded-lg p-2 shadow-lg"
                   />
+                </div>
+                <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-1">Maria S.</h3>
                   <p className="text-sm text-muted-foreground mb-4">Restaurant Owner, New York</p>
                   <p className="text-lg font-semibold text-primary mb-2">
@@ -533,19 +533,19 @@ const ConversationAssistant = () => {
 
               {/* Testimonial 2 - Mike */}
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-green-500/10 p-6">
+                <div className="bg-green-500/10 p-6 relative">
                   <img
                     src={testimonialMike}
                     alt="Mike R."
                     className="w-full h-64 object-cover object-top rounded-xl"
                   />
-                </div>
-                <CardContent className="p-6">
                   <img
                     src={logoRapidPlumb}
                     alt="Rapid Plumb"
-                    className="h-10 mb-4"
+                    className="absolute bottom-8 right-8 h-12 bg-background/90 backdrop-blur-sm rounded-lg p-2 shadow-lg"
                   />
+                </div>
+                <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-1">Mike R.</h3>
                   <p className="text-sm text-muted-foreground mb-4">Plumber, Wyoming</p>
                   <p className="text-lg font-semibold text-primary mb-2">
@@ -559,19 +559,19 @@ const ConversationAssistant = () => {
 
               {/* Testimonial 3 - James */}
               <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-amber-500/10 p-6">
+                <div className="bg-amber-500/10 p-6 relative">
                   <img
                     src={testimonialJames}
                     alt="James T."
                     className="w-full h-64 object-cover object-top rounded-xl"
                   />
-                </div>
-                <CardContent className="p-6">
                   <img
                     src={logoVitalBalance}
                     alt="Vital Balance"
-                    className="h-10 mb-4"
+                    className="absolute bottom-8 right-8 h-12 bg-background/90 backdrop-blur-sm rounded-lg p-2 shadow-lg"
                   />
+                </div>
+                <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-1">James T.</h3>
                   <p className="text-sm text-muted-foreground mb-4">Wellness Brand Founder, Online</p>
                   <p className="text-lg font-semibold text-primary mb-2">
