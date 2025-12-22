@@ -137,11 +137,11 @@ const Index = () => {
                 <p className="mt-4 text-lg text-muted-foreground">
                   Your AI assistants do it for you. They handle calls, messages, payments, and meeting notes—automatically, 24/7.
                 </p>
-                <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <div className="relative z-10 mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
                     <a href="https://my.ragadvise.com/signup">Sign Up – See Value in 20 Minutes</a>
                   </Button>
-                  <Button variant="outline" size="lg" asChild>
+                  <Button variant="outline" size="lg" className="bg-background" asChild>
                     <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
                       <Calendar className="mr-2 h-4 w-4" />
                       Schedule a Demo
