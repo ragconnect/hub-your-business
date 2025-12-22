@@ -494,46 +494,8 @@ const ConversationAssistant = () => {
           </div>
         </section>
 
-        {/* Our Team */}
-        <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left - Team Photo */}
-              <div className="order-2 lg:order-1">
-                <img
-                  src={teamPhoto}
-                  alt="The RagAdvise team"
-                  className="rounded-2xl shadow-xl w-full"
-                />
-              </div>
-              
-              {/* Right - Text Content */}
-              <div className="order-1 lg:order-2">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Our Team Will Become Your Team
-                </h2>
-                <p className="text-xl text-muted-foreground mb-4">
-                  We're more than a tool you'll love using. We're people you'll love working with.
-                </p>
-                <p className="text-lg text-muted-foreground mb-4">
-                  We have a plan to help you succeed.
-                </p>
-                <p className="text-muted-foreground mb-8">
-                  And that's to not give up till your AI assistant is running smoothly. Our customers say working with us is easy. This is why they stick with us to handle more customer conversations than ever before.
-                </p>
-                <Button size="lg" asChild>
-                  <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule a Demo
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Testimonials */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-muted/30">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               Real Results from Real Businesses
@@ -620,6 +582,44 @@ const ConversationAssistant = () => {
                   </p>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Team */}
+        <section className="py-16 md:py-24">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left - Team Photo */}
+              <div className="order-2 lg:order-1">
+                <img
+                  src={teamPhoto}
+                  alt="The RagAdvise team"
+                  className="rounded-2xl shadow-xl w-full"
+                />
+              </div>
+              
+              {/* Right - Text Content */}
+              <div className="order-1 lg:order-2">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Our Team Will Become Your Team
+                </h2>
+                <p className="text-xl text-muted-foreground mb-4">
+                  We're more than a tool you'll love using. We're people you'll love working with.
+                </p>
+                <p className="text-lg text-muted-foreground mb-4">
+                  We have a plan to help you succeed.
+                </p>
+                <p className="text-muted-foreground mb-8">
+                  And that's to not give up till your AI assistant is running smoothly. Our customers say working with us is easy. This is why they stick with us to handle more customer conversations than ever before.
+                </p>
+                <Button size="lg" asChild>
+                  <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
+                    <Calendar className="mr-2 h-4 w-4" />
+                    Schedule a Demo
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
