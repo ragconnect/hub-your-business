@@ -29,6 +29,9 @@ import {
   Users,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
+import testimonialMaria from "@/assets/testimonials/testimonial-maria.jpg";
+import testimonialMike from "@/assets/testimonials/testimonial-mike.jpg";
+import testimonialJames from "@/assets/testimonials/testimonial-james.jpg";
 
 const oldWayProblems = [
   {
@@ -450,6 +453,83 @@ const ConversationAssistant = () => {
                   </a>
                 </Button>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-16 md:py-24">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Real Results from Real Businesses
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              See how business owners like you are saving time and growing with RagAdvise.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Testimonial 1 - Maria */}
+              <Card className="overflow-hidden border-0 shadow-lg">
+                <div className="bg-primary/10 p-6">
+                  <img
+                    src={testimonialMaria}
+                    alt="Maria S."
+                    className="w-full h-64 object-cover object-top rounded-xl"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-1">Maria S.</h3>
+                  <p className="text-sm text-muted-foreground mb-4">Restaurant Owner, New York</p>
+                  <p className="text-lg font-semibold text-primary mb-2">
+                    Manages 50+ calls per day
+                  </p>
+                  <p className="text-muted-foreground">
+                    "I used to miss half my reservation calls during the dinner rush. Now my AI handles everything—bookings, hours, even catering inquiries."
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Testimonial 2 - Mike */}
+              <Card className="overflow-hidden border-0 shadow-lg">
+                <div className="bg-green-500/10 p-6">
+                  <img
+                    src={testimonialMike}
+                    alt="Mike R."
+                    className="w-full h-64 object-cover object-top rounded-xl"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-1">Mike R.</h3>
+                  <p className="text-sm text-muted-foreground mb-4">Plumber, Wyoming</p>
+                  <p className="text-lg font-semibold text-primary mb-2">
+                    Handles 10+ emergency calls weekly
+                  </p>
+                  <p className="text-muted-foreground">
+                    "Emergency calls at 2 AM used to wake the whole family. Now the AI books them, texts me the details, and I sleep through the night."
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Testimonial 3 - James */}
+              <Card className="overflow-hidden border-0 shadow-lg">
+                <div className="bg-amber-500/10 p-6">
+                  <img
+                    src={testimonialJames}
+                    alt="James T."
+                    className="w-full h-64 object-cover object-top rounded-xl"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-1">James T.</h3>
+                  <p className="text-sm text-muted-foreground mb-4">Wellness Brand Founder, Online</p>
+                  <p className="text-lg font-semibold text-primary mb-2">
+                    Manages 1,000+ customer emails
+                  </p>
+                  <p className="text-muted-foreground">
+                    "Scaling my wellness brand meant drowning in customer emails. RagAdvise handles product questions, refunds, and reviews automatically."
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
