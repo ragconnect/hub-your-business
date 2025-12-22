@@ -13,14 +13,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  ListTodo,
-  Brain,
+  Mic,
+  FileText,
   Clock,
   Users,
   Bot,
-  Target,
-  Repeat,
-  Zap,
+  Search,
+  Share2,
+  MessageCircle,
   Calendar,
   X,
   Check,
@@ -37,70 +37,70 @@ import logoTechflow from "@/assets/testimonials/logo-techflow.png";
 
 const oldWayProblems = [
   {
-    icon: ListTodo,
-    title: "You juggle tasks in your head",
-    desc: "Important tasks slip through the cracks. You wake up at 3am remembering something you forgot. Stress becomes your constant companion.",
+    icon: Mic,
+    title: "Manual notes miss the critical details",
+    desc: "You take notes but realize they didn't capture the essence of the call. Key decisions and action items slip through the cracks.",
   },
   {
-    icon: Brain,
-    title: "You waste mental energy deciding what's next",
-    desc: "Every morning starts with chaos. What should you do first? You spend more time planning than doing.",
+    icon: FileText,
+    title: "Hours wasted on meeting summaries",
+    desc: "After every call, you spend 20+ minutes writing summaries. By the time you're done, you've forgotten half of what was said.",
   },
   {
     icon: Clock,
-    title: "You miss deadlines constantly",
-    desc: "Projects pile up. Clients get frustrated. You promise to deliver 'tomorrow' but tomorrow never comes.",
+    title: "Action items never get done",
+    desc: "Great meeting, clear next steps—but no one follows up. Tasks fall into a black hole between meetings.",
   },
   {
     icon: Users,
-    title: "Your team works in silos",
-    desc: "Nobody knows what anyone else is doing. Work gets duplicated. Important tasks fall between the cracks.",
+    title: "Your team misses context",
+    desc: "People who couldn't join the meeting are left guessing. Cross-functional teams never get the full picture.",
   },
 ];
 
 const newWaySolutions = [
   {
     icon: Bot,
-    title: "Your AI captures every task automatically",
-    desc: "Mention a task in email, chat, or voice? AI captures it instantly. Nothing falls through the cracks ever again.",
+    title: "AI transcribes every meeting automatically",
+    desc: "Sales calls, team syncs, interviews, lectures—convert any audio into notes, summaries, and action items instantly.",
   },
   {
-    icon: Target,
-    title: "AI prioritizes what matters most",
-    desc: "Wake up to a clear plan. AI analyzes deadlines, dependencies, and importance to tell you exactly what to do next.",
+    icon: Search,
+    title: "Search and ask questions about your meetings",
+    desc: "\"What did the customer say about pricing?\" Search keywords or ask your AI agent about any meeting detail.",
   },
   {
-    icon: Repeat,
-    title: "Recurring tasks run on autopilot",
-    desc: "Weekly reports, monthly reviews, daily standups—AI schedules and reminds automatically. Set it once, forget it forever.",
+    icon: Share2,
+    title: "Share context with your entire team",
+    desc: "Send transcripts, summaries, and key takeaways to anyone—even those who couldn't join. Add follow-up notes for latecomers.",
   },
   {
-    icon: Zap,
-    title: "Team coordination without meetings",
-    desc: "Everyone sees what needs to be done. AI assigns tasks based on skills and availability. Fewer meetings, more doing.",
+    icon: MessageCircle,
+    title: "Proactive pre and post-meeting actions",
+    desc: "Send agenda questions before the call. Auto-generate action items after. Focus on getting things done, not just transcription.",
   },
 ];
 
 const faqs = [
   {
-    q: "How does it integrate with my existing tools?",
-    a: "RagAdvise connects with Slack, Gmail, Outlook, Notion, Asana, Trello, and 100+ other apps. Tasks sync automatically.",
+    q: "What types of meetings can it transcribe?",
+    a: "Video calls, phone calls, in-person meetings, conferences, lectures, interviews, team syncs—any audio source works.",
   },
   {
-    q: "Can it handle complex projects?",
-    a: "Yes. Break projects into subtasks, set dependencies, and let AI track progress. It alerts you before deadlines are at risk.",
+    q: "Can I search for specific things mentioned in a call?",
+    a: "Yes. Search for keywords, phrases, or ask your AI agent natural questions like 'What pricing did the customer mention?'",
   },
   {
-    q: "What if my team doesn't adopt it?",
-    a: "AI meets your team where they are. Capture tasks from email, chat, or voice. No need to change existing workflows.",
+    q: "How is this different from Otter.ai or Fireflies?",
+    a: "We focus on action items and getting things done—not just transcription. Pre-meeting prep, post-meeting follow-ups, and proactive task tracking.",
   },
   {
-    q: "How does AI know what to prioritize?",
-    a: "You teach it your priorities once. It learns from your patterns—which tasks you do first, which you delay, what's truly urgent.",
+    q: "Can I share meeting notes with people who weren't there?",
+    a: "Absolutely. Share full transcripts, summaries, or key takeaways. Add notes and follow-up questions for anyone who missed the call.",
   },
   {
-    q: "Can I use it for personal tasks too?",
-    a: "Absolutely. Separate workspaces for work and personal. Or combine them—AI knows the difference.",
+    q: "Does it work with my calendar and other tools?",
+    a: "Yes. Connect to Google Calendar, Microsoft, Slack, and project management tools. Import meetings automatically.",
   },
 ];
 
@@ -111,8 +111,8 @@ const TaskAssistant = () => {
   const { toast } = useToast();
   
   const siteUrl = typeof window !== "undefined" ? `${window.location.origin}/assistants/task` : "https://ragadvise.com/assistants/task";
-  const title = "Task Assistant — AI That Manages Your To-Do List 24/7 | RagAdvise";
-  const description = "Your AI captures tasks, prioritizes your day, and keeps your team aligned—automatically, without the mental overhead.";
+  const title = "Task Assistant — AI Meeting Notes, Transcription & Action Items | RagAdvise";
+  const description = "Turn any meeting into notes, summaries, and action items. Search your calls, ask AI questions, and never miss a follow-up again.";
 
   const handleDemoSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -165,10 +165,10 @@ const TaskAssistant = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight">
-                  Drowning in Tasks You Can't Keep Track Of?
+                  Stop Taking Notes That Miss the Critical Details
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Schedule your free demo to get consultation on how to configure your AI assistant and finally get your tasks under control.
+                  Turn sales calls, team meetings, and interviews into searchable notes, summaries, and action items—automatically.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button size="lg" asChild>
@@ -395,7 +395,7 @@ const TaskAssistant = () => {
               See How RagAdvise Compares
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Built for busy professionals who want AI that actually reduces their workload.
+              We focus on action items and getting things done—not just transcription.
             </p>
             
             <div className="overflow-x-auto">
@@ -404,24 +404,38 @@ const TaskAssistant = () => {
                   <tr className="border-b">
                     <th className="text-left py-4 px-4 font-medium text-muted-foreground">Feature</th>
                     <th className="text-center py-4 px-4 font-bold text-primary">RagAdvise</th>
-                    <th className="text-center py-4 px-4 font-medium">Asana</th>
-                    <th className="text-center py-4 px-4 font-medium">Todoist</th>
-                    <th className="text-center py-4 px-4 font-medium">Sticky Notes</th>
+                    <th className="text-center py-4 px-4 font-medium">Otter.ai</th>
+                    <th className="text-center py-4 px-4 font-medium">Fireflies</th>
+                    <th className="text-center py-4 px-4 font-medium">Granola</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="bg-muted/30">
-                    <td className="py-4 px-4">AI task capture from email/chat</td>
+                    <td className="py-4 px-4">Focus on action items</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Basic</span></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-4">Pre-meeting agenda prep</td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
                   </tr>
-                  <tr>
-                    <td className="py-4 px-4">Smart prioritization</td>
+                  <tr className="bg-muted/30">
+                    <td className="py-4 px-4">Ask AI questions about meetings</td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Manual</span></td>
-                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Manual</span></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-4">Post-meeting follow-up automation</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Basic</span></td>
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
                   </tr>
                   <tr className="bg-muted/30">
@@ -432,25 +446,11 @@ const TaskAssistant = () => {
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4">Works across all your tools</td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Limited</span></td>
-                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Limited</span></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                  </tr>
-                  <tr className="bg-muted/30">
-                    <td className="py-4 px-4">Team coordination built-in</td>
+                    <td className="py-4 px-4">Store customer call transcripts</td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Basic</span></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-4">No learning curve</td>
                     <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
                     <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
                   </tr>
                 </tbody>
               </table>
