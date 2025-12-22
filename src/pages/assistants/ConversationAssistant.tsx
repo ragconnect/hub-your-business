@@ -184,8 +184,30 @@ const ConversationAssistant = () => {
           </div>
         </section>
 
-        {/* Problems */}
+        {/* Solutions */}
         <section className="py-16 md:py-24 bg-muted/30">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              How the Conversation Assistant Helps
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {solutions.map((solution) => (
+                <Card key={solution.title} className="border-primary/20 bg-primary/5">
+                  <CardContent className="p-6">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                      <solution.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2">{solution.title}</h3>
+                    <p className="text-muted-foreground">{solution.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Problems */}
+        <section className="py-16 md:py-24">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               The Problems You Face Every Day
@@ -205,28 +227,6 @@ const ConversationAssistant = () => {
                         <p className="text-muted-foreground">{problem.desc}</p>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Solutions */}
-        <section className="py-16 md:py-24">
-          <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              How the Conversation Assistant Helps
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {solutions.map((solution) => (
-                <Card key={solution.title} className="border-primary/20 bg-primary/5">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                      <solution.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="font-semibold text-lg mb-2">{solution.title}</h3>
-                    <p className="text-muted-foreground">{solution.desc}</p>
                   </CardContent>
                 </Card>
               ))}
