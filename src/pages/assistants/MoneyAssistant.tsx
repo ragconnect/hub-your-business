@@ -71,11 +71,6 @@ const newWaySolutions = [
     desc: "See exactly where your money goes. Get alerts before problems happen. Know your profit margin at a glance.",
   },
   {
-    icon: PieChart,
-    title: "Never miss a payment again",
-    desc: "AI tracks every invoice and bill. Sends reminders before due dates. Follows up on late payments automatically.",
-  },
-  {
     icon: Zap,
     title: "Tax-ready books year-round",
     desc: "Every transaction categorized for taxes. Generate reports in seconds. Hand your accountant clean books—save money on prep fees.",
