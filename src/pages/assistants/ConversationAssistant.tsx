@@ -69,8 +69,8 @@ const newWaySolutions = [
   },
   {
     icon: Zap,
-    title: "Cost less than a Netflix Subscription",
-    desc: "Your AI works 24/7, never takes vacation, and handles 100+ customers at the same time.",
+    title: "Costs less than Netflix, works harder than any employee",
+    desc: "Start free. Upgrade for $16/month—just $1 per customer interaction. Handle more than 16 calls or emails? It pays for itself. Your AI works 24/7, never takes vacation, and handles 100+ customers at once.",
   },
 ];
 
