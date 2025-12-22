@@ -312,40 +312,6 @@ const ConversationAssistant = () => {
           </div>
         </section>
 
-        {/* Demo CTAs */}
-        <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="border-primary bg-primary/5">
-                <CardContent className="p-8 text-center">
-                  <Play className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Watch a 2-Minute Demo</h3>
-                  <p className="text-muted-foreground mb-6">
-                    See the AI answer real customer calls and emails
-                  </p>
-                  <Button size="lg" variant="outline" className="w-full bg-background" asChild>
-                    <a href="#demo-video">Watch Demo Video →</a>
-                  </Button>
-                </CardContent>
-              </Card>
-              <Card className="border-green-500/50 bg-green-500/5">
-                <CardContent className="p-8 text-center">
-                  <Calendar className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Schedule a Free Demo</h3>
-                  <p className="text-muted-foreground mb-6">
-                    We'll show you how it works with your actual business
-                  </p>
-                  <Button size="lg" className="w-full bg-green-600 hover:bg-green-700" asChild>
-                    <a href="https://my.ragadvise.com/contact-us" target="_blank" rel="noopener noreferrer">
-                      Book 15-Minute Demo →
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
         {/* FAQ */}
         <section className="py-16 md:py-24">
           <div className="container max-w-3xl">
