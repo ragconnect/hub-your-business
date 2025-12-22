@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 import {
   Accordion,
   AccordionContent,
@@ -21,6 +25,7 @@ import {
   Play,
   X,
   Check,
+  Send,
 } from "lucide-react";
 
 const oldWayProblems = [
@@ -89,9 +94,48 @@ const faqs = [
 ];
 
 const ConversationAssistant = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+  
   const siteUrl = typeof window !== "undefined" ? `${window.location.origin}/assistants/conversation` : "https://ragadvise.com/assistants/conversation";
   const title = "Conversation Assistant — Never Miss a Customer Call Again | RagAdvise";
   const description = "Your AI answers calls, replies to messages, and follows up with customers—automatically, 24/7.";
+
+  const handleDemoSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!name.trim() || !email.trim()) {
+      toast({
+        title: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Please enter a valid email",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    // Simulate submission - replace with actual API call
+    setTimeout(() => {
+      toast({
+        title: "Demo request submitted!",
+        description: "We'll be in touch within 24 hours.",
+      });
+      setName("");
+      setEmail("");
+      setIsSubmitting(false);
+    }, 1000);
+  };
 
   return (
     <>
@@ -207,6 +251,60 @@ const ConversationAssistant = () => {
                 You catch every customer. You save hours every day. You grow without hiring. Your business runs while you sleep.
               </p>
             </div>
+
+            {/* Demo Contact Form */}
+            <Card className="mt-16 max-w-lg mx-auto border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <Calendar className="w-10 h-10 text-primary mx-auto mb-3" />
+                  <h3 className="text-2xl font-bold">Schedule Your Free Demo</h3>
+                  <p className="text-muted-foreground mt-2">
+                    Enter your details and we'll reach out within 24 hours
+                  </p>
+                </div>
+                <form onSubmit={handleDemoSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="demo-name">Your Name</Label>
+                    <Input
+                      id="demo-name"
+                      type="text"
+                      placeholder="John Smith"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      maxLength={100}
+                      className="bg-background"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="demo-email">Email Address</Label>
+                    <Input
+                      id="demo-email"
+                      type="email"
+                      placeholder="john@example.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      maxLength={255}
+                      className="bg-background"
+                    />
+                  </div>
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full" 
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      "Submitting..."
+                    ) : (
+                      <>
+                        <Send className="mr-2 h-4 w-4" />
+                        Request Demo
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
