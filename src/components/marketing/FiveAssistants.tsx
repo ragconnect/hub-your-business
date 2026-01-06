@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
@@ -9,11 +10,11 @@ import customersImg from "@/assets/hubs/hub-customers.jpg";
 import knowledgeImg from "@/assets/hubs/hub-knowledge.jpg";
 
 const assistants = [
-  { key: "conversation", title: "Conversation", desc: "Calls, messages, and tasks in one inbox.", image: commImg, alt: "Conversation assistant UI with calls, messages, and tasks" },
-  { key: "task", title: "Task", desc: "Auto-notes, action items, and follow‑ups.", image: meetingsImg, alt: "Task assistant with calendar and meeting notes" },
-  { key: "money", title: "Money", desc: "Real-time cash, revenue, and expenses.", image: financeImg, alt: "Money assistant dashboard with KPIs and charts" },
-  { key: "customer", title: "Customer", desc: "Lightweight CRM and pipeline tracking.", image: customersImg, alt: "Customer assistant with pipeline columns and cards" },
-  { key: "training", title: "Training", desc: "Docs and wiki trained on your business.", image: knowledgeImg, alt: "Training assistant with wiki preview and documents list" },
+  { key: "conversation", title: "Conversation", desc: "Calls, messages, and tasks in one inbox.", image: commImg, alt: "Conversation assistant UI with calls, messages, and tasks", link: "/assistants/conversation" },
+  { key: "task", title: "Task", desc: "Auto-notes, action items, and follow‑ups.", image: meetingsImg, alt: "Task assistant with calendar and meeting notes", link: "/assistants/task" },
+  { key: "money", title: "Money", desc: "Real-time cash, revenue, and expenses.", image: financeImg, alt: "Money assistant dashboard with KPIs and charts", link: "/assistants/money" },
+  { key: "customer", title: "Customer", desc: "Lightweight CRM and pipeline tracking.", image: customersImg, alt: "Customer assistant with pipeline columns and cards", link: null },
+  { key: "training", title: "Training", desc: "Docs and wiki trained on your business.", image: knowledgeImg, alt: "Training assistant with wiki preview and documents list", link: null },
 ] as const;
 
 const FiveAssistants: React.FC = () => {
@@ -69,7 +70,11 @@ const FiveAssistants: React.FC = () => {
                       <h3 className="text-xl font-semibold tracking-tight">{assistant.title} Assistant</h3>
                       <p className="mt-1 text-sm text-muted-foreground max-w-md">{assistant.desc}</p>
                       <Button className="mt-3" variant="secondary" size="sm" asChild>
-                        <a href="#start" className="story-link">Learn more</a>
+                        {assistant.link ? (
+                          <Link to={assistant.link}>Learn more</Link>
+                        ) : (
+                          <span className="cursor-not-allowed opacity-50">Coming soon</span>
+                        )}
                       </Button>
                     </div>
                   </article>
