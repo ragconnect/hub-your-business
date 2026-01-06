@@ -65,7 +65,7 @@ const newWaySolutions = [
   {
     icon: Bot,
     title: "AI transcribes every meeting automatically",
-    desc: "Sales calls, team syncs, interviews, lectures—convert any audio into notes, summaries, and action items instantly.",
+    desc: "Sales calls, team syncs, interviews, lectures—convert any audio into notes, summaries, and action items instantly. Then share them with ease.",
   },
   {
     icon: Search,
