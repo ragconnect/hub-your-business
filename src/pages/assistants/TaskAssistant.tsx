@@ -404,7 +404,7 @@ const TaskAssistant = () => {
               <DemoRequestModal>
                 <Button size="lg">
                   <Calendar className="mr-2 h-4 w-4" />
-                  Schedule Demo For Set Up Consultation
+                  Schedule Demo
                 </Button>
               </DemoRequestModal>
             </div>
