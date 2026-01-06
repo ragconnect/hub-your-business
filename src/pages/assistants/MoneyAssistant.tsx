@@ -37,6 +37,7 @@ import testimonial3 from "@/assets/testimonials/money-testimonial-3.jpg";
 import logoPeakAccounting from "@/assets/testimonials/logo-peak-accounting.png";
 import logoBudgetBros from "@/assets/testimonials/logo-budget-bros.png";
 import logoSunriseBakery from "@/assets/testimonials/logo-sunrise-bakery.png";
+import LogoMarquee from "@/components/marketing/LogoMarquee";
 
 const oldWayProblems = [
   {
@@ -259,6 +260,9 @@ const MoneyAssistant = () => {
             </div>
           </div>
         </section>
+
+        {/* Logo Marquee - Social Proof */}
+        <LogoMarquee />
 
         {/* The Old Way */}
         <section className="py-16 md:py-24 bg-muted/30">

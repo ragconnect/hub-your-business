@@ -36,6 +36,7 @@ import testimonial3 from "@/assets/testimonials/task-testimonial-3.jpg";
 import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
 import logoCreativeStudio from "@/assets/testimonials/logo-creative-studio.png";
 import logoTechflow from "@/assets/testimonials/logo-techflow.png";
+import LogoMarquee from "@/components/marketing/LogoMarquee";
 
 const oldWayProblems = [
   {
@@ -258,6 +259,9 @@ const TaskAssistant = () => {
             </div>
           </div>
         </section>
+
+        {/* Logo Marquee - Social Proof */}
+        <LogoMarquee />
 
         {/* The Old Way */}
         <section className="py-16 md:py-24 bg-muted/30">
