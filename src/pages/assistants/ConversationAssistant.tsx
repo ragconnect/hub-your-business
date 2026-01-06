@@ -190,7 +190,7 @@ const ConversationAssistant = () => {
                   Tired of Spending All Day on Customer Calls, Emails, and Reviews?
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Manage customer calls, emails, and reviews easily with personalized workflows. Schedule a free demo to customize your AI assistant.
+                  One AI assistant for calls, emails, and reviews 24/7. Look professional from day one or upgrade your existing setup. Schedule a free demo to customize your AI assistant.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button size="lg" variant="outline" className="bg-background" asChild>
