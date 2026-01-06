@@ -416,7 +416,7 @@ const ConversationAssistant = () => {
               <DemoRequestModal>
                 <Button size="lg">
                   <Calendar className="mr-2 h-4 w-4" />
-                  Schedule a Demo for Personalized Customization & Setup
+                  Schedule Demo For Set Up Consultation
                 </Button>
               </DemoRequestModal>
             </div>
