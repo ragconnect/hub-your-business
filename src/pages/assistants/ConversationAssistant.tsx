@@ -193,11 +193,11 @@ const ConversationAssistant = () => {
                   Manage customer calls, emails, and reviews easily with personalized workflows. Schedule a free demo to customize your AI assistant.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button size="lg" asChild>
+                  <Button size="lg" variant="outline" className="bg-background" asChild>
                     <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
                   </Button>
                   <DemoRequestModal>
-                    <Button variant="outline" size="lg" className="bg-background">
+                    <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
                       <Calendar className="mr-2 h-4 w-4" />
                       Schedule a Demo
                     </Button>
