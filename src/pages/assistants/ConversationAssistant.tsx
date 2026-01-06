@@ -190,9 +190,7 @@ const ConversationAssistant = () => {
                   Tired of Spending All Day on Customer Calls, Emails, and Reviews?
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Schedule your demo to get consultation on how to configure your AI assistant for only{" "}
-                  <span className="line-through text-muted-foreground/70">$1,999</span>{" "}
-                  <span className="font-semibold text-primary">free</span> and manage all your customer calls, emails, and reviews.
+                  Schedule your free demo to get consultation on how to configure your AI assistant and manage all your customer calls, emails, and reviews.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button size="lg" asChild>
