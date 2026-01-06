@@ -3,7 +3,10 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 import {
   Accordion,
@@ -21,124 +24,63 @@ import {
   Share2,
   MessageCircle,
   Calendar,
-  CheckCircle2,
-  Play,
-  Shield,
-  Lock,
-  FileCheck,
-  UserCheck,
-  Zap,
-  ListTodo,
+  X,
+  Check,
+  Send,
+  ClipboardList,
 } from "lucide-react";
+import teamPhoto from "@/assets/team-photo.jpg";
+import testimonial1 from "@/assets/testimonials/testimonial-mike.jpg";
+import testimonial2 from "@/assets/testimonials/task-testimonial-2.jpg";
+import testimonial3 from "@/assets/testimonials/task-testimonial-3.jpg";
+import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
+import logoCreativeStudio from "@/assets/testimonials/logo-creative-studio.png";
+import logoTechflow from "@/assets/testimonials/logo-techflow.png";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 
-const meetingTypes = [
-  { id: "1on1", label: "1:1s", icon: Users },
-  { id: "team", label: "Team syncs", icon: MessageCircle },
-  { id: "client", label: "Client calls", icon: FileText },
-  { id: "interviews", label: "Interviews", icon: UserCheck },
-  { id: "brainstorms", label: "Brainstorms", icon: Zap },
-];
-
-const meetingContent = {
-  "1on1": {
-    title: "Capture manager & direct report conversations",
-    description: "Get AI summaries with feedback themes, career goals discussed, and follow-up commitments—ready to reference before your next 1:1.",
-    features: ["Key themes extracted", "Action items for both parties", "Track commitments over time"],
-  },
-  team: {
-    title: "Keep your whole team aligned",
-    description: "From standup updates to sprint planning, automatically capture decisions, blockers, and next steps so no one misses the context.",
-    features: ["Auto-detect decisions", "Capture blockers & owners", "Share with absent members"],
-  },
-  client: {
-    title: "Never miss a client requirement",
-    description: "Transcribe sales calls, discovery sessions, and check-ins. Search for what clients said about pricing, timelines, or concerns.",
-    features: ["Full transcript + summary", "Searchable by topic", "Auto-generate follow-up emails"],
-  },
-  interviews: {
-    title: "Structured interview notes, automatically",
-    description: "Focus on the candidate, not your keyboard. Get transcripts with skills assessment, culture fit indicators, and comparison notes.",
-    features: ["Candidate scorecards", "Compare across interviews", "Share with hiring team"],
-  },
-  brainstorms: {
-    title: "Capture every idea, no matter how fast",
-    description: "Creative sessions move quickly. AI catches every concept, groups related ideas, and highlights the most discussed themes.",
-    features: ["Idea clustering", "Priority signals", "Export to project tools"],
-  },
-};
-
-const features = [
+const oldWayProblems = [
   {
     icon: Mic,
-    title: "Works with any video tool",
-    description: "Transcribes your system audio and mic. No bots joining your calls, no awkward introductions.",
+    title: "Manual notes miss the critical details",
+    desc: "You take notes but realize they didn't capture the essence of the call. Key decisions and action items slip through the cracks.",
   },
   {
-    icon: Users,
-    title: "Even for face-to-face",
-    description: "Capture notes in person on any device. Works offline and syncs when connected.",
-  },
-  {
-    icon: Calendar,
-    title: "Syncs with your calendar",
-    description: "Notes get created, started, and shared with attendees—automatically.",
-  },
-];
-
-const actionFeatures = [
-  {
-    icon: ListTodo,
-    title: "Action items become your to-dos",
-    description: "AI extracts tasks with owners, priority levels, and due dates. Nothing slips through the cracks.",
-  },
-  {
-    icon: Bot,
-    title: "Projects updated automatically",
-    description: "Keep projects current after meetings with new statuses, completed tasks, and revised timelines.",
-  },
-  {
-    icon: Share2,
-    title: "Turn notes into follow-ups that land",
-    description: "Create meeting recaps tailored to your audience with a simple prompt.",
-  },
-  {
-    icon: Search,
-    title: "Find answers when you want them",
-    description: "Ask anything about past meetings and get context-rich answers instantly.",
-  },
-];
-
-const securityFeatures = [
-  {
-    icon: Lock,
-    title: "No training on your data",
-    description: "Contractual agreements prohibit use of customer data to train AI models.",
+    icon: FileText,
+    title: "Hours wasted on meeting summaries",
+    desc: "After every call, you spend 20+ minutes writing summaries. By the time you're done, you've forgotten half of what was said.",
   },
   {
     icon: Clock,
-    title: "Configurable retention",
-    description: "Set auto-transcript deletion windows and control audio storage.",
+    title: "Action items never get done",
+    desc: "Great meeting, clear next steps—but no one follows up. Tasks fall into a black hole between meetings.",
   },
   {
-    icon: Shield,
-    title: "Built-in safeguards",
-    description: "Audit logs, granular permissions, and SSO keep sensitive work secure.",
+    icon: Users,
+    title: "Your team misses context",
+    desc: "People who couldn't join the meeting are left guessing. Cross-functional teams never get the full picture.",
+  },
+];
+
+const newWaySolutions = [
+  {
+    icon: Bot,
+    title: "AI transcribes every meeting automatically",
+    desc: "Sales calls, team syncs, interviews, lectures—convert any audio into notes, summaries, and action items instantly.",
   },
   {
-    icon: UserCheck,
-    title: "Consent disclosures",
-    description: "Clear in-product reminders to obtain consent before recording.",
+    icon: Search,
+    title: "Search and ask questions about your meetings",
+    desc: "\"What did the customer say about pricing?\" Search keywords or ask your AI agent about any meeting detail.",
   },
   {
-    icon: FileCheck,
-    title: "Secure encryption",
-    description: "Data encrypted in-transit using TLS 1.2 or greater.",
+    icon: Share2,
+    title: "Share context with your entire team",
+    desc: "Send transcripts, summaries, and key takeaways to anyone—even those who couldn't join. Add follow-up notes for latecomers.",
   },
   {
-    icon: CheckCircle2,
-    title: "SOC 2 (Type 2)",
-    description: "Enterprise-grade compliance for your organization.",
+    icon: MessageCircle,
+    title: "Proactive pre and post-meeting actions",
+    desc: "Send agenda questions before the call. Auto-generate action items after. Focus on getting things done, not just transcription.",
   },
 ];
 
@@ -166,20 +108,64 @@ const faqs = [
 ];
 
 const TaskAssistant = () => {
-  const [activeMeetingType, setActiveMeetingType] = useState("1on1");
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  
+  const siteUrl = typeof window !== "undefined" ? `${window.location.origin}/assistants/task` : "https://ragadvise.com/assistants/task";
+  const title = "Task Assistant — AI Meeting Notes, Transcription & Action Items | RagAdvise";
+  const description = "Turn any meeting into notes, summaries, and action items. Search your calls, ask AI questions, and never miss a follow-up again.";
 
-  const siteUrl =
-    typeof window !== "undefined"
-      ? `${window.location.origin}/assistants/task`
-      : "https://ragadvise.com/assistants/task";
-  const title =
-    "Task Assistant — AI Meeting Notes, Transcription & Action Items | RagAdvise";
-  const description =
-    "Turn any meeting into notes, summaries, and action items. Search your calls, ask AI questions, and never miss a follow-up again.";
+  const handleDemoSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!name.trim() || !email.trim()) {
+      toast({
+        title: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
 
-  const activeContent = meetingContent[activeMeetingType as keyof typeof meetingContent];
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Please enter a valid email",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase.functions.invoke("send-demo-request", {
+        body: { name: name.trim(), email: email.trim() },
+      });
+
+      if (error) {
+        console.error("Error sending demo request:", error);
+        throw new Error(error.message);
+      }
+
+      toast({
+        title: "Demo request submitted!",
+        description: "We'll be in touch within 24 hours.",
+      });
+      setName("");
+      setEmail("");
+    } catch (error: any) {
+      console.error("Demo request error:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -192,242 +178,308 @@ const TaskAssistant = () => {
       <Header />
 
       <main>
-        {/* Hero - Notion-style centered with video */}
-        <section className="pt-20 md:pt-32 pb-8" aria-labelledby="hero-title">
-          <div className="container max-w-4xl text-center">
-            <p className="text-sm font-medium text-muted-foreground mb-4 tracking-wide uppercase">
-              AI Meeting Notes
-            </p>
-            <h1
-              id="hero-title"
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight"
-            >
-              Perfect meeting memory.
-            </h1>
-            <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
-              Your notetaker catches every detail and delivers actionable
-              summaries, right where you work.
-            </p>
-            <div className="mt-8">
-              <Button size="lg" asChild>
-                <a href="https://my.ragadvise.com/signup">Try now →</a>
-              </Button>
-            </div>
-          </div>
+        {/* Hero */}
+        <section className="relative pt-16 md:pt-24 pb-16 md:pb-24" aria-labelledby="hero-title">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_0%,hsl(var(--primary)/0.15),transparent_60%)]" />
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="text-center lg:text-left">
+                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight">
+                  Stop Taking Notes That Miss the Critical Details
+                </h1>
+                <p className="mt-6 text-xl text-muted-foreground">
+                  Turn sales calls, team meetings, and interviews into searchable notes, summaries, and action items—automatically.
+                </p>
+                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Button size="lg" asChild>
+                    <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                  </Button>
+                  <DemoRequestModal>
+                    <Button variant="outline" size="lg" className="bg-background">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule a Demo
+                    </Button>
+                  </DemoRequestModal>
+                </div>
+              </div>
 
-          {/* Video Section */}
-          <div className="container max-w-5xl mt-12">
-            <div className="relative rounded-2xl overflow-hidden bg-muted/30 shadow-2xl border">
-              {!isVideoPlaying ? (
-                <div
-                  className="relative cursor-pointer group"
-                  onClick={() => setIsVideoPlaying(true)}
-                >
-                  {/* Video thumbnail placeholder */}
-                  <div className="aspect-video bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    
-                    {/* Animated interface mockup */}
-                    <div className="relative w-full max-w-3xl mx-auto p-6">
-                      <Card className="border-0 shadow-xl">
-                        <CardContent className="p-0">
-                          {/* Tab bar */}
-                          <div className="flex items-center gap-2 p-4 border-b bg-background/80">
-                            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-muted-foreground">
-                              <Bot className="w-4 h-4" />
-                              AI Summary
-                            </div>
-                            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-muted-foreground">
-                              <FileText className="w-4 h-4" />
-                              Notes
-                            </div>
-                            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm bg-muted font-medium">
-                              <Mic className="w-4 h-4" />
-                              Transcript
-                            </div>
-                            <div className="ml-auto flex items-center gap-2">
-                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <span className="w-12 h-1 bg-primary/30 rounded-full overflow-hidden">
-                                  <span className="block w-1/2 h-full bg-primary rounded-full animate-pulse" />
-                                </span>
-                              </div>
-                              <Button size="sm" variant="destructive" className="h-7 text-xs">
-                                <span className="w-2 h-2 bg-white rounded-sm mr-1" />
-                                Stop
-                              </Button>
-                            </div>
-                          </div>
-                          
-                          {/* Content preview */}
-                          <div className="p-6 bg-background">
-                            <h3 className="text-lg font-semibold mb-2">
-                              User feedback call <span className="text-muted-foreground">@Today</span>
-                            </h3>
-                            <div className="border-l-2 border-primary/30 pl-4 text-muted-foreground">
-                              Good morning everyone. Let's wait a minute for everyone to join before we jump in. 
-                              Quick reminder that we're here today to hear your feedback about the new dashboard experience — thank you so
-                              <span className="animate-pulse">|</span>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-
-                    {/* Play button overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                        <Play className="w-8 h-8 ml-1" fill="currentColor" />
-                      </div>
-                    </div>
+              <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl">
+                <CardContent className="p-8">
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold">
+                      Schedule Your Free Demo
+                    </h3>
+                    <p className="text-muted-foreground mt-2">
+                      Enter your details and we'll reach out within 24 hours
+                    </p>
                   </div>
-                </div>
-              ) : (
-                <div className="aspect-video">
-                  <iframe
-                    src="https://www.loom.com/embed/your-loom-id?autoplay=1"
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
-                  />
-                </div>
-              )}
+                  <form onSubmit={handleDemoSubmit} className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="demo-name">Your Name</Label>
+                      <Input
+                        id="demo-name"
+                        type="text"
+                        placeholder="John Smith"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        maxLength={100}
+                        className="bg-background rounded-xl"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="demo-email">Email Address</Label>
+                      <Input
+                        id="demo-email"
+                        type="email"
+                        placeholder="john@example.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        maxLength={255}
+                        className="bg-background rounded-xl"
+                      />
+                    </div>
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full rounded-xl" 
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        "Submitting..."
+                      ) : (
+                        <>
+                          <Send className="mr-2 h-4 w-4" />
+                          Request Demo
+                        </>
+                      )}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
 
         {/* Logo Marquee - Social Proof */}
-        <section className="py-12">
-          <p className="text-center text-sm text-muted-foreground mb-6">
-            Trusted by those at
-          </p>
-          <LogoMarquee />
-        </section>
+        <LogoMarquee />
 
-        {/* Meeting Types - Tabbed Section */}
-        <section className="py-16 md:py-24">
-          <div className="container max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Tailored to every meeting.
-            </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Every summary gives you exactly what you need to move work forward.
-            </p>
-
-            {/* Tabs */}
-            <div className="flex flex-wrap justify-center gap-2 mb-10">
-              {meetingTypes.map((type) => (
-                <button
-                  key={type.id}
-                  onClick={() => setActiveMeetingType(type.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    activeMeetingType === type.id
-                      ? "bg-primary text-primary-foreground shadow-lg"
-                      : "bg-muted hover:bg-muted/80 text-muted-foreground"
-                  }`}
-                >
-                  {type.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Content Card */}
-            <Card className="border-0 shadow-xl bg-gradient-to-br from-background to-muted/30">
-              <CardContent className="p-8 md:p-12">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4">{activeContent.title}</h3>
-                    <p className="text-muted-foreground mb-6">{activeContent.description}</p>
-                    <ul className="space-y-3">
-                      {activeContent.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="bg-muted/50 rounded-xl p-6 aspect-square flex items-center justify-center">
-                    <div className="text-center">
-                      {meetingTypes.find((t) => t.id === activeMeetingType)?.icon && (
-                        <>
-                          {(() => {
-                            const IconComponent = meetingTypes.find(
-                              (t) => t.id === activeMeetingType
-                            )?.icon;
-                            return IconComponent ? (
-                              <IconComponent className="w-16 h-16 text-primary mx-auto mb-4" />
-                            ) : null;
-                          })()}
-                        </>
-                      )}
-                      <p className="text-sm text-muted-foreground">
-                        {meetingTypes.find((t) => t.id === activeMeetingType)?.label} mockup
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Works Everywhere */}
+        {/* The Old Way */}
         <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Works everywhere you do.
-            </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Capture conversations anywhere. Sync your calendar, and note-taking happens automatically.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {features.map((feature) => (
-                <Card key={feature.title} className="border-0 shadow-lg text-center">
-                  <CardContent className="p-8">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                      <feature.icon className="w-7 h-7 text-primary" />
+          <div className="container">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 text-destructive mb-4">
+                <X className="w-6 h-6" />
+                <span className="text-lg font-semibold">The Old Way</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                What Most Businesses Do
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {oldWayProblems.map((problem) => (
+                <Card key={problem.title} className="border-destructive/20 bg-destructive/5">
+                  <CardContent className="p-6">
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
+                          <problem.icon className="w-6 h-6 text-destructive" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-2">{problem.title}</h3>
+                        <p className="text-muted-foreground">{problem.desc}</p>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm">{feature.description}</p>
                   </CardContent>
                 </Card>
               ))}
+            </div>
+            <div className="mt-10 text-center max-w-2xl mx-auto">
+              <p className="text-lg font-semibold text-destructive mb-2">Why this sucks:</p>
+              <p className="text-muted-foreground">
+                You feel overwhelmed. You miss deadlines. Your team is confused. Important work doesn't get done.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* Notes Turn Into Progress */}
+        {/* The New Way */}
         <section className="py-16 md:py-24">
-          <div className="container max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              The only place where notes turn into progress.
-            </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Act on meeting outcomes instantly. AI handles the follow-ups so you can focus on what's next.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {actionFeatures.map((feature) => (
-                <Card key={feature.title} className="border-0 shadow-lg overflow-hidden">
-                  <CardContent className="p-0">
-                    <div className="p-6">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                        <feature.icon className="w-6 h-6 text-primary" />
+          <div className="container">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 text-primary mb-4">
+                <Check className="w-6 h-6" />
+                <span className="text-lg font-semibold">The New Way</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                What RagAdvise Does For You
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {newWaySolutions.map((solution) => (
+                <Card key={solution.title} className="border-primary/20 bg-primary/5">
+                  <CardContent className="p-6">
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <solution.icon className="w-6 h-6 text-primary" />
+                        </div>
                       </div>
-                      <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
-                      <p className="text-muted-foreground text-sm">{feature.description}</p>
-                    </div>
-                    <div className="h-32 bg-gradient-to-br from-muted/50 to-muted flex items-center justify-center">
-                      <feature.icon className="w-10 h-10 text-muted-foreground/30" />
+                      <div>
+                        <h3 className="font-semibold text-lg mb-2">{solution.title}</h3>
+                        <p className="text-muted-foreground">{solution.desc}</p>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
+            <div className="mt-10 text-center max-w-2xl mx-auto">
+              <p className="text-lg font-semibold text-primary mb-2">Why this works:</p>
+              <p className="text-muted-foreground">
+                You wake up with clarity. You hit every deadline. Your team stays aligned. Important work gets done first.
+              </p>
+            </div>
+          </div>
+        </section>
 
-            <div className="text-center mt-12">
+        {/* How It Works */}
+        <section className="py-16 md:py-24 bg-muted/30">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              Set Up In Under 5 Minutes
+            </h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                    1
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Connect your tools</h3>
+                  <p className="text-muted-foreground">
+                    Link your email, calendar, Slack, and project tools. AI starts capturing tasks from everywhere.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                    2
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Train your AI assistant</h3>
+                  <p className="text-muted-foreground">
+                    Tell the AI your priorities, work hours, and preferences. It learns how you like to work.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                    3
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Let AI organize your day</h3>
+                  <p className="text-muted-foreground">
+                    Wake up to a prioritized task list. AI tells you exactly what to focus on. Just execute.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                    4
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Review and improve</h3>
+                  <p className="text-muted-foreground">
+                    See what you accomplished. Track patterns. AI gets smarter about your work style over time.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center mt-10">
+              <DemoRequestModal>
+                <Button size="lg">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo
+                </Button>
+              </DemoRequestModal>
+            </div>
+          </div>
+        </section>
+
+        {/* How We Compare */}
+        <section className="py-16 md:py-24">
+          <div className="container max-w-5xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              See How RagAdvise Compares
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              We focus on action items and getting things done—not just transcription.
+            </p>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-4 px-4 font-medium text-muted-foreground">Feature</th>
+                    <th className="text-center py-4 px-4 font-bold text-primary">RagAdvise</th>
+                    <th className="text-center py-4 px-4 font-medium">Otter.ai</th>
+                    <th className="text-center py-4 px-4 font-medium">Fireflies</th>
+                    <th className="text-center py-4 px-4 font-medium">Granola</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-muted/30">
+                    <td className="py-4 px-4">Focus on action items</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Basic</span></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-4">Pre-meeting agenda prep</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                  </tr>
+                  <tr className="bg-muted/30">
+                    <td className="py-4 px-4">Ask AI questions about meetings</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-4">Post-meeting follow-up automation</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Basic</span></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                  </tr>
+                  <tr className="bg-muted/30">
+                    <td className="py-4 px-4">White-glove setup support</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-4">Store customer call transcripts</td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="text-center mt-10">
               <DemoRequestModal>
                 <Button size="lg">
                   <Calendar className="mr-2 h-4 w-4" />
@@ -438,30 +490,139 @@ const TaskAssistant = () => {
           </div>
         </section>
 
-        {/* Security */}
+        {/* Testimonials */}
         <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container max-w-5xl">
+          <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Security and privacy at the highest standards.
+              Real Results Across Industries
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Trusted by leading companies with enterprise-grade protections built in.
+              From construction sites to creative studios, see how professionals are getting more done.
             </p>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {securityFeatures.map((feature) => (
-                <Card key={feature.title} className="border-0 shadow-md">
-                  <CardContent className="p-6 flex gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-5 h-5 text-primary" />
-                    </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="overflow-hidden border-0 shadow-lg">
+                <div className="bg-primary/10">
+                  <img
+                    src={testimonial1}
+                    alt="Robert C."
+                    className="w-full h-72 object-cover object-top"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <img
+                      src={logoRapidPlumb}
+                      alt="Rapid Plumb"
+                      className="h-16 w-16 object-contain flex-shrink-0"
+                    />
                     <div>
-                      <h3 className="font-semibold mb-1">{feature.title}</h3>
-                      <p className="text-muted-foreground text-sm">{feature.description}</p>
+                      <h3 className="text-xl font-bold">Mike R.</h3>
+                      <p className="text-sm text-muted-foreground">Plumber, Wyoming</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Never misses a follow-up
+                      </p>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                  </div>
+                  <p className="text-muted-foreground">
+                    "I run my whole business solo—plumber, scheduler, follow-up guy. RagAdvise tracks my quotes, reminds me to follow up with customers, and makes sure I order materials before the job."
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-0 shadow-lg">
+                <div className="bg-green-500/10">
+                  <img
+                    src={testimonial2}
+                    alt="Lisa P."
+                    className="w-full h-72 object-cover object-top"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <img
+                      src={logoCreativeStudio}
+                      alt="Creative Studio"
+                      className="h-16 w-16 object-contain flex-shrink-0"
+                    />
+                    <div>
+                      <h3 className="text-xl font-bold">Lisa P.</h3>
+                      <p className="text-sm text-muted-foreground">Course Creator, Online</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Doubled revenue last quarter
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground">
+                    "It tracks my content calendar, manages email sequences, and coordinates with freelancers. I launched two courses on time and grew my list by 3,000."
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-0 shadow-lg">
+                <div className="bg-amber-500/10">
+                  <img
+                    src={testimonial3}
+                    alt="Tom W."
+                    className="w-full h-72 object-cover object-top"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <img
+                      src={logoTechflow}
+                      alt="TechFlow Solutions"
+                      className="h-16 w-16 object-contain flex-shrink-0"
+                    />
+                    <div>
+                      <h3 className="text-xl font-bold">Tom W.</h3>
+                      <p className="text-sm text-muted-foreground">Realtor, Texas</p>
+                      <p className="text-lg font-semibold text-primary">
+                        Closed 4 forgotten deals
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground">
+                    "It tracks every lead, reminds me when to follow up, and prompts me to reach out to past clients. My sphere business doubled."
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Team */}
+        <section className="py-16 md:py-24">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <img
+                  src={teamPhoto}
+                  alt="The RagAdvise team"
+                  className="rounded-2xl shadow-xl w-full"
+                />
+              </div>
+              
+              <div className="order-1 lg:order-2">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Our Team Will Become Your Team
+                </h2>
+                <p className="text-xl text-muted-foreground mb-4">
+                  We're more than a tool you'll love using. We're people you'll love working with.
+                </p>
+                <p className="text-lg text-muted-foreground mb-4">
+                  We have a plan to help you succeed.
+                </p>
+                <p className="text-muted-foreground mb-8">
+                  And that's to not give up till your AI assistant is organizing your work smoothly. Our customers say working with us is easy. This is why they trust us to manage their most important tasks.
+                </p>
+                <DemoRequestModal>
+                  <Button size="lg">
+                    <Calendar className="mr-2 h-4 w-4" />
+                    Schedule a Demo
+                  </Button>
+                </DemoRequestModal>
+              </div>
             </div>
           </div>
         </section>
@@ -469,9 +630,7 @@ const TaskAssistant = () => {
         {/* FAQ */}
         <section className="py-16 md:py-24">
           <div className="container max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Questions?
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Questions?</h2>
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, i) => (
                 <AccordionItem key={i} value={`item-${i}`}>
@@ -487,28 +646,16 @@ const TaskAssistant = () => {
 
         {/* Final CTA */}
         <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-          <div className="container text-center max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready for perfect meeting memory?
-            </h2>
-            <p className="text-xl opacity-90 mb-8">
-              Join thousands of teams who never miss an action item.
+          <div className="container text-center">
+            <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto">
+              Stop drowning in tasks. Let AI organize your work.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild>
-                <a href="https://my.ragadvise.com/signup">Try now →</a>
+            <DemoRequestModal>
+              <Button size="lg" variant="secondary" className="mt-8">
+                <Calendar className="mr-2 h-4 w-4" />
+                Schedule a Demo
               </Button>
-              <DemoRequestModal>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-                >
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Schedule a Demo
-                </Button>
-              </DemoRequestModal>
-            </div>
+            </DemoRequestModal>
           </div>
         </section>
       </main>
