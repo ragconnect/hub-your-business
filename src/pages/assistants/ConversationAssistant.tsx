@@ -213,9 +213,7 @@ const ConversationAssistant = () => {
                   <div className="text-center mb-6">
                     <Calendar className="w-10 h-10 text-primary mx-auto mb-3" />
                     <h3 className="text-2xl font-bold">
-                      Schedule Demo for{" "}
-                      <span className="line-through text-muted-foreground">$1,999</span>{" "}
-                      <span className="text-primary">Free</span> Configuration
+                      60 Minute Personalized Setup
                     </h3>
                     <p className="text-muted-foreground mt-2">
                       Enter your details and we'll reach out within 24 hours
