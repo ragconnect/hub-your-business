@@ -37,6 +37,7 @@ import testimonialJames from "@/assets/testimonials/testimonial-james.jpg";
 import logoMariasKitchen from "@/assets/testimonials/logo-marias-kitchen.png";
 import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
 import logoVitalBalance from "@/assets/testimonials/logo-vital-balance.png";
+import LogoMarquee from "@/components/marketing/LogoMarquee";
 
 const oldWayProblems = [
   {
@@ -266,6 +267,9 @@ const ConversationAssistant = () => {
             </div>
           </div>
         </section>
+
+        {/* Logo Marquee - Social Proof */}
+        <LogoMarquee />
 
         {/* The Old Way */}
         <section className="py-16 md:py-24 bg-muted/30">
