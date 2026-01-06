@@ -197,7 +197,7 @@ const ConversationAssistant = () => {
                     <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
                   </Button>
                   <DemoRequestModal>
-                    <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
+                    <Button size="lg">
                       <Calendar className="mr-2 h-4 w-4" />
                       Schedule a Demo
                     </Button>
