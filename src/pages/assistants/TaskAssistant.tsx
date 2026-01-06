@@ -74,8 +74,8 @@ const newWaySolutions = [
   },
   {
     icon: Share2,
-    title: "Share context with your entire team",
-    desc: "Send transcripts, summaries, and key takeaways to anyone—even those who couldn't join. Add follow-up notes for latecomers.",
+    title: "Capture conversations anywhere",
+    desc: "Works with any video tool (Zoom, Google Meet, Microsoft Teams), face-to-face meetings, and phone calls with no extra setup.",
   },
   {
     icon: MessageCircle,
