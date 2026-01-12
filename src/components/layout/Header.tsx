@@ -29,6 +29,11 @@ const assistants = [
     href: "/assistants/money",
     description: "Track expenses, send invoices, and manage payments.",
   },
+  {
+    title: "Site Assistant",
+    href: "/assistants/site",
+    description: "Voice-first AI that converts website visitors 24/7.",
+  },
 ];
 
 const Header = () => {
