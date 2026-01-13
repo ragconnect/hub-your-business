@@ -207,8 +207,9 @@ const MoneyAssistant = () => {
               <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
+                    <Calendar className="w-10 h-10 text-primary mx-auto mb-3" />
                     <h3 className="text-2xl font-bold">
-                      Schedule Your Free Demo
+                      Free 30 Minute Personalized Setup
                     </h3>
                     <p className="text-muted-foreground mt-2">
                       Enter your details and we'll reach out within 24 hours
