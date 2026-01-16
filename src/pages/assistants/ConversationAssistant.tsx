@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
@@ -17,18 +18,26 @@ import {
 import {
   Phone,
   Mail,
+  MessageSquare,
+  Globe,
+  Star,
+  Bot,
+  Calendar,
+  Send,
+  Check,
+  X,
+  Sparkles,
+  Building2,
+  Rocket,
   Clock,
   DollarSign,
-  Bot,
-  MessageSquare,
-  RefreshCw,
-  Zap,
-  Calendar,
-  Play,
-  X,
-  Check,
-  Send,
+  Settings,
+  Shield,
+  BarChart3,
   Users,
+  Bell,
+  CreditCard,
+  Lightbulb,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
 import testimonialMaria from "@/assets/testimonials/testimonial-maria.jpg";
@@ -39,72 +48,38 @@ import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
 import logoVitalBalance from "@/assets/testimonials/logo-vital-balance.png";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 
-const oldWayProblems = [
-  {
-    icon: Phone,
-    title: "You answer every call yourself",
-    desc: "You're helping one customer. Three more calls go straight to voicemail. They call your competitor instead.",
-  },
-  {
-    icon: Mail,
-    title: "You reply to emails one by one",
-    desc: 'Customers ask "Are you open?" or "What\'s your price?" You type the same answer 20 times a day.',
-  },
-  {
-    icon: Clock,
-    title: "You forget to follow up",
-    desc: 'You write down "call John back at 3pm" on a sticky note. By 5pm, you forgot. John hired someone else.',
-  },
-  {
-    icon: DollarSign,
-    title: "You hire expensive help",
-    desc: "A receptionist costs $2,500 per month. They don't work nights, weekends, or holidays.",
-  },
-];
-
-const newWaySolutions = [
-  {
-    icon: Bot,
-    title: "Your AI assistant answers every call",
-    desc: "Customer calls at 9pm? Your AI picks up and answers questions. It uses your FAQ and business documents to give the right answer every time. Then it books the appointment. You wake up to new jobs.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Your AI replies to all emails and messages",
-    desc: 'Customer texts "Do you deliver?" AI responds in 30 seconds with the answer. Works on email, text, WhatsApp, and social media.',
-  },
-  {
-    icon: RefreshCw,
-    title: "Never forget what customers said",
-    desc: "Every customer call is automatically transcribed—whether answered by AI or your team. Search any conversation. See exactly what was said. No more guessing or forgetting details.",
-  },
-  {
-    icon: Zap,
-    title: "Costs less than Netflix, works harder than any employee",
-    desc: "Start free. Upgrade for $16/month—just $1 per customer interaction. Handle more than 16 calls or emails? It pays for itself. Your AI works 24/7, never takes vacation, and handles 100+ customers at once.",
-  },
-];
-
 const faqs = [
   {
-    q: "How long to set up?",
-    a: "30 minutes. Connect your phone and email, tell the AI about your business, done.",
+    q: "How long does setup take?",
+    a: "30 minutes. Connect your phone and email (or get new ones), answer questions about your business, and your AI is ready to go.",
   },
   {
-    q: "Does this work? Can I trust the AI to correctly answer questions across phone, email, and reviews?",
-    a: "Yes. You control exactly what the AI says across every channel using categories and rules. You also control the system prompt and configuration—so the AI only responds the way you want it to.",
+    q: "What if the AI makes a mistake?",
+    a: "You control exactly what AI can say. Use approval mode to review responses before they're sent, or set specific rules for handling different topics.",
   },
   {
-    q: "What if it makes a mistake?",
-    a: "You control what it says. You can review and approve responses before they go out.",
+    q: "Can I keep my existing phone number and email?",
+    a: "Yes. Connect your current business number and email address. Or we'll provide new professional ones—your choice.",
   },
   {
-    q: "Can I keep my phone number?",
-    a: "Yes. Your customers call the same number. The AI just answers it for you.",
+    q: "What happens to complex customer issues?",
+    a: "AI knows when it needs help. Complex problems, special requests, or urgent issues get escalated to you with full conversation history and context.",
   },
   {
-    q: "What if a customer needs me?",
-    a: "The AI knows when to get you. Complex problems come straight to you with all the details.",
+    q: "What channels does it work on?",
+    a: "Phone calls, SMS, email, WhatsApp, Facebook Messenger, Instagram DMs, and website chat. Add or remove channels anytime.",
+  },
+  {
+    q: "How much does it cost?",
+    a: "Plans start at $16/month and scale based on usage. Higher-tier plans include unlimited calls, emails, and messages across all channels.",
+  },
+  {
+    q: "Do I need to tell customers I'm using AI?",
+    a: "That's up to you. AI introduces itself naturally: \"Hi, this is the RagAdvise assistant for [Your Business]. How can I help you today?\" Most customers don't care—they just want fast, accurate answers.",
+  },
+  {
+    q: "Can I try it before committing?",
+    a: "Yes. 7-day free trial with full access to all features. No credit card required to start.",
   },
 ];
 
@@ -113,14 +88,19 @@ const ConversationAssistant = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
-  const siteUrl = typeof window !== "undefined" ? `${window.location.origin}/assistants/conversation` : "https://ragadvise.com/assistants/conversation";
-  const title = "Conversation Assistant — Never Miss a Customer Call Again | RagAdvise";
-  const description = "Your AI answers calls, replies to messages, and follows up with customers—automatically, 24/7.";
+
+  const siteUrl =
+    typeof window !== "undefined"
+      ? `${window.location.origin}/assistants/conversation`
+      : "https://ragadvise.com/assistants/conversation";
+  const title =
+    "Conversation Assistant — AI for Calls, Emails & Reviews | RagAdvise";
+  const description =
+    "Get an AI assistant that handles all customer communication for your business across phone, email, text, social media, website chat, and reviews.";
 
   const handleDemoSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!name.trim() || !email.trim()) {
       toast({
         title: "Please fill in all fields",
@@ -139,7 +119,7 @@ const ConversationAssistant = () => {
     }
 
     setIsSubmitting(true);
-    
+
     try {
       const { error } = await supabase.functions.invoke("send-demo-request", {
         body: { name: name.trim(), email: email.trim() },
@@ -180,21 +160,56 @@ const ConversationAssistant = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative pt-16 md:pt-24 pb-16 md:pb-24" aria-labelledby="hero-title">
+        <section
+          className="relative pt-16 md:pt-24 pb-16 md:pb-24"
+          aria-labelledby="hero-title"
+        >
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_0%,hsl(var(--primary)/0.15),transparent_60%)]" />
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left - Hero Text */}
               <div className="text-center lg:text-left">
-                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight">
-                  Tired of Spending All Day on Customer Calls, Emails, and Reviews?
+                <h1
+                  id="hero-title"
+                  className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight"
+                >
+                  Get an AI assistant that handles all customer communication
+                  for your business.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  One AI assistant for calls, emails, and reviews 24/7. Look professional from day one or upgrade your existing setup. Schedule a free demo to customize your AI assistant.
+                  Look professional and never miss a customer again with an AI
+                  assistant that works 24/7 across:
                 </p>
+                <div className="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start text-sm font-medium">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                    <Phone className="w-4 h-4" /> Phone calls
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                    <Mail className="w-4 h-4" /> Email
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                    <MessageSquare className="w-4 h-4" /> Text/SMS
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                    <Users className="w-4 h-4" /> Social media
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                    <Globe className="w-4 h-4" /> Website chat
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                    <Star className="w-4 h-4" /> Reviews
+                  </span>
+                </div>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button size="lg" variant="outline" className="bg-background" asChild>
-                    <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="bg-background"
+                    asChild
+                  >
+                    <a href="https://my.ragadvise.com/signup">
+                      Start Free Trial
+                    </a>
                   </Button>
                   <DemoRequestModal>
                     <Button size="lg">
@@ -242,10 +257,10 @@ const ConversationAssistant = () => {
                         className="bg-background rounded-xl"
                       />
                     </div>
-                    <Button 
-                      type="submit" 
-                      size="lg" 
-                      className="w-full rounded-xl" 
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full rounded-xl"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
@@ -267,240 +282,1136 @@ const ConversationAssistant = () => {
         {/* Logo Marquee - Social Proof */}
         <LogoMarquee />
 
-        {/* The Old Way */}
-        <section className="py-16 md:py-24 bg-muted/30">
+        {/* Audience Selector */}
+        <section className="py-16 md:py-20 bg-muted/30">
           <div className="container">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 text-destructive mb-4">
-                <X className="w-6 h-6" />
-                <span className="text-lg font-semibold">The Old Way</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold">
-                What Most Businesses Do
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {oldWayProblems.map((problem) => (
-                <Card key={problem.title} className="border-destructive/20 bg-destructive/5">
-                  <CardContent className="p-6">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
-                          <problem.icon className="w-6 h-6 text-destructive" />
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg mb-2">{problem.title}</h3>
-                        <p className="text-muted-foreground">{problem.desc}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <div className="mt-10 text-center max-w-2xl mx-auto">
-              <p className="text-lg font-semibold text-destructive mb-2">Why this sucks:</p>
-              <p className="text-muted-foreground">
-                You lose customers. You waste time. You can't afford help. Your business stays small.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* The New Way */}
-        <section className="py-16 md:py-24">
-          <div className="container">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 text-primary mb-4">
-                <Check className="w-6 h-6" />
-                <span className="text-lg font-semibold">The New Way</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold">
-                What RagAdvise Does For You
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {newWaySolutions.map((solution) => (
-                <Card key={solution.title} className="border-primary/20 bg-primary/5">
-                  <CardContent className="p-6">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <solution.icon className="w-6 h-6 text-primary" />
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg mb-2">{solution.title}</h3>
-                        <p className="text-muted-foreground">{solution.desc}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <div className="mt-10 text-center max-w-2xl mx-auto">
-              <p className="text-lg font-semibold text-primary mb-2">Why this works:</p>
-              <p className="text-muted-foreground">
-                You catch every customer. You save hours every day. You grow without hiring. Your business runs while you sleep.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* How It Works */}
-        <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Set Up In Under 5 Minutes
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Step 1 */}
-              <Card className="text-center border-0 shadow-lg">
-                <CardContent className="pt-8 pb-6 px-6">
-                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                    1
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Connect your accounts</h3>
-                  <p className="text-muted-foreground">
-                    Link your email, phone number, review sites, and messaging apps. Keep your existing numbers—customers won't notice a thing.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Step 2 */}
-              <Card className="text-center border-0 shadow-lg">
-                <CardContent className="pt-8 pb-6 px-6">
-                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                    2
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Train your AI assistant</h3>
-                  <p className="text-muted-foreground">
-                    Tell the AI how to handle customers using our easy interface. Add your FAQs, upload business documents, and set your rules. No coding required.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Step 3 */}
-              <Card className="text-center border-0 shadow-lg">
-                <CardContent className="pt-8 pb-6 px-6">
-                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                    3
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Let AI handle customers</h3>
-                  <p className="text-muted-foreground">
-                    Customers call, email, or message. Your AI answers instantly, books appointments, and follows up—automatically. You focus on running your business.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Step 4 */}
-              <Card className="text-center border-0 shadow-lg">
-                <CardContent className="pt-8 pb-6 px-6">
-                  <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                    4
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Review and improve</h3>
-                  <p className="text-muted-foreground">
-                    Listen to call recordings and read transcripts. See what customers ask. Update your AI's answers to get even better results over time.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="text-center mt-10">
-              <DemoRequestModal>
-                <Button size="lg">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Schedule Demo
-                </Button>
-              </DemoRequestModal>
-            </div>
-          </div>
-        </section>
-
-        {/* How We Compare */}
-        <section className="py-16 md:py-24">
-          <div className="container max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              See How RagAdvise Compares
+              Which describes you?
+            </h2>
+            <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+              Select your situation to see what RagAdvise can do for you.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <Card className="border-primary/20 hover:border-primary/40 transition-colors cursor-pointer group">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Rocket className="w-7 h-7 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold">Starting a new business</h3>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    Get a professional communication system from day one—no
+                    staff, no hardware, no missed opportunities.
+                  </p>
+                  <a
+                    href="#features"
+                    className="text-primary font-medium inline-flex items-center gap-1 hover:underline"
+                  >
+                    See what you get →
+                  </a>
+                </CardContent>
+              </Card>
+
+              <Card className="border-primary/20 hover:border-primary/40 transition-colors cursor-pointer group">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Building2 className="w-7 h-7 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold">
+                      Running an existing business
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    Upgrade your current phone and email system—keep your
+                    numbers, handle more volume, scale without hiring.
+                  </p>
+                  <a
+                    href="#features"
+                    className="text-primary font-medium inline-flex items-center gap-1 hover:underline"
+                  >
+                    See what you get →
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Unified Features Section */}
+        <section id="features" className="py-16 md:py-24">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Everything You Need in One AI Assistant
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Built for small businesses who want AI that works out of the box—not a developer project.
+              One unified system that handles all customer communication across
+              every channel.
             </p>
-            
+
+            <div className="space-y-8 max-w-5xl mx-auto">
+              {/* Phone */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2">
+                        Professional Phone System
+                      </h3>
+                      <p className="text-muted-foreground">
+                        AI-powered phone that never misses a call
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Business phone number</strong> – Get a new
+                        local/toll-free number OR port your existing number for
+                        free
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>AI receptionist</strong> – Answers 24/7, handles
+                        FAQs, books appointments, routes urgent calls to you
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Works on your cell phone</strong> – No desk
+                        phone or hardware needed
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Smart call routing</strong> – Handle overflow
+                        automatically when you're busy or after hours
+                      </span>
+                    </li>
+                  </ul>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Lightbulb className="w-4 h-4 text-primary" />
+                        <span className="font-semibold text-sm">
+                          New businesses
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Sound professional from day one. $16/month vs.
+                        $2,500/month for a receptionist
+                      </p>
+                    </div>
+                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Lightbulb className="w-4 h-4 text-primary" />
+                        <span className="font-semibold text-sm">
+                          Existing businesses
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Stop losing 30-40% of calls to voicemail during busy
+                        times. Each missed call is lost revenue.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Email */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2">
+                        Business Email with AI
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Instant responses to common questions
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Business email</strong> – Get a new professional
+                        email OR connect your existing address
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Smart auto-responses</strong> – AI answers
+                        common questions instantly ("Are you open?" "Pricing?"
+                        "Location?")
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>AI training tools</strong> – Teach AI your
+                        business specifics
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Reduce email time by 70%</strong> – AI handles
+                        routine, you handle strategic
+                      </span>
+                    </li>
+                  </ul>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Lightbulb className="w-4 h-4 text-primary" />
+                        <span className="font-semibold text-sm">
+                          New businesses
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Respond instantly while building your business. Never
+                        lose leads to faster competitors.
+                      </p>
+                    </div>
+                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Lightbulb className="w-4 h-4 text-primary" />
+                        <span className="font-semibold text-sm">
+                          Existing businesses
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Stop spending 2-3 hours daily answering the same 10
+                        questions over and over.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Messaging */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MessageSquare className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2">
+                        Text, SMS & Social Messaging
+                      </h3>
+                      <p className="text-muted-foreground">
+                        One inbox for all your messages
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>SMS on business number</strong> – Customers can
+                        text you, AI responds instantly
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>WhatsApp Business</strong> – AI handles WhatsApp
+                        conversations
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Facebook & Instagram DMs</strong> – One inbox
+                        for all social messages
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Multi-channel consistency</strong> – Same AI
+                        knowledge across all platforms
+                      </span>
+                    </li>
+                  </ul>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Lightbulb className="w-4 h-4 text-primary" />
+                        <span className="font-semibold text-sm">
+                          New businesses
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Be reachable everywhere customers are—without juggling 5
+                        apps.
+                      </p>
+                    </div>
+                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Lightbulb className="w-4 h-4 text-primary" />
+                        <span className="font-semibold text-sm">
+                          Existing businesses
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Consolidate 5+ messaging platforms into one AI-powered
+                        inbox.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Website Chat */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Globe className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2">Website Chat</h3>
+                      <p className="text-muted-foreground">
+                        Convert more visitors into customers
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>AI chat widget</strong> – Install in 5 minutes,
+                        works 24/7
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Lead capture & qualification</strong> – AI
+                        collects info and books appointments
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Same business knowledge</strong> – Consistent
+                        answers across phone, email, and chat
+                      </span>
+                    </li>
+                  </ul>
+                  <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Lightbulb className="w-4 h-4 text-primary" />
+                      <span className="font-semibold text-sm">
+                        Why it matters
+                      </span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      71% of customers expect website chat. AI gives you
+                      enterprise-level chat support without hiring staff.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Review Management */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Star className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2">
+                        Review Management
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Build your reputation automatically
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Multi-platform monitoring</strong> – AI watches
+                        Google, Yelp, TripAdvisor, Facebook, and more
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Smart response drafting</strong> – AI drafts
+                        professional responses (you approve)
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Multi-channel review request flows:</strong>
+                      </span>
+                    </li>
+                    <ul className="ml-8 space-y-2 text-muted-foreground">
+                      <li>• Email campaigns after job completion</li>
+                      <li>• SMS with one-tap review links</li>
+                      <li>• Phone requests during/after calls</li>
+                      <li>• Website widgets for onsite capture</li>
+                    </ul>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Follow-up sequences</strong> – Automatic
+                        reminders = 3x more reviews
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Reputation dashboard</strong> – All reviews,
+                        ratings, and trends in one place
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Negative review alerts</strong> – Respond
+                        quickly to prevent damage
+                      </span>
+                    </li>
+                  </ul>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Lightbulb className="w-4 h-4 text-primary" />
+                        <span className="font-semibold text-sm">
+                          New businesses
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Build social proof fast without awkward asks. Systematic
+                        approach across all platforms.
+                      </p>
+                    </div>
+                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Lightbulb className="w-4 h-4 text-primary" />
+                        <span className="font-semibold text-sm">
+                          Existing businesses
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        300-500% increase in reviews within 3 months. Automated
+                        across all channels.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Smart Routing & Automation */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Bot className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2">
+                        Smart Routing & Automation
+                      </h3>
+                      <p className="text-muted-foreground">
+                        AI knows when to handle it and when to escalate
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Intelligent escalation</strong> – AI handles
+                        routine, complex issues come to you with full context
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Appointment reminders</strong> – Automatic
+                        confirmations reduce no-shows
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Payment reminders</strong> – Friendly follow-ups
+                        for overdue invoices
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Follow-up sequences</strong> – Nurture leads
+                        automatically
+                      </span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Admin & Control */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Settings className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2">
+                        Admin & Control
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Full visibility and control over your AI
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span>AI training dashboard</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span>Response approval mode</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span>Team access</span>
+                      </li>
+                    </ul>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span>Analytics dashboard</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span>Privacy & security</span>
+                      </li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Comparison */}
+        <section className="py-16 md:py-24 bg-muted/30">
+          <div className="container max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Pricing That Makes Sense
+            </h2>
+            <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+              See how much you save compared to traditional solutions.
+            </p>
+
+            <Tabs defaultValue="new" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-8">
+                <TabsTrigger value="new" className="text-base">
+                  <Rocket className="w-4 h-4 mr-2" />
+                  For New Businesses
+                </TabsTrigger>
+                <TabsTrigger value="existing" className="text-base">
+                  <Building2 className="w-4 h-4 mr-2" />
+                  For Existing Businesses
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="new">
+                <Card className="border-primary/20">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="text-5xl font-bold text-primary mb-2">
+                        $16
+                        <span className="text-xl font-normal text-muted-foreground">
+                          /month
+                        </span>
+                      </div>
+                      <p className="text-lg text-muted-foreground">
+                        Complete AI communication system
+                      </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-bold mb-4 flex items-center gap-2">
+                          <Check className="w-5 h-5 text-green-500" />
+                          What's included:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Business phone + AI receptionist</li>
+                          <li>• Business email + AI responses</li>
+                          <li>• Text, SMS & social messaging</li>
+                          <li>• Website chat</li>
+                          <li>• Review management</li>
+                          <li>• Unlimited calls, emails, messages</li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
+                        <h4 className="font-bold mb-4 flex items-center gap-2 text-destructive">
+                          <X className="w-5 h-5" />
+                          Building it yourself:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>
+                            Receptionist:{" "}
+                            <span className="line-through">$2,500/month</span>
+                          </li>
+                          <li>
+                            Answering service:{" "}
+                            <span className="line-through">$200-500/month</span>
+                          </li>
+                          <li>
+                            Live chat:{" "}
+                            <span className="line-through">$50-200/month</span>
+                          </li>
+                          <li>
+                            Review tool:{" "}
+                            <span className="line-through">$50-100/month</span>
+                          </li>
+                          <li className="font-bold pt-2 border-t border-destructive/20">
+                            Total:{" "}
+                            <span className="line-through">
+                              $2,800-3,300/month
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-primary/10 rounded-xl text-center">
+                      <p className="text-lg font-bold text-primary">
+                        RagAdvise = 20x cheaper
+                      </p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="bg-background"
+                        asChild
+                      >
+                        <a href="https://my.ragadvise.com/signup">
+                          Start Free Trial
+                        </a>
+                      </Button>
+                      <DemoRequestModal>
+                        <Button size="lg">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          Schedule Demo
+                        </Button>
+                      </DemoRequestModal>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="existing">
+                <Card className="border-primary/20">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="text-5xl font-bold text-primary mb-2">
+                        $16
+                        <span className="text-xl font-normal text-muted-foreground">
+                          /month
+                        </span>
+                      </div>
+                      <p className="text-lg text-muted-foreground">
+                        vs. your current costs
+                      </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-bold mb-4 flex items-center gap-2">
+                          <Check className="w-5 h-5 text-green-500" />
+                          What's included:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• AI phone answering + keep your number</li>
+                          <li>• AI email responses + keep your email</li>
+                          <li>• AI text & social messaging</li>
+                          <li>• Website chat with AI</li>
+                          <li>• Review management</li>
+                          <li>• Unlimited volume across all channels</li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
+                        <h4 className="font-bold mb-4 flex items-center gap-2 text-destructive">
+                          <X className="w-5 h-5" />
+                          What you're spending now:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>
+                            Receptionist/VA:{" "}
+                            <span className="line-through">$2,500/month</span>
+                          </li>
+                          <li>
+                            OR answering service:{" "}
+                            <span className="line-through">$200-500/month</span>
+                          </li>
+                          <li>
+                            Repetitive emails: 15-20 hrs/week ={" "}
+                            <span className="line-through">
+                              $600-1,200 lost productivity
+                            </span>
+                          </li>
+                          <li>
+                            Missed voicemails: 5-10/week ={" "}
+                            <span className="line-through">
+                              $2,000-5,000 lost revenue
+                            </span>
+                          </li>
+                          <li className="font-bold pt-2 border-t border-destructive/20">
+                            Total:{" "}
+                            <span className="line-through">
+                              $3,300-9,200/month
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-primary/10 rounded-xl text-center">
+                      <p className="text-lg font-bold text-primary">
+                        Save $3,000-9,000+/month while handling MORE volume
+                      </p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="bg-background"
+                        asChild
+                      >
+                        <a href="https://my.ragadvise.com/signup">
+                          Start Free Trial
+                        </a>
+                      </Button>
+                      <DemoRequestModal>
+                        <Button size="lg">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          Schedule Demo
+                        </Button>
+                      </DemoRequestModal>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
+          </div>
+        </section>
+
+        {/* Benefits Summary */}
+        <section className="py-16 md:py-24">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              RagAdvise Conversation Assistant helps you:
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Phone className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">
+                    Never miss a customer
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    AI answers every call, email, and message instantly—even at
+                    2am, weekends, and holidays.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Sparkles className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Look professional</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Professional phone number, instant responses, and consistent
+                    communication across all channels.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Clock className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">
+                    Save 15-20 hours/week
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Stop typing the same answers to "Are you open?" and "How
+                    much does it cost?" AI handles repetitive questions.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center border-0 shadow-lg">
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <DollarSign className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">
+                    Capture more revenue
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Customers who can't reach you call your competitor. AI
+                    answers immediately and books the appointment.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-16 md:py-24 bg-muted/30">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              What customers say:
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Real results from real businesses using RagAdvise.
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {/* Testimonial 1 */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-6">
+                  <p className="text-muted-foreground mb-4 italic">
+                    "I used to miss 5-6 calls a day while working on jobs. Now
+                    my AI answers every call and I get the important ones texted
+                    to me. Game changer."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={testimonialMike}
+                      alt="Mike T."
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <p className="font-semibold">Mike T.</p>
+                      <p className="text-sm text-muted-foreground">
+                        Plumbing Business
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Testimonial 2 */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-6">
+                  <p className="text-muted-foreground mb-4 italic">
+                    "We added AI to our existing phone number and didn't have to
+                    tell customers anything. Suddenly we're just 'always
+                    available' and bookings went up 40%."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={testimonialMaria}
+                      alt="Sarah K."
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <p className="font-semibold">Sarah K.</p>
+                      <p className="text-sm text-muted-foreground">
+                        Hair Salon Owner
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Testimonial 3 */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-6">
+                  <p className="text-muted-foreground mb-4 italic">
+                    "As a new business, I couldn't afford a receptionist. AI
+                    made me look like I had a full office from day one.
+                    Customers have no idea it's just me."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={testimonialJames}
+                      alt="James R."
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <p className="font-semibold">James R.</p>
+                      <p className="text-sm text-muted-foreground">
+                        HVAC Company
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Testimonial 4 */}
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-6">
+                  <p className="text-muted-foreground mb-4 italic">
+                    "The after-hours coverage alone paid for itself. We used to
+                    lose evening calls to competitors. Now AI captures them and
+                    we follow up in the morning."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="font-semibold text-primary">ML</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold">Maria L.</p>
+                      <p className="text-sm text-muted-foreground">
+                        Dental Practice
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Table */}
+        <section className="py-16 md:py-24">
+          <div className="container max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              How does RagAdvise compare?
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              See how RagAdvise stacks up against traditional phone systems and
+              AI platforms.
+            </p>
+
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left py-4 px-4 font-medium text-muted-foreground">Feature</th>
-                    <th className="text-center py-4 px-4 font-bold text-primary">RagAdvise</th>
-                    <th className="text-center py-4 px-4 font-medium">Vapi</th>
-                    <th className="text-center py-4 px-4 font-medium">OpenAI API</th>
-                    <th className="text-center py-4 px-4 font-medium">Google Voice</th>
+                    <th className="text-left py-4 px-3 font-medium text-muted-foreground min-w-[140px]">
+                      Feature
+                    </th>
+                    <th className="text-center py-4 px-3 font-bold text-primary bg-primary/5 min-w-[100px]">
+                      RagAdvise
+                    </th>
+                    <th className="text-center py-4 px-3 font-medium min-w-[100px]">
+                      Vapi
+                    </th>
+                    <th className="text-center py-4 px-3 font-medium min-w-[100px]">
+                      OpenAI API
+                    </th>
+                    <th className="text-center py-4 px-3 font-medium min-w-[100px]">
+                      Google Voice
+                    </th>
+                    <th className="text-center py-4 px-3 font-medium min-w-[100px]">
+                      Grasshopper
+                    </th>
+                    <th className="text-center py-4 px-3 font-medium min-w-[100px]">
+                      RingCentral
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="bg-muted/30">
-                    <td className="py-4 px-4">No coding required</td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="py-3 px-3 font-medium">Starting Price</td>
+                    <td className="text-center py-3 px-3 bg-primary/5 font-bold text-primary">
+                      $16/mo
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">
+                      Pay/min
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">
+                      Pay/token
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">
+                      $10/user
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">
+                      $14/mo
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">
+                      $20/user
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4">AI-powered conversations</td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="py-3 px-3 font-medium">
+                      AI Answering Included
+                    </td>
+                    <td className="text-center py-3 px-3 bg-primary/5">
+                      <Check className="h-5 w-5 text-green-500 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground text-xs">
+                      Dev platform
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground text-xs">
+                      Dev API
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground text-xs">
+                      $60 add-on
+                    </td>
                   </tr>
                   <tr className="bg-muted/30">
-                    <td className="py-4 px-4">White-glove setup support</td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="py-3 px-3 font-medium">Email with AI</td>
+                    <td className="text-center py-3 px-3 bg-primary/5">
+                      <Check className="h-5 w-5 text-green-500 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4">Calls, texts, emails, social & reviews</td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Calls only</span></td>
-                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">DIY</span></td>
-                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Calls/texts</span></td>
+                    <td className="py-3 px-3 font-medium">
+                      Social Media (FB, IG, WhatsApp)
+                    </td>
+                    <td className="text-center py-3 px-3 bg-primary/5">
+                      <Check className="h-5 w-5 text-green-500 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
                   </tr>
                   <tr className="bg-muted/30">
-                    <td className="py-4 px-4">Built-in CRM</td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="py-3 px-3 font-medium">
+                      Website Chat with AI
+                    </td>
+                    <td className="text-center py-3 px-3 bg-primary/5">
+                      <Check className="h-5 w-5 text-green-500 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground text-xs">
+                      Build it
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground text-xs">
+                      Build it
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4">Flat, predictable pricing</td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="py-3 px-3 font-medium">Review Management</td>
+                    <td className="text-center py-3 px-3 bg-primary/5">
+                      <Check className="h-5 w-5 text-green-500 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
+                    <td className="text-center py-3 px-3">
+                      <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+                    </td>
                   </tr>
                   <tr className="bg-muted/30">
-                    <td className="py-4 px-4">Built for small business</td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><X className="h-5 w-5 text-muted-foreground/50 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-4">Live in 24 hours</td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Weeks</span></td>
-                    <td className="text-center py-4 px-4"><span className="text-sm text-muted-foreground">Weeks+</span></td>
-                    <td className="text-center py-4 px-4"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                    <td className="py-3 px-3 font-medium">Setup Complexity</td>
+                    <td className="text-center py-3 px-3 bg-primary/5 font-medium text-primary">
+                      30 min
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground text-xs">
+                      Coding req.
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground text-xs">
+                      Coding req.
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground text-xs">
+                      Simple
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground text-xs">
+                      Simple
+                    </td>
+                    <td className="text-center py-3 px-3 text-muted-foreground text-xs">
+                      Moderate
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            
+
+            <p className="text-center text-muted-foreground mt-8 text-sm max-w-3xl mx-auto">
+              <strong>Key takeaway:</strong> Traditional phone systems give you
+              a phone number but no AI. Developer platforms give you AI tools
+              but require coding. RagAdvise is the only solution that gives you
+              AI answering across phone, email, SMS, social media, and website
+              chat—ready to use in 30 minutes.
+            </p>
+
             <div className="text-center mt-10">
               <DemoRequestModal>
                 <Button size="lg">
@@ -512,112 +1423,8 @@ const ConversationAssistant = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Real Results from Real Businesses
-            </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              See how business owners like you are saving time and growing with RagAdvise.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Testimonial 1 - Maria */}
-              <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-primary/10">
-                  <img
-                    src={testimonialMaria}
-                    alt="Maria S."
-                    className="w-full h-72 object-cover object-top"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <img
-                      src={logoMariasKitchen}
-                      alt="Maria's Kitchen"
-                      className="h-16 w-16 object-contain flex-shrink-0"
-                    />
-                    <div>
-                      <h3 className="text-xl font-bold">Maria S.</h3>
-                      <p className="text-sm text-muted-foreground">Restaurant Owner, New York</p>
-                      <p className="text-lg font-semibold text-primary">
-                        Manages 50+ calls per day
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground">
-                    "I used to miss half my reservation calls during the dinner rush. Now my AI handles everything—bookings, hours, even catering inquiries."
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Testimonial 2 - Mike */}
-              <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-green-500/10">
-                  <img
-                    src={testimonialMike}
-                    alt="Mike R."
-                    className="w-full h-72 object-cover object-top"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <img
-                      src={logoRapidPlumb}
-                      alt="Rapid Plumb"
-                      className="h-16 w-16 object-contain flex-shrink-0"
-                    />
-                    <div>
-                      <h3 className="text-xl font-bold">Mike R.</h3>
-                      <p className="text-sm text-muted-foreground">Plumber, Wyoming</p>
-                      <p className="text-lg font-semibold text-primary">
-                        Handles 10+ emergency calls weekly
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground">
-                    "Emergency calls at 2 AM used to wake the whole family. Now the AI books them, texts me the details, and I sleep through the night."
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Testimonial 3 - James */}
-              <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-amber-500/10">
-                  <img
-                    src={testimonialJames}
-                    alt="James T."
-                    className="w-full h-72 object-cover object-top"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <img
-                      src={logoVitalBalance}
-                      alt="Vital Balance"
-                      className="h-16 w-16 object-contain flex-shrink-0"
-                    />
-                    <div>
-                      <h3 className="text-xl font-bold">James T.</h3>
-                      <p className="text-sm text-muted-foreground">Wellness Brand Founder, Online</p>
-                      <p className="text-lg font-semibold text-primary">
-                        Manages 1,000+ customer emails
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground">
-                    "Scaling my wellness brand meant drowning in customer emails. RagAdvise handles product questions, refunds, and reviews automatically."
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
         {/* Our Team */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-muted/30">
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left - Team Photo */}
@@ -628,20 +1435,24 @@ const ConversationAssistant = () => {
                   className="rounded-2xl shadow-xl w-full"
                 />
               </div>
-              
+
               {/* Right - Text Content */}
               <div className="order-1 lg:order-2">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   Our Team Will Become Your Team
                 </h2>
                 <p className="text-xl text-muted-foreground mb-4">
-                  We're more than a tool you'll love using. We're people you'll love working with.
+                  We're more than a tool you'll love using. We're people you'll
+                  love working with.
                 </p>
                 <p className="text-lg text-muted-foreground mb-4">
                   We have a plan to help you succeed.
                 </p>
                 <p className="text-muted-foreground mb-8">
-                  And that's to not give up till your AI assistant is running smoothly. Our customers say working with us is easy. This is why they stick with us to handle more customer conversations than ever before.
+                  And that's to not give up till your AI assistant is running
+                  smoothly. Our customers say working with us is easy. This is
+                  why they stick with us to handle more customer conversations
+                  than ever before.
                 </p>
                 <DemoRequestModal>
                   <Button size="lg">
@@ -657,11 +1468,15 @@ const ConversationAssistant = () => {
         {/* FAQ */}
         <section className="py-16 md:py-24">
           <div className="container max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Questions?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              Common questions
+            </h2>
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, i) => (
                 <AccordionItem key={i} value={`item-${i}`}>
-                  <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
+                  <AccordionTrigger className="text-left">
+                    {faq.q}
+                  </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
                     {faq.a}
                   </AccordionContent>
@@ -674,15 +1489,28 @@ const ConversationAssistant = () => {
         {/* Final CTA */}
         <section className="py-16 md:py-24 bg-primary text-primary-foreground">
           <div className="container text-center">
-            <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto">
-              Stop losing customers to voicemail. Let AI answer for you.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Start your free trial today.
+            </h2>
+            <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto opacity-90">
+              See how RagAdvise Conversation Assistant handles your actual
+              customer calls, emails, and messages across all channels.
             </p>
-            <DemoRequestModal>
-              <Button size="lg" variant="secondary" className="mt-8">
-                <Calendar className="mr-2 h-4 w-4" />
-                Schedule a Demo
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="secondary" asChild>
+                <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
               </Button>
-            </DemoRequestModal>
+              <DemoRequestModal>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                >
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule a Demo
+                </Button>
+              </DemoRequestModal>
+            </div>
           </div>
         </section>
       </main>
