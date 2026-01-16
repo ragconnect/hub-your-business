@@ -385,11 +385,11 @@ const ConversationAssistant = () => {
                   <div className="grid grid-cols-2 gap-2 mb-4">
                     <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
                       <p className="text-xs font-semibold text-primary mb-1">New businesses</p>
-                      <p className="text-xs text-muted-foreground">$16/mo vs $2,500/mo receptionist</p>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Skip hiring a receptionist ($2,500/mo+). Get a professional phone presence from day one for $16/mo. AI answers every call, books appointments, and handles FAQs 24/7.</p>
                     </div>
                     <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
                       <p className="text-xs font-semibold text-primary mb-1">Existing businesses</p>
-                      <p className="text-xs text-muted-foreground">Stop losing 30-40% of calls</p>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Stop losing 30-40% of calls to voicemail. AI handles overflow during busy times and after hours. Keep your existing number—add AI as your always-available backup.</p>
                     </div>
                   </div>
                   <DemoRequestModal>
@@ -434,11 +434,11 @@ const ConversationAssistant = () => {
                   <div className="grid grid-cols-2 gap-2 mb-4">
                     <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
                       <p className="text-xs font-semibold text-primary mb-1">New businesses</p>
-                      <p className="text-xs text-muted-foreground">Respond instantly, win leads</p>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Respond to inquiries in minutes, not hours. Leads go to whoever responds first. AI drafts professional responses instantly so you win more business from day one.</p>
                     </div>
                     <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
                       <p className="text-xs font-semibold text-primary mb-1">Existing businesses</p>
-                      <p className="text-xs text-muted-foreground">Stop repeating same answers</p>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Stop answering the same questions 50 times a day. AI handles pricing, hours, location, and FAQs automatically. You only see emails that actually need your attention.</p>
                     </div>
                   </div>
                   <DemoRequestModal>
@@ -486,11 +486,11 @@ const ConversationAssistant = () => {
                   <div className="grid grid-cols-2 gap-2 mb-4">
                     <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
                       <p className="text-xs font-semibold text-primary mb-1">New businesses</p>
-                      <p className="text-xs text-muted-foreground">Be everywhere without 5 apps</p>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Be present on SMS, WhatsApp, Facebook, and Instagram without juggling 5 different apps. One AI manages all channels with consistent, professional responses.</p>
                     </div>
                     <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
                       <p className="text-xs font-semibold text-primary mb-1">Existing businesses</p>
-                      <p className="text-xs text-muted-foreground">Consolidate 5+ platforms</p>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Consolidate 5+ messaging platforms into one inbox. No more missed DMs or forgotten texts. AI responds instantly so customers don't wait—or go to competitors.</p>
                     </div>
                   </div>
                   <DemoRequestModal>
@@ -578,11 +578,11 @@ const ConversationAssistant = () => {
                   <div className="grid grid-cols-2 gap-2 mb-4">
                     <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
                       <p className="text-xs font-semibold text-primary mb-1">New businesses</p>
-                      <p className="text-xs text-muted-foreground">Build proof without awkward asks</p>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Build social proof without awkward in-person asks. AI automatically requests reviews via email, text, or phone after each job. Get your first 50+ reviews fast.</p>
                     </div>
                     <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
                       <p className="text-xs font-semibold text-primary mb-1">Existing businesses</p>
-                      <p className="text-xs text-muted-foreground">300-500% more reviews in 3 mo</p>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Most businesses get 300-500% more reviews within 3 months. AI drafts personalized responses to every review and sends smart follow-up reminders.</p>
                     </div>
                   </div>
                   <DemoRequestModal>
