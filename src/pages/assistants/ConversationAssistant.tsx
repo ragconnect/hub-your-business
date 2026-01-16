@@ -350,470 +350,329 @@ const ConversationAssistant = () => {
               every channel.
             </p>
 
-            <div className="space-y-8 max-w-5xl mx-auto">
+            {/* Row 1: Phone & Email */}
+            <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-6">
               {/* Phone */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-7 h-7 text-primary" />
+              <Card className="border-0 shadow-lg h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">
-                        Professional Phone System
-                      </h3>
-                      <p className="text-muted-foreground">
-                        AI-powered phone that never misses a call
-                      </p>
+                      <h3 className="text-xl font-bold">Professional Phone System</h3>
+                      <p className="text-sm text-muted-foreground">AI-powered phone that never misses a call</p>
                     </div>
                   </div>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Business phone number</strong> – Get a new
-                        local/toll-free number OR port your existing number for
-                        free
-                      </span>
+                  <ul className="space-y-2 mb-4 flex-1">
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Business phone number</strong> – New or port existing</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>AI receptionist</strong> – Answers 24/7, handles
-                        FAQs, books appointments, routes urgent calls to you
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>AI receptionist</strong> – 24/7, FAQs, appointments</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Works on your cell phone</strong> – No desk
-                        phone or hardware needed
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Works on cell phone</strong> – No hardware needed</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Smart call routing</strong> – Handle overflow
-                        automatically when you're busy or after hours
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Smart routing</strong> – Overflow & after-hours</span>
                     </li>
                   </ul>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Lightbulb className="w-4 h-4 text-primary" />
-                        <span className="font-semibold text-sm">
-                          New businesses
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Sound professional from day one. $16/month vs.
-                        $2,500/month for a receptionist
-                      </p>
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-1">New businesses</p>
+                      <p className="text-xs text-muted-foreground">$16/mo vs $2,500/mo receptionist</p>
                     </div>
-                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Lightbulb className="w-4 h-4 text-primary" />
-                        <span className="font-semibold text-sm">
-                          Existing businesses
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Stop losing 30-40% of calls to voicemail during busy
-                        times. Each missed call is lost revenue.
-                      </p>
+                    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-1">Existing businesses</p>
+                      <p className="text-xs text-muted-foreground">Stop losing 30-40% of calls</p>
                     </div>
                   </div>
+                  <DemoRequestModal>
+                    <Button size="sm" className="w-full">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Demo
+                    </Button>
+                  </DemoRequestModal>
                 </CardContent>
               </Card>
 
               {/* Email */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-7 h-7 text-primary" />
+              <Card className="border-0 shadow-lg h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">
-                        Business Email with AI
-                      </h3>
-                      <p className="text-muted-foreground">
-                        Instant responses to common questions
-                      </p>
+                      <h3 className="text-xl font-bold">Business Email with AI</h3>
+                      <p className="text-sm text-muted-foreground">Instant responses to common questions</p>
                     </div>
                   </div>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Business email</strong> – Get a new professional
-                        email OR connect your existing address
-                      </span>
+                  <ul className="space-y-2 mb-4 flex-1">
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Business email</strong> – New or connect existing</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Smart auto-responses</strong> – AI answers
-                        common questions instantly ("Are you open?" "Pricing?"
-                        "Location?")
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Smart auto-responses</strong> – Hours, pricing, location</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>AI training tools</strong> – Teach AI your
-                        business specifics
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>AI training tools</strong> – Teach your specifics</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Reduce email time by 70%</strong> – AI handles
-                        routine, you handle strategic
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Reduce email time 70%</strong> – AI handles routine</span>
                     </li>
                   </ul>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Lightbulb className="w-4 h-4 text-primary" />
-                        <span className="font-semibold text-sm">
-                          New businesses
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Respond instantly while building your business. Never
-                        lose leads to faster competitors.
-                      </p>
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-1">New businesses</p>
+                      <p className="text-xs text-muted-foreground">Respond instantly, win leads</p>
                     </div>
-                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Lightbulb className="w-4 h-4 text-primary" />
-                        <span className="font-semibold text-sm">
-                          Existing businesses
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Stop spending 2-3 hours daily answering the same 10
-                        questions over and over.
-                      </p>
+                    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-1">Existing businesses</p>
+                      <p className="text-xs text-muted-foreground">Stop repeating same answers</p>
                     </div>
                   </div>
+                  <DemoRequestModal>
+                    <Button size="sm" className="w-full">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Demo
+                    </Button>
+                  </DemoRequestModal>
                 </CardContent>
               </Card>
+            </div>
 
+            {/* Row 2: Messaging & Website Chat */}
+            <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-6">
               {/* Messaging */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MessageSquare className="w-7 h-7 text-primary" />
+              <Card className="border-0 shadow-lg h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MessageSquare className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">
-                        Text, SMS & Social Messaging
-                      </h3>
-                      <p className="text-muted-foreground">
-                        One inbox for all your messages
-                      </p>
+                      <h3 className="text-xl font-bold">Text, SMS & Social</h3>
+                      <p className="text-sm text-muted-foreground">One inbox for all messages</p>
                     </div>
                   </div>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>SMS on business number</strong> – Customers can
-                        text you, AI responds instantly
-                      </span>
+                  <ul className="space-y-2 mb-4 flex-1">
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>SMS on business number</strong> – AI responds instantly</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>WhatsApp Business</strong> – AI handles WhatsApp
-                        conversations
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>WhatsApp Business</strong> – AI handles conversations</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Facebook & Instagram DMs</strong> – One inbox
-                        for all social messages
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Facebook & Instagram DMs</strong> – All in one place</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Multi-channel consistency</strong> – Same AI
-                        knowledge across all platforms
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Multi-channel consistency</strong> – Same AI knowledge</span>
                     </li>
                   </ul>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Lightbulb className="w-4 h-4 text-primary" />
-                        <span className="font-semibold text-sm">
-                          New businesses
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Be reachable everywhere customers are—without juggling 5
-                        apps.
-                      </p>
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-1">New businesses</p>
+                      <p className="text-xs text-muted-foreground">Be everywhere without 5 apps</p>
                     </div>
-                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Lightbulb className="w-4 h-4 text-primary" />
-                        <span className="font-semibold text-sm">
-                          Existing businesses
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Consolidate 5+ messaging platforms into one AI-powered
-                        inbox.
-                      </p>
+                    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-1">Existing businesses</p>
+                      <p className="text-xs text-muted-foreground">Consolidate 5+ platforms</p>
                     </div>
                   </div>
+                  <DemoRequestModal>
+                    <Button size="sm" className="w-full">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Demo
+                    </Button>
+                  </DemoRequestModal>
                 </CardContent>
               </Card>
 
               {/* Website Chat */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Globe className="w-7 h-7 text-primary" />
+              <Card className="border-0 shadow-lg h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Globe className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">Website Chat</h3>
-                      <p className="text-muted-foreground">
-                        Convert more visitors into customers
-                      </p>
+                      <h3 className="text-xl font-bold">Website Chat</h3>
+                      <p className="text-sm text-muted-foreground">Convert more visitors into customers</p>
                     </div>
                   </div>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>AI chat widget</strong> – Install in 5 minutes,
-                        works 24/7
-                      </span>
+                  <ul className="space-y-2 mb-4 flex-1">
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>AI chat widget</strong> – Install in 5 min, works 24/7</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Lead capture & qualification</strong> – AI
-                        collects info and books appointments
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Lead capture</strong> – Collects info, books appointments</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Same business knowledge</strong> – Consistent
-                        answers across phone, email, and chat
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Same knowledge</strong> – Consistent across all channels</span>
                     </li>
                   </ul>
-                  <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Lightbulb className="w-4 h-4 text-primary" />
-                      <span className="font-semibold text-sm">
-                        Why it matters
-                      </span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      71% of customers expect website chat. AI gives you
-                      enterprise-level chat support without hiring staff.
+                  <div className="p-3 bg-primary/5 rounded-lg border border-primary/10 mb-4">
+                    <p className="text-xs text-muted-foreground">
+                      <strong className="text-primary">71% of customers expect chat.</strong> AI gives you enterprise-level support without staff.
                     </p>
                   </div>
+                  <DemoRequestModal>
+                    <Button size="sm" className="w-full">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Demo
+                    </Button>
+                  </DemoRequestModal>
                 </CardContent>
               </Card>
+            </div>
 
+            {/* Row 3: Reviews & Automation */}
+            <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-6">
               {/* Review Management */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Star className="w-7 h-7 text-primary" />
+              <Card className="border-0 shadow-lg h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Star className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">
-                        Review Management
-                      </h3>
-                      <p className="text-muted-foreground">
-                        Build your reputation automatically
-                      </p>
+                      <h3 className="text-xl font-bold">Review Management</h3>
+                      <p className="text-sm text-muted-foreground">Build reputation automatically</p>
                     </div>
                   </div>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Multi-platform monitoring</strong> – AI watches
-                        Google, Yelp, TripAdvisor, Facebook, and more
-                      </span>
+                  <ul className="space-y-2 mb-4 flex-1">
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Multi-platform monitoring</strong> – Google, Yelp, FB & more</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Smart response drafting</strong> – AI drafts
-                        professional responses (you approve)
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Response drafting</strong> – AI drafts, you approve</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Multi-channel review request flows:</strong>
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Review requests</strong> – Email, SMS, phone, website</span>
                     </li>
-                    <ul className="ml-8 space-y-2 text-muted-foreground">
-                      <li>• Email campaigns after job completion</li>
-                      <li>• SMS with one-tap review links</li>
-                      <li>• Phone requests during/after calls</li>
-                      <li>• Website widgets for onsite capture</li>
-                    </ul>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Follow-up sequences</strong> – Automatic
-                        reminders = 3x more reviews
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Reputation dashboard</strong> – All reviews,
-                        ratings, and trends in one place
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Negative review alerts</strong> – Respond
-                        quickly to prevent damage
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Follow-ups</strong> – Auto reminders = 3x more reviews</span>
                     </li>
                   </ul>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Lightbulb className="w-4 h-4 text-primary" />
-                        <span className="font-semibold text-sm">
-                          New businesses
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Build social proof fast without awkward asks. Systematic
-                        approach across all platforms.
-                      </p>
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-1">New businesses</p>
+                      <p className="text-xs text-muted-foreground">Build proof without awkward asks</p>
                     </div>
-                    <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Lightbulb className="w-4 h-4 text-primary" />
-                        <span className="font-semibold text-sm">
-                          Existing businesses
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        300-500% increase in reviews within 3 months. Automated
-                        across all channels.
-                      </p>
+                    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-1">Existing businesses</p>
+                      <p className="text-xs text-muted-foreground">300-500% more reviews in 3 mo</p>
                     </div>
                   </div>
+                  <DemoRequestModal>
+                    <Button size="sm" className="w-full">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Demo
+                    </Button>
+                  </DemoRequestModal>
                 </CardContent>
               </Card>
 
               {/* Smart Routing & Automation */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Bot className="w-7 h-7 text-primary" />
+              <Card className="border-0 shadow-lg h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Bot className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">
-                        Smart Routing & Automation
-                      </h3>
-                      <p className="text-muted-foreground">
-                        AI knows when to handle it and when to escalate
-                      </p>
+                      <h3 className="text-xl font-bold">Smart Routing & Automation</h3>
+                      <p className="text-sm text-muted-foreground">AI handles routine, escalates complex</p>
                     </div>
                   </div>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Intelligent escalation</strong> – AI handles
-                        routine, complex issues come to you with full context
-                      </span>
+                  <ul className="space-y-2 mb-4 flex-1">
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Intelligent escalation</strong> – Full context when needed</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Appointment reminders</strong> – Automatic
-                        confirmations reduce no-shows
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Appointment reminders</strong> – Reduce no-shows</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Payment reminders</strong> – Friendly follow-ups
-                        for overdue invoices
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Payment reminders</strong> – Friendly follow-ups</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>
-                        <strong>Follow-up sequences</strong> – Nurture leads
-                        automatically
-                      </span>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span><strong>Follow-up sequences</strong> – Nurture leads automatically</span>
                     </li>
                   </ul>
+                  <div className="p-3 bg-primary/5 rounded-lg border border-primary/10 mb-4">
+                    <p className="text-xs text-muted-foreground">
+                      <strong className="text-primary">Never drop the ball.</strong> AI ensures every customer gets attention at the right time.
+                    </p>
+                  </div>
+                  <DemoRequestModal>
+                    <Button size="sm" className="w-full">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Demo
+                    </Button>
+                  </DemoRequestModal>
                 </CardContent>
               </Card>
+            </div>
 
-              {/* Admin & Control */}
+            {/* Admin & Control - Full width */}
+            <div className="max-w-6xl mx-auto">
               <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Settings className="w-7 h-7 text-primary" />
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Settings className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">
-                        Admin & Control
-                      </h3>
-                      <p className="text-muted-foreground">
-                        Full visibility and control over your AI
-                      </p>
+                      <h3 className="text-xl font-bold">Admin & Control</h3>
+                      <p className="text-sm text-muted-foreground">Full visibility and control over your AI</p>
                     </div>
                   </div>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span>AI training dashboard</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span>Response approval mode</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span>Team access</span>
-                      </li>
-                    </ul>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span>Analytics dashboard</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span>Privacy & security</span>
-                      </li>
-                    </ul>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                    <div className="flex items-center gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span>AI training dashboard</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span>Response approval mode</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span>Team access</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span>Analytics dashboard</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span>Privacy & security</span>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
