@@ -1503,8 +1503,8 @@ const ConversationAssistant = () => {
               <DemoRequestModal>
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                  variant="secondary"
+                  className="bg-transparent border-2 border-white text-white hover:bg-white/10"
                 >
                   <Calendar className="mr-2 h-4 w-4" />
                   Schedule a Demo
