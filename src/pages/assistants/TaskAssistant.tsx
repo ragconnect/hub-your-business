@@ -36,15 +36,73 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
-import testimonial1 from "@/assets/testimonials/testimonial-mike.jpg";
-import testimonial2 from "@/assets/testimonials/task-testimonial-2.jpg";
-import testimonial3 from "@/assets/testimonials/task-testimonial-3.jpg";
-import testimonial4 from "@/assets/testimonials/testimonial-maria.jpg";
 import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
 import logoCreativeStudio from "@/assets/testimonials/logo-creative-studio.png";
 import logoTechflow from "@/assets/testimonials/logo-techflow.png";
 import logoPeakAccounting from "@/assets/testimonials/logo-peak-accounting.png";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import retailImg from "@/assets/stories/story-retail.jpg";
+import financeImg from "@/assets/stories/story-finance.jpg";
+import hospitalityImg from "@/assets/stories/story-hospitality.jpg";
+import warehouseImg from "@/assets/stories/story-warehouse.jpg";
+
+const taskTestimonials = [
+  {
+    company: "Creative Studio",
+    tags: ["Sales", "Close rate +40%"],
+    image: retailImg,
+    alt: "Sales team in modern office environment",
+    review: {
+      quote: "I used to lose track of client requests during calls. Now my Task Assistant catches everything, and I never miss a follow-up.",
+      name: "Sarah K.",
+      role: "Sales Manager",
+      initials: "SK",
+    },
+    logo: logoCreativeStudio,
+  },
+  {
+    company: "Rapid Plumb",
+    tags: ["Contractor", "Saved project"],
+    image: financeImg,
+    alt: "Contractor reviewing project documentation",
+    review: {
+      quote: "We had a he-said-she-said situation with a client. Pulled up the meeting transcript, found the exact moment we discussed scope.",
+      name: "Mike T.",
+      role: "Contractor",
+      initials: "MT",
+    },
+    logo: logoRapidPlumb,
+  },
+  {
+    company: "Techflow",
+    tags: ["Product", "Saves 10 hrs/week"],
+    image: hospitalityImg,
+    alt: "Product manager reviewing meeting summaries",
+    review: {
+      quote: "Juggling 5 teams, I was spending 10 hours a week writing up meeting notes. Now I spend 10 minutes reviewing AI summaries.",
+      name: "James R.",
+      role: "Product Manager",
+      initials: "JR",
+    },
+    logo: logoTechflow,
+  },
+  {
+    company: "Peak Accounting",
+    tags: ["Customer Success", "Retention +25%"],
+    image: warehouseImg,
+    alt: "Customer success team analyzing conversation data",
+    review: {
+      quote: "Our CS team can finally search all customer conversations. We spot issues before they become problems.",
+      name: "Maria L.",
+      role: "CS Director",
+      initials: "ML",
+    },
+    logo: logoPeakAccounting,
+  },
+];
 
 const teamTypes = [
   {
@@ -339,56 +397,10 @@ const TaskAssistant = () => {
                   <p className="text-sm text-muted-foreground">They manage tasks. Task Assistant manages tasks AND automatically creates them from your meetings.</p>
                 </div>
               </div>
-              <div className="bg-muted/30 rounded-2xl p-6 space-y-4">
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Laptop className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Engineering teams</p>
-                    <p className="text-xs text-muted-foreground">Meeting action items automatically become trackable tasks on your board</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Briefcase className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Sales teams</p>
-                    <p className="text-xs text-muted-foreground">Every prospect commitment becomes a task with priority and due date</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Headphones className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Support teams</p>
-                    <p className="text-xs text-muted-foreground">Customer issues from calls become prioritized tasks instantly</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Feature 2: Auto-Create Tasks from Meetings */}
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-              <div className="order-2 lg:order-1 bg-muted/30 rounded-2xl p-6 space-y-4">
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Laptop className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Engineering teams</p>
-                    <p className="text-xs text-muted-foreground">Standup creates your daily tasks automatically</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Briefcase className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Sales teams</p>
-                    <p className="text-xs text-muted-foreground">Every client commitment becomes a trackable deliverable</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Headphones className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Support teams</p>
-                    <p className="text-xs text-muted-foreground">Customer requests become prioritized tasks instantly</p>
-                  </div>
-                </div>
-              </div>
+            <div className="mb-16">
               <div className="order-1 lg:order-2">
                 <div className="inline-flex items-center gap-2 text-primary mb-4">
                   <Bot className="w-6 h-6" />
@@ -458,57 +470,10 @@ const TaskAssistant = () => {
                   <p className="text-sm text-muted-foreground"><strong className="text-foreground">But here's the thing:</strong> Everyone does meeting transcripts now. What matters is turning those conversations into work that gets done.</p>
                 </div>
               </div>
-              <div className="bg-muted/30 rounded-2xl p-6 space-y-4">
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Briefcase className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Sales managers</p>
-                    <p className="text-xs text-muted-foreground">Track rep performance and sentiment in customer calls</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Users className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Team leads</p>
-                    <p className="text-xs text-muted-foreground">Identify who's dominating conversations and ensure balanced participation</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Headphones className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">HR teams</p>
-                    <p className="text-xs text-muted-foreground">Monitor team morale through sentiment analysis across meetings</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Feature 4: Meeting & Task Archive */}
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div className="order-2 lg:order-1 bg-muted/30 rounded-2xl p-6 space-y-4">
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Headphones className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Customer success</p>
-                    <p className="text-xs text-muted-foreground">Build a knowledge base of every customer conversation</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Users className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Leadership</p>
-                    <p className="text-xs text-muted-foreground">Search across all team meetings to track progress and decisions</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 bg-background rounded-lg p-4 border">
-                  <Briefcase className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-sm">Sales teams</p>
-                    <p className="text-xs text-muted-foreground">Review past prospect calls before follow-up meetings</p>
-                  </div>
-                </div>
-              </div>
-              <div className="order-1 lg:order-2">
+            <div className="mb-16">
                 <div className="inline-flex items-center gap-2 text-primary mb-4">
                   <Archive className="w-6 h-6" />
                   <span className="font-semibold">Meeting & Task Archive</span>
@@ -541,10 +506,8 @@ const TaskAssistant = () => {
                   </li>
                 </ul>
               </div>
-            </div>
           </div>
         </section>
-
         {/* Pricing */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
@@ -786,131 +749,57 @@ const TaskAssistant = () => {
         </section>
 
         {/* Testimonials */}
-        <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              What customers say
-            </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Real results from real teams using Task Assistant
-            </p>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-primary/10">
-                  <img
-                    src={testimonial2}
-                    alt="Sarah K."
-                    className="w-full h-48 object-cover object-top"
-                  />
-                </div>
-                <CardContent className="p-5">
-                  <div className="flex items-start gap-3 mb-3">
-                    <img
-                      src={logoCreativeStudio}
-                      alt="Company"
-                      className="h-10 w-10 object-contain flex-shrink-0"
-                    />
-                    <div>
-                      <h3 className="font-bold">Sarah K.</h3>
-                      <p className="text-xs text-muted-foreground">Sales Manager</p>
-                      <p className="text-sm font-semibold text-primary">
-                        Close rate up 40%
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    "I used to lose track of client requests during calls. Now my Task Assistant catches everything, and I never miss a follow-up."
-                  </p>
-                </CardContent>
-              </Card>
+        <section id="testimonials" aria-labelledby="testimonials-title" className="border-t bg-muted/10">
+          <div className="container py-16 md:py-20">
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 id="testimonials-title" className="text-3xl md:text-4xl font-semibold tracking-tight">What customers say</h2>
+              <p className="mt-2 text-muted-foreground">Real results from real teams using Task Assistant</p>
+            </div>
 
-              <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-green-500/10">
-                  <img
-                    src={testimonial1}
-                    alt="Mike T."
-                    className="w-full h-48 object-cover object-top"
-                  />
+            <div className="mt-8">
+              <Carousel opts={{ align: "start", loop: true }}>
+                <CarouselContent>
+                  {taskTestimonials.map((s) => (
+                    <CarouselItem key={s.company} className="basis-full md:basis-1/2 lg:basis-1/3">
+                      <article className="overflow-hidden rounded-2xl border bg-card shadow-sm">
+                        <AspectRatio ratio={16 / 9}>
+                          <img src={s.image} alt={`${s.company} — ${s.alt}`} className="h-full w-full object-cover" loading="lazy" decoding="async" />
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent" />
+                          <div className="absolute left-4 right-4 top-4">
+                            <span className="text-sm font-semibold tracking-wider text-background/90 bg-foreground/80 px-2 py-1 rounded-md">CASE STUDY</span>
+                          </div>
+                        </AspectRatio>
+                        <div className="p-4">
+                          <div className="flex items-center gap-3 mb-2">
+                            <img src={s.logo} alt={s.company} className="h-8 w-8 object-contain" />
+                            <h3 className="text-xl md:text-2xl font-semibold">{s.company}</h3>
+                          </div>
+                          <div className="mt-2 flex flex-wrap gap-2">
+                            {s.tags.map((t) => (
+                              <span key={t} className="rounded-full bg-muted text-foreground/90 text-xs px-3 py-1">{t}</span>
+                            ))}
+                          </div>
+                          <div className="mt-4 rounded-xl border bg-background p-3">
+                            <p className="text-sm text-foreground/90">"{s.review.quote}"</p>
+                            <div className="mt-2 flex items-center gap-2">
+                              <Avatar className="size-6">
+                                <AvatarFallback className="text-[10px]">{s.review.initials}</AvatarFallback>
+                              </Avatar>
+                              <div className="text-xs text-muted-foreground">
+                                <span className="font-medium text-foreground">{s.review.name}</span> · {s.review.role}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="mt-4 flex items-center justify-end gap-2">
+                  <CarouselPrevious aria-label="Previous story" />
+                  <CarouselNext aria-label="Next story" />
                 </div>
-                <CardContent className="p-5">
-                  <div className="flex items-start gap-3 mb-3">
-                    <img
-                      src={logoRapidPlumb}
-                      alt="Company"
-                      className="h-10 w-10 object-contain flex-shrink-0"
-                    />
-                    <div>
-                      <h3 className="font-bold">Mike T.</h3>
-                      <p className="text-xs text-muted-foreground">Contractor</p>
-                      <p className="text-sm font-semibold text-primary">
-                        Saved the project
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    "We had a he-said-she-said situation with a client. Pulled up the meeting transcript, found the exact moment we discussed scope."
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-amber-500/10">
-                  <img
-                    src={testimonial3}
-                    alt="James R."
-                    className="w-full h-48 object-cover object-top"
-                  />
-                </div>
-                <CardContent className="p-5">
-                  <div className="flex items-start gap-3 mb-3">
-                    <img
-                      src={logoTechflow}
-                      alt="Company"
-                      className="h-10 w-10 object-contain flex-shrink-0"
-                    />
-                    <div>
-                      <h3 className="font-bold">James R.</h3>
-                      <p className="text-xs text-muted-foreground">Product Manager</p>
-                      <p className="text-sm font-semibold text-primary">
-                        Saves 10 hrs/week
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    "Juggling 5 teams, I was spending 10 hours a week writing up meeting notes. Now I spend 10 minutes reviewing AI summaries."
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="overflow-hidden border-0 shadow-lg">
-                <div className="bg-blue-500/10">
-                  <img
-                    src={testimonial4}
-                    alt="Maria L."
-                    className="w-full h-48 object-cover object-top"
-                  />
-                </div>
-                <CardContent className="p-5">
-                  <div className="flex items-start gap-3 mb-3">
-                    <img
-                      src={logoPeakAccounting}
-                      alt="Company"
-                      className="h-10 w-10 object-contain flex-shrink-0"
-                    />
-                    <div>
-                      <h3 className="font-bold">Maria L.</h3>
-                      <p className="text-xs text-muted-foreground">CS Director</p>
-                      <p className="text-sm font-semibold text-primary">
-                        Retention up 25%
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    "Our CS team can finally search all customer conversations. We spot issues before they become problems."
-                  </p>
-                </CardContent>
-              </Card>
+              </Carousel>
             </div>
           </div>
         </section>
