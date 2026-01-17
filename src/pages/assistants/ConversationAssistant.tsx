@@ -1298,25 +1298,42 @@ const ConversationAssistant = () => {
               {/* Right - Text Content */}
               <div className="order-1 lg:order-2">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Our Team Will Become Your Team
+                  Free Personalized Setup—No $2,500 Fee
                 </h2>
                 <p className="text-xl text-muted-foreground mb-4">
-                  We're more than a tool you'll love using. We're people you'll
-                  love working with.
+                  Vapi, Intercom, RingCentral, and other platforms charge upwards of <strong className="text-foreground">$2,500</strong> for full personalized setup across email and phone.
                 </p>
                 <p className="text-lg text-muted-foreground mb-4">
-                  We have a plan to help you succeed.
+                  We believe non-technical business owners deserve AI—without the high cost.
                 </p>
-                <p className="text-muted-foreground mb-8">
-                  And that's to not give up till your AI assistant is running
-                  smoothly. Our customers say working with us is easy. This is
-                  why they stick with us to handle more customer conversations
-                  than ever before.
+                <p className="text-muted-foreground mb-6">
+                  That's why our support engineers will <strong className="text-foreground">demo the product and configure your entire setup for free</strong>. No setup fee. No technical expertise required.
                 </p>
+                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-8">
+                  <p className="text-sm font-medium mb-2">What you get in your free setup session:</p>
+                  <ul className="space-y-1.5 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>30-minute personalized demo with a support engineer</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>Complete configuration of your AI assistant</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>Phone, email, and messaging setup included</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>Training tailored to your business and industry</span>
+                    </li>
+                  </ul>
+                </div>
                 <DemoRequestModal>
                   <Button size="lg">
                     <Calendar className="mr-2 h-4 w-4" />
-                    Schedule a Demo
+                    Schedule Your Free Setup
                   </Button>
                 </DemoRequestModal>
               </div>
