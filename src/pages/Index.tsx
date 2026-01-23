@@ -46,9 +46,6 @@ const Index = () => {
                 <p className="mt-4 text-lg text-muted-foreground">
                   Run your entire business with intelligent AI assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.
                 </p>
-                <p className="mt-3 text-muted-foreground">
-                  Stop juggling multiple tools and paying for expensive staff. RagAdvise gives you a complete suite of AI assistants that work 24/7 to grow your business.
-                </p>
                 <div className="relative z-10 mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
                     <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
