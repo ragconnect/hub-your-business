@@ -1,27 +1,25 @@
 import { Helmet } from "react-helmet-async";
 import heroImage from "@/assets/hero-people-collab.jpg";
 import { Button } from "@/components/ui/button";
-import { Play, Calendar } from "lucide-react";
+import { Play } from "lucide-react";
 
 import Header from "@/components/layout/Header";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import Testimonials from "@/components/marketing/Testimonials";
-import FiveAssistants from "@/components/marketing/FiveAssistants";
-import ComparisonCompact from "@/components/marketing/ComparisonCompact";
+import SixAssistants from "@/components/marketing/SixAssistants";
+import WhyChooseRagAdvise from "@/components/marketing/WhyChooseRagAdvise";
+import HowItWorks from "@/components/marketing/HowItWorks";
+import PricingSection from "@/components/marketing/PricingSection";
 import CTABand from "@/components/marketing/CTABand";
 import FAQ from "@/components/marketing/FAQ";
 import IntegrationsShowcase from "@/components/marketing/IntegrationsShowcase";
-import RoadmapFuture from "@/components/marketing/RoadmapFuture";
-import CustomerFacts from "@/components/marketing/CustomerFacts";
-import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
 import OfferBanner from "@/components/marketing/OfferBanner";
 import VideoModal from "@/components/marketing/VideoModal";
-import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 
 const Index = () => {
   const siteUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : 'https://ragadvise.com/';
-  const title = "RagAdvise — Your AI Business Companion";
-  const description = "Always-on AI that handles calls, meetings, finances, and follow-up for your business in minutes.";
+  const title = "RagAdvise — Your Business, Powered by AI Assistants";
+  const description = "Run your entire business with intelligent AI assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.";
 
   return (
     <>
@@ -43,21 +41,24 @@ const Index = () => {
             <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
               <div>
                 <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-tight">
-                  Hate Spending All Day on Calls, Emails, and Paperwork?
+                  Your Business, Powered by AI Assistants
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Your team of AI assistants handles it all. Answer 50+ calls per day. Reply to 100+ emails instantly. Track 500+ transactions across all your bank accounts—automatically.
+                  Run your entire business with intelligent AI assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.
+                </p>
+                <p className="mt-3 text-muted-foreground">
+                  Stop juggling multiple tools and paying for expensive staff. RagAdvise gives you a complete suite of AI assistants that work 24/7 to grow your business.
                 </p>
                 <div className="relative z-10 mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
-                    <a href="https://my.ragadvise.com/signup">Sign Up – See Value in 20 Minutes</a>
+                    <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
                   </Button>
-                  <DemoRequestModal>
+                  <VideoModal>
                     <Button variant="outline" size="lg" className="bg-background">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule a Demo
+                      <Play className="mr-2 h-4 w-4" />
+                      Watch Demo
                     </Button>
-                  </DemoRequestModal>
+                  </VideoModal>
                 </div>
               </div>
               <VideoModal>
@@ -83,33 +84,29 @@ const Index = () => {
           </div>
         </section>
 
-
         {/* Companies */}
         <LogoMarquee />
 
         {/* Assistants */}
-        <FiveAssistants />
+        <SixAssistants />
 
-        {/* Facts */}
-        <CustomerFacts />
+        {/* Why Choose RagAdvise */}
+        <WhyChooseRagAdvise />
 
         {/* Testimonials */}
         <Testimonials />
 
+        {/* How It Works */}
+        <HowItWorks />
+
         {/* Integrations */}
         <IntegrationsShowcase />
 
-        {/* Who is this for */}
-        <WhoIsThisFor />
-
-        {/* Compact Comparison */}
-        <ComparisonCompact />
+        {/* Pricing */}
+        <PricingSection />
 
         {/* CTA Band */}
         <CTABand />
-
-        {/* Roadmap */}
-        <RoadmapFuture />
 
         {/* FAQ */}
         <FAQ />
