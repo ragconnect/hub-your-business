@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import heroImage from "@/assets/hero-people-collab.jpg";
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { Play, Calendar } from "lucide-react";
 
 import Header from "@/components/layout/Header";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
@@ -15,6 +15,7 @@ import FAQ from "@/components/marketing/FAQ";
 import IntegrationsShowcase from "@/components/marketing/IntegrationsShowcase";
 import OfferBanner from "@/components/marketing/OfferBanner";
 import VideoModal from "@/components/marketing/VideoModal";
+import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 
 const Index = () => {
   const siteUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : 'https://ragadvise.com/';
@@ -50,12 +51,12 @@ const Index = () => {
                   <Button size="lg" asChild>
                     <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
                   </Button>
-                  <VideoModal>
+                  <DemoRequestModal>
                     <Button variant="outline" size="lg" className="bg-background">
-                      <Play className="mr-2 h-4 w-4" />
-                      Watch Demo
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Free Setup
                     </Button>
-                  </VideoModal>
+                  </DemoRequestModal>
                 </div>
               </div>
               <VideoModal>
