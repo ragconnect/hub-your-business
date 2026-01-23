@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/layout/Header";
+import OfferBanner from "@/components/marketing/OfferBanner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -225,6 +226,7 @@ const TaskAssistant = () => {
         <link rel="canonical" href={siteUrl} />
       </Helmet>
 
+      <OfferBanner />
       <Header />
 
       <main>
