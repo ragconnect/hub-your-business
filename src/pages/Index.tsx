@@ -54,7 +54,7 @@ const Index = () => {
                   <DemoRequestModal>
                     <Button variant="outline" size="lg" className="bg-background">
                       <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Free Setup
+                      Schedule Demo or Free Setup
                     </Button>
                   </DemoRequestModal>
                 </div>
