@@ -54,7 +54,7 @@ const assistants = [
       "Track progress and quiz comprehension",
       "Integrate with your existing tools",
     ],
-    link: null,
+    link: "/assistants/training",
   },
   {
     key: "customer",
@@ -67,7 +67,7 @@ const assistants = [
       "Smart follow-ups and relationship tracking",
       "Integrates with HubSpot and Salesforce",
     ],
-    link: null,
+    link: "/assistants/customer",
   },
   {
     key: "site",

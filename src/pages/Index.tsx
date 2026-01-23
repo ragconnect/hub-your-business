@@ -91,9 +91,6 @@ const Index = () => {
         {/* Why Choose RagAdvise */}
         <WhyChooseRagAdvise />
 
-        {/* Testimonials */}
-        <Testimonials />
-
         {/* How It Works */}
         <HowItWorks />
 
@@ -102,6 +99,9 @@ const Index = () => {
 
         {/* Pricing */}
         <PricingSection />
+
+        {/* Testimonials */}
+        <Testimonials />
 
         {/* CTA Band */}
         <CTABand />
