@@ -242,10 +242,10 @@ const TaskAssistant = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight">
-                  Get a project management system that captures work from meetings—not just transcripts.
+                  Keep your jobs on track—without the stress.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Stop using Jira for tasks and Otter for meetings. Task Assistant manages your work AND captures commitments from conversations automatically.
+                  With a personalized AI assistant for tasks, deadlines, and follow-ups. Ensure every task, deadline, and promise is automatically organized for your team—so work gets done and customers stay happy. Turn meetings into action items automatically—so your team always knows what to do next.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start text-sm">
                   <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
@@ -254,8 +254,21 @@ const TaskAssistant = () => {
                   </span>
                   <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
                     <Video className="w-4 h-4" />
-                    Plus auto-create tasks from meetings
+                    Plus auto-create tasks from meetings, unlike any other Project tool
                   </span>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start text-sm text-muted-foreground">
+                  <span>📝 Tasks</span>
+                  <span>•</span>
+                  <span>📋 Kanban board</span>
+                  <span>•</span>
+                  <span>✅ Action items from meetings</span>
+                  <span>•</span>
+                  <span>👥 Assign owners</span>
+                  <span>•</span>
+                  <span>⏰ Due dates</span>
+                  <span>•</span>
+                  <span>🚨 Priorities</span>
                 </div>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button size="lg" asChild>
