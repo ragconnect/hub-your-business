@@ -551,7 +551,7 @@ const SiteAssistant = () => {
               The Site Assistant is powerful alone, but transformative when connected to our full suite.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <Card>
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/conversation'}>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
@@ -560,9 +560,10 @@ const SiteAssistant = () => {
                     <h3 className="font-semibold">Conversation Assistant</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">Captures revenue opportunities and customer requests across channels.</p>
+                  <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/task'}>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
@@ -571,9 +572,10 @@ const SiteAssistant = () => {
                     <h3 className="font-semibold">Task Assistant</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">Turns website leads into action: follow-ups, assignments, deadlines.</p>
+                  <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/customer'}>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
@@ -582,9 +584,10 @@ const SiteAssistant = () => {
                     <h3 className="font-semibold">Customer Assistant</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">Shows who pays, who churns, and which customers are most profitable.</p>
+                  <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/training'}>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
@@ -593,6 +596,7 @@ const SiteAssistant = () => {
                     <h3 className="font-semibold">Training Assistant</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">Keeps site content workflows consistent with clear SOPs and policies.</p>
+                  <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
                 </CardContent>
               </Card>
               <Card className="border-primary bg-primary/5">
@@ -606,7 +610,7 @@ const SiteAssistant = () => {
                   <p className="text-sm text-muted-foreground">You're here. Captures leads and ties spend to conversion so marketing is measurable.</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/money'}>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
@@ -615,6 +619,7 @@ const SiteAssistant = () => {
                     <h3 className="font-semibold">Money Assistant</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">The source of truth for business performance and financial health.</p>
+                  <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
                 </CardContent>
               </Card>
             </div>
