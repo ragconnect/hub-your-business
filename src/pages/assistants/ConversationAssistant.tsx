@@ -39,6 +39,10 @@ import {
   Bell,
   CreditCard,
   Lightbulb,
+  Compass,
+  ListChecks,
+  BookOpen,
+  Globe as GlobeIcon,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
 import testimonialMaria from "@/assets/testimonials/testimonial-maria.jpg";
@@ -277,6 +281,21 @@ const ConversationAssistant = () => {
                   </form>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* GPS Callout */}
+        <section className="py-8 border-y bg-muted/30">
+          <div className="container">
+            <div className="flex items-start gap-4 max-w-3xl mx-auto">
+              <Compass className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-lg">RagAdvise is your GPS for business.</p>
+                <p className="text-muted-foreground mt-1">
+                  You're looking at the Conversation Assistant, but it's built to work as part of a connected suite of assistants. If you like this, you'll love how the whole system runs your business end-to-end.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -1280,6 +1299,84 @@ const ConversationAssistant = () => {
                   Schedule a Demo
                 </Button>
               </DemoRequestModal>
+            </div>
+          </div>
+        </section>
+
+        {/* Works Better as a Suite */}
+        <section className="py-16 md:py-24">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Works better as a suite</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              The Conversation Assistant is powerful alone, but transformative when connected to our full suite.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <Card className="border-primary bg-primary/5">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-primary-foreground">
+                      <MessageSquare className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-semibold">Conversation Assistant</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">You're here. It captures revenue opportunities and customer requests across channels.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
+                      <ListChecks className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-semibold">Task Assistant</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Turns communication to-dos into action: follow-ups, assignments, deadlines.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
+                      <Users className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-semibold">Customer Assistant</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Shows who pays, who churns, and which customers are most profitable.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
+                      <BookOpen className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-semibold">Training Assistant</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Keeps communication workflows consistent with clear SOPs and policies.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
+                      <GlobeIcon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-semibold">Site Assistant</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Captures leads and ties spend to conversion so marketing is measurable.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
+                      <DollarSign className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-semibold">Money Assistant</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">The source of truth for business performance and financial health.</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
