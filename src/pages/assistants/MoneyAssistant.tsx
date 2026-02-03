@@ -138,11 +138,11 @@ const features = [
 ];
 
 const suiteAssistants = [
-  { icon: MessageSquare, name: "Conversation Assistant", desc: "Captures revenue opportunities and customer requests across channels." },
-  { icon: ListChecks, name: "Task Assistant", desc: "Turns financial to-dos into action: invoices, follow-ups, renewals." },
-  { icon: Users, name: "Customer Assistant", desc: "Shows who pays, who churns, and which customers are most profitable." },
-  { icon: BookOpen, name: "Training Assistant", desc: "Keeps finance workflows consistent with clear SOPs and policies." },
-  { icon: Globe, name: "Site Assistant", desc: "Captures leads and ties spend to conversion so marketing is measurable." },
+  { icon: MessageSquare, name: "Conversation Assistant", desc: "Captures revenue opportunities and customer requests across channels.", link: "/assistants/conversation" },
+  { icon: ListChecks, name: "Task Assistant", desc: "Turns financial to-dos into action: invoices, follow-ups, renewals.", link: "/assistants/task" },
+  { icon: Users, name: "Customer Assistant", desc: "Shows who pays, who churns, and which customers are most profitable.", link: "/assistants/customer" },
+  { icon: BookOpen, name: "Training Assistant", desc: "Keeps finance workflows consistent with clear SOPs and policies.", link: "/assistants/training" },
+  { icon: Globe, name: "Site Assistant", desc: "Captures leads and ties spend to conversion so marketing is measurable.", link: "/assistants/site" },
   { icon: DollarSign, name: "Money Assistant", desc: "You're here. It's the source of truth for business performance.", highlight: true },
 ];
 
@@ -467,7 +467,11 @@ const MoneyAssistant = () => {
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {suiteAssistants.map((assistant) => (
-                <Card key={assistant.name} className={assistant.highlight ? "border-primary bg-primary/5" : ""}>
+                <Card 
+                  key={assistant.name} 
+                  className={`${assistant.highlight ? "border-primary bg-primary/5" : ""} ${assistant.link ? "hover:shadow-lg transition-shadow cursor-pointer" : ""}`}
+                  onClick={() => assistant.link && (window.location.href = assistant.link)}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-3">
                       <div className={`w-10 h-10 rounded-full flex items-center justify-center ${assistant.highlight ? "bg-primary text-primary-foreground" : "bg-muted"}`}>
@@ -476,6 +480,9 @@ const MoneyAssistant = () => {
                       <h3 className="font-semibold">{assistant.name}</h3>
                     </div>
                     <p className="text-sm text-muted-foreground">{assistant.desc}</p>
+                    {assistant.link && (
+                      <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
+                    )}
                   </CardContent>
                 </Card>
               ))}
