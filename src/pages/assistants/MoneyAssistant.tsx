@@ -678,7 +678,7 @@ const MoneyAssistant = () => {
                 <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
               </Button>
               <DemoRequestModal>
-                <Button size="lg" variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+                <Button size="lg" variant="ghost" className="border-2 border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
                   <Calendar className="mr-2 h-4 w-4" />
                   Schedule Demo
                 </Button>
