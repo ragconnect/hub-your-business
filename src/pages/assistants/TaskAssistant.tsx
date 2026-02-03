@@ -245,16 +245,12 @@ const TaskAssistant = () => {
                   Keep your jobs on track—without the stress.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  With a personalized AI assistant for tasks, deadlines, and follow-ups. Ensure every task, deadline, and promise is automatically organized for your team—so work gets done and customers stay happy. Turn meetings into action items automatically—so your team always knows what to do next.
+                  With a personalized AI assistant for tasks, deadlines, and follow-ups. Ensure work gets done and customers stay happy with your team.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start text-sm">
                   <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
-                    <Check className="w-4 h-4" />
-                    Manage projects like Jira, Monday, or Asana
-                  </span>
-                  <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
                     <Video className="w-4 h-4" />
-                    Plus auto-create tasks from meetings, unlike any other Project tool
+                    Auto-create tasks from meetings, unlike any other Project tool
                   </span>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start text-sm text-muted-foreground">
