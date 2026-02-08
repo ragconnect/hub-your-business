@@ -299,7 +299,7 @@ const MoneyAssistant = () => {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
-                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight">
+                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
                   Get an AI assistant that tracks every dollar, organizes your finances, and keeps your books ready for tax time.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
