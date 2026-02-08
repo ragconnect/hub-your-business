@@ -254,13 +254,21 @@ const SiteAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Let Your Website Do the Talking—Site Assistant Converts
-                  Visitors With Voice
+                  Create an AI Voice To Engage Your Website Traffic: Support and Convert 3x More Visitors
                 </h1>
-                <p className="mt-6 text-xl text-muted-foreground">
-                  Voice-first assistant that captures leads while you sleep.
-                  Because talking is 3x faster than typing—and feels more human.
+                <p className="mt-6 text-lg text-muted-foreground">
+                  Support visitors with real conversations, not intrusive popups.
                 </p>
+                <p className="mt-3 text-base text-muted-foreground">
+                  Get a voice-enabled site assistant that:
+                </p>
+                <div className="mt-3 flex flex-wrap gap-3 justify-center lg:justify-start text-sm font-medium text-foreground">
+                  <span>💬 Answers questions</span>
+                  <span>🎯 Qualifies visitors</span>
+                  <span>✉️ Captures leads</span>
+                  <span>📅 Drives bookings/callbacks</span>
+                  <span>🧾 Creates support requests</span>
+                </div>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button size="lg" asChild>
                     <a href="https://my.ragadvise.com/signup">Get Started Free</a>
