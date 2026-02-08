@@ -251,7 +251,8 @@ const SiteAssistant = () => {
               <div className="text-center lg:text-left">
                 <h1
                   id="hero-title"
-                  className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight"
+                  className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
+                  style={{ fontFamily: "'Caprasimo', serif" }}
                 >
                   Let Your Website Do the Talking—Site Assistant Converts
                   Visitors With Voice

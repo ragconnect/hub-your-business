@@ -241,7 +241,7 @@ const TaskAssistant = () => {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
-                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight">
+                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
                   Keep your jobs on track—without the stress.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">

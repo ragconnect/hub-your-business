@@ -177,7 +177,8 @@ const ConversationAssistant = () => {
               <div className="text-center lg:text-left">
                 <h1
                   id="hero-title"
-                  className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight"
+                  className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
+                  style={{ fontFamily: "'Caprasimo', serif" }}
                 >
                   Get an AI assistant that handles all customer communication
                   for your business.
