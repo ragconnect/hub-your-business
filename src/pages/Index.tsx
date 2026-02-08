@@ -40,14 +40,14 @@ const Index = () => {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_80%_20%,hsl(var(--primary)/0.15),transparent_60%)]" />
           <div className="container">
             <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
-              <div>
+              <div className="text-center md:text-left">
                 <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
                    Your Business, Powered by AI Business Assistants
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
                   Run your entire business with AI Business assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.
                 </p>
-                <div className="relative z-10 mt-6 flex flex-col sm:flex-row gap-3">
+                <div className="relative z-10 mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                   <Button size="lg" asChild>
                     <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
                   </Button>
