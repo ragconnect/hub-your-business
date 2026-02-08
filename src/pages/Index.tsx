@@ -41,8 +41,8 @@ const Index = () => {
           <div className="container">
             <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
               <div>
-                <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-tight">
-                  Your Business, Powered by AI Business Assistants
+                <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-tight" style={{ fontFamily: "'Caprasimo', serif" }}>
+                   Your Business, Powered by AI Business Assistants
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
                   Run your entire business with AI Business assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.
