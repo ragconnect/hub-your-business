@@ -41,7 +41,7 @@ const Index = () => {
           <div className="container">
             <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
               <div>
-                <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-tight text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
+                <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
                    Your Business, Powered by AI Business Assistants
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
