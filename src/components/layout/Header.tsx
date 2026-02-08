@@ -43,7 +43,7 @@ const Header = () => {
     <header className="w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative z-50">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="RagAdvise Logo" className="h-44 -my-14" />
+          <img src={logo} alt="RagAdvise Logo" className="h-44 -my-14 mix-blend-multiply" />
         </Link>
 
         {/* Desktop Navigation */}
