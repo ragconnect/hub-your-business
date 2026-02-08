@@ -45,7 +45,7 @@ const Index = () => {
                   Your Business, Powered by AI Assistants
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Run your entire business with intelligent AI assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.
+                  Run your entire business with AI Business assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.
                 </p>
                 <div className="relative z-10 mt-6 flex flex-col sm:flex-row gap-3">
                   <Button size="lg" asChild>
