@@ -18,7 +18,7 @@ const benefits = [
     icon: Zap,
     emoji: "⚡",
     title: "Works 24/7",
-    desc: "Your AI assistants never sleep, never take breaks, and handle unlimited work simultaneously.",
+    desc: "Your AI business assistants never sleep, never take breaks, and handle unlimited work simultaneously.",
   },
   {
     icon: Link2,
