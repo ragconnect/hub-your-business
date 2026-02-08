@@ -24,7 +24,7 @@ const steps = [
     icon: Rocket,
     number: "4",
     title: "Go Live",
-    desc: "Your AI assistants start working immediately, handling customer inquiries, managing tasks, and running your operations.",
+    desc: "Your AI business assistants start working immediately, handling customer inquiries, managing tasks, and running your operations.",
   },
 ] as const;
 

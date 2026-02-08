@@ -89,12 +89,12 @@ const SixAssistants: React.FC = () => {
     <section id="assistants" aria-labelledby="assistants-title" className="border-t bg-muted/10">
       <div className="container py-16 md:py-20">
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-sm font-medium text-primary/80 tracking-wide">Complete AI Suite</p>
+          <p className="text-sm font-medium text-primary/80 tracking-wide">Complete AI Business Suite</p>
           <h2 id="assistants-title" className="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">
             The Complete AI Business Assistant Suite
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Stop juggling multiple tools and paying for expensive staff. RagAdvise gives you a complete suite of AI assistants that work 24/7 to grow your business.
+            Stop juggling multiple tools and paying for expensive staff. RagAdvise gives you a complete suite of AI business assistants that work 24/7 to grow your business.
           </p>
         </div>
 
