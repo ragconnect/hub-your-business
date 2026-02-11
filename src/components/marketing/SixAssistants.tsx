@@ -73,7 +73,7 @@ const assistants = [
     key: "site",
     icon: Globe,
     emoji: "🌐",
-    title: "Site Assistant",
+    title: "Website Voice",
     subtitle: "Interactive AI avatars for your website",
     features: [
       "Engage visitors with voice-enabled AI",

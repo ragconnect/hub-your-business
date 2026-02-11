@@ -873,7 +873,7 @@ const TaskAssistant = () => {
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
                       <GlobeIcon className="w-5 h-5" />
                     </div>
-                    <h3 className="font-semibold">Site Assistant</h3>
+                    <h3 className="font-semibold">Website Voice</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">Captures leads and ties spend to conversion so marketing is measurable.</p>
                   <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
