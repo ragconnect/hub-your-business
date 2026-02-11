@@ -41,6 +41,7 @@ import {
   Users,
 } from "lucide-react";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
+import googleLogo from "@/assets/logos/google.png";
 
 const oldWayProblems = [
   {
@@ -269,14 +270,17 @@ const SiteAssistant = () => {
                   <span>📅 Drives bookings/callbacks</span>
                   <span>🧾 Creates support requests</span>
                 </div>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button size="lg" asChild>
-                    <a href="https://my.ragadvise.com/signup">Get Started Free</a>
+                <div className="mt-8 flex flex-col gap-3 justify-center lg:justify-start max-w-md mx-auto lg:mx-0">
+                  <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                    <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                      <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                      Sign up with Google or email
+                    </a>
                   </Button>
                   <DemoRequestModal>
-                    <Button variant="outline" size="lg" className="bg-background">
+                    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
                       <Calendar className="mr-2 h-4 w-4" />
-                      Watch Demo
+                      Schedule Demo & Free Setup
                     </Button>
                   </DemoRequestModal>
                 </div>
@@ -668,12 +672,14 @@ const SiteAssistant = () => {
                Stop losing 80% of your website visitors. Give them Website
                Voice.
             </p>
-            <Button size="lg" asChild>
-              <a href="https://my.ragadvise.com/signup">
-                <Zap className="mr-2 h-4 w-4" />
-                Get Started Free
-              </a>
-            </Button>
+            <div className="flex flex-col gap-3 justify-center max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google or email
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -708,14 +714,17 @@ const SiteAssistant = () => {
               Start converting more visitors in 30 seconds. No credit card
               required.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <a href="https://my.ragadvise.com/signup">Get Started Free</a>
+            <div className="flex flex-col gap-3 justify-center max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google or email
+                </a>
               </Button>
               <DemoRequestModal>
-                <Button variant="outline" size="lg" className="bg-background">
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
                   <Calendar className="mr-2 h-4 w-4" />
-                  Schedule Demo
+                  Schedule Demo & Free Setup
                 </Button>
               </DemoRequestModal>
             </div>

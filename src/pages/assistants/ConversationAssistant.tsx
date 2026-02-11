@@ -45,6 +45,7 @@ import {
   Globe as GlobeIcon,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
+import googleLogo from "@/assets/logos/google.png";
 import testimonialMaria from "@/assets/testimonials/testimonial-maria.jpg";
 import testimonialMike from "@/assets/testimonials/testimonial-mike.jpg";
 import testimonialJames from "@/assets/testimonials/testimonial-james.jpg";
@@ -207,21 +208,17 @@ const ConversationAssistant = () => {
                     <Star className="w-4 h-4" /> Reviews
                   </span>
                 </div>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="bg-background"
-                    asChild
-                  >
-                    <a href="https://my.ragadvise.com/signup">
-                      Start Free Trial
+                <div className="mt-8 flex flex-col gap-3 justify-center lg:justify-start max-w-md mx-auto lg:mx-0">
+                  <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                    <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                      <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                      Sign up with Google or email
                     </a>
                   </Button>
                   <DemoRequestModal>
-                    <Button size="lg">
+                    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
                       <Calendar className="mr-2 h-4 w-4" />
-                      Schedule a Demo
+                      Schedule Demo & Free Setup
                     </Button>
                   </DemoRequestModal>
                 </div>
@@ -1477,18 +1474,17 @@ const ConversationAssistant = () => {
               See how RagAdvise Conversation Assistant handles your actual
               customer calls, emails, and messages across all channels.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild>
-                <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+            <div className="mt-8 flex flex-col gap-3 justify-center max-w-md mx-auto">
+              <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google or email
+                </a>
               </Button>
               <DemoRequestModal>
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="bg-transparent border-2 border-white text-white hover:bg-white/10"
-                >
+                <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg bg-transparent border-2 border-white text-white hover:bg-white/10">
                   <Calendar className="mr-2 h-4 w-4" />
-                  Schedule a Demo
+                  Schedule Demo & Free Setup
                 </Button>
               </DemoRequestModal>
             </div>

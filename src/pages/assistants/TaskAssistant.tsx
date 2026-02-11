@@ -42,6 +42,7 @@ import {
   Globe as GlobeIcon,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
+import googleLogo from "@/assets/logos/google.png";
 import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
 import logoCreativeStudio from "@/assets/testimonials/logo-creative-studio.png";
 import logoTechflow from "@/assets/testimonials/logo-techflow.png";
@@ -266,14 +267,17 @@ const TaskAssistant = () => {
                   <span>•</span>
                   <span>🚨 Priorities</span>
                 </div>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button size="lg" asChild>
-                    <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                <div className="mt-8 flex flex-col gap-3 justify-center lg:justify-start max-w-md mx-auto lg:mx-0">
+                  <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                    <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                      <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                      Sign up with Google or email
+                    </a>
                   </Button>
                   <DemoRequestModal>
-                    <Button variant="outline" size="lg" className="bg-background">
+                    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
                       <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo
+                      Schedule Demo & Free Setup
                     </Button>
                   </DemoRequestModal>
                 </div>
@@ -534,14 +538,17 @@ const TaskAssistant = () => {
             </div>
 
             <div className="text-center">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" asChild>
-                  <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+              <div className="flex flex-col gap-3 justify-center max-w-md mx-auto">
+                <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                    <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                    Sign up with Google or email
+                  </a>
                 </Button>
                 <DemoRequestModal>
-                  <Button variant="outline" size="lg" className="bg-background">
+                  <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
                     <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Demo
+                    Schedule Demo & Free Setup
                   </Button>
                 </DemoRequestModal>
               </div>
@@ -978,14 +985,17 @@ const TaskAssistant = () => {
             <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
               7-day free trial with full access to all features. Record meetings and see the magic yourself.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild>
-                <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+            <div className="flex flex-col gap-3 justify-center max-w-md mx-auto">
+              <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google or email
+                </a>
               </Button>
               <DemoRequestModal>
-                <Button size="lg" variant="outline" className="border-2 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
+                <Button size="lg" variant="outline" className="w-full h-14 text-base font-semibold rounded-lg border-2 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
                   <Calendar className="mr-2 h-4 w-4" />
-                  Schedule Demo
+                  Schedule Demo & Free Setup
                 </Button>
               </DemoRequestModal>
             </div>
