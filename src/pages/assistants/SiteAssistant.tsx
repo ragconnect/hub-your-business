@@ -69,17 +69,17 @@ const newWaySolutions = [
   {
     icon: Bot,
     title: "Your website talks to visitors instantly",
-    desc: "Site Assistant appears. Visitor says what they need—by voice or chat. AI understands and responds in 3 seconds.",
+    desc: "Website Voice appears. Visitor says what they need—by voice or chat. AI understands and responds in 3 seconds.",
   },
   {
     icon: Mic,
     title: "Voice makes it personal and fast",
-    desc: 'Customer presses "Talk" and speaks: "I need a plumber for a leak, how soon can you come?" Site Assistant books them right there. 3x faster than typing.',
+    desc: 'Customer presses "Talk" and speaks: "I need a plumber for a leak, how soon can you come?" Website Voice books them right there. 3x faster than typing.',
   },
   {
     icon: Calendar,
     title: "Get instant appointments and orders",
-    desc: "Site Assistant captures their problem, recommends your top 3 solutions, shows pricing, and books them—all on screen in 30 seconds.",
+    desc: "Website Voice captures their problem, recommends your top 3 solutions, shows pricing, and books them—all on screen in 30 seconds.",
   },
   {
     icon: Video,
@@ -89,7 +89,7 @@ const newWaySolutions = [
   {
     icon: Moon,
     title: "Works 24/7, even at 2am",
-    desc: "Website visitor in the middle of the night? Site Assistant captures them, qualifies them, books them. You wake up to new customers.",
+    desc: "Website visitor in the middle of the night? Website Voice captures them, qualifies them, books them. You wake up to new customers.",
   },
 ];
 
@@ -98,37 +98,37 @@ const industries = [
     icon: Wrench,
     title: "For Plumbers & Home Services",
     example: '"My water heater broke, how much to fix it?"',
-    result: "→ Site Assistant diagnoses, quotes, and books same-day service",
+    result: "→ Website Voice diagnoses, quotes, and books same-day service",
   },
   {
     icon: UtensilsCrossed,
     title: "For Restaurants",
     example: '"Table for 4 tonight at 7pm?"',
-    result: "→ Site Assistant checks availability, books it, sends confirmation on screen",
+    result: "→ Website Voice checks availability, books it, sends confirmation on screen",
   },
   {
     icon: Home,
     title: "For Realtors",
     example: '"Looking for 3-bedroom homes near good schools"',
-    result: "→ Site Assistant shows listings, books tour, emails video walkthrough",
+    result: "→ Website Voice shows listings, books tour, emails video walkthrough",
   },
   {
     icon: Car,
     title: "For Car Dealers",
     example: '"Need an SUV under $40k"',
-    result: "→ Site Assistant recommends 3 vehicles, schedules test drives, explains financing",
+    result: "→ Website Voice recommends 3 vehicles, schedules test drives, explains financing",
   },
   {
     icon: ShoppingBag,
     title: "For Online Stores",
     example: '"Looking for running shoes for wide feet"',
-    result: "→ Site Assistant shows products, builds cart, offers discount code",
+    result: "→ Website Voice shows products, builds cart, offers discount code",
   },
   {
     icon: Heart,
     title: "For Nonprofits",
     example: '"Want to help with youth programs"',
-    result: "→ Site Assistant explains campaigns, processes donation, sends impact video",
+    result: "→ Website Voice explains campaigns, processes donation, sends impact video",
   },
 ];
 
@@ -143,7 +143,7 @@ const faqs = [
   },
   {
     q: "Do I need special tech?",
-    a: "Nope. Site Assistant works on any website—WordPress, Shopify, custom sites, anything.",
+    a: "Nope. Website Voice works on any website—WordPress, Shopify, custom sites, anything.",
   },
   {
     q: "What if the AI doesn't know something?",
@@ -174,7 +174,7 @@ const SiteAssistant = () => {
       ? `${window.location.origin}/assistants/site`
       : "https://ragadvise.com/assistants/site";
   const title =
-    "Site Assistant — Voice-First AI That Converts Website Visitors 24/7 | RagAdvise";
+    "Website Voice — Voice-First AI That Converts Website Visitors 24/7 | RagAdvise";
   const description =
     "Turn your website into a 24/7 sales machine. Voice-first AI assistant that captures leads, books appointments, and converts visitors while you sleep.";
 
@@ -260,7 +260,7 @@ const SiteAssistant = () => {
                   Support visitors with real conversations, not intrusive popups.
                 </p>
                 <p className="mt-3 text-base text-muted-foreground">
-                  Get a voice-enabled site assistant that:
+                  Get a voice-enabled website voice that:
                 </p>
                 <div className="mt-3 flex flex-wrap gap-3 justify-center lg:justify-start text-sm font-medium text-foreground">
                   <span>💬 Answers questions</span>
@@ -348,7 +348,7 @@ const SiteAssistant = () => {
               <div>
                 <p className="font-semibold text-lg">RagAdvise is your GPS for business.</p>
                 <p className="text-muted-foreground mt-1">
-                  You're looking at the Site Assistant, but it's built to work as part of a connected suite of assistants. If you like this, you'll love how the whole system runs your business end-to-end.
+                  You're looking at Website Voice, but it's built to work as part of a connected suite of assistants. If you like this, you'll love how the whole system runs your business end-to-end.
                 </p>
               </div>
             </div>
@@ -416,7 +416,7 @@ const SiteAssistant = () => {
                 <span className="text-lg font-semibold">The New Way</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold">
-                What Site Assistant Does For You
+                What Website Voice Does For You
               </h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -460,7 +460,7 @@ const SiteAssistant = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Add Site Assistant In 30 Seconds
+              Add Website Voice In 30 Seconds
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -499,7 +499,7 @@ const SiteAssistant = () => {
                     Start converting visitors
                   </h3>
                   <p className="text-muted-foreground">
-                    Site Assistant greets visitors, answers questions, and books
+                    Website Voice greets visitors, answers questions, and books
                     them—24/7.
                   </p>
                 </CardContent>
@@ -525,7 +525,7 @@ const SiteAssistant = () => {
                 💼 Works For Every Business
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                See how Site Assistant handles real conversations in different
+                See how Website Voice handles real conversations in different
                 industries.
               </p>
             </div>
@@ -557,7 +557,7 @@ const SiteAssistant = () => {
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Works better as a suite</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              The Site Assistant is powerful alone, but transformative when connected to our full suite.
+              Website Voice is powerful alone, but transformative when connected to our full suite.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/conversation'}>
@@ -614,7 +614,7 @@ const SiteAssistant = () => {
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-primary-foreground">
                       <Globe className="w-5 h-5" />
                     </div>
-                    <h3 className="font-semibold">Site Assistant</h3>
+                    <h3 className="font-semibold">Website Voice</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">You're here. Captures leads and ties spend to conversion so marketing is measurable.</p>
                 </CardContent>
@@ -665,8 +665,8 @@ const SiteAssistant = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Most websites are silent. <strong>Yours can talk.</strong>
               <br />
-              Stop losing 80% of your website visitors. Give them Site
-              Assistant.
+               Stop losing 80% of your website visitors. Give them Website
+               Voice.
             </p>
             <Button size="lg" asChild>
               <a href="https://my.ragadvise.com/signup">
@@ -702,7 +702,7 @@ const SiteAssistant = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              🚀 Add Site Assistant To Your Website Today
+              🚀 Add Website Voice To Your Website Today
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
               Start converting more visitors in 30 seconds. No credit card

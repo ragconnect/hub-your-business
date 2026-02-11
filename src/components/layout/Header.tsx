@@ -30,7 +30,7 @@ const assistants = [
     description: "Track expenses, send invoices, and manage payments.",
   },
   {
-    title: "Site Assistant",
+    title: "Website Voice",
     href: "/assistants/site",
     description: "Voice-first AI that converts website visitors 24/7.",
   },

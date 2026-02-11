@@ -142,7 +142,7 @@ const suiteAssistants = [
   { icon: ListChecks, name: "Task Assistant", desc: "Turns financial to-dos into action: invoices, follow-ups, renewals.", link: "/assistants/task" },
   { icon: Users, name: "Customer Assistant", desc: "Shows who pays, who churns, and which customers are most profitable.", link: "/assistants/customer" },
   { icon: BookOpen, name: "Training Assistant", desc: "Keeps finance workflows consistent with clear SOPs and policies.", link: "/assistants/training" },
-  { icon: Globe, name: "Site Assistant", desc: "Captures leads and ties spend to conversion so marketing is measurable.", link: "/assistants/site" },
+  { icon: Globe, name: "Website Voice", desc: "Captures leads and ties spend to conversion so marketing is measurable.", link: "/assistants/site" },
   { icon: DollarSign, name: "Money Assistant", desc: "You're here. It's the source of truth for business performance.", highlight: true },
 ];
 
