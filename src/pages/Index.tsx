@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import heroImage from "@/assets/hero-people-collab.jpg";
+import googleLogo from "@/assets/logos/google.png";
 import { Button } from "@/components/ui/button";
 import { Play, Calendar } from "lucide-react";
 
@@ -47,16 +48,28 @@ const Index = () => {
                 <p className="mt-4 text-lg text-muted-foreground">
                   Run your entire business with AI Business assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.
                 </p>
-                <div className="relative z-10 mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                  <Button size="lg" asChild>
-                    <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                <div className="relative z-10 mt-6 flex flex-col gap-3 justify-center md:justify-start max-w-md mx-auto md:mx-0">
+                  <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                    <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                      <img src={googleLogo} alt="" className="w-6 h-6 bg-white rounded-full p-0.5" />
+                      Sign up with Google
+                    </a>
                   </Button>
                   <DemoRequestModal>
-                    <Button variant="outline" size="lg" className="bg-background">
+                    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
                       <Calendar className="mr-2 h-4 w-4" />
                       Schedule Demo or Free Setup
                     </Button>
                   </DemoRequestModal>
+                  <div className="flex items-center gap-3 mt-1">
+                    <div className="flex-1 border-t" />
+                    <span className="text-xs text-muted-foreground">OR</span>
+                    <div className="flex-1 border-t" />
+                  </div>
+                  <p className="text-center text-sm">
+                    <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                    <span className="text-muted-foreground ml-1">No credit card required</span>
+                  </p>
                 </div>
               </div>
               <VideoModal>
