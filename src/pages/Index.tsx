@@ -58,7 +58,7 @@ const Index = () => {
                   <DemoRequestModal>
                     <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
                       <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo or Free Setup
+                      Schedule Demo & Free Setup
                     </Button>
                   </DemoRequestModal>
                   <div className="flex items-center gap-3 mt-1">
