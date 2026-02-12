@@ -6,6 +6,7 @@ import peopleHiker from "@/assets/people-hiker.png";
 import peopleCafe from "@/assets/people-cafe.png";
 import { Button } from "@/components/ui/button";
 import { Play, Calendar } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 
 import Header from "@/components/layout/Header";
@@ -21,6 +22,103 @@ import IntegrationsShowcase from "@/components/marketing/IntegrationsShowcase";
 import OfferBanner from "@/components/marketing/OfferBanner";
 import VideoModal from "@/components/marketing/VideoModal";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+
+const heroCharacters = [
+  { src: peopleFamily, alt: "Family" },
+  { src: peopleYoga, alt: "Yoga" },
+  { src: peopleHiker, alt: "Hiker" },
+  { src: peopleCafe, alt: "Cafe" },
+];
+
+const HeroSection = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    let pos = 0;
+    let direction = 1;
+    const speed = 0.3;
+    let raf: number;
+
+    const animate = () => {
+      pos += speed * direction;
+      const maxScroll = el.scrollHeight - el.clientHeight;
+      if (pos >= maxScroll) direction = -1;
+      if (pos <= 0) direction = 1;
+      el.scrollTop = pos;
+      raf = requestAnimationFrame(animate);
+    };
+    raf = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  return (
+    <section className="relative pt-8 md:pt-12 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
+      {/* Green gradient */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[hsl(var(--primary)/0.15)] via-[hsl(var(--primary)/0.08)] to-transparent" />
+
+      {/* Scrolling character background */}
+      <div
+        ref={scrollRef}
+        className="absolute inset-0 -z-[5] overflow-hidden pointer-events-none select-none"
+        aria-hidden="true"
+      >
+        <div className="flex flex-wrap justify-around items-start gap-6 p-8 opacity-[0.12]" style={{ minHeight: '200%' }}>
+          {[...heroCharacters, ...heroCharacters, ...heroCharacters].map((char, i) => (
+            <img
+              key={i}
+              src={char.src}
+              alt=""
+              className="w-[200px] md:w-[260px] object-contain"
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="container relative z-10">
+        <div className="max-w-2xl mx-auto text-center">
+          <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
+            POV: SaaS and Business Apps Are Dead — Power Your Empire With AI
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            RagAdvise's AI-powered business platform uses business assistants to handle everything from customer conversations and task management to financial tracking, team training, CRM, and website engagement—all for $16/month.
+          </p>
+          <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
+            <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+              <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                Sign up with Google
+              </a>
+            </Button>
+            <DemoRequestModal>
+              <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                <Calendar className="mr-2 h-4 w-4" />
+                Schedule Demo & Free Setup
+              </Button>
+            </DemoRequestModal>
+            <div className="flex items-center gap-3 mt-1">
+              <div className="flex-1 border-t" />
+              <span className="text-xs text-muted-foreground">OR</span>
+              <div className="flex-1 border-t" />
+            </div>
+            <div className="flex items-center justify-center gap-2 text-sm">
+              <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+              <span className="text-muted-foreground">No credit card required</span>
+              <span className="text-muted-foreground">·</span>
+              <VideoModal>
+                <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
+                  <Play className="w-3 h-3" fill="currentColor" />
+                  Watch Demo
+                </button>
+              </VideoModal>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 
 const Index = () => {
@@ -42,56 +140,7 @@ const Index = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative pt-8 md:pt-12 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[hsl(var(--primary)/0.15)] via-[hsl(var(--primary)/0.08)] to-transparent" />
-          
-          {/* Overlay characters - desktop only */}
-          <img src={peopleFamily} alt="" className="hidden lg:block absolute -left-8 bottom-0 w-[280px] opacity-90 pointer-events-none select-none" aria-hidden="true" />
-          <img src={peopleYoga} alt="" className="hidden lg:block absolute right-0 top-16 w-[200px] opacity-90 pointer-events-none select-none" aria-hidden="true" />
-          <img src={peopleHiker} alt="" className="hidden lg:block absolute left-4 top-8 w-[160px] opacity-80 pointer-events-none select-none" aria-hidden="true" />
-          <img src={peopleCafe} alt="" className="hidden lg:block absolute -right-4 bottom-4 w-[280px] opacity-90 pointer-events-none select-none" aria-hidden="true" />
-
-          <div className="container relative z-10">
-            <div className="max-w-2xl mx-auto text-center">
-              <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                 POV: SaaS and Business Apps Are Dead — Power Your Empire With AI
-              </h1>
-              <p className="mt-4 text-lg text-muted-foreground">
-                RagAdvise's AI-powered business platform uses business assistants to handle everything from customer conversations and task management to financial tracking, team training, CRM, and website engagement—all for $16/month.
-              </p>
-              <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
-                <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
-                    <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                    Sign up with Google
-                  </a>
-                </Button>
-                <DemoRequestModal>
-                  <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Demo & Free Setup
-                  </Button>
-                </DemoRequestModal>
-                <div className="flex items-center gap-3 mt-1">
-                  <div className="flex-1 border-t" />
-                  <span className="text-xs text-muted-foreground">OR</span>
-                  <div className="flex-1 border-t" />
-                </div>
-                <div className="flex items-center justify-center gap-2 text-sm">
-                  <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
-                  <span className="text-muted-foreground">No credit card required</span>
-                  <span className="text-muted-foreground">·</span>
-                  <VideoModal>
-                    <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
-                      <Play className="w-3 h-3" fill="currentColor" />
-                      Watch Demo
-                    </button>
-                  </VideoModal>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <HeroSection />
 
         {/* Companies */}
         <LogoMarquee />
