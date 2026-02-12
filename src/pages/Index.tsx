@@ -1,8 +1,10 @@
 import { Helmet } from "react-helmet-async";
-import heroImage from "@/assets/hero-people-collab.jpg";
 import googleLogo from "@/assets/logos/google.png";
+import heroDashboard1 from "@/assets/hero-dashboard-1.png";
+import heroDashboard2 from "@/assets/hero-dashboard-2.png";
 import { Button } from "@/components/ui/button";
 import { Play, Calendar } from "lucide-react";
+import { useState, useEffect } from "react";
 
 import Header from "@/components/layout/Header";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
@@ -17,6 +19,35 @@ import IntegrationsShowcase from "@/components/marketing/IntegrationsShowcase";
 import OfferBanner from "@/components/marketing/OfferBanner";
 import VideoModal from "@/components/marketing/VideoModal";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+
+const heroImages = [heroDashboard1, heroDashboard2];
+
+const HeroImageCarousel = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative overflow-hidden rounded-lg shadow-lg" style={{ aspectRatio: '16/10' }}>
+      {heroImages.map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          alt={`RagAdvise dashboard view ${i + 1}`}
+          className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateY(${(i - activeIndex) * 100}%)` }}
+          loading={i === 0 ? "eager" : "lazy"}
+          decoding="async"
+        />
+      ))}
+    </div>
+  );
+};
 
 const Index = () => {
   const siteUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : 'https://ragadvise.com/';
@@ -66,31 +97,20 @@ const Index = () => {
                     <span className="text-xs text-muted-foreground">OR</span>
                     <div className="flex-1 border-t" />
                   </div>
-                  <p className="text-center text-sm">
+                  <div className="flex items-center justify-center md:justify-start gap-2 text-sm">
                     <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
-                    <span className="text-muted-foreground ml-1">No credit card required</span>
-                  </p>
-                </div>
-              </div>
-              <VideoModal>
-                <div className="relative cursor-pointer group">
-                  <img
-                    src={heroImage}
-                    alt="Watch RagAdvise explainer video"
-                    className="w-full h-auto rounded-lg shadow transition-transform group-hover:scale-[1.02]"
-                    loading="eager"
-                    decoding="async"
-                  />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg bg-black/20 transition-all group-hover:bg-black/30">
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center shadow-xl ring-4 ring-primary-foreground/30 transition-transform group-hover:scale-110">
-                      <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" fill="currentColor" />
-                    </div>
-                    <span className="mt-4 px-5 py-2.5 bg-primary text-primary-foreground font-semibold text-sm md:text-base rounded-full shadow-lg">
-                      Watch the Demo
-                    </span>
+                    <span className="text-muted-foreground">No credit card required</span>
+                    <span className="text-muted-foreground">·</span>
+                    <VideoModal>
+                      <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
+                        <Play className="w-3 h-3" fill="currentColor" />
+                        Watch Demo
+                      </button>
+                    </VideoModal>
                   </div>
                 </div>
-              </VideoModal>
+              </div>
+              <HeroImageCarousel />
             </div>
           </div>
         </section>
