@@ -45,6 +45,7 @@ import {
   Globe as GlobeIcon,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
+import taskManagementPreview from "@/assets/task-management-preview.png";
 import googleLogo from "@/assets/logos/google.png";
 import testimonialMaria from "@/assets/testimonials/testimonial-maria.jpg";
 import testimonialMike from "@/assets/testimonials/testimonial-mike.jpg";
@@ -224,61 +225,14 @@ const ConversationAssistant = () => {
                 </div>
               </div>
 
-              {/* Right - Demo Contact Form */}
-              <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl">
-                <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <Calendar className="w-10 h-10 text-primary mx-auto mb-3" />
-                    <h3 className="text-2xl font-bold">
-                      Free 30 Minute Personalized Setup
-                    </h3>
-                    <p className="text-muted-foreground mt-2">
-                      Enter your details and we'll reach out within 24 hours
-                    </p>
-                  </div>
-                  <form onSubmit={handleDemoSubmit} className="space-y-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="demo-name">Your Name</Label>
-                      <Input
-                        id="demo-name"
-                        type="text"
-                        placeholder="John Smith"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        maxLength={100}
-                        className="bg-background rounded-xl"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="demo-email">Email Address</Label>
-                      <Input
-                        id="demo-email"
-                        type="email"
-                        placeholder="john@example.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        maxLength={255}
-                        className="bg-background rounded-xl"
-                      />
-                    </div>
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full rounded-xl"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        "Submitting..."
-                      ) : (
-                        <>
-                          <Send className="mr-2 h-4 w-4" />
-                          Request Demo
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              {/* Right - Product Preview */}
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/20">
+                <img
+                  src={taskManagementPreview}
+                  alt="RagAdvise Task Management dashboard showing kanban board with tasks, priorities, and status tracking"
+                  className="w-full h-auto block"
+                />
+              </div>
             </div>
           </div>
         </section>
