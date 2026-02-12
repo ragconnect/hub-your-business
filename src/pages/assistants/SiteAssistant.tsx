@@ -17,6 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Mic,
   Globe,
@@ -42,6 +43,8 @@ import {
   BookOpen,
   Users,
   Play,
+  Rocket,
+  Building2,
 } from "lucide-react";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import googleLogo from "@/assets/logos/google.png";
@@ -601,7 +604,154 @@ const SiteAssistant = () => {
           </div>
         </section>
 
-        {/* The Bottom Line */}
+        {/* Pricing */}
+        <section className="py-16 md:py-24 bg-muted/30">
+          <div className="container max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Pricing That Makes Sense
+            </h2>
+            <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+              See how much you save compared to traditional solutions.
+            </p>
+
+            <Tabs defaultValue="new" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-8">
+                <TabsTrigger value="new" className="text-base">
+                  <Rocket className="w-4 h-4 mr-2" />
+                  For New Businesses
+                </TabsTrigger>
+                <TabsTrigger value="existing" className="text-base">
+                  <Building2 className="w-4 h-4 mr-2" />
+                  For Existing Businesses
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="new">
+                <Card className="border-primary/20">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="text-5xl font-bold text-primary mb-2">
+                        $16<span className="text-xl font-normal text-muted-foreground">/month</span>
+                      </div>
+                      <p className="text-lg text-muted-foreground">Complete AI website engagement system</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-bold mb-4 flex items-center gap-2">
+                          <Check className="w-5 h-5 text-green-500" />
+                          What's included:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Voice-enabled AI on your website</li>
+                          <li>• 24/7 visitor engagement</li>
+                          <li>• Lead qualification & capture</li>
+                          <li>• Appointment booking</li>
+                          <li>• Personalized video follow-ups</li>
+                          <li>• Unlimited conversations</li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
+                        <h4 className="font-bold mb-4 flex items-center gap-2 text-destructive">
+                          <X className="w-5 h-5" />
+                          Building it yourself:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>Live chat tool: <span className="line-through">$50-200/month</span></li>
+                          <li>Chatbot builder: <span className="line-through">$100-500/month</span></li>
+                          <li>Video platform: <span className="line-through">$50-100/month</span></li>
+                          <li>Booking tool: <span className="line-through">$20-50/month</span></li>
+                          <li className="font-bold pt-2 border-t border-destructive/20">
+                            Total: <span className="line-through">$220-850/month</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-primary/10 rounded-xl text-center">
+                      <p className="text-lg font-bold text-primary">RagAdvise = 15-50x cheaper</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button size="lg" variant="outline" className="bg-background" asChild>
+                        <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                      </Button>
+                      <DemoRequestModal>
+                        <Button size="lg">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          Schedule Demo
+                        </Button>
+                      </DemoRequestModal>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="existing">
+                <Card className="border-primary/20">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="text-5xl font-bold text-primary mb-2">
+                        $16<span className="text-xl font-normal text-muted-foreground">/month</span>
+                      </div>
+                      <p className="text-lg text-muted-foreground">vs. your current costs</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-bold mb-4 flex items-center gap-2">
+                          <Check className="w-5 h-5 text-green-500" />
+                          What's included:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Replace live chat + chatbot tools</li>
+                          <li>• Voice AI that talks to visitors</li>
+                          <li>• Auto-qualify and book leads</li>
+                          <li>• Personalized video follow-ups</li>
+                          <li>• Works 24/7 without staff</li>
+                          <li>• Unlimited conversations</li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
+                        <h4 className="font-bold mb-4 flex items-center gap-2 text-destructive">
+                          <X className="w-5 h-5" />
+                          What you're spending now:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>Live chat support: <span className="line-through">$50-200/month</span></li>
+                          <li>Chatbot/widget: <span className="line-through">$100-500/month</span></li>
+                          <li>Lost visitors (80%): <span className="line-through">$2,000-10,000 in lost revenue</span></li>
+                          <li className="font-bold pt-2 border-t border-destructive/20">
+                            Total: <span className="line-through">$150-700/month + lost sales</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-primary/10 rounded-xl text-center">
+                      <p className="text-lg font-bold text-primary">Convert 3x more visitors while spending less</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button size="lg" variant="outline" className="bg-background" asChild>
+                        <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                      </Button>
+                      <DemoRequestModal>
+                        <Button size="lg">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          Schedule Demo
+                        </Button>
+                      </DemoRequestModal>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
+          </div>
+        </section>
+
         <section className="py-16 md:py-24 bg-primary/5">
           <div className="container max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
