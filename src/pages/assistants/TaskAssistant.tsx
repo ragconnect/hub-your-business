@@ -243,7 +243,7 @@ const TaskAssistant = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                  Keep your jobs on track—without the stress.
+                  An AI project tracker that helps teams get 2X as much work done
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   With a personalized AI assistant for tasks, deadlines, and follow-ups. Ensure work gets done and customers stay happy with your team.
