@@ -74,7 +74,7 @@ const Index = () => {
             <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
               <div className="text-center md:text-left">
                 <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                   SaaS and Business Apps Are Dead — Use RagAdvise: AI Powered Business Management
+                   POV: SaaS and Business Apps Are Dead — Power Your Empire With AI
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
                   Run your entire business with AI Business assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.
