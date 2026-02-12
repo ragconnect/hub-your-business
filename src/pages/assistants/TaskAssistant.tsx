@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import VideoModal from "@/components/marketing/VideoModal";
 import {
   Accordion,
   AccordionContent,
@@ -41,6 +42,7 @@ import {
   MessageSquare,
   BookOpen,
   Globe as GlobeIcon,
+  Play,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
 import googleLogo from "@/assets/logos/google.png";
@@ -241,22 +243,21 @@ const TaskAssistant = () => {
         {/* Hero */}
         <section className="relative pt-16 md:pt-24 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
           <ScrollingCharacterBg />
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="text-center lg:text-left">
+          <div className="container relative z-10">
+            <div className="max-w-2xl mx-auto text-center">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
                   An AI project tracker that helps teams get 2X as much work done
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   With a personalized AI assistant for tasks, deadlines, and follow-ups. Ensure work gets done and customers stay happy with your team.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start text-sm">
+                <div className="mt-6 flex flex-wrap gap-4 justify-center text-sm">
                   <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
                     <Video className="w-4 h-4" />
                     Auto-create tasks from meetings, unlike any other Project tool
                   </span>
                 </div>
-                <div className="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start text-sm text-muted-foreground">
+                <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm text-muted-foreground">
                   <span>📝 Tasks</span>
                   <span>•</span>
                   <span>📋 Kanban board</span>
@@ -269,11 +270,11 @@ const TaskAssistant = () => {
                   <span>•</span>
                   <span>🚨 Priorities</span>
                 </div>
-                <div className="mt-8 flex flex-col gap-3 justify-center lg:justify-start max-w-md mx-auto lg:mx-0">
+                <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                     <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                       <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                      Sign up with Google or email
+                      Sign up with Google
                     </a>
                   </Button>
                   <DemoRequestModal>
@@ -282,16 +283,23 @@ const TaskAssistant = () => {
                       Schedule Demo & Free Setup
                     </Button>
                   </DemoRequestModal>
+                  <div className="flex items-center gap-3 mt-1">
+                    <div className="flex-1 border-t" />
+                    <span className="text-xs text-muted-foreground">OR</span>
+                    <div className="flex-1 border-t" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-sm">
+                    <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                    <span className="text-muted-foreground">No credit card required</span>
+                    <span className="text-muted-foreground">·</span>
+                    <VideoModal>
+                      <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
+                        <Play className="w-3 h-3" fill="currentColor" />
+                        Watch Demo
+                      </button>
+                    </VideoModal>
+                  </div>
                 </div>
-              </div>
-
-              <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/20 bg-background">
-                <img
-                  src={taskDashboardImg}
-                  alt="RagAdvise Task Management dashboard showing kanban board with tasks, priorities, and status tracking"
-                  className="w-full h-auto block"
-                />
-              </div>
             </div>
           </div>
         </section>

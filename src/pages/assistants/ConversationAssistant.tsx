@@ -177,10 +177,8 @@ const ConversationAssistant = () => {
           aria-labelledby="hero-title"
         >
           <ScrollingCharacterBg />
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left - Hero Text */}
-              <div className="text-center lg:text-left">
+          <div className="container relative z-10">
+            <div className="max-w-2xl mx-auto text-center">
                 <h1
                   id="hero-title"
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
@@ -193,7 +191,7 @@ const ConversationAssistant = () => {
                   Look professional and never miss a customer again with an AI
                   assistant that works 24/7 across:
                 </p>
-                <div className="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start text-sm font-medium">
+                <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm font-medium">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
                     <Phone className="w-4 h-4" /> Phone calls
                   </span>
@@ -213,11 +211,11 @@ const ConversationAssistant = () => {
                     <Star className="w-4 h-4" /> Reviews
                   </span>
                 </div>
-                <div className="mt-8 flex flex-col gap-3 justify-center lg:justify-start max-w-md mx-auto lg:mx-0">
+                <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                     <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                       <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                      Sign up with Google or email
+                      Sign up with Google
                     </a>
                   </Button>
                   <DemoRequestModal>
@@ -226,25 +224,23 @@ const ConversationAssistant = () => {
                       Schedule Demo & Free Setup
                     </Button>
                   </DemoRequestModal>
-                </div>
-              </div>
-
-              {/* Right - Video */}
-              <VideoModal>
-                <div className="relative cursor-pointer group max-w-md mx-auto">
-                  <img
-                    src={heroImage}
-                    alt="Watch RagAdvise explainer video"
-                    className="w-full h-auto rounded-lg shadow transition-transform group-hover:scale-[1.02]"
-                    loading="eager"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-primary/90 text-primary-foreground rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform">
-                      <Play className="w-8 h-8" />
-                    </div>
+                  <div className="flex items-center gap-3 mt-1">
+                    <div className="flex-1 border-t" />
+                    <span className="text-xs text-muted-foreground">OR</span>
+                    <div className="flex-1 border-t" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-sm">
+                    <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                    <span className="text-muted-foreground">No credit card required</span>
+                    <span className="text-muted-foreground">·</span>
+                    <VideoModal>
+                      <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
+                        <Play className="w-3 h-3" fill="currentColor" />
+                        Watch Demo
+                      </button>
+                    </VideoModal>
                   </div>
                 </div>
-              </VideoModal>
             </div>
           </div>
         </section>
