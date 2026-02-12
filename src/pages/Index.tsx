@@ -52,7 +52,7 @@ const HeroImageCarousel = () => {
 const Index = () => {
   const siteUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : 'https://ragadvise.com/';
   const title = "RagAdvise — Your Business, Powered by AI Business Assistants";
-  const description = "Run your entire business with AI Business assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.";
+  const description = "RagAdvise's AI-powered business platform uses business assistants to handle everything from customer conversations and task management to financial tracking, team training, CRM, and website engagement—all for $16/month.";
 
   return (
     <>
@@ -77,7 +77,7 @@ const Index = () => {
                    POV: SaaS and Business Apps Are Dead — Power Your Empire With AI
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Run your entire business with AI Business assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.
+                  RagAdvise's AI-powered business platform uses business assistants to handle everything from customer conversations and task management to financial tracking, team training, CRM, and website engagement—all for $16/month.
                 </p>
                 <div className="relative z-10 mt-6 flex flex-col gap-3 justify-center md:justify-start max-w-md mx-auto md:mx-0">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
