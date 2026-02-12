@@ -40,8 +40,9 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative z-50">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="w-full relative z-50 py-3">
+      <div className="container">
+        <div className="flex h-14 items-center justify-between bg-background/90 backdrop-blur-md rounded-full px-6 shadow-lg border border-border/50">
         <Link to="/" className="flex items-center">
           <img src={logo} alt="RagAdvise Logo" className="h-36 -my-10 mix-blend-multiply" />
         </Link>
@@ -85,8 +86,8 @@ const Header = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <a href="https://my.ragadvise.com" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
-          <Button asChild>
-            <a href="https://my.ragadvise.com/signup" aria-label="Sign Up – See Value in 20 Minutes">Sign Up</a>
+          <Button asChild className="rounded-full">
+            <a href="https://my.ragadvise.com/signup" aria-label="Get Started">Get Started</a>
           </Button>
         </div>
         
@@ -161,6 +162,7 @@ const Header = () => {
             </nav>
           </SheetContent>
         </Sheet>
+        </div>
       </div>
     </header>
   );
