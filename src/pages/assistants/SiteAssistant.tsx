@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import VideoModal from "@/components/marketing/VideoModal";
 import {
   Accordion,
   AccordionContent,
@@ -40,6 +41,7 @@ import {
   ListChecks,
   BookOpen,
   Users,
+  Play,
 } from "lucide-react";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import googleLogo from "@/assets/logos/google.png";
@@ -248,9 +250,8 @@ const SiteAssistant = () => {
           aria-labelledby="hero-title"
         >
           <ScrollingCharacterBg />
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="text-center lg:text-left">
+          <div className="container relative z-10">
+            <div className="max-w-2xl mx-auto text-center">
                 <h1
                   id="hero-title"
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
@@ -264,18 +265,18 @@ const SiteAssistant = () => {
                 <p className="mt-3 text-base text-muted-foreground">
                   Get a voice-enabled website voice that:
                 </p>
-                <div className="mt-3 flex flex-wrap gap-3 justify-center lg:justify-start text-sm font-medium text-foreground">
+                <div className="mt-3 flex flex-wrap gap-3 justify-center text-sm font-medium text-foreground">
                   <span>💬 Answers questions</span>
                   <span>🎯 Qualifies visitors</span>
                   <span>✉️ Captures leads</span>
                   <span>📅 Drives bookings/callbacks</span>
                   <span>🧾 Creates support requests</span>
                 </div>
-                <div className="mt-8 flex flex-col gap-3 justify-center lg:justify-start max-w-md mx-auto lg:mx-0">
+                <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                     <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                       <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                      Sign up with Google or email
+                      Sign up with Google
                     </a>
                   </Button>
                   <DemoRequestModal>
@@ -284,63 +285,23 @@ const SiteAssistant = () => {
                       Schedule Demo & Free Setup
                     </Button>
                   </DemoRequestModal>
-                </div>
-              </div>
-
-              <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl">
-                <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <Calendar className="w-10 h-10 text-primary mx-auto mb-3" />
-                    <h3 className="text-2xl font-bold">
-                      Free 30 Minute Personalized Setup
-                    </h3>
-                    <p className="text-muted-foreground mt-2">
-                      Enter your details and we'll reach out within 24 hours
-                    </p>
+                  <div className="flex items-center gap-3 mt-1">
+                    <div className="flex-1 border-t" />
+                    <span className="text-xs text-muted-foreground">OR</span>
+                    <div className="flex-1 border-t" />
                   </div>
-                  <form onSubmit={handleDemoSubmit} className="space-y-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="demo-name">Your Name</Label>
-                      <Input
-                        id="demo-name"
-                        type="text"
-                        placeholder="John Smith"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        maxLength={100}
-                        className="bg-background rounded-xl"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="demo-email">Email Address</Label>
-                      <Input
-                        id="demo-email"
-                        type="email"
-                        placeholder="john@example.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        maxLength={255}
-                        className="bg-background rounded-xl"
-                      />
-                    </div>
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full rounded-xl"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        "Submitting..."
-                      ) : (
-                        <>
-                          <Send className="mr-2 h-4 w-4" />
-                          Request Demo
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+                  <div className="flex items-center justify-center gap-2 text-sm">
+                    <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                    <span className="text-muted-foreground">No credit card required</span>
+                    <span className="text-muted-foreground">·</span>
+                    <VideoModal>
+                      <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
+                        <Play className="w-3 h-3" fill="currentColor" />
+                        Watch Demo
+                      </button>
+                    </VideoModal>
+                  </div>
+                </div>
             </div>
           </div>
         </section>
