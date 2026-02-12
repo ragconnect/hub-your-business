@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import googleLogo from "@/assets/logos/google.png";
 
 const plans = [
   {
@@ -84,12 +85,19 @@ const PricingSection: React.FC = () => {
                   ))}
                 </ul>
                 <Button 
-                  className="w-full" 
+                  className="w-full h-12 text-sm font-semibold" 
                   variant={highlight ? "default" : "outline"}
                   asChild
                 >
-                  <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                    <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                    Sign up with Google
+                  </a>
                 </Button>
+                <p className="text-xs text-center mt-2">
+                  <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                  {" "}<span className="text-muted-foreground">No credit card required</span>
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -97,7 +105,7 @@ const PricingSection: React.FC = () => {
 
         <div className="mt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            <span className="font-medium">Start Free Trial</span> • No credit card required • 14-day trial
+            No credit card required • 14-day trial
           </p>
         </div>
       </div>
