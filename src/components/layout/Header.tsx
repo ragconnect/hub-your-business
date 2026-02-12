@@ -40,7 +40,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="w-full relative z-50 py-3">
+    <header className="w-full relative z-50 py-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <div className="container">
         <div className="flex h-14 items-center justify-between bg-background/90 backdrop-blur-md rounded-full px-6 shadow-lg border border-border/50">
         <Link to="/" className="flex items-center">
