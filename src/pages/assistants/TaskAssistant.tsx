@@ -17,6 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Mic,
   FileText,
@@ -43,6 +44,8 @@ import {
   BookOpen,
   Globe as GlobeIcon,
   Play,
+  Rocket,
+  Building,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
 import googleLogo from "@/assets/logos/google.png";
@@ -474,86 +477,148 @@ const TaskAssistant = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Pricing
+              Pricing That Makes Sense
             </h2>
-            <p className="text-center text-xl text-muted-foreground mb-8">
-              Complete AI meeting assistant: <strong className="text-foreground">Starting at $16/month</strong>
+            <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+              See how much you save compared to traditional solutions.
             </p>
 
-            <Card className="border-primary/30 mb-8">
-              <CardContent className="p-6">
-                <h3 className="font-bold text-lg mb-4">What's included:</h3>
-                <ul className="grid md:grid-cols-2 gap-3 text-muted-foreground mb-6">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green-500" />
-                    <span>Unlimited meeting transcriptions</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green-500" />
-                    <span>Automatic summaries and action items</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green-500" />
-                    <span>Searchable meeting archive</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green-500" />
-                    <span>Integration with calendar and project tools</span>
-                  </li>
-                  <li className="flex items-center gap-2 md:col-span-2">
-                    <Check className="w-4 h-4 text-green-500" />
-                    <span>Works across Zoom, Meet, Teams, phone, and in-person</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <Tabs defaultValue="new" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-8">
+                <TabsTrigger value="new" className="text-base">
+                  <Rocket className="w-4 h-4 mr-2" />
+                  For New Businesses
+                </TabsTrigger>
+                <TabsTrigger value="existing" className="text-base">
+                  <Building className="w-4 h-4 mr-2" />
+                  For Existing Businesses
+                </TabsTrigger>
+              </TabsList>
 
-            <div className="bg-background border rounded-xl p-6 mb-8">
-              <h3 className="font-bold text-lg mb-4">Compare to alternatives:</h3>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
-                  <span><strong className="text-foreground">Jira, Monday, or Asana:</strong> $10-24/user/month (manage tasks, but you manually create every ticket from meetings)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
-                  <span><strong className="text-foreground">Otter.ai or Fireflies.ai:</strong> $20/user/month (transcribe meetings, but you copy/paste action items into your PM tool)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
-                  <span><strong className="text-foreground">Using both:</strong> $30-44/user/month + hours of manual work copying tasks</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
-                  <span><strong className="text-foreground">Notion or ClickUp:</strong> Similar pricing, still manually creating tasks from meeting notes</span>
-                </li>
-              </ul>
-              <div className="mt-6 pt-6 border-t">
-                <p className="font-semibold text-primary">With Task Assistant: $16/month for project management that auto-creates tasks from conversations</p>
-                <p className="text-sm text-muted-foreground mt-2">Save 15-20 hours per week on meeting notes, task creation, and project updates</p>
-              </div>
-            </div>
+              <TabsContent value="new">
+                <Card className="border-primary/20">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="text-5xl font-bold text-primary mb-2">
+                        $16<span className="text-xl font-normal text-muted-foreground">/month</span>
+                      </div>
+                      <p className="text-lg text-muted-foreground">Complete AI project management system</p>
+                    </div>
 
-            <div className="text-center">
-              <div className="flex flex-col gap-3 justify-center max-w-md mx-auto">
-                <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
-                    <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                    Sign up with Google or email
-                  </a>
-                </Button>
-                <DemoRequestModal>
-                  <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Demo & Free Setup
-                  </Button>
-                </DemoRequestModal>
-              </div>
-            </div>
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-bold mb-4 flex items-center gap-2">
+                          <Check className="w-5 h-5 text-green-500" />
+                          What's included:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Unlimited meeting transcriptions</li>
+                          <li>• Automatic summaries and action items</li>
+                          <li>• AI task creation from conversations</li>
+                          <li>• Kanban board & priorities</li>
+                          <li>• Team assignment & due dates</li>
+                          <li>• Works across Zoom, Meet, Teams, phone</li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
+                        <h4 className="font-bold mb-4 flex items-center gap-2 text-destructive">
+                          <X className="w-5 h-5" />
+                          Building it yourself:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>Jira/Monday: <span className="line-through">$10-24/user/month</span></li>
+                          <li>Otter.ai/Fireflies: <span className="line-through">$18-20/user/month</span></li>
+                          <li>Manual task creation: <span className="line-through">15-20 hrs/week</span></li>
+                          <li className="font-bold pt-2 border-t border-destructive/20">
+                            Total: <span className="line-through">$30-44/user/month + hours of manual work</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-primary/10 rounded-xl text-center">
+                      <p className="text-lg font-bold text-primary">RagAdvise = Save 15-20 hours/week + lower cost</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button size="lg" variant="outline" className="bg-background" asChild>
+                        <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                      </Button>
+                      <DemoRequestModal>
+                        <Button size="lg">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          Schedule Demo
+                        </Button>
+                      </DemoRequestModal>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="existing">
+                <Card className="border-primary/20">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="text-5xl font-bold text-primary mb-2">
+                        $16<span className="text-xl font-normal text-muted-foreground">/month</span>
+                      </div>
+                      <p className="text-lg text-muted-foreground">vs. your current costs</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-bold mb-4 flex items-center gap-2">
+                          <Check className="w-5 h-5 text-green-500" />
+                          What's included:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Replace separate PM + transcription tools</li>
+                          <li>• Auto-create tasks from any meeting</li>
+                          <li>• AI prioritization & follow-ups</li>
+                          <li>• Kanban board with team assignments</li>
+                          <li>• Integrates with your calendar</li>
+                          <li>• Unlimited volume</li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
+                        <h4 className="font-bold mb-4 flex items-center gap-2 text-destructive">
+                          <X className="w-5 h-5" />
+                          What you're spending now:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>PM tool (Jira/Asana/Monday): <span className="line-through">$10-24/user/month</span></li>
+                          <li>Meeting transcription: <span className="line-through">$18-20/user/month</span></li>
+                          <li>Manual copy/paste tasks: <span className="line-through">15-20 hrs/week lost</span></li>
+                          <li className="font-bold pt-2 border-t border-destructive/20">
+                            Total: <span className="line-through">$30-44/user/month + wasted hours</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-primary/10 rounded-xl text-center">
+                      <p className="text-lg font-bold text-primary">Save $30+/user/month while eliminating manual task creation</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button size="lg" variant="outline" className="bg-background" asChild>
+                        <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                      </Button>
+                      <DemoRequestModal>
+                        <Button size="lg">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          Schedule Demo
+                        </Button>
+                      </DemoRequestModal>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
           </div>
         </section>
-
-        {/* Full Comparison Table */}
         <section className="py-16 md:py-24">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">

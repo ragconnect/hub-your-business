@@ -17,6 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   CreditCard,
   PieChart,
@@ -36,6 +37,8 @@ import {
   DollarSign,
   Compass,
   Play,
+  X,
+  Rocket,
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
 import googleLogo from "@/assets/logos/google.png";
@@ -467,89 +470,150 @@ const MoneyAssistant = () => {
 
         {/* Pricing */}
         <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Pricing</h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Complete AI bookkeeping system: Starting at $16/month
+          <div className="container max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Pricing That Makes Sense
+            </h2>
+            <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+              See how much you save compared to traditional solutions.
             </p>
 
-            <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              <Card className="border-primary">
-                <CardHeader>
-                  <CardTitle className="text-2xl">What's included</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {[
-                      "Automatic expense tracking",
-                      "Unlimited account connections",
-                      "P&L and financial reports",
-                      "Invoice creation and tracking",
-                      "Tax-ready categorization",
-                      "Receipt storage",
-                      "Analytics dashboard",
-                    ].map((item) => (
-                      <li key={item} className="flex items-center gap-3">
-                        <Check className="w-5 h-5 text-primary" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+            <Tabs defaultValue="new" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-8">
+                <TabsTrigger value="new" className="text-base">
+                  <Rocket className="w-4 h-4 mr-2" />
+                  For New Businesses
+                </TabsTrigger>
+                <TabsTrigger value="existing" className="text-base">
+                  <Building2 className="w-4 h-4 mr-2" />
+                  For Existing Businesses
+                </TabsTrigger>
+              </TabsList>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Compare to alternatives</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex justify-between py-2 border-b">
-                      <span>Bookkeeper</span>
-                      <span className="font-medium">$300-500/month</span>
+              <TabsContent value="new">
+                <Card className="border-primary/20">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="text-5xl font-bold text-primary mb-2">
+                        $16<span className="text-xl font-normal text-muted-foreground">/month</span>
+                      </div>
+                      <p className="text-lg text-muted-foreground">Complete AI bookkeeping system</p>
                     </div>
-                    <div className="flex justify-between py-2 border-b">
-                      <span>QuickBooks</span>
-                      <span className="font-medium">$30-200/month</span>
-                    </div>
-                    <div className="flex justify-between py-2 border-b">
-                      <span>Accountant (tax prep)</span>
-                      <span className="font-medium">$500-2,000/year</span>
-                    </div>
-                    <div className="flex justify-between py-2 border-b text-muted-foreground">
-                      <span>Total traditional cost</span>
-                      <span>$1,100-7,000/year</span>
-                    </div>
-                    <div className="flex justify-between py-3 bg-primary/10 rounded-lg px-4 -mx-4">
-                      <span className="font-bold text-primary">With RagAdvise</span>
-                      <span className="font-bold text-primary">$192/year</span>
-                    </div>
-                    <p className="text-sm text-center text-muted-foreground pt-2">
-                      Saves $908-6,808 annually
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
 
-            <div className="text-center mt-10 flex flex-col gap-3 justify-center max-w-md mx-auto">
-              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
-                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                  Sign up with Google or email
-                </a>
-              </Button>
-              <DemoRequestModal>
-                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Schedule Demo & Free Setup
-                </Button>
-              </DemoRequestModal>
-            </div>
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-bold mb-4 flex items-center gap-2">
+                          <Check className="w-5 h-5 text-green-500" />
+                          What's included:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Automatic expense tracking</li>
+                          <li>• Unlimited account connections</li>
+                          <li>• P&L and financial reports</li>
+                          <li>• Invoice creation and tracking</li>
+                          <li>• Tax-ready categorization</li>
+                          <li>• Receipt storage & analytics</li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
+                        <h4 className="font-bold mb-4 flex items-center gap-2 text-destructive">
+                          <X className="w-5 h-5" />
+                          Building it yourself:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>Bookkeeper: <span className="line-through">$300-500/month</span></li>
+                          <li>QuickBooks: <span className="line-through">$30-200/month</span></li>
+                          <li>Accountant (tax prep): <span className="line-through">$500-2,000/year</span></li>
+                          <li className="font-bold pt-2 border-t border-destructive/20">
+                            Total: <span className="line-through">$1,100-7,000/year</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-primary/10 rounded-xl text-center">
+                      <p className="text-lg font-bold text-primary">RagAdvise = Save $908-6,808 annually</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button size="lg" variant="outline" className="bg-background" asChild>
+                        <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                      </Button>
+                      <DemoRequestModal>
+                        <Button size="lg">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          Schedule Demo
+                        </Button>
+                      </DemoRequestModal>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="existing">
+                <Card className="border-primary/20">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="text-5xl font-bold text-primary mb-2">
+                        $16<span className="text-xl font-normal text-muted-foreground">/month</span>
+                      </div>
+                      <p className="text-lg text-muted-foreground">vs. your current costs</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-bold mb-4 flex items-center gap-2">
+                          <Check className="w-5 h-5 text-green-500" />
+                          What's included:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Replace bookkeeper + accounting software</li>
+                          <li>• Auto-categorize all transactions</li>
+                          <li>• Generate invoices in seconds</li>
+                          <li>• Tax-ready reports year-round</li>
+                          <li>• Receipt capture & storage</li>
+                          <li>• Unlimited transactions</li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
+                        <h4 className="font-bold mb-4 flex items-center gap-2 text-destructive">
+                          <X className="w-5 h-5" />
+                          What you're spending now:
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>Bookkeeper: <span className="line-through">$300-500/month</span></li>
+                          <li>QuickBooks/Xero: <span className="line-through">$30-200/month</span></li>
+                          <li>Manual data entry: <span className="line-through">2+ hrs/week</span></li>
+                          <li className="font-bold pt-2 border-t border-destructive/20">
+                            Total: <span className="line-through">$330-700/month + lost time</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-primary/10 rounded-xl text-center">
+                      <p className="text-lg font-bold text-primary">Save $314-684/month while getting better accuracy</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button size="lg" variant="outline" className="bg-background" asChild>
+                        <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                      </Button>
+                      <DemoRequestModal>
+                        <Button size="lg">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          Schedule Demo
+                        </Button>
+                      </DemoRequestModal>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
           </div>
         </section>
-
-        {/* Testimonials */}
         <section className="py-16 md:py-24">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What customers say</h2>
