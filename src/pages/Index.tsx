@@ -1,12 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import googleLogo from "@/assets/logos/google.png";
-import peopleFamily from "@/assets/people-family.png";
-import peopleYoga from "@/assets/people-yoga.png";
-import peopleHiker from "@/assets/people-hiker.png";
-import peopleCafe from "@/assets/people-cafe.png";
 import { Button } from "@/components/ui/button";
 import { Play, Calendar } from "lucide-react";
-import { useEffect, useRef } from "react";
+import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
 
 
 import Header from "@/components/layout/Header";
@@ -23,59 +19,10 @@ import OfferBanner from "@/components/marketing/OfferBanner";
 import VideoModal from "@/components/marketing/VideoModal";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 
-const heroCharacters = [
-  { src: peopleFamily, alt: "Family" },
-  { src: peopleYoga, alt: "Yoga" },
-  { src: peopleHiker, alt: "Hiker" },
-  { src: peopleCafe, alt: "Cafe" },
-];
-
 const HeroSection = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    let pos = 0;
-    let direction = 1;
-    const speed = 0.3;
-    let raf: number;
-
-    const animate = () => {
-      pos += speed * direction;
-      const maxScroll = el.scrollHeight - el.clientHeight;
-      if (pos >= maxScroll) direction = -1;
-      if (pos <= 0) direction = 1;
-      el.scrollTop = pos;
-      raf = requestAnimationFrame(animate);
-    };
-    raf = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(raf);
-  }, []);
-
   return (
     <section className="relative pt-8 md:pt-12 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
-      {/* Green gradient */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[hsl(var(--primary)/0.15)] via-[hsl(var(--primary)/0.08)] to-transparent" />
-
-      {/* Scrolling character background */}
-      <div
-        ref={scrollRef}
-        className="absolute inset-0 -z-[5] overflow-hidden pointer-events-none select-none"
-        aria-hidden="true"
-      >
-        <div className="flex flex-wrap justify-around items-start gap-6 p-8 opacity-[0.12]" style={{ minHeight: '200%' }}>
-          {[...heroCharacters, ...heroCharacters, ...heroCharacters].map((char, i) => (
-            <img
-              key={i}
-              src={char.src}
-              alt=""
-              className="w-[200px] md:w-[260px] object-contain"
-            />
-          ))}
-        </div>
-      </div>
-
+      <ScrollingCharacterBg />
       <div className="container relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
