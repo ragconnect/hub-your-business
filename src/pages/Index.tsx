@@ -68,33 +68,48 @@ const Index = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative pt-8 md:pt-16 pb-16 md:pb-24" aria-labelledby="hero-title">
+        <section className="relative pt-8 md:pt-12 pb-16 md:pb-24" aria-labelledby="hero-title">
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[hsl(var(--primary)/0.15)] via-[hsl(var(--primary)/0.08)] to-transparent" />
-          {/* Decorative sparkle dots */}
-          <div className="absolute top-20 left-[15%] w-2 h-2 bg-primary/30 rounded-full blur-[1px] hidden md:block" />
-          <div className="absolute top-32 right-[20%] w-3 h-3 bg-primary/20 rounded-full blur-[2px] hidden md:block" />
-          <div className="absolute top-48 right-[10%] w-1.5 h-1.5 bg-primary/40 rounded-full hidden md:block" />
           <div className="container">
-            <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-              <h1 id="hero-title" className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground" style={{ fontFamily: "'DM Sans', 'Inter', sans-serif" }}>
-                RagAdvise: AI-Powered Business Management
-              </h1>
-              <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl">
-                Run your entire business with AI assistants that handle customer conversations, task management, financial tracking, and more—all from $16/month.
-              </p>
-              <div className="relative z-10 mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <VideoModal>
-                  <Button variant="outline" size="lg" className="h-14 px-8 text-base font-semibold rounded-full bg-background border-primary text-primary hover:bg-primary/5">
-                    <Play className="mr-2 h-4 w-4" fill="currentColor" />
-                    See How It Works
+            <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
+              <div className="text-center md:text-left">
+                <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
+                   POV: SaaS and Business Apps Are Dead — Power Your Empire With AI
+                </h1>
+                <p className="mt-4 text-lg text-muted-foreground">
+                  Run your entire business with AI Business assistants that handle customer conversations, task management, financial tracking, team training, CRM, and website engagement—all from $16/month.
+                </p>
+                <div className="relative z-10 mt-6 flex flex-col gap-3 justify-center md:justify-start max-w-md mx-auto md:mx-0">
+                  <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                    <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                      <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                      Sign up with Google
+                    </a>
                   </Button>
-                </VideoModal>
-                <Button size="lg" className="h-14 px-8 text-base font-semibold rounded-full" asChild>
-                  <a href="https://my.ragadvise.com/signup">Start Your Free Trial</a>
-                </Button>
+                  <DemoRequestModal>
+                    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Demo & Free Setup
+                    </Button>
+                  </DemoRequestModal>
+                  <div className="flex items-center gap-3 mt-1">
+                    <div className="flex-1 border-t" />
+                    <span className="text-xs text-muted-foreground">OR</span>
+                    <div className="flex-1 border-t" />
+                  </div>
+                  <div className="flex items-center justify-center md:justify-start gap-2 text-sm">
+                    <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                    <span className="text-muted-foreground">No credit card required</span>
+                    <span className="text-muted-foreground">·</span>
+                    <VideoModal>
+                      <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
+                        <Play className="w-3 h-3" fill="currentColor" />
+                        Watch Demo
+                      </button>
+                    </VideoModal>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="mt-12 md:mt-16 max-w-5xl mx-auto">
               <HeroImageCarousel />
             </div>
           </div>
