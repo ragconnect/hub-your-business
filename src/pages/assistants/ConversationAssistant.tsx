@@ -226,11 +226,12 @@ const ConversationAssistant = () => {
               </div>
 
               {/* Right - Product Preview */}
-              <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/20">
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/20 bg-background">
                 <img
                   src={taskManagementPreview}
                   alt="RagAdvise Task Management dashboard showing kanban board with tasks, priorities, and status tracking"
-                  className="w-full h-auto block"
+                  className="w-full h-auto block scale-110"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
                 />
               </div>
             </div>
