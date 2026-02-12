@@ -1,7 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import googleLogo from "@/assets/logos/google.png";
-import heroDashboard1 from "@/assets/hero-dashboard-1.png";
-import heroDashboard2 from "@/assets/hero-dashboard-2.png";
+import heroPowerEmpire from "@/assets/hero-power-empire.jpg";
+import heroTaskMgmt from "@/assets/hero-task-management.jpg";
+import heroTrackDollar from "@/assets/hero-track-dollar.jpg";
+import heroReceipts from "@/assets/hero-receipts.jpg";
 import { Button } from "@/components/ui/button";
 import { Play, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -20,7 +22,7 @@ import OfferBanner from "@/components/marketing/OfferBanner";
 import VideoModal from "@/components/marketing/VideoModal";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 
-const heroImages = [heroDashboard1, heroDashboard2];
+const heroImages = [heroPowerEmpire, heroTaskMgmt, heroTrackDollar, heroReceipts];
 
 const HeroImageCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
