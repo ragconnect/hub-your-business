@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/layout/Header";
+import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
 import OfferBanner from "@/components/marketing/OfferBanner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -295,8 +296,8 @@ const MoneyAssistant = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative pt-16 md:pt-24 pb-16 md:pb-24" aria-labelledby="hero-title">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_0%,hsl(var(--primary)/0.15),transparent_60%)]" />
+        <section className="relative pt-16 md:pt-24 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
+          <ScrollingCharacterBg />
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
