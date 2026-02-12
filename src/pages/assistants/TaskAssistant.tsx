@@ -336,7 +336,7 @@ const TaskAssistant = () => {
                 <Button type="submit" size="sm" className="h-9 whitespace-nowrap" disabled={isSubmitting}>
                   {isSubmitting ? "..." : <>
                     <Send className="mr-1 h-3 w-3" />
-                    Free Setup
+                    Schedule Demo & Free Setup
                   </>}
                 </Button>
               </form>
