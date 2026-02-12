@@ -673,16 +673,23 @@ const SiteAssistant = () => {
                       <p className="text-lg font-bold text-primary">RagAdvise = 15-50x cheaper</p>
                     </div>
 
-                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                      <Button size="lg" variant="outline" className="bg-background" asChild>
-                        <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                    <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
+                      <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                        <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                          <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                          Sign up with Google
+                        </a>
                       </Button>
                       <DemoRequestModal>
-                        <Button size="lg">
+                        <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
                           <Calendar className="mr-2 h-4 w-4" />
-                          Schedule Demo
+                          Schedule Demo & Free Setup
                         </Button>
                       </DemoRequestModal>
+                      <div className="flex items-center justify-center gap-2 text-sm mt-1">
+                        <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                        <span className="text-muted-foreground">No credit card required</span>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -734,16 +741,23 @@ const SiteAssistant = () => {
                       <p className="text-lg font-bold text-primary">Convert 3x more visitors while spending less</p>
                     </div>
 
-                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                      <Button size="lg" variant="outline" className="bg-background" asChild>
-                        <a href="https://my.ragadvise.com/signup">Start Free Trial</a>
+                    <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
+                      <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                        <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                          <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                          Sign up with Google
+                        </a>
                       </Button>
                       <DemoRequestModal>
-                        <Button size="lg">
+                        <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
                           <Calendar className="mr-2 h-4 w-4" />
-                          Schedule Demo
+                          Schedule Demo & Free Setup
                         </Button>
                       </DemoRequestModal>
+                      <div className="flex items-center justify-center gap-2 text-sm mt-1">
+                        <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                        <span className="text-muted-foreground">No credit card required</span>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
