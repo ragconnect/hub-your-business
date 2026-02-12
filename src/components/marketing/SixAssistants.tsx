@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageSquare, CheckSquare, DollarSign, GraduationCap, Users, Globe } from "lucide-react";
+import { MessageSquare, CheckSquare, DollarSign, GraduationCap, Users, Globe, Play } from "lucide-react";
+import VideoModal from "@/components/marketing/VideoModal";
 
 const assistants = [
   {
@@ -95,7 +96,13 @@ const SixAssistants: React.FC = () => {
           </h2>
           <p className="mt-3 text-muted-foreground">
             Stop juggling multiple tools and paying for expensive staff. RagAdvise gives you a complete suite of AI business assistants that work 24/7 to grow your business.
-          </p>
+           </p>
+          <VideoModal>
+            <button className="mt-4 inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer text-sm">
+              <Play className="w-4 h-4" fill="currentColor" />
+              See It in Action
+            </button>
+          </VideoModal>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
