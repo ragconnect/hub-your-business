@@ -226,7 +226,7 @@ const ConversationAssistant = () => {
               </div>
 
               {/* Right - Product Preview */}
-              <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/20 bg-background">
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/20 bg-background max-w-md mx-auto">
                 <img
                   src={taskManagementPreview}
                   alt="RagAdvise Task Management dashboard showing kanban board with tasks, priorities, and status tracking"
