@@ -10,6 +10,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import VideoModal from "@/components/marketing/VideoModal";
+import heroImage from "@/assets/hero-people-collab.jpg";
+import { Play } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -225,15 +228,22 @@ const ConversationAssistant = () => {
                 </div>
               </div>
 
-              {/* Right - Product Preview */}
-              <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/20 bg-background max-w-md mx-auto">
-                <img
-                  src={taskManagementPreview}
-                  alt="RagAdvise Task Management dashboard showing kanban board with tasks, priorities, and status tracking"
-                  className="w-full h-auto block scale-110"
-                  style={{ objectFit: 'cover', objectPosition: 'center' }}
-                />
-              </div>
+              {/* Right - Video */}
+              <VideoModal>
+                <div className="relative cursor-pointer group max-w-md mx-auto">
+                  <img
+                    src={heroImage}
+                    alt="Watch RagAdvise explainer video"
+                    className="w-full h-auto rounded-lg shadow transition-transform group-hover:scale-[1.02]"
+                    loading="eager"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="bg-primary/90 text-primary-foreground rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform">
+                      <Play className="w-8 h-8" />
+                    </div>
+                  </div>
+                </div>
+              </VideoModal>
             </div>
           </div>
         </section>
