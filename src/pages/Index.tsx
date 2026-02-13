@@ -29,7 +29,7 @@ const HeroSection = () => {
             👀 to Replace All Your SaaS Tools? Use the #1 AGI for Business
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            The all-in-one backend AI for your business that automates operations and management with AI business assistants —all for $16/month.
+            The all-in-one backend AI for your business that automates operations and management —all for $16/month.
           </p>
           <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
             <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
