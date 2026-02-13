@@ -11,6 +11,7 @@ const assistants = [
     emoji: "🗣️",
     title: "Conversation Assistant",
     subtitle: "Stop using Google Voice and Gmail, use AI instead",
+    channels: ["Phone calls", "Email", "Text/SMS", "Social media", "Website chat", "Review"],
     features: [
       "Answer customer inquiries instantly across all channels",
       "Handle unlimited conversations simultaneously",
@@ -83,7 +84,7 @@ const assistants = [
     ],
     link: "/assistants/site",
   },
-] as const;
+];
 
 const SixAssistants: React.FC = () => {
   return (
@@ -106,10 +107,15 @@ const SixAssistants: React.FC = () => {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {assistants.map(({ key, emoji, title, subtitle, features, link }) => (
+          {assistants.map(({ key, emoji, title, subtitle, features, link, channels }) => (
             <Card key={key} className="group hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <div className="text-3xl mb-3">{emoji}</div>
+                <div className="flex items-center gap-2 flex-wrap mb-3">
+                  <span className="text-3xl">{emoji}</span>
+                  {channels && channels.map((ch) => (
+                    <span key={ch} className="text-[11px] font-medium bg-primary/10 text-primary rounded-full px-2 py-0.5">{ch}</span>
+                  ))}
+                </div>
                 <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground font-medium">{subtitle}</p>
                 <ul className="mt-4 space-y-2">
