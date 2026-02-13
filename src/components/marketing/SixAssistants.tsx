@@ -10,7 +10,7 @@ const assistants = [
     icon: MessageSquare,
     emoji: "🗣️",
     title: "Conversation Assistant",
-    subtitle: "Your AI receptionist for calls, emails, SMS, and website chat",
+    subtitle: "Stop using Google Voice and Gmail, use AI instead",
     features: [
       "Answer customer inquiries instantly across all channels",
       "Handle unlimited conversations simultaneously",
