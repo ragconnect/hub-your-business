@@ -10,7 +10,7 @@ const assistants = [
     icon: MessageSquare,
     emoji: "🗣️",
     title: "Conversation Assistant",
-    subtitle: "Stop using Google Voice and Gmail, use AI instead",
+    subtitle: "Stop using Google Voice, Zendesk, and Gmail, use AI instead",
     channels: ["Phone calls", "Email", "Text/SMS", "Social media", "Website chat", "Review"],
     features: [
       "Answer customer inquiries instantly across all channels",
