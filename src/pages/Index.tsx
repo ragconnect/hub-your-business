@@ -26,7 +26,7 @@ const HeroSection = () => {
       <div className="container relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-            👀 to Replace All Your SaaS Tools? Use the #1 AI for Businesses
+            👀 to Replace All Your SaaS Tools? Use the #1 AGI for Businesses
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             The all-in-one backend for your business, powered by AI—all for $16/month.
