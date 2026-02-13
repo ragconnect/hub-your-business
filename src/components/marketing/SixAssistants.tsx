@@ -52,7 +52,7 @@ const assistants = [
     icon: GraduationCap,
     emoji: "🎓",
     title: "Training Assistant",
-    subtitle: "Stop using Google Drive, Notion, and Trainual, use AI instead",
+    subtitle: "Stop using Google Drive, Notion, and Dropbox, use AI instead",
     channels: ["Onboarding", "File Storage & Smart Retrieval", "Website Links"],
     features: [
       "Create interactive training modules",
