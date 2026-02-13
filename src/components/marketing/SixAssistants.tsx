@@ -53,7 +53,7 @@ const assistants = [
     emoji: "🎓",
     title: "Training Assistant",
     subtitle: "Onboard and train your team with AI",
-    channels: ["Onboarding", "Quizzes", "SOPs"],
+    channels: ["Onboarding", "File Storage & Smart Retrieval", "Website Links"],
     features: [
       "Create interactive training modules",
       "Track progress and quiz comprehension",
