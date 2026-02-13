@@ -121,12 +121,13 @@ const SixAssistants: React.FC = () => {
                   ))}
                 </ul>
                 {link ? (
-                  <Link
-                    to={link}
+                  <a
+                    href={link}
+                    onClick={() => window.scrollTo(0, 0)}
                     className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:underline"
                   >
                     Learn more →
-                  </Link>
+                  </a>
                 ) : (
                   <span className="mt-4 inline-flex items-center text-sm font-medium text-muted-foreground">
                     Coming soon
