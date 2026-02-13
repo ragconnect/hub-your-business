@@ -375,16 +375,25 @@ const MoneyAssistant = () => {
         <section className="py-16 md:py-20">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Which describes you?</h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {whoDescribesYou.map((item) => (
-                <Card key={item.title} className="border-primary/20">
-                  <CardContent className="p-8 text-center">
-                    <span className="text-5xl mb-4 block">{item.icon}</span>
-                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto items-center">
+              <div className="grid gap-6">
+                {whoDescribesYou.map((item) => (
+                  <Card key={item.title} className="border-primary/20">
+                    <CardContent className="p-8 text-center">
+                      <span className="text-5xl mb-4 block">{item.icon}</span>
+                      <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                      <p className="text-muted-foreground">{item.desc}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <div className="flex justify-center">
+                <img
+                  src={moneyDashboardPreview}
+                  alt="RagAdvise Money Assistant dashboard showing total balance, saving goals, recent transactions, and weekly comparison charts"
+                  className="rounded-2xl shadow-lg w-full max-w-lg"
+                />
+              </div>
             </div>
           </div>
         </section>
