@@ -49,6 +49,7 @@ import logoPeakAccounting from "@/assets/testimonials/logo-peak-accounting.png";
 import logoBudgetBros from "@/assets/testimonials/logo-budget-bros.png";
 import logoSunriseBakery from "@/assets/testimonials/logo-sunrise-bakery.png";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
+import moneyDashboardPreview from "@/assets/money-dashboard-preview.png";
 
 const features = [
   {
