@@ -1,5 +1,8 @@
 import React from "react";
-import { DollarSign, Rocket, Zap, Link2, Target, Shield } from "lucide-react";
+import { DollarSign, Rocket, Zap, Link2, Target, Shield, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import googleLogo from "@/assets/logos/google.png";
 
 const benefits = [
   {
@@ -59,6 +62,21 @@ const WhyChooseRagAdvise: React.FC = () => {
               <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+          <Button size="lg" className="h-14 text-base font-semibold rounded-lg flex-1" asChild>
+            <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+              <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+              Sign up with Google
+            </a>
+          </Button>
+          <DemoRequestModal>
+            <Button variant="outline" size="lg" className="h-14 text-base font-semibold rounded-lg flex-1 bg-background">
+              <Calendar className="mr-2 h-4 w-4" />
+              Schedule Demo & Free Setup
+            </Button>
+          </DemoRequestModal>
         </div>
       </div>
     </section>
