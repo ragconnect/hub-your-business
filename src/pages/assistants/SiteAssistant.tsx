@@ -309,17 +309,51 @@ const SiteAssistant = () => {
           </div>
         </section>
 
-        {/* GPS Callout */}
+        {/* GPS Callout + Inline Contact */}
         <section className="py-8 border-y bg-muted/30">
           <div className="container">
-            <div className="flex items-start gap-4 max-w-3xl mx-auto">
-              <Compass className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-lg">RagAdvise is your GPS for business.</p>
-                <p className="text-muted-foreground mt-1">
-                  You're looking at Website Voice, but it's built to work as part of a connected suite of assistants. If you like this, you'll love how the whole system runs your business end-to-end.
-                </p>
+            <div className="max-w-5xl mx-auto grid md:grid-cols-[1fr,auto] gap-8 items-center">
+              <div className="flex items-start gap-4">
+                <Compass className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold text-lg">RagAdvise is your GPS for business.</p>
+                  <p className="text-muted-foreground mt-1">
+                    You're looking at Website Voice, but it's built to work as part of a connected suite of assistants. If you like this, you'll love how the whole system runs your business end-to-end.
+                  </p>
+                </div>
               </div>
+              <form onSubmit={handleDemoSubmit} className="flex flex-col sm:flex-row items-end gap-2 min-w-0 sm:min-w-[420px]">
+                <div className="flex-1 w-full">
+                  <Label htmlFor="gps-name" className="text-xs">Name</Label>
+                  <Input
+                    id="gps-name"
+                    type="text"
+                    placeholder="John Smith"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    maxLength={100}
+                    className="h-9 text-sm"
+                  />
+                </div>
+                <div className="flex-1 w-full">
+                  <Label htmlFor="gps-email" className="text-xs">Email</Label>
+                  <Input
+                    id="gps-email"
+                    type="email"
+                    placeholder="john@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    maxLength={255}
+                    className="h-9 text-sm"
+                  />
+                </div>
+                <Button type="submit" size="sm" className="h-9 whitespace-nowrap" disabled={isSubmitting}>
+                  {isSubmitting ? "..." : <>
+                    <Send className="mr-1 h-3 w-3" />
+                    Schedule Demo & Free Setup
+                  </>}
+                </Button>
+              </form>
             </div>
           </div>
         </section>
