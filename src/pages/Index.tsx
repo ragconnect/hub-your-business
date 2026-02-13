@@ -29,7 +29,7 @@ const HeroSection = () => {
             👀 to Replace All Your SaaS Tools? Use the #1 AI for Businesses
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            As a new business, you can compete with large enterprises using just one platform.
+            RagAdvise's AI-powered business platform uses business assistants to handle everything from customer conversations and task management to financial tracking, team training, CRM, and website engagement—all for $16/month.
           </p>
           <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
             <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
