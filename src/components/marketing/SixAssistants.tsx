@@ -38,7 +38,7 @@ const assistants = [
     icon: DollarSign,
     emoji: "💰",
     title: "Money Assistant",
-    subtitle: "Your AI accountant and financial advisor",
+    subtitle: "Stop using QuickBooks, FreshBooks, and Excel, use AI instead",
     channels: ["Invoicing", "Expenses", "P&L", "Tax"],
     features: [
       "Track expenses and income automatically",
@@ -52,7 +52,7 @@ const assistants = [
     icon: GraduationCap,
     emoji: "🎓",
     title: "Training Assistant",
-    subtitle: "Onboard and train your team with AI",
+    subtitle: "Stop using Google Drive, Notion, and Trainual, use AI instead",
     channels: ["Onboarding", "File Storage & Smart Retrieval", "Website Links"],
     features: [
       "Create interactive training modules",
@@ -66,7 +66,7 @@ const assistants = [
     icon: Users,
     emoji: "👥",
     title: "Customer Assistant",
-    subtitle: "AI-powered CRM that works for you",
+    subtitle: "Stop using HubSpot, Salesforce, and spreadsheets, use AI instead",
     channels: ["CRM", "Follow-ups", "Leads"],
     features: [
       "Automatically log and enrich customer data",
@@ -80,7 +80,7 @@ const assistants = [
     icon: Globe,
     emoji: "🌐",
     title: "Website Voice",
-    subtitle: "Interactive AI avatars for your website",
+    subtitle: "Stop using Drift, Intercom, and chatbots, use AI instead",
     channels: ["Voice AI", "Avatars", "Chat"],
     features: [
       "Engage visitors with voice-enabled AI",
