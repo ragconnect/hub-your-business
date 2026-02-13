@@ -26,7 +26,7 @@ const HeroSection = () => {
       <div className="container relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-            AI Assistants To Replace All Your SaaS Tools
+            One AI Assistant to Replace All Your SaaS Tools for the Price of One
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             RagAdvise's AI-powered business platform uses business assistants to handle everything from customer conversations and task management to financial tracking, team training, CRM, and website engagement—all for $16/month.
