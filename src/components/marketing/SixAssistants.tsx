@@ -25,6 +25,7 @@ const assistants = [
     emoji: "✅",
     title: "Task Assistant",
     subtitle: "Turn meetings into action automatically",
+    channels: ["Meetings", "Projects", "Teams", "Deadlines"],
     features: [
       "Record meetings and extract action items",
       "Auto-create tasks in your project management system",
@@ -38,6 +39,7 @@ const assistants = [
     emoji: "💰",
     title: "Money Assistant",
     subtitle: "Your AI accountant and financial advisor",
+    channels: ["Invoicing", "Expenses", "P&L", "Tax"],
     features: [
       "Track expenses and income automatically",
       "Generate financial reports and forecasts",
@@ -51,6 +53,7 @@ const assistants = [
     emoji: "🎓",
     title: "Training Assistant",
     subtitle: "Onboard and train your team with AI",
+    channels: ["Onboarding", "Quizzes", "SOPs"],
     features: [
       "Create interactive training modules",
       "Track progress and quiz comprehension",
@@ -64,6 +67,7 @@ const assistants = [
     emoji: "👥",
     title: "Customer Assistant",
     subtitle: "AI-powered CRM that works for you",
+    channels: ["CRM", "Follow-ups", "Leads"],
     features: [
       "Automatically log and enrich customer data",
       "Smart follow-ups and relationship tracking",
@@ -77,6 +81,7 @@ const assistants = [
     emoji: "🌐",
     title: "Website Voice",
     subtitle: "Interactive AI avatars for your website",
+    channels: ["Voice AI", "Avatars", "Chat"],
     features: [
       "Engage visitors with voice-enabled AI",
       "Full-body avatars with real-time interaction",
