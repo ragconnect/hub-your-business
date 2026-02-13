@@ -24,7 +24,7 @@ const assistants = [
     icon: CheckSquare,
     emoji: "✅",
     title: "Task Assistant",
-    subtitle: "Stop using Jira, Monday, Zoom, and Otter",
+    subtitle: "Stop using Jira, Monday, Zoom, and Otter, use AI instead",
     channels: ["Meeting Notes", "Project Tracker", "Deadlines", "Reminders", "Tickets"],
     features: [
       "Create and get reminders of work items across your team",
