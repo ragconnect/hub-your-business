@@ -604,7 +604,7 @@ const SiteAssistant = () => {
                   Improve Answers Over Time
                 </h2>
                 <p className="text-muted-foreground text-lg">
-                  AutoLearn records and transcribes every visitor conversation. You can review the questions, add a better answer, and the assistant will use your updated response going forward.
+                  AutoLearn records and transcribes every visitor chat. Review questions, improve answers, and it uses the updates next time.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 max-w-sm">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
