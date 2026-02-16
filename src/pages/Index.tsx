@@ -45,7 +45,7 @@ const HeroSection = () => {
       <div className="container relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-            👀 to Replace All Your{" "}
+            Replace All Your{" "}
             <span
               className={`inline-block transition-all duration-300 ${
                 isAnimating
