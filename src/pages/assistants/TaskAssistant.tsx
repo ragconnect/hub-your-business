@@ -285,15 +285,17 @@ const TaskAssistant = () => {
                 <div className="mt-6 flex flex-wrap gap-4 justify-center text-sm">
                   <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
                     <Video className="w-4 h-4" />
-                    Just ask the AI Business Assistant to{" "}
-                    <span
-                      className={`inline-block transition-all duration-300 ${
-                        isAnimating
-                          ? "opacity-0 translate-y-2"
-                          : "opacity-100 translate-y-0"
-                      }`}
-                    >
-                      {rotatingActions[actionIndex]}
+                    <span>
+                      Just ask the AI Business Assistant to{" "}
+                      <span
+                        className={`inline transition-all duration-300 ${
+                          isAnimating
+                            ? "opacity-0"
+                            : "opacity-100"
+                        }`}
+                      >
+                        {rotatingActions[actionIndex]}
+                      </span>
                     </span>
                   </span>
                 </div>
