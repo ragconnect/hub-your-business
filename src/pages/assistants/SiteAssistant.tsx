@@ -170,7 +170,7 @@ const faqs = [
   },
 ];
 
-const rotatingWords = ["sales", "appointments", "answers", "engagement", "directions"];
+const rotatingWords = ["Engage", "Sell to", "Support", "Convert", "Direct"];
 
 const SiteAssistant = () => {
   const [name, setName] = useState("");
@@ -275,7 +275,7 @@ const SiteAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Create an AI Voice To Engage Your Website Traffic:{" "}
+                  Create an AI Voice To{" "}
                   <span
                     className={`inline-block transition-all duration-300 ${
                       isAnimating
@@ -285,6 +285,7 @@ const SiteAssistant = () => {
                   >
                     {rotatingWords[wordIndex]}
                   </span>
+                  {" "}Your Website Traffic
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   With real{" "}
