@@ -172,12 +172,14 @@ const faqs = [
 ];
 
 const rotatingTeams = ["teams", "bands", "school projects", "solo entrepreneurs", "people managing contractors"];
+const rotatingActions = ["instantly change the status of work items", "ask for status on any task", "create a task for anyone", "assign tasks to your team", "create tasks from meeting recordings"];
 
 const TaskAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [teamIndex, setTeamIndex] = useState(0);
+  const [actionIndex, setActionIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const { toast } = useToast();
 
@@ -186,6 +188,7 @@ const TaskAssistant = () => {
       setIsAnimating(true);
       setTimeout(() => {
         setTeamIndex((prev) => (prev + 1) % rotatingTeams.length);
+        setActionIndex((prev) => (prev + 1) % rotatingActions.length);
         setIsAnimating(false);
       }, 300);
     }, 2500);
@@ -277,7 +280,16 @@ const TaskAssistant = () => {
                   {" "}get 2X as much work done
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  With a personalized AI assistant for tasks, deadlines, and follow-ups. Ensure work gets done and customers stay happy with your team.
+                  RagAdvise Task Assistant helps you and your contractors stay in sync, and teams average 45% more work done than with spreadsheets. Use the assistant to{" "}
+                  <span
+                    className={`inline-block transition-all duration-300 font-semibold text-foreground ${
+                      isAnimating
+                        ? "opacity-0 translate-y-2"
+                        : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingActions[actionIndex]}
+                  </span>.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-4 justify-center text-sm">
                   <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
