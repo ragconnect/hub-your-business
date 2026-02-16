@@ -171,7 +171,7 @@ const faqs = [
 ];
 
 const rotatingWords = ["Engage", "Sell to", "Support", "Convert", "Direct"];
-const rotatingRoles = ["a sales expert", "your biggest fan", "a product expert", "tech support", "customer service"];
+const rotatingRoles = ["best rep", "sales expert", "product expert", "tech support", "super fan", "band manager", "contractor"];
 
 const SiteAssistant = () => {
   const [name, setName] = useState("");
@@ -291,7 +291,7 @@ const SiteAssistant = () => {
                   {" "}Your Website Traffic and 3X Conversions
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Make the AI that website visitors engage with sound and respond like{" "}
+                  Make your site speak and respond like your{" "}
                   <span
                     className={`inline-block transition-all duration-300 font-semibold text-foreground ${
                       isAnimating
@@ -301,7 +301,7 @@ const SiteAssistant = () => {
                   >
                     {rotatingRoles[roleIndex]}
                   </span>
-                  {" "}— with a voice-enabled website assistant that:
+                  {" "}- with a voice-enabled website assistant that:
                 </p>
                 <div className="mt-3 flex flex-wrap gap-3 justify-center text-sm font-medium text-foreground">
                   <span>💬 Answers questions</span>
