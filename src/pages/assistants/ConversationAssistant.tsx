@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/layout/Header";
 import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
@@ -94,11 +94,26 @@ const faqs = [
   },
 ];
 
+const rotatingWords = ["customer", "email", "phone", "text", "review", "social"];
+
 const ConversationAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+        setIsAnimating(false);
+      }, 300);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   const siteUrl =
     typeof window !== "undefined"
@@ -184,7 +199,17 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Get an AI assistant that handles all customer communication
+                  Get an AI assistant that handles all{" "}
+                  <span
+                    className={`inline-block transition-all duration-300 ${
+                      isAnimating
+                        ? "opacity-0 translate-y-2"
+                        : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingWords[wordIndex]}
+                  </span>
+                  {" "}communication
                   for your business.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
