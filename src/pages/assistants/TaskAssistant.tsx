@@ -432,84 +432,113 @@ const TaskAssistant = () => {
               A complete project management system with a superpower: tasks auto-create from your meetings.
             </p>
 
-            {/* Feature 1: Full Project Management System */}
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-              <div>
-                <div className="inline-flex items-center gap-2 text-primary mb-4">
-                  <KanbanSquare className="w-6 h-6" />
-                  <span className="font-semibold">Full Project Management System</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-4">What you get:</h3>
-                <ul className="space-y-3 text-muted-foreground mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">Kanban task board</strong> – Visualize all tasks with columns: To Do, In Progress, Done, Blocked, In Review, Cancelled</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">Auto-create tasks from meetings</strong> – Action items from meetings become trackable tasks with one click ("Assign to bulk")</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">Full task properties</strong> – Every task has title, description, assigned owner, status, priority (Urgent/Medium/Low), and actions</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">Task workflow management</strong> – Move tasks through your workflow with status updates and start/complete buttons</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">Priority tracking</strong> – Flag urgent tasks and filter by priority to focus on what matters</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">Bulk assignment</strong> – Assign multiple action items from meetings to team members at once</span>
-                  </li>
-                </ul>
-                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-4">
-                  <p className="font-semibold text-sm mb-2">This is what Jira and Monday can't do.</p>
-                  <p className="text-sm text-muted-foreground">They manage tasks. Task Assistant manages tasks AND automatically creates them from your meetings.</p>
-                </div>
-              </div>
-            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+              {/* Full Project Management System */}
+              <Card className="border-0 shadow-lg h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <KanbanSquare className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Full Project Management System</h3>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 mb-4 flex-1">
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span><strong>Kanban task board</strong> – To Do, In Progress, Done, Blocked, In Review, Cancelled</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span><strong>Auto-create tasks from meetings</strong> – Action items become trackable tasks</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span><strong>Full task properties</strong> – Title, description, owner, status, priority, actions</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span><strong>Priority tracking</strong> – Flag urgent tasks and filter by priority</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span><strong>Bulk assignment</strong> – Assign multiple action items at once</span>
+                    </li>
+                  </ul>
+                  <div className="p-3 bg-primary/5 rounded-lg border border-primary/10 mb-4">
+                    <p className="text-xs text-muted-foreground"><strong className="text-primary">This is what Jira and Monday can't do.</strong> They manage tasks. Task Assistant manages tasks AND auto-creates them from meetings.</p>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                        <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                        Sign up with Google
+                      </a>
+                    </Button>
+                    <Button size="sm" variant="outline" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup">
+                        <KanbanSquare className="mr-2 h-4 w-4" />
+                        Create Your Board
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
 
-            {/* Feature 2: Auto-Create Tasks from Meetings */}
-            <div className="mb-16">
-              <div className="order-1 lg:order-2">
-                <div className="inline-flex items-center gap-2 text-primary mb-4">
-                  <Bot className="w-6 h-6" />
-                  <span className="font-semibold">Auto-Create Tasks from Meetings</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-4">What you get:</h3>
-                <ul className="space-y-3 text-muted-foreground mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">AI listens to your meetings</strong> – Bot joins Zoom, Google Meet, Microsoft Teams, and phone calls</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">Extracts commitments automatically</strong> – "I'll finish the design by Friday" becomes a tracked task with due date</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">Bulk assignment</strong> – Review all action items and assign them to your team with one click</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">Speaker identification</strong> – Knows who said what so tasks go to the right people</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-foreground">No manual ticket creation</strong> – Commitments become tasks without typing anything</span>
-                  </li>
-                </ul>
-                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-4">
-                  <p className="font-semibold text-sm mb-2">This is the difference.</p>
-                  <p className="text-sm text-muted-foreground">Otter, Zoom, and Fireflies give you transcripts. Task Assistant gives you tickets ready to work on.</p>
-                </div>
-              </div>
+              {/* Auto-Create Tasks from Meetings */}
+              <Card className="border-0 shadow-lg h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Bot className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Auto-Create Tasks from Meetings</h3>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 mb-4 flex-1">
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span><strong>AI listens to meetings</strong> – Joins Zoom, Google Meet, Teams, and phone calls</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span><strong>Extracts commitments</strong> – "I'll finish by Friday" becomes a tracked task</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span><strong>Bulk assignment</strong> – Assign all action items to your team with one click</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span><strong>Speaker identification</strong> – Knows who said what for correct assignment</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span><strong>No manual ticket creation</strong> – Commitments become tasks automatically</span>
+                    </li>
+                  </ul>
+                  <div className="p-3 bg-primary/5 rounded-lg border border-primary/10 mb-4">
+                    <p className="text-xs text-muted-foreground"><strong className="text-primary">This is the difference.</strong> Otter and Fireflies give you transcripts. Task Assistant gives you tickets ready to work on.</p>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                        <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                        Sign up with Google
+                      </a>
+                    </Button>
+                    <Button size="sm" variant="outline" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup">
+                        <Bot className="mr-2 h-4 w-4" />
+                        Connect Your Meetings
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
-
           </div>
         </section>
         {/* Pricing */}
