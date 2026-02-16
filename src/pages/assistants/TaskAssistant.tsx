@@ -857,6 +857,21 @@ const TaskAssistant = () => {
                 Traditional project management tools make you manually create every task from your meetings. Meeting transcription tools give you notes but no task system. Task Assistant is the only platform that combines full project management with automatic task creation from conversations—so commitments made in meetings instantly become trackable work.
               </p>
             </div>
+
+            <div className="mt-10 flex flex-col gap-3 max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google
+                </a>
+              </Button>
+              <DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
+            </div>
           </div>
         </section>
 
@@ -913,6 +928,21 @@ const TaskAssistant = () => {
                 </div>
               </Carousel>
             </div>
+
+            <div className="mt-10 flex flex-col gap-3 max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google
+                </a>
+              </Button>
+              <DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
+            </div>
           </div>
         </section>
 
@@ -959,6 +989,21 @@ const TaskAssistant = () => {
                   <p className="text-sm text-muted-foreground">Automate meeting documentation and follow-ups</p>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-10 flex flex-col gap-3 max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google
+                </a>
+              </Button>
+              <DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
             </div>
           </div>
         </section>
