@@ -334,7 +334,7 @@ const MoneyAssistant = () => {
                   {" "}and keeps your books ready for tax time.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Never scramble for receipts again with an AI assistant that handles:
+                  Reduce your time spent doing money management by, on average, 13 hours per month. Never scramble for receipts again with an AI assistant that handles:
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm">
                   <span className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">💳 Expense tracking</span>
