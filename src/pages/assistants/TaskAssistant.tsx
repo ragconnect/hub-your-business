@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/layout/Header";
 import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
@@ -171,11 +171,26 @@ const faqs = [
   },
 ];
 
+const rotatingTeams = ["teams", "bands", "school projects", "solo entrepreneurs", "people managing contractors"];
+
 const TaskAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [teamIndex, setTeamIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setTeamIndex((prev) => (prev + 1) % rotatingTeams.length);
+        setIsAnimating(false);
+      }, 300);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
   
   const siteUrl = typeof window !== "undefined" ? `${window.location.origin}/assistants/task` : "https://ragadvise.com/assistants/task";
   const title = "Task Assistant — Project Management + Auto-Create Tasks from Meetings | RagAdvise";
@@ -249,7 +264,17 @@ const TaskAssistant = () => {
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                  An AI project tracker that helps teams get 2X as much work done
+                  An AI project tracker that helps{" "}
+                  <span
+                    className={`inline-block transition-all duration-300 ${
+                      isAnimating
+                        ? "opacity-0 translate-y-2"
+                        : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingTeams[teamIndex]}
+                  </span>
+                  {" "}get 2X as much work done
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   With a personalized AI assistant for tasks, deadlines, and follow-ups. Ensure work gets done and customers stay happy with your team.
