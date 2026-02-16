@@ -170,7 +170,7 @@ const faqs = [
   },
 ];
 
-const rotatingWords = ["conversations", "appointments", "answers", "engagement"];
+const rotatingWords = ["sales", "appointments", "answers", "engagement", "directions"];
 
 const SiteAssistant = () => {
   const [name, setName] = useState("");
@@ -288,7 +288,16 @@ const SiteAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Convert 3X More Visitors
+                  Create an AI Voice To Engage Your Website Traffic:{" "}
+                  <span
+                    className={`inline-block transition-all duration-300 ${
+                      isAnimating
+                        ? "opacity-0 translate-y-2"
+                        : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingWords[wordIndex]}
+                  </span>
                 </h1>
                 <p className="mt-3 text-base text-muted-foreground">
                   Get a voice-enabled website voice that:
