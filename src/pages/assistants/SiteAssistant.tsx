@@ -171,12 +171,14 @@ const faqs = [
 ];
 
 const rotatingWords = ["Engage", "Sell to", "Support", "Convert", "Direct"];
+const rotatingRoles = ["a sales expert", "your biggest fan", "a product expert", "tech support", "customer service"];
 
 const SiteAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
+  const [roleIndex, setRoleIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const { toast } = useToast();
 
@@ -185,6 +187,7 @@ const SiteAssistant = () => {
       setIsAnimating(true);
       setTimeout(() => {
         setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+        setRoleIndex((prev) => (prev + 1) % rotatingRoles.length);
         setIsAnimating(false);
       }, 300);
     }, 2500);
@@ -288,7 +291,7 @@ const SiteAssistant = () => {
                   {" "}Your Website Traffic and 3X Conversions
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  With real{" "}
+                  Make the AI that website visitors engage with, sound and respond like{" "}
                   <span
                     className={`inline-block transition-all duration-300 font-semibold text-foreground ${
                       isAnimating
@@ -296,9 +299,8 @@ const SiteAssistant = () => {
                         : "opacity-100 translate-y-0"
                     }`}
                   >
-                    {rotatingWords[wordIndex]}
+                    {rotatingRoles[roleIndex]}
                   </span>
-                  , not popups
                 </p>
                 <p className="mt-3 text-base text-muted-foreground">
                   Get a voice-enabled website voice that:
