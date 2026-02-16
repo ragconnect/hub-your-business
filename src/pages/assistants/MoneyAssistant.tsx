@@ -63,6 +63,7 @@ const features = [
     ],
     tipNew: "Start with clean books from day one—no learning curve",
     tipExisting: "Save 2+ hours per week on manual bookkeeping",
+    cta: "Connect Your Expenses",
   },
   {
     icon: PieChart,
@@ -76,6 +77,7 @@ const features = [
     ],
     tipNew: 'Ask: "Which business meals were most expensive last month?"',
     tipExisting: "Track necessary vs. unnecessary expenses to cut $500-1,000 in waste monthly",
+    cta: "See Your Insights",
   },
   {
     icon: FileText,
@@ -89,6 +91,7 @@ const features = [
     ],
     tipNew: "Look professional when applying for loans or credit lines",
     tipExisting: "Financial documents ready in minutes, not hours",
+    cta: "Generate Your Reports",
   },
   {
     icon: Landmark,
@@ -102,6 +105,7 @@ const features = [
     ],
     tipNew: "Save $2,000-5,000 annually in taxes with proper expense tracking",
     tipExisting: "Never miss a deduction again—AI catches every tax-deductible expense",
+    cta: "Organize for Tax Time",
   },
   {
     icon: Building2,
@@ -115,6 +119,7 @@ const features = [
     ],
     tipNew: "Computers (5-year), furniture (7-year), vehicles (5-year), buildings (39-year)",
     tipExisting: "Save thousands by properly depreciating assets instead of expensing everything at once",
+    cta: "Track Your Assets",
   },
   {
     icon: RotateCcw,
@@ -128,6 +133,7 @@ const features = [
     ],
     tipNew: "Track: Adobe, Microsoft 365, Slack, Zoom, Canva, and more",
     tipExisting: "Most businesses waste $500-1,500/year on unused subscriptions they forgot about",
+    cta: "Manage Subscriptions",
   },
   {
     icon: Smartphone,
@@ -141,6 +147,7 @@ const features = [
     ],
     tipNew: "Contractors: Track materials and mileage from the job site",
     tipExisting: "Consultants: Document every client expense for accurate billing",
+    cta: "Add Your Receipts",
   },
 ];
 
@@ -486,6 +493,20 @@ const MoneyAssistant = () => {
                         <p className="text-xs font-semibold text-primary mb-1">Existing businesses</p>
                         <p className="text-[11px] text-muted-foreground leading-tight">{feature.tipExisting}</p>
                       </div>
+                    </div>
+                    <div className="flex flex-col gap-2 mt-4">
+                      <Button size="sm" className="w-full" asChild>
+                        <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                          <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                          Sign up with Google
+                        </a>
+                      </Button>
+                      <Button size="sm" variant="outline" className="w-full" asChild>
+                        <a href="https://my.ragadvise.com/signup">
+                          <feature.icon className="mr-2 h-4 w-4" />
+                          {feature.cta}
+                        </a>
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
