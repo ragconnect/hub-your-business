@@ -199,7 +199,7 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Handle all{" "}
+                  An AI Business Assistant to handle all{" "}
                   <span
                     className={`inline-block transition-all duration-300 ${
                       isAnimating
@@ -209,7 +209,7 @@ const ConversationAssistant = () => {
                   >
                     {rotatingWords[wordIndex]}
                   </span>
-                  {" "}communication for your business.
+                  {" "}customer communication for your business.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Most teams reduce time spent on{" "}
