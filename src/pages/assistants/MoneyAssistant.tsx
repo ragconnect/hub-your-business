@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/layout/Header";
 import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
@@ -228,11 +228,26 @@ const whoDescribesYou = [
   },
 ];
 
+const rotatingMoneyActions = ["tracks every dollar", "organizes your finances", "helps you solo bookkeep"];
+
 const MoneyAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [moneyIndex, setMoneyIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setMoneyIndex((prev) => (prev + 1) % rotatingMoneyActions.length);
+        setIsAnimating(false);
+      }, 300);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   const siteUrl = typeof window !== "undefined" ? `${window.location.origin}/assistants/money` : "https://ragadvise.com/assistants/money";
   const title = "Money Assistant — AI Bookkeeping That Tracks Every Dollar | RagAdvise";
@@ -306,7 +321,17 @@ const MoneyAssistant = () => {
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                  Get an AI assistant that tracks every dollar, organizes your finances, and keeps your books ready for tax time.
+                  Get an AI assistant that{" "}
+                  <span
+                    className={`inline-block transition-all duration-300 ${
+                      isAnimating
+                        ? "opacity-0 translate-y-2"
+                        : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingMoneyActions[moneyIndex]}
+                  </span>
+                  {" "}and keeps your books ready for tax time.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Never scramble for receipts again with an AI assistant that handles:
