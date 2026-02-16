@@ -199,7 +199,7 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Get an AI assistant that handles all{" "}
+                  Handle all{" "}
                   <span
                     className={`inline-block transition-all duration-300 ${
                       isAnimating
@@ -209,12 +209,20 @@ const ConversationAssistant = () => {
                   >
                     {rotatingWords[wordIndex]}
                   </span>
-                  {" "}communication
-                  for your business.
+                  {" "}communication for your business.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Look professional and never miss a customer again with an AI
-                  assistant that works 24/7 across:
+                  Most teams reduce time spent on{" "}
+                  <span
+                    className={`inline-block transition-all duration-300 font-semibold text-foreground ${
+                      isAnimating
+                        ? "opacity-0 translate-y-2"
+                        : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingWords[wordIndex]}s
+                  </span>
+                  {" "}by 40%.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm font-medium">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
