@@ -309,6 +309,7 @@ const SiteAssistant = () => {
                   <span>✉️ Captures leads</span>
                   <span>📅 Drives bookings/callbacks</span>
                   <span>🧾 Creates support requests</span>
+                  <span>📝 Records & logs calls</span>
                 </div>
                 <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
