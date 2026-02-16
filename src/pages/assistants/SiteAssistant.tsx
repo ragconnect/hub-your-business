@@ -26,6 +26,7 @@ import {
   Bot,
   Video,
   Calendar,
+  RefreshCw,
   X,
   Check,
   Send,
@@ -586,6 +587,71 @@ const SiteAssistant = () => {
                   Schedule Demo & Free Setup
                 </Button>
               </DemoRequestModal>
+            </div>
+          </div>
+        </section>
+
+        {/* Improve Answers Over Time */}
+        <section className="py-16 md:py-24">
+          <div className="container max-w-4xl">
+            <div className="grid md:grid-cols-[1fr,1fr] gap-8 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 text-primary mb-4">
+                  <RefreshCw className="w-6 h-6" />
+                  <span className="text-lg font-semibold">AutoLearn</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  Improve Answers Over Time
+                </h2>
+                <p className="text-muted-foreground text-lg">
+                  AutoLearn records and transcribes every visitor conversation. You can review the questions, add a better answer, and the assistant will use your updated response going forward.
+                </p>
+                <div className="mt-8 flex flex-col gap-3 max-w-sm">
+                  <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                    <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                      <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                      Sign up with Google
+                    </a>
+                  </Button>
+                  <DemoRequestModal>
+                    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Demo & Free Setup
+                    </Button>
+                  </DemoRequestModal>
+                </div>
+              </div>
+              <Card className="border-primary/20 bg-primary/5">
+                <CardContent className="p-6 space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-sm font-bold text-primary">1</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold">Visitor asks a question</p>
+                      <p className="text-sm text-muted-foreground">Every conversation is recorded and transcribed automatically.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-sm font-bold text-primary">2</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold">You review & refine</p>
+                      <p className="text-sm text-muted-foreground">See exactly what was asked and add a better answer in seconds.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-sm font-bold text-primary">3</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold">Assistant gets smarter</p>
+                      <p className="text-sm text-muted-foreground">Next time that question comes up, your updated answer is used automatically.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
