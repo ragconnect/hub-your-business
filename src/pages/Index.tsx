@@ -55,7 +55,7 @@ const HeroSection = () => {
             >
               {rotatingWords[wordIndex]}
             </span>
-            {" "}Tools? AI Platform For Small Teams
+            {" "}Tools? AI Business Assistants For Small Teams
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             The all-in-one backend AI for your business that automates operations and management —all for $16/month.
