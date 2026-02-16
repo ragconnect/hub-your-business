@@ -228,7 +228,7 @@ const whoDescribesYou = [
   },
 ];
 
-const rotatingMoneyActions = ["tracks every dollar", "organizes your finances", "helps you solo bookkeep"];
+const rotatingMoneyActions = ["tracks every dollar", "organizes your finances", "helps you solo bookkeep", "categorizes expenses", "tracks physical assets like laptops"];
 
 const MoneyAssistant = () => {
   const [name, setName] = useState("");
