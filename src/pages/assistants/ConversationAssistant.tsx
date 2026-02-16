@@ -440,12 +440,20 @@ const ConversationAssistant = () => {
                       <p className="text-[11px] text-muted-foreground leading-tight">Stop losing 30-40% of calls to voicemail. AI handles overflow during busy times and after hours. Keep your existing number—add AI as your always-available backup.</p>
                     </div>
                   </div>
-                  <DemoRequestModal>
-                    <Button size="sm" className="w-full">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo
+                  <div className="flex flex-col gap-2">
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                        <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                        Sign up with Google
+                      </a>
                     </Button>
-                  </DemoRequestModal>
+                    <Button size="sm" variant="outline" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup">
+                        <Phone className="mr-2 h-4 w-4" />
+                        Buy Phone Number
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -489,12 +497,20 @@ const ConversationAssistant = () => {
                       <p className="text-[11px] text-muted-foreground leading-tight">Stop answering the same questions 50 times a day. AI handles pricing, hours, location, and FAQs automatically. You only see emails that actually need your attention.</p>
                     </div>
                   </div>
-                  <DemoRequestModal>
-                    <Button size="sm" className="w-full">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo
+                  <div className="flex flex-col gap-2">
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                        <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                        Sign up with Google
+                      </a>
                     </Button>
-                  </DemoRequestModal>
+                    <Button size="sm" variant="outline" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup">
+                        <Mail className="mr-2 h-4 w-4" />
+                        Connect Your Email
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -541,12 +557,20 @@ const ConversationAssistant = () => {
                       <p className="text-[11px] text-muted-foreground leading-tight">Consolidate 5+ messaging platforms into one inbox. No more missed DMs or forgotten texts. AI responds instantly so customers don't wait—or go to competitors.</p>
                     </div>
                   </div>
-                  <DemoRequestModal>
-                    <Button size="sm" className="w-full">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo
+                  <div className="flex flex-col gap-2">
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                        <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                        Sign up with Google
+                      </a>
                     </Button>
-                  </DemoRequestModal>
+                    <Button size="sm" variant="outline" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup">
+                        <MessageSquare className="mr-2 h-4 w-4" />
+                        Connect Your Messaging
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -581,12 +605,20 @@ const ConversationAssistant = () => {
                       <strong className="text-primary">71% of customers expect chat.</strong> AI gives you enterprise-level support without staff.
                     </p>
                   </div>
-                  <DemoRequestModal>
-                    <Button size="sm" className="w-full">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo
+                  <div className="flex flex-col gap-2">
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                        <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                        Sign up with Google
+                      </a>
                     </Button>
-                  </DemoRequestModal>
+                    <Button size="sm" variant="outline" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup">
+                        <Globe className="mr-2 h-4 w-4" />
+                        Connect Your Website
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -633,12 +665,20 @@ const ConversationAssistant = () => {
                       <p className="text-[11px] text-muted-foreground leading-tight">Most businesses get 300-500% more reviews within 3 months. AI drafts personalized responses to every review and sends smart follow-up reminders.</p>
                     </div>
                   </div>
-                  <DemoRequestModal>
-                    <Button size="sm" className="w-full">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo
+                  <div className="flex flex-col gap-2">
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                        <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                        Sign up with Google
+                      </a>
                     </Button>
-                  </DemoRequestModal>
+                    <Button size="sm" variant="outline" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup">
+                        <Star className="mr-2 h-4 w-4" />
+                        Connect Review Accounts
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -677,12 +717,20 @@ const ConversationAssistant = () => {
                       <strong className="text-primary">Never drop the ball.</strong> AI ensures every customer gets attention at the right time.
                     </p>
                   </div>
-                  <DemoRequestModal>
-                    <Button size="sm" className="w-full">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo
+                  <div className="flex flex-col gap-2">
+                    <Button size="sm" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                        <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                        Sign up with Google
+                      </a>
                     </Button>
-                  </DemoRequestModal>
+                    <Button size="sm" variant="outline" className="w-full" asChild>
+                      <a href="https://my.ragadvise.com/signup">
+                        <Bot className="mr-2 h-4 w-4" />
+                        Set Up Automation
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
