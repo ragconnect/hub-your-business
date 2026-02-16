@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/layout/Header";
 import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
@@ -170,11 +170,26 @@ const faqs = [
   },
 ];
 
+const rotatingWords = ["conversations", "appointments", "answers", "engagement"];
+
 const SiteAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+        setIsAnimating(false);
+      }, 300);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   const siteUrl =
     typeof window !== "undefined"
@@ -255,16 +270,26 @@ const SiteAssistant = () => {
           <ScrollingCharacterBg />
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
+                <p className="mt-6 text-xl text-muted-foreground">
+                  With real{" "}
+                  <span
+                    className={`inline-block transition-all duration-300 font-semibold text-foreground ${
+                      isAnimating
+                        ? "opacity-0 translate-y-2"
+                        : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingWords[wordIndex]}
+                  </span>
+                  , not popups
+                </p>
                 <h1
                   id="hero-title"
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Create an AI Voice To Engage Your Website Traffic: Support and Convert 3x More Visitors
+                  Convert 3X More Visitors
                 </h1>
-                <p className="mt-6 text-lg text-muted-foreground">
-                  Support visitors with real conversations, not intrusive popups.
-                </p>
                 <p className="mt-3 text-base text-muted-foreground">
                   Get a voice-enabled website voice that:
                 </p>
