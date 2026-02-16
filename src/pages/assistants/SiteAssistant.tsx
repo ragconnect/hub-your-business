@@ -291,7 +291,7 @@ const SiteAssistant = () => {
                   {" "}Your Website Traffic and 3X Conversions
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Make your website speak and respond like your{" "}
+                  Make your site speak and respond like your{" "}
                   <span
                     className={`inline-block transition-all duration-300 font-semibold text-foreground ${
                       isAnimating
@@ -301,7 +301,7 @@ const SiteAssistant = () => {
                   >
                     {rotatingRoles[roleIndex]}
                   </span>
-                  {" "}- with an AI voice website assistant that:
+                  {" "}- with a voice-enabled website assistant that:
                 </p>
                 <div className="mt-3 flex flex-wrap gap-3 justify-center text-sm font-medium text-foreground">
                   <span>💬 Answers questions</span>
