@@ -281,7 +281,7 @@ const SiteAssistant = () => {
             <div className="max-w-3xl mx-auto text-center">
                 <h1
                   id="hero-title"
-                  className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-wide text-primary"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
                   Create an AI Voice To{" "}
