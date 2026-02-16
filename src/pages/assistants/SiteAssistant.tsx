@@ -443,6 +443,20 @@ const SiteAssistant = () => {
                 actually want.
               </p>
             </div>
+            <div className="mt-8 flex flex-col gap-3 justify-center max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google
+                </a>
+              </Button>
+              <DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
+            </div>
           </div>
         </section>
 
@@ -491,6 +505,20 @@ const SiteAssistant = () => {
                 instantly. Customers get value before talking to you. Your
                 website finally converts.
               </p>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 justify-center max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google
+                </a>
+              </Button>
+              <DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
             </div>
           </div>
         </section>
@@ -545,11 +573,17 @@ const SiteAssistant = () => {
               </Card>
             </div>
 
-            <div className="text-center mt-10">
+            <div className="mt-10 flex flex-col gap-3 justify-center max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google
+                </a>
+              </Button>
               <DemoRequestModal>
-                <Button size="lg">
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
                   <Calendar className="mr-2 h-4 w-4" />
-                  Schedule Demo
+                  Schedule Demo & Free Setup
                 </Button>
               </DemoRequestModal>
             </div>
@@ -588,88 +622,33 @@ const SiteAssistant = () => {
                 </Card>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Works Better as a Suite */}
-        <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Works better as a suite</h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Website Voice is powerful alone, but transformative when connected to our full suite.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/conversation'}>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
-                      <MessageCircle className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-semibold">Conversation Assistant</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Captures revenue opportunities and customer requests across channels.</p>
-                  <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/task'}>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
-                      <ListChecks className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-semibold">Task Assistant</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Turns website leads into action: follow-ups, assignments, deadlines.</p>
-                  <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/customer'}>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
-                      <Users className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-semibold">Customer Assistant</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Shows who pays, who churns, and which customers are most profitable.</p>
-                  <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/training'}>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
-                      <BookOpen className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-semibold">Training Assistant</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Keeps site content workflows consistent with clear SOPs and policies.</p>
-                  <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
-                </CardContent>
-              </Card>
-              <Card className="border-primary bg-primary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-primary-foreground">
-                      <Globe className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-semibold">Website Voice</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground">You're here. Captures leads and ties spend to conversion so marketing is measurable.</p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.location.href = '/assistants/money'}>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted">
-                      <DollarSign className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-semibold">Money Assistant</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground">The source of truth for business performance and financial health.</p>
-                  <p className="text-sm text-primary mt-3 font-medium">Learn more →</p>
-                </CardContent>
-              </Card>
+            <div className="mt-10 flex flex-col gap-3 justify-center max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google
+                </a>
+              </Button>
+              <DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
+            </div>
+            <div className="mt-10 flex flex-col gap-3 justify-center max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google
+                </a>
+              </Button>
+              <DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
             </div>
           </div>
         </section>
@@ -872,9 +851,15 @@ const SiteAssistant = () => {
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                 <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                  Sign up with Google or email
+                  Sign up with Google
                 </a>
               </Button>
+              <DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
             </div>
           </div>
         </section>
@@ -897,6 +882,20 @@ const SiteAssistant = () => {
                 </AccordionItem>
               ))}
             </Accordion>
+            <div className="mt-10 flex flex-col gap-3 justify-center max-w-md mx-auto">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google
+                </a>
+              </Button>
+              <DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
+            </div>
           </div>
         </section>
 
