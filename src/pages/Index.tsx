@@ -3,7 +3,7 @@ import googleLogo from "@/assets/logos/google.png";
 import { Button } from "@/components/ui/button";
 import { Play, Calendar } from "lucide-react";
 import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
-
+import { useState, useEffect } from "react";
 
 import Header from "@/components/layout/Header";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
@@ -19,14 +19,43 @@ import OfferBanner from "@/components/marketing/OfferBanner";
 import VideoModal from "@/components/marketing/VideoModal";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 
+const rotatingWords = [
+  "SaaS", "Money", "Email", "Phone", "Project Management",
+  "Website Chat", "File Storage", "Note Taking", "Recording Meetings"
+];
+
 const HeroSection = () => {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+        setIsAnimating(false);
+      }, 300);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative pt-8 md:pt-12 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
       <ScrollingCharacterBg />
       <div className="container relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-            👀 to Replace All Your SaaS Tools? The Preferred AI Business Platform For Small Teams
+            👀 to Replace All Your{" "}
+            <span
+              className={`inline-block transition-all duration-300 ${
+                isAnimating
+                  ? "opacity-0 translate-y-2"
+                  : "opacity-100 translate-y-0"
+              }`}
+            >
+              {rotatingWords[wordIndex]}
+            </span>
+            {" "}Tools? The Preferred AI Business Platform For Small Teams
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             The all-in-one backend AI for your business that automates operations and management —all for $16/month.
