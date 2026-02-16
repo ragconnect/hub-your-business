@@ -270,19 +270,6 @@ const SiteAssistant = () => {
           <ScrollingCharacterBg />
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
-                <p className="mt-6 text-xl text-muted-foreground">
-                  With real{" "}
-                  <span
-                    className={`inline-block transition-all duration-300 font-semibold text-foreground ${
-                      isAnimating
-                        ? "opacity-0 translate-y-2"
-                        : "opacity-100 translate-y-0"
-                    }`}
-                  >
-                    {rotatingWords[wordIndex]}
-                  </span>
-                  , not popups
-                </p>
                 <h1
                   id="hero-title"
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
@@ -299,6 +286,19 @@ const SiteAssistant = () => {
                     {rotatingWords[wordIndex]}
                   </span>
                 </h1>
+                <p className="mt-6 text-xl text-muted-foreground">
+                  With real{" "}
+                  <span
+                    className={`inline-block transition-all duration-300 font-semibold text-foreground ${
+                      isAnimating
+                        ? "opacity-0 translate-y-2"
+                        : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingWords[wordIndex]}
+                  </span>
+                  , not popups
+                </p>
                 <p className="mt-3 text-base text-muted-foreground">
                   Get a voice-enabled website voice that:
                 </p>
