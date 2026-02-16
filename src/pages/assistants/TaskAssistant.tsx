@@ -280,21 +280,20 @@ const TaskAssistant = () => {
                   {" "}get 2X as much work done
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  RagAdvise Task Assistant helps you and your contractors stay in sync, and teams average 45% more work done than with spreadsheets. Use the assistant to{" "}
-                  <span
-                    className={`inline-block transition-all duration-300 font-semibold text-foreground ${
-                      isAnimating
-                        ? "opacity-0 translate-y-2"
-                        : "opacity-100 translate-y-0"
-                    }`}
-                  >
-                    {rotatingActions[actionIndex]}
-                  </span>.
+                  RagAdvise Task Assistant helps you and your contractors stay in sync, and teams average 45% more work done than with spreadsheets.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-4 justify-center text-sm">
                   <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
                     <Video className="w-4 h-4" />
-                    Auto-create tasks from meetings, unlike any other Project tool
+                    <span
+                      className={`inline-block transition-all duration-300 ${
+                        isAnimating
+                          ? "opacity-0 translate-y-2"
+                          : "opacity-100 translate-y-0"
+                      }`}
+                    >
+                      {rotatingActions[actionIndex]}
+                    </span>
                   </span>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm text-muted-foreground">
