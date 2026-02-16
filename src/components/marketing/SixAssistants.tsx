@@ -115,11 +115,8 @@ const SixAssistants: React.FC = () => {
           {assistants.map(({ key, emoji, title, subtitle, features, link, channels }) => (
             <Card key={key} className="group hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <div className="flex items-center gap-2 flex-wrap mb-3">
+                <div className="mb-3">
                   <span className="text-3xl">{emoji}</span>
-                  {channels && channels.map((ch) => (
-                    <span key={ch} className="text-[11px] font-medium bg-primary/10 text-primary rounded-full px-2 py-0.5">{ch}</span>
-                  ))}
                 </div>
                 <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground font-medium">{subtitle}</p>
@@ -131,19 +128,24 @@ const SixAssistants: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                {link ? (
-                  <a
-                    href={link}
-                    onClick={() => window.scrollTo(0, 0)}
-                    className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:underline"
-                  >
-                    Learn more →
-                  </a>
-                ) : (
-                  <span className="mt-4 inline-flex items-center text-sm font-medium text-muted-foreground">
-                    Coming soon
-                  </span>
-                )}
+                <div className="mt-4 flex items-center gap-2 flex-wrap">
+                  {link ? (
+                    <a
+                      href={link}
+                      onClick={() => window.scrollTo(0, 0)}
+                      className="inline-flex items-center text-sm font-medium text-primary hover:underline"
+                    >
+                      Learn more →
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center text-sm font-medium text-muted-foreground">
+                      Coming soon
+                    </span>
+                  )}
+                  {channels && channels.map((ch) => (
+                    <span key={ch} className="text-[11px] font-medium bg-primary/10 text-primary rounded-full px-2 py-0.5">{ch}</span>
+                  ))}
+                </div>
               </CardContent>
             </Card>
           ))}
