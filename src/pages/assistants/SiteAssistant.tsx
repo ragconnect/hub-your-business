@@ -285,7 +285,7 @@ const SiteAssistant = () => {
                   >
                     {rotatingWords[wordIndex]}
                   </span>
-                  {" "}Your Website Traffic
+                  {" "}Your Website Traffic and 3X Conversions
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   With real{" "}
