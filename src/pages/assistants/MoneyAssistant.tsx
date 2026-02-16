@@ -4,7 +4,7 @@ import Header from "@/components/layout/Header";
 import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
 import OfferBanner from "@/components/marketing/OfferBanner";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
@@ -457,35 +457,34 @@ const MoneyAssistant = () => {
               Complete financial management powered by AI—from expense tracking to tax prep.
             </p>
 
-            <div className="space-y-12">
-              {features.map((feature, idx) => (
-                <Card key={feature.title} className="overflow-hidden">
-                  <CardHeader className="bg-primary/5 border-b">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+              {features.map((feature) => (
+                <Card key={feature.title} className="border-0 shadow-lg h-full flex flex-col">
+                  <CardContent className="p-6 flex flex-col flex-1">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <feature.icon className="w-6 h-6 text-primary" />
                       </div>
-                      <CardTitle className="text-xl md:text-2xl">{feature.title}</CardTitle>
+                      <div>
+                        <h3 className="text-xl font-bold">{feature.title}</h3>
+                      </div>
                     </div>
-                  </CardHeader>
-                  <CardContent className="p-6 md:p-8">
-                    <p className="font-medium text-muted-foreground mb-4">What you get:</p>
-                    <ul className="space-y-3 mb-6">
+                    <ul className="space-y-2 mb-4 flex-1">
                       {feature.highlights.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <li key={i} className="flex items-start gap-2 text-sm">
+                          <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
-                    <div className="grid md:grid-cols-2 gap-4 pt-4 border-t">
-                      <div className="bg-primary/5 rounded-lg p-4">
-                        <p className="text-sm font-medium text-primary mb-1">💡 New businesses:</p>
-                        <p className="text-sm text-muted-foreground">{feature.tipNew}</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                        <p className="text-xs font-semibold text-primary mb-1">New businesses</p>
+                        <p className="text-[11px] text-muted-foreground leading-tight">{feature.tipNew}</p>
                       </div>
-                      <div className="bg-primary/5 rounded-lg p-4">
-                        <p className="text-sm font-medium text-primary mb-1">💡 Existing businesses:</p>
-                        <p className="text-sm text-muted-foreground">{feature.tipExisting}</p>
+                      <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                        <p className="text-xs font-semibold text-primary mb-1">Existing businesses</p>
+                        <p className="text-[11px] text-muted-foreground leading-tight">{feature.tipExisting}</p>
                       </div>
                     </div>
                   </CardContent>
