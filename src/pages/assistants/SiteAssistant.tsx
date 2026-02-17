@@ -284,7 +284,7 @@ const SiteAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Turn website traffic into 3× more conversions—feel confident in minutes with AI voice to support your website traffic
+                  Turn website traffic into 3× more conversions—feel confident in minutes with AI voice
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Make your site speak and respond like your{" "}
