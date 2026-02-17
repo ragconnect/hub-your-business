@@ -267,51 +267,11 @@ const TaskAssistant = () => {
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                  An AI project tracker that helps{" "}
-                  <span
-                    className={`inline-block transition-all duration-300 ${
-                      isAnimating
-                        ? "opacity-0 translate-y-2"
-                        : "opacity-100 translate-y-0"
-                    }`}
-                  >
-                    {rotatingTeams[teamIndex]}
-                  </span>
-                  {" "}get 2X as much work done
+                  With a simple chat, turn conversations into assigned tasks that get done.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  RagAdvise Task Assistant helps you and your contractors stay in sync, and teams average 45% more work done than with spreadsheets.
+                  RagAdvise Task Assistant turns the things your team says and agrees to into clear, trackable work. Create tasks, assign owners, set due dates and priorities, and keep everyone aligned without digging through threads.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-4 justify-center text-sm">
-                  <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full">
-                    <Video className="w-4 h-4" />
-                    <span>
-                      Just ask the AI Business Assistant to{" "}
-                      <span
-                        className={`inline transition-all duration-300 ${
-                          isAnimating
-                            ? "opacity-0"
-                            : "opacity-100"
-                        }`}
-                      >
-                        {rotatingActions[actionIndex]}
-                      </span>
-                    </span>
-                  </span>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm text-muted-foreground">
-                  <span>📝 Tasks</span>
-                  <span>•</span>
-                  <span>📋 Kanban board</span>
-                  <span>•</span>
-                  <span>✅ Action items from meetings</span>
-                  <span>•</span>
-                  <span>👥 Assign owners</span>
-                  <span>•</span>
-                  <span>⏰ Due dates</span>
-                  <span>•</span>
-                  <span>🚨 Priorities</span>
-                </div>
                 <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                     <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
