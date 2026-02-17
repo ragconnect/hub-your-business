@@ -179,6 +179,7 @@ const chatPrompts = [
   "Create TikTok ads campaign",
   "Follow up with Ivan",
   "Design marketing brief",
+  "Record meeting with the team",
   "Schedule team standup",
   "Review quarterly report",
 ];
