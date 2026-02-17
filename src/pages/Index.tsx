@@ -76,9 +76,6 @@ const HeroSection = () => {
           <p className="mt-4 text-lg text-muted-foreground">
             Turn everyday business moments into finished work—faster replies, smoother follow‑through, and fewer things slipping through the cracks.
           </p>
-          <p className="mt-3 text-base text-muted-foreground">
-            RagAdvise is a connected suite of AI assistants that turns calls, emails, website visitors, invoices, and meetings into replies sent, leads captured, invoices drafted, notes summarized, and action items assigned—in minutes.
-          </p>
           <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
             <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
               <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
