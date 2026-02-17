@@ -294,7 +294,7 @@ const SiteAssistant = () => {
                   >
                     {rotatingWords[wordIndex]}
                   </span>
-                  {" "}Your Website Traffic and 3X Conversions
+                  {" "}Your Website Traffic and 3X Conversions in 7 days
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Make your site speak and respond like your{" "}
