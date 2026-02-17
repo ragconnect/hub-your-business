@@ -71,7 +71,7 @@ const HeroSection = () => {
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-            Starting today, AI handles the busywork across your business
+            Starting today, AI handles the busywork across your business, so you can feel accomplished in minutes.
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             <AnimatedWord text={rotatingExamples[exampleIndex]} animating={isExampleAnimating} />
