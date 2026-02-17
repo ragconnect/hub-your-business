@@ -272,6 +272,19 @@ const TaskAssistant = () => {
                 <p className="mt-6 text-xl text-muted-foreground">
                   RagAdvise Task Assistant turns the things your team says and agrees to into clear, trackable work. Create tasks, assign owners, set due dates and priorities, and keep everyone aligned without digging through threads.
                 </p>
+                <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm text-muted-foreground">
+                  <span>📝 Tasks</span>
+                  <span>•</span>
+                  <span>📋 Kanban board</span>
+                  <span>•</span>
+                  <span>✅ Action items from meetings</span>
+                  <span>•</span>
+                  <span>👥 Assign owners</span>
+                  <span>•</span>
+                  <span>⏰ Due dates</span>
+                  <span>•</span>
+                  <span>🚨 Priorities</span>
+                </div>
                 <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                     <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
