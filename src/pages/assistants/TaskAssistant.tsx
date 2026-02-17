@@ -728,7 +728,7 @@ const TaskAssistant = () => {
                     <td className="text-center py-3 px-3 text-muted-foreground">Included</td>
                   </tr>
                   <tr>
-                    <td className="py-3 px-3 font-medium whitespace-nowrap">Full Project Management</td>
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">One system the team can trust</td>
                     <td className="text-center py-3 px-3 bg-primary/5"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
@@ -740,7 +740,7 @@ const TaskAssistant = () => {
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
                   </tr>
                   <tr className="bg-muted/30">
-                    <td className="py-3 px-3 font-medium whitespace-nowrap">Auto-Create Tasks from Meetings</td>
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">Nothing slips through the cracks</td>
                     <td className="text-center py-3 px-3 bg-primary/5"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
@@ -752,7 +752,7 @@ const TaskAssistant = () => {
                     <td className="text-center py-3 px-3"><span className="text-xs text-muted-foreground">Lists only</span></td>
                   </tr>
                   <tr>
-                    <td className="py-3 px-3 font-medium whitespace-nowrap">Meeting Transcription</td>
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">Capture work where it happens</td>
                     <td className="text-center py-3 px-3 bg-primary/5"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
@@ -764,7 +764,7 @@ const TaskAssistant = () => {
                     <td className="text-center py-3 px-3"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                   </tr>
                   <tr className="bg-muted/30">
-                    <td className="py-3 px-3 font-medium whitespace-nowrap">Meeting Bot Joins Calls</td>
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">Clean handoffs, no lost context</td>
                     <td className="text-center py-3 px-3 bg-primary/5"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
@@ -776,7 +776,7 @@ const TaskAssistant = () => {
                     <td className="text-center py-3 px-3"><span className="text-xs text-muted-foreground">Zoom only</span></td>
                   </tr>
                   <tr>
-                    <td className="py-3 px-3 font-medium whitespace-nowrap">Bulk Task Assignment</td>
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">Everyone knows what to do next</td>
                     <td className="text-center py-3 px-3 bg-primary/5"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><span className="text-xs text-muted-foreground">One at a time</span></td>
                     <td className="text-center py-3 px-3"><span className="text-xs text-muted-foreground">One at a time</span></td>
@@ -788,7 +788,7 @@ const TaskAssistant = () => {
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
                   </tr>
                   <tr className="bg-muted/30">
-                    <td className="py-3 px-3 font-medium whitespace-nowrap">Automatic Follow-through</td>
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">Faster follow‑through, fewer pings</td>
                     <td className="text-center py-3 px-3 bg-primary/5"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
@@ -800,7 +800,7 @@ const TaskAssistant = () => {
                     <td className="text-center py-3 px-3"><span className="text-xs text-muted-foreground">Limited</span></td>
                   </tr>
                   <tr>
-                    <td className="py-3 px-3 font-medium whitespace-nowrap">Meeting Analytics</td>
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">Work stays on track when busy</td>
                     <td className="text-center py-3 px-3 bg-primary/5"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
@@ -812,7 +812,7 @@ const TaskAssistant = () => {
                     <td className="text-center py-3 px-3"><span className="text-xs text-muted-foreground">Basic</span></td>
                   </tr>
                   <tr className="bg-muted/30">
-                    <td className="py-3 px-3 font-medium whitespace-nowrap">Speaker Identification</td>
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">Less admin, more execution</td>
                     <td className="text-center py-3 px-3 bg-primary/5"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
                     <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
