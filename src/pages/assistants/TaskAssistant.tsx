@@ -692,7 +692,7 @@ const TaskAssistant = () => {
         <section className="py-16 md:py-24">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              How does RagAdvise Task Assistant compare?
+              RagAdvise Task Assistant is a comprehensive work management assistant that creates, assigns, and tracks tasks automatically.
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
               RagAdvise Task Assistant is a comprehensive work management assistant that creates, assigns, and tracks tasks automatically. Unlike slower, expensive one‑trick tools that only do project boards or meeting notes, Task Assistant combines work capture + execution + follow‑through in one system to get more work done.
