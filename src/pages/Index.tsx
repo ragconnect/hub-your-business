@@ -73,16 +73,14 @@ const HeroSection = () => {
           <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
             Starting today, AI handles the busywork across your business
           </h1>
-          <p className="mt-4 text-xl text-muted-foreground">
+          <p className="mt-4 text-lg text-muted-foreground">
             From{" "}
             <AnimatedWord text={rotatingInlines[inlineIndex]} animating={isInlineAnimating} />
-            {" "}to invoicing to meeting notes.
-          </p>
-          <p className="mt-3 text-lg font-medium text-primary/80">
-            <AnimatedWord text={rotatingExamples[exampleIndex]} animating={isExampleAnimating} />
-          </p>
-          <p className="mt-2 text-base text-muted-foreground italic">
-            Feel how quickly things get done.
+            {" "}to invoicing to meeting notes.{" "}
+            <span className="font-medium text-primary/80">
+              <AnimatedWord text={rotatingExamples[exampleIndex]} animating={isExampleAnimating} />
+            </span>{" "}
+            <span className="italic">Feel how quickly things get done.</span>
           </p>
           <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
             <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
