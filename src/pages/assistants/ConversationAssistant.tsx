@@ -199,7 +199,7 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  An AI Business Assistant to handle all{" "}
+                  AI Business Assistant to handle all{" "}
                   <span
                     className={`inline-block transition-all duration-300 ${
                       isAnimating
