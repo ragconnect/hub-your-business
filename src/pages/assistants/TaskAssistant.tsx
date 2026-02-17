@@ -171,15 +171,13 @@ const faqs = [
   },
 ];
 
-const rotatingTeams = ["teams", "bands", "school projects", "solo entrepreneurs", "people managing contractors"];
-const rotatingActions = ["instantly change the status of work items", "ask for status on any task", "create a task for anyone", "assign tasks to your team", "create tasks from meeting recordings"];
+const rotatingTeams = ["team", "band", "business", "school", "charity"];
 
 const TaskAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [teamIndex, setTeamIndex] = useState(0);
-  const [actionIndex, setActionIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const { toast } = useToast();
 
@@ -188,7 +186,7 @@ const TaskAssistant = () => {
       setIsAnimating(true);
       setTimeout(() => {
         setTeamIndex((prev) => (prev + 1) % rotatingTeams.length);
-        setActionIndex((prev) => (prev + 1) % rotatingActions.length);
+        setIsAnimating(false);
         setIsAnimating(false);
       }, 300);
     }, 2500);
@@ -267,7 +265,15 @@ const TaskAssistant = () => {
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                  With a simple chat, turn conversations into assigned tasks that get done.
+                  With a simple chat, turn conversations into assigned tasks that get done instantly for your{" "}
+                  <span
+                    className={`inline-block transition-all duration-300 ${
+                      isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingTeams[teamIndex]}
+                  </span>
+                  .
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Task Assistant turns the things your team says and agrees to into clear, trackable work. Create tasks, assign owners, set due dates and priorities, and keep everyone aligned without digging through threads.
