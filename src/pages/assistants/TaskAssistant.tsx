@@ -268,23 +268,7 @@ const TaskAssistant = () => {
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                  With a simple chat, turn{" "}
-                  <span
-                    className={`inline-block transition-all duration-300 ${
-                      isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-                    }`}
-                  >
-                    {rotatingInputs[inputIndex]}
-                  </span>
-                  {" "}into assigned tasks that get done instantly for your{" "}
-                  <span
-                    className={`inline-block transition-all duration-300 ${
-                      isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-                    }`}
-                  >
-                    {rotatingTeams[teamIndex]}
-                  </span>
-                  .
+                  With a simple chat, turn conversations into assigned tasks that get done instantly.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Turn the things your team says and agrees to into clear, trackable work. Create tasks, assign owners, set due dates and priorities, and keep everyone aligned without digging through threads with AI business assistants.
