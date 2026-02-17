@@ -172,12 +172,14 @@ const faqs = [
 ];
 
 const rotatingTeams = ["team", "band", "business", "school", "charity"];
+const rotatingInputs = ["emails", "projects", "work", "notes", "conversations", "recordings"];
 
 const TaskAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [teamIndex, setTeamIndex] = useState(0);
+  const [inputIndex, setInputIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const { toast } = useToast();
 
@@ -186,12 +188,13 @@ const TaskAssistant = () => {
       setIsAnimating(true);
       setTimeout(() => {
         setTeamIndex((prev) => (prev + 1) % rotatingTeams.length);
-        setIsAnimating(false);
+        setInputIndex((prev) => (prev + 1) % rotatingInputs.length);
         setIsAnimating(false);
       }, 300);
     }, 2500);
     return () => clearInterval(interval);
   }, []);
+  
   
   const siteUrl = typeof window !== "undefined" ? `${window.location.origin}/assistants/task` : "https://ragadvise.com/assistants/task";
   const title = "Task Assistant — Project Management + Auto-Create Tasks from Meetings | RagAdvise";
@@ -265,7 +268,15 @@ const TaskAssistant = () => {
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                  With a simple chat, turn conversations into assigned tasks that get done instantly for your{" "}
+                  With a simple chat, turn{" "}
+                  <span
+                    className={`inline-block transition-all duration-300 ${
+                      isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingInputs[inputIndex]}
+                  </span>
+                  {" "}into assigned tasks that get done instantly for your{" "}
                   <span
                     className={`inline-block transition-all duration-300 ${
                       isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
