@@ -355,6 +355,9 @@ const TaskAssistant = () => {
                   {" "}into assigned work task.
                 </h1>
 
+                {/* Chat-like input box */}
+                <ChatPromptBox />
+
                 <p className="mt-6 text-xl text-muted-foreground">
                    AI turns the things your team says and agrees to into clear, trackable work.
                 </p>
@@ -371,9 +374,6 @@ const TaskAssistant = () => {
                   <span>•</span>
                   <span>🎙️ Records meetings & takes notes</span>
                 </div>
-
-                {/* Chat-like input box */}
-                <ChatPromptBox />
                 <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                     <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
