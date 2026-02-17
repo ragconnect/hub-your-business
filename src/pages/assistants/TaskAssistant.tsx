@@ -640,6 +640,8 @@ const TaskAssistant = () => {
                           <li>• Kanban board with team assignments</li>
                           <li>• Integrates with your calendar</li>
                           <li>• 1GB meeting storage & search (free plan)</li>
+                          <li>• 10 hours free recording (free plan)</li>
+                          <li>• 3 team members included ($16/mo plan)</li>
                           <li>• Unlimited volume</li>
                         </ul>
                       </div>
