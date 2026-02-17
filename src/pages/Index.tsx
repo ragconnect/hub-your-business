@@ -19,46 +19,70 @@ import OfferBanner from "@/components/marketing/OfferBanner";
 import VideoModal from "@/components/marketing/VideoModal";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 
-const rotatingWords = [
-  "SaaS", "Money", "Email", "Phone", "Project Management",
-  "Website Chat", "File Storage", "Note Taking", "Recording Meetings"
+const rotatingInlines = ["customer support", "invoicing", "meeting notes"];
+const rotatingExamples = [
+  'Turn "missed call" into "callback booked + summary sent"',
+  'Turn "meeting" into "notes + action items assigned"',
+  'Turn "invoice request" into "invoice drafted + follow-up scheduled"',
+  'Turn "angry customer email" into "calm reply + escalation routed"',
 ];
 
 const HeroSection = () => {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [inlineIndex, setInlineIndex] = useState(0);
+  const [exampleIndex, setExampleIndex] = useState(0);
+  const [isInlineAnimating, setIsInlineAnimating] = useState(false);
+  const [isExampleAnimating, setIsExampleAnimating] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
+      setIsInlineAnimating(true);
       setTimeout(() => {
-        setWordIndex((prev) => (prev + 1) % rotatingWords.length);
-        setIsAnimating(false);
+        setInlineIndex((prev) => (prev + 1) % rotatingInlines.length);
+        setIsInlineAnimating(false);
       }, 300);
     }, 2500);
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsExampleAnimating(true);
+      setTimeout(() => {
+        setExampleIndex((prev) => (prev + 1) % rotatingExamples.length);
+        setIsExampleAnimating(false);
+      }, 300);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const AnimatedWord = ({ text, animating }: { text: string; animating: boolean }) => (
+    <span
+      className={`inline-block transition-all duration-300 ${
+        animating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+      }`}
+    >
+      {text}
+    </span>
+  );
+
   return (
     <section className="relative pt-8 md:pt-12 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
       <ScrollingCharacterBg />
       <div className="container relative z-10">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center">
           <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-            Replace All Your{" "}
-            <span
-              className={`inline-block transition-all duration-300 ${
-                isAnimating
-                  ? "opacity-0 translate-y-2"
-                  : "opacity-100 translate-y-0"
-              }`}
-            >
-              {rotatingWords[wordIndex]}
-            </span>
-            {" "}Tools, AI Business Assistants For Small Teams
+            Starting today, AI handles the busywork across your business
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground">
-            The all-in-one backend AI for your business that automates operations and management —all for $16/month.
+          <p className="mt-4 text-xl text-muted-foreground">
+            From{" "}
+            <AnimatedWord text={rotatingInlines[inlineIndex]} animating={isInlineAnimating} />
+            {" "}to invoicing to meeting notes.
+          </p>
+          <p className="mt-3 text-lg font-medium text-primary/80">
+            <AnimatedWord text={rotatingExamples[exampleIndex]} animating={isExampleAnimating} />
+          </p>
+          <p className="mt-2 text-base text-muted-foreground italic">
+            Feel how quickly things get done.
           </p>
           <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
             <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
