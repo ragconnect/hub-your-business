@@ -71,13 +71,13 @@ const HeroSection = () => {
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-            Starting today, AI handles the busywork across your business, so you can feel accomplished in minutes.
+            Starting today, AI handles the busywork across your business
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            <AnimatedWord text={rotatingExamples[exampleIndex]} animating={isExampleAnimating} />
+            Turn everyday business moments into finished work—faster replies, smoother follow‑through, and fewer things slipping through the cracks.
           </p>
-          <p className="mt-2 text-lg text-muted-foreground italic">
-            Feel how quickly things get done.
+          <p className="mt-3 text-base text-muted-foreground">
+            RagAdvise is a connected suite of AI assistants that turns calls, emails, website visitors, invoices, and meetings into replies sent, leads captured, invoices drafted, notes summarized, and action items assigned—in minutes.
           </p>
           <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
             <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
