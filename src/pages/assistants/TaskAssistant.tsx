@@ -278,9 +278,6 @@ const TaskAssistant = () => {
                   </span>
                   {" "}into assigned work task across your team.
                 </h1>
-                <p className="mt-6 text-xl text-muted-foreground">
-                  Turn the things your team says and agrees to into clear, trackable work. Create tasks, assign owners, set due dates and priorities, and keep everyone aligned without digging through threads with AI business assistants.
-                </p>
                 <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm text-muted-foreground">
                   <span>📝 Tasks</span>
                   <span>•</span>
@@ -385,7 +382,7 @@ const TaskAssistant = () => {
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Which describes you?
+                AI turns the things your team says and agrees to into clear, trackable work.
               </h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
