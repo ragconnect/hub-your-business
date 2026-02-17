@@ -356,11 +356,8 @@ const TaskAssistant = () => {
                 </h1>
 
                 <p className="mt-6 text-xl text-muted-foreground">
-                   AI turns the things your team says and agrees to into clear, trackable work. Create tasks, assign owners, set due dates and priorities, and keep everyone aligned without digging through threads with AI business assistants.
+                   AI turns the things your team says and agrees to into clear, trackable work.
                 </p>
-
-                {/* Chat-like input box */}
-                <ChatPromptBox />
                 <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm text-muted-foreground">
                   <span>📝 Tasks</span>
                   <span>•</span>
@@ -374,6 +371,9 @@ const TaskAssistant = () => {
                   <span>•</span>
                   <span>🚨 Priorities</span>
                 </div>
+
+                {/* Chat-like input box */}
+                <ChatPromptBox />
                 <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                     <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
