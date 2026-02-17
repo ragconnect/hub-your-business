@@ -824,6 +824,30 @@ const TaskAssistant = () => {
                     <td className="text-center py-3 px-3"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
                   </tr>
                   <tr>
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">Free Storage</td>
+                    <td className="text-center py-3 px-3 bg-primary/5 font-medium text-primary">1 GB</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">—</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">—</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">—</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">100 MB</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">—</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">100 MB</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">100 MB</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">—</td>
+                  </tr>
+                  <tr className="bg-muted/30">
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">Team Members (Paid)</td>
+                    <td className="text-center py-3 px-3 bg-primary/5 font-medium text-primary">3 included</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">Per user</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">Per user</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">Per user</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">Per user</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">Per user</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">Per user</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">Per user</td>
+                    <td className="text-center py-3 px-3 text-muted-foreground">Per user</td>
+                  </tr>
+                  <tr>
                     <td className="py-3 px-3 font-medium whitespace-nowrap">Setup Complexity</td>
                     <td className="text-center py-3 px-3 bg-primary/5 font-medium text-primary">Simple (15 min)</td>
                     <td className="text-center py-3 px-3 text-muted-foreground">Moderate</td>
