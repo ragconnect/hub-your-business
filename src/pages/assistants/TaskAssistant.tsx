@@ -172,7 +172,7 @@ const faqs = [
 ];
 
 const rotatingTeams = ["team", "band", "business", "school", "charity"];
-const rotatingInputs = ["emails", "projects", "work", "notes", "conversations", "recordings"];
+const rotatingInputs = ["emails", "projects", "work", "notes", "recordings"];
 
 const chatPrompts = [
   "Create support ticket for Angie",
