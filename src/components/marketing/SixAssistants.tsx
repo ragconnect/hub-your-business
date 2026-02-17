@@ -101,8 +101,8 @@ const SixAssistants: React.FC = () => {
             The Complete AI Business Assistant Suite
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Stop juggling multiple tools and paying for expensive staff. RagAdvise gives you a complete suite of AI business assistants that work 24/7 to grow your business.
-           </p>
+            RagAdvise is a connected suite of AI business assistants that turns calls, emails, website visitors, invoices, and meetings into replies sent, leads captured, invoices drafted, notes summarized, and action items assigned—in minutes working 24/7.
+          </p>
           <VideoModal>
             <button className="mt-4 inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer text-sm">
               <Play className="w-4 h-4" fill="currentColor" />
