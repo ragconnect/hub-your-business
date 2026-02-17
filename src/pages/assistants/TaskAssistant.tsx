@@ -695,7 +695,7 @@ const TaskAssistant = () => {
               RagAdvise Task Assistant is a comprehensive work management assistant that creates, assigns, and tracks tasks automatically.
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-              RagAdvise Task Assistant is a comprehensive work management assistant that creates, assigns, and tracks tasks automatically. Unlike slower, expensive one‑trick tools that only do project boards or meeting notes, Task Assistant combines work capture + execution + follow‑through in one system to get more work done.
+              Unlike slower, expensive one‑trick tools that only do project boards or meeting notes, Task Assistant combines work capture + execution + follow‑through in one system to get more work done.
             </p>
             
             <div className="overflow-x-auto">
