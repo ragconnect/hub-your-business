@@ -209,7 +209,7 @@ const ConversationAssistant = () => {
                   >
                     {rotatingWords[wordIndex]}
                   </span>
-                  {" "}customer communication for your business.
+                  {" "}communication for your business.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Most teams reduce time spent on{" "}
