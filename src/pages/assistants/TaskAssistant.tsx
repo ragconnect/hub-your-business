@@ -527,10 +527,10 @@ const TaskAssistant = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Pricing That Makes Sense
+              Get more done for less
             </h2>
             <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
-              See how much you save compared to traditional solutions.
+              Faster task creation, better management, more users included, and more storage upfront.
             </p>
 
             <Tabs defaultValue="new" className="w-full">
