@@ -174,6 +174,80 @@ const faqs = [
 const rotatingTeams = ["team", "band", "business", "school", "charity"];
 const rotatingInputs = ["emails", "projects", "work", "notes", "conversations", "recordings"];
 
+const chatPrompts = [
+  "Create support ticket for Angie",
+  "Create TikTok ads campaign",
+  "Follow up with Ivan",
+  "Design marketing brief",
+  "Schedule team standup",
+  "Review quarterly report",
+];
+
+const ChatPromptBox = () => {
+  const [chatValue, setChatValue] = useState("");
+  const [promptIndex, setPromptIndex] = useState(0);
+  const [isPromptAnimating, setIsPromptAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsPromptAnimating(true);
+      setTimeout(() => {
+        setPromptIndex((prev) => (prev + 1) % chatPrompts.length);
+        setIsPromptAnimating(false);
+      }, 300);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && chatValue.trim()) {
+      window.location.href = "https://my.ragadvise.com/signup";
+    }
+  };
+
+  const handleSend = () => {
+    if (chatValue.trim()) {
+      window.location.href = "https://my.ragadvise.com/signup";
+    }
+  };
+
+  return (
+    <div className="mt-8 max-w-lg mx-auto">
+      <p className="text-sm font-medium text-muted-foreground mb-3">Tell me what you need to do</p>
+      <div className="relative flex items-center rounded-xl border-2 border-primary/30 bg-background shadow-lg hover:border-primary/50 transition-colors">
+        <input
+          type="text"
+          value={chatValue}
+          onChange={(e) => setChatValue(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder={chatPrompts[promptIndex]}
+          className="flex-1 h-14 px-4 bg-transparent text-base outline-none placeholder:text-muted-foreground/60 placeholder:transition-opacity placeholder:duration-300"
+        />
+        <button
+          onClick={handleSend}
+          className="mr-2 p-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          aria-label="Send"
+        >
+          <Send className="w-4 h-4" />
+        </button>
+      </div>
+      <div className="mt-3 flex flex-wrap gap-2 justify-center">
+        {chatPrompts.slice(0, 4).map((prompt) => (
+          <button
+            key={prompt}
+            onClick={() => {
+              setChatValue(prompt);
+            }}
+            className="text-xs px-3 py-1.5 rounded-full border bg-muted/50 text-muted-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-colors"
+          >
+            {prompt}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const TaskAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -278,6 +352,10 @@ const TaskAssistant = () => {
                   </span>
                   {" "}into assigned work task.
                 </h1>
+
+                {/* Chat-like input box */}
+                <ChatPromptBox />
+
                 <p className="mt-6 text-xl text-muted-foreground">
                    Turn the things your team says and agrees to into clear, trackable work. Create tasks, assign owners, set due dates and priorities, and keep everyone aligned without digging through threads with AI business assistants.
                 </p>
