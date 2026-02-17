@@ -77,9 +77,7 @@ const HeroSection = () => {
             From{" "}
             <AnimatedWord text={rotatingInlines[inlineIndex]} animating={isInlineAnimating} />
             {" "}to invoicing to meeting notes.{" "}
-            <span className="font-medium text-primary/80">
-              <AnimatedWord text={rotatingExamples[exampleIndex]} animating={isExampleAnimating} />
-            </span>{" "}
+            <AnimatedWord text={rotatingExamples[exampleIndex]} animating={isExampleAnimating} />{" "}
             <span className="italic">Feel how quickly things get done.</span>
           </p>
           <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
