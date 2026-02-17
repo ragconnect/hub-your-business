@@ -369,7 +369,7 @@ const TaskAssistant = () => {
                   <span>•</span>
                   <span>⏰ Due dates</span>
                   <span>•</span>
-                  <span>🚨 Priorities</span>
+                  <span>🎙️ Records meetings & takes notes</span>
                 </div>
 
                 {/* Chat-like input box */}
