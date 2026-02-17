@@ -569,6 +569,7 @@ const TaskAssistant = () => {
                           <li>• Team assignment & due dates</li>
                           <li>• Works across Zoom, Meet, Teams, phone</li>
                           <li>• 1GB meeting storage & search (free plan)</li>
+                          <li>• 10 hours free recording (free plan)</li>
                         </ul>
                       </div>
 
@@ -581,6 +582,7 @@ const TaskAssistant = () => {
                           <li>Jira/Monday: <span className="line-through">$10-24/user/month</span></li>
                           <li>Otter.ai/Fireflies: <span className="line-through">$18-20/user/month</span></li>
                           <li>Meeting storage: <span className="line-through">100MB free (competitors)</span></li>
+                          <li>Recording: <span className="line-through">1 hour free (competitors)</span></li>
                           <li className="font-bold pt-2 border-t border-destructive/20">
                             Total: <span className="line-through">$30-44/user/month + hours of manual work</span>
                           </li>
