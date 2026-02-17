@@ -94,7 +94,7 @@ const faqs = [
   },
 ];
 
-const rotatingWords = ["customer", "email", "phone", "text", "review", "social"];
+const rotatingWords = ["email", "phone", "text", "review", "social"];
 
 const ConversationAssistant = () => {
   const [name, setName] = useState("");
