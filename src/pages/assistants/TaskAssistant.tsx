@@ -848,6 +848,18 @@ const TaskAssistant = () => {
                     <td className="text-center py-3 px-3 text-muted-foreground">Per user</td>
                   </tr>
                   <tr>
+                    <td className="py-3 px-3 font-medium whitespace-nowrap">Kanban / Project Board</td>
+                    <td className="text-center py-3 px-3 bg-primary/5"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-3 px-3"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-3 px-3"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-3 px-3"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-3 px-3"><Check className="h-4 w-4 text-green-500 mx-auto" /></td>
+                    <td className="text-center py-3 px-3"><span className="text-xs text-muted-foreground">Basic</span></td>
+                    <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
+                    <td className="text-center py-3 px-3"><X className="h-4 w-4 text-muted-foreground/50 mx-auto" /></td>
+                  </tr>
+                  <tr className="bg-muted/30">
                     <td className="py-3 px-3 font-medium whitespace-nowrap">Setup Complexity</td>
                     <td className="text-center py-3 px-3 bg-primary/5 font-medium text-primary">Simple (15 min)</td>
                     <td className="text-center py-3 px-3 text-muted-foreground">Moderate</td>
