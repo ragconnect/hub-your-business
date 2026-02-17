@@ -199,17 +199,19 @@ const ChatPromptBox = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && chatValue.trim()) {
-      window.location.href = "https://my.ragadvise.com/signup";
-    }
+  const saveAndRedirect = async (text: string) => {
+    if (!text.trim()) return;
+    try {
+      await supabase.from("chat_prompt_submissions").insert({ prompt_text: text.trim(), page: "task-assistant" });
+    } catch (_) {}
+    window.location.href = "https://my.ragadvise.com/signup";
   };
 
-  const handleSend = () => {
-    if (chatValue.trim()) {
-      window.location.href = "https://my.ragadvise.com/signup";
-    }
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") saveAndRedirect(chatValue);
   };
+
+  const handleSend = () => saveAndRedirect(chatValue);
 
   return (
     <div className="mt-8 max-w-lg mx-auto">

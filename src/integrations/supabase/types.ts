@@ -14,7 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      chat_prompt_submissions: {
+        Row: {
+          created_at: string
+          id: string
+          page: string | null
+          prompt_text: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          page?: string | null
+          prompt_text: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          page?: string | null
+          prompt_text?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
