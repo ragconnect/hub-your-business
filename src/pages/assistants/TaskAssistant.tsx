@@ -568,7 +568,6 @@ const TaskAssistant = () => {
                           <li>• Kanban board & priorities</li>
                           <li>• Team assignment & due dates</li>
                           <li>• Works across Zoom, Meet, Teams, phone</li>
-                          <li>• 1GB meeting storage & search (free plan)</li>
                           <li>• 10 hours free recording (free plan)</li>
                           <li>• 3 team members included ($16/mo plan)</li>
                         </ul>
@@ -582,7 +581,7 @@ const TaskAssistant = () => {
                         <ul className="space-y-2 text-muted-foreground">
                           <li>Jira/Monday: <span className="line-through">$10-24/user/month</span></li>
                           <li>Otter.ai/Fireflies: <span className="line-through">$18-20/user/month</span></li>
-                          <li>Meeting storage: <span className="line-through">100MB free (competitors)</span></li>
+                          
                           <li>Recording: <span className="line-through">1 hour free (competitors)</span></li>
                           <li className="font-bold pt-2 border-t border-destructive/20">
                             Total: <span className="line-through">$30-44/user/month + hours of manual work</span>
@@ -639,7 +638,7 @@ const TaskAssistant = () => {
                           <li>• AI prioritization & follow-ups</li>
                           <li>• Kanban board with team assignments</li>
                           <li>• Integrates with your calendar</li>
-                          <li>• 1GB meeting storage & search (free plan)</li>
+                          
                           <li>• 10 hours free recording (free plan)</li>
                           <li>• 3 team members included ($16/mo plan)</li>
                           <li>• Unlimited volume</li>
