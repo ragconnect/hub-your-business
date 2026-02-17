@@ -570,6 +570,7 @@ const TaskAssistant = () => {
                           <li>• Works across Zoom, Meet, Teams, phone</li>
                           <li>• 1GB meeting storage & search (free plan)</li>
                           <li>• 10 hours free recording (free plan)</li>
+                          <li>• 3 team members included ($16/mo plan)</li>
                         </ul>
                       </div>
 
