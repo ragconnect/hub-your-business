@@ -74,11 +74,10 @@ const HeroSection = () => {
             Starting today, AI handles the busywork across your business
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            From{" "}
-            <AnimatedWord text={rotatingInlines[inlineIndex]} animating={isInlineAnimating} />
-            {" "}to invoicing to meeting notes.{" "}
-            <AnimatedWord text={rotatingExamples[exampleIndex]} animating={isExampleAnimating} />{" "}
-            <span className="italic">Feel how quickly things get done.</span>
+            <AnimatedWord text={rotatingExamples[exampleIndex]} animating={isExampleAnimating} />
+          </p>
+          <p className="mt-2 text-lg text-muted-foreground italic">
+            Feel how quickly things get done.
           </p>
           <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
             <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
