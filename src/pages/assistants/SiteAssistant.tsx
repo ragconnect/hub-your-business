@@ -284,7 +284,7 @@ const SiteAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Feel Smarter When You 3X Conversions in No Time Using AI Voice To{" "}
+                  3X Conversions in No Time &amp; Feel Smarter Using AI Voice To{" "}
                   <span
                     className={`inline-block transition-all duration-300 ${
                       isAnimating
