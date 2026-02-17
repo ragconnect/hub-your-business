@@ -270,7 +270,7 @@ const TaskAssistant = () => {
                   With a simple chat, turn conversations into assigned tasks that get done.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  RagAdvise Task Assistant turns the things your team says and agrees to into clear, trackable work. Create tasks, assign owners, set due dates and priorities, and keep everyone aligned without digging through threads.
+                  Task Assistant turns the things your team says and agrees to into clear, trackable work. Create tasks, assign owners, set due dates and priorities, and keep everyone aligned without digging through threads.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm text-muted-foreground">
                   <span>📝 Tasks</span>
