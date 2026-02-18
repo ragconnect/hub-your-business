@@ -331,7 +331,7 @@ const MoneyAssistant = () => {
                   Now you can instantly lower your business's expenses and ensure its money is organized daily
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Save an average of 13 hours a month on money management. Stop chasing receipts with an AI assistant that handles:
+                  Cut 13 hours a month from money management and eliminate up to 30% in hidden fees and charges. Get organized with an AI business assistant that handles:
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm">
                   <span className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">💳 Expense tracking</span>
