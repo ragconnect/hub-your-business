@@ -328,7 +328,7 @@ const MoneyAssistant = () => {
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                  AI Business Assistants instantly organize your business's money and ensure it's organized daily
+                  Now you can instantly lower your business's expenses and ensure its money is organized daily
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Save an average of 13 hours a month on money management. Stop chasing receipts with an AI assistant that handles:
