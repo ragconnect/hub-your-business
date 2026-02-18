@@ -12,8 +12,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Calendar } from "lucide-react";
+import { Calendar, ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+
+const GOOGLE_CALENDAR_URL =
+  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Vc2tRDJbXVkABapDVg-1GqKNFE4qDGKAX0KgG9OCGeq4nTqUqZet64riYuWCANnjgZXei5YV9?gv=1";
 
 const demoRequestSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -30,7 +33,9 @@ interface DemoRequestModalProps {
 
 const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
   const [open, setOpen] = useState(false);
+  const [step, setStep] = useState<"form" | "calendar">("form");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submittedName, setSubmittedName] = useState("");
   const [formData, setFormData] = useState<DemoRequestForm>({
     name: "",
     email: "",
@@ -40,10 +45,20 @@ const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
   const [errors, setErrors] = useState<Partial<Record<keyof DemoRequestForm, string>>>({});
   const { toast } = useToast();
 
+  const handleOpenChange = (val: boolean) => {
+    setOpen(val);
+    if (!val) {
+      // Reset on close
+      setStep("form");
+      setFormData({ name: "", email: "", company: "", message: "" });
+      setErrors({});
+      setSubmittedName("");
+    }
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user types
     if (errors[name as keyof DemoRequestForm]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -68,7 +83,7 @@ const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
     }
 
     try {
-      const { data, error } = await supabase.functions.invoke("send-demo-request", {
+      const { error } = await supabase.functions.invoke("send-demo-request", {
         body: {
           name: result.data.name,
           email: result.data.email,
@@ -82,13 +97,8 @@ const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
         throw new Error(error.message);
       }
 
-      toast({
-        title: "Demo Request Received!",
-        description: "We'll be in touch within 24 hours to schedule your demo.",
-      });
-      
-      setFormData({ name: "", email: "", company: "", message: "" });
-      setOpen(false);
+      setSubmittedName(result.data.name.split(" ")[0]);
+      setStep("calendar");
     } catch (error: any) {
       console.error("Demo request error:", error);
       toast({
@@ -102,78 +112,111 @@ const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2 text-xl">
-            <Calendar className="w-5 h-5 text-primary" />
-            Schedule a Demo
-          </DialogTitle>
-        </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4 mt-2">
-          <div className="space-y-2">
-            <Label htmlFor="name">Name *</Label>
-            <Input
-              id="name"
-              name="name"
-              placeholder="Your name"
-              value={formData.name}
-              onChange={handleChange}
-              className={errors.name ? "border-destructive" : ""}
+      <DialogContent
+        className={step === "calendar" ? "sm:max-w-2xl p-0 overflow-hidden" : "sm:max-w-md"}
+      >
+        {step === "form" ? (
+          <>
+            <DialogHeader>
+              <DialogTitle className="flex items-center gap-2 text-xl">
+                <Calendar className="w-5 h-5 text-primary" />
+                Schedule a Demo
+              </DialogTitle>
+            </DialogHeader>
+            <form onSubmit={handleSubmit} className="space-y-4 mt-2">
+              <div className="space-y-2">
+                <Label htmlFor="name">Name *</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={errors.name ? "border-destructive" : ""}
+                />
+                {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email">Email *</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@company.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={errors.email ? "border-destructive" : ""}
+                />
+                {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="company">Company</Label>
+                <Input
+                  id="company"
+                  name="company"
+                  placeholder="Your company (optional)"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className={errors.company ? "border-destructive" : ""}
+                />
+                {errors.company && <p className="text-sm text-destructive">{errors.company}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message">What are you hoping to achieve?</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your goals (optional)"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={3}
+                  className={errors.message ? "border-destructive" : ""}
+                />
+                {errors.message && <p className="text-sm text-destructive">{errors.message}</p>}
+              </div>
+
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Continue to Book a Time →"}
+              </Button>
+
+              <p className="text-xs text-muted-foreground text-center">
+                Pick a time that works for you on the next screen.
+              </p>
+            </form>
+          </>
+        ) : (
+          <div className="flex flex-col">
+            <div className="flex items-center gap-3 px-6 pt-5 pb-3 border-b">
+              <button
+                onClick={() => setStep("form")}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Back to form"
+              >
+                <ArrowLeft className="w-4 h-4" />
+              </button>
+              <div>
+                <p className="font-semibold text-sm">
+                  {submittedName ? `Nice to meet you, ${submittedName}!` : "Pick a time"}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Choose a slot and we'll confirm it instantly.
+                </p>
+              </div>
+            </div>
+            <iframe
+              src={GOOGLE_CALENDAR_URL}
+              title="Book a demo"
+              className="w-full border-0"
+              style={{ height: "560px" }}
+              loading="lazy"
             />
-            {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
           </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="email">Email *</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="you@company.com"
-              value={formData.email}
-              onChange={handleChange}
-              className={errors.email ? "border-destructive" : ""}
-            />
-            {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="company">Company</Label>
-            <Input
-              id="company"
-              name="company"
-              placeholder="Your company (optional)"
-              value={formData.company}
-              onChange={handleChange}
-              className={errors.company ? "border-destructive" : ""}
-            />
-            {errors.company && <p className="text-sm text-destructive">{errors.company}</p>}
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="message">What are you hoping to achieve?</Label>
-            <Textarea
-              id="message"
-              name="message"
-              placeholder="Tell us about your goals (optional)"
-              value={formData.message}
-              onChange={handleChange}
-              rows={3}
-              className={errors.message ? "border-destructive" : ""}
-            />
-            {errors.message && <p className="text-sm text-destructive">{errors.message}</p>}
-          </div>
-
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Request Demo"}
-          </Button>
-
-          <p className="text-xs text-muted-foreground text-center">
-            We'll reach out within 24 hours to find a time that works.
-          </p>
-        </form>
+        )}
       </DialogContent>
     </Dialog>
   );
