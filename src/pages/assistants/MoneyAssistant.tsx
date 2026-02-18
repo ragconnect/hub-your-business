@@ -238,7 +238,7 @@ const whoDescribesYou = [
 const rotatingMoneyActions = ["tracks", "categorizes", "flags waste", "finds savings", "keeps you on budget", "optimizes bills", "spots overspending", "recommends next steps"];
 
 const moneyPrompts = [
-  "Add this receipt to Home Depot",
+  "Add this Home Depot receipt",
   "Log $86 from CVS to Supplies",
   "Invoice Sarah for $1,200",
   "Send reminder for invoice #104",
