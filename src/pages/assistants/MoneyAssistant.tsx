@@ -278,7 +278,7 @@ const MoneyPromptBox = () => {
 
   return (
     <div className="mt-8 max-w-lg mx-auto">
-      <p className="text-sm font-medium text-muted-foreground mb-3">Tell me what you need help with</p>
+      <p className="text-sm font-medium text-muted-foreground mb-3">Over 10K entrepreneurs have lowered their monthly expenses:</p>
       <div className="relative flex items-center rounded-xl border-2 border-primary/30 bg-background shadow-lg hover:border-primary/50 transition-colors">
         <input
           type="text"
