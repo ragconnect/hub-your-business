@@ -18,6 +18,8 @@ import IntegrationsShowcase from "@/components/marketing/IntegrationsShowcase";
 import OfferBanner from "@/components/marketing/OfferBanner";
 import VideoModal from "@/components/marketing/VideoModal";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
+import ComparisonCompact from "@/components/marketing/ComparisonCompact";
 
 const rotatingInlines = ["customer support", "invoicing", "meeting notes"];
 const rotatingExamples = [
@@ -151,6 +153,12 @@ const Index = () => {
 
         {/* Pricing */}
         <PricingSection />
+
+        {/* Who Is This For */}
+        <WhoIsThisFor />
+
+        {/* Compare */}
+        <ComparisonCompact />
 
         {/* Testimonials */}
         <Testimonials />
