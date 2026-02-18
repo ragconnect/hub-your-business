@@ -69,7 +69,7 @@ const HeroSection = () => {
   );
 
   return (
-    <section className="relative pt-8 md:pt-12 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
+    <section className="relative pt-4 md:pt-6 lg:pt-4 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
       <ScrollingCharacterBg />
       <div className="container relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
