@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import googleLogo from "@/assets/logos/google.png";
-import heroDashboard from "@/assets/hero-app-screenshot.png";
+import heroDashboard from "@/assets/hero-app-screenshot-new.png";
 import { Button } from "@/components/ui/button";
 import { Play, Calendar } from "lucide-react";
 import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
