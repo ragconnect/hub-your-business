@@ -298,26 +298,6 @@ const ConversationAssistant = () => {
                   </span>
                   {" "}by 40%.
                 </p>
-                <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm font-medium">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
-                    <Phone className="w-4 h-4" /> Phone calls
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
-                    <Mail className="w-4 h-4" /> Email
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
-                    <MessageSquare className="w-4 h-4" /> Text/SMS
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
-                    <Users className="w-4 h-4" /> Social media
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
-                    <Globe className="w-4 h-4" /> Website chat
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
-                    <Star className="w-4 h-4" /> Reviews
-                  </span>
-                </div>
                 {/* Chat-like input box */}
                 <ConversationPromptBox />
 
@@ -413,6 +393,26 @@ const ConversationAssistant = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               Which describes you?
             </h2>
+            <div className="flex flex-wrap gap-3 justify-center text-sm font-medium mb-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                <Phone className="w-4 h-4" /> Phone calls
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                <Mail className="w-4 h-4" /> Email
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                <MessageSquare className="w-4 h-4" /> Text/SMS
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                <Users className="w-4 h-4" /> Social media
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                <Globe className="w-4 h-4" /> Website chat
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-full">
+                <Star className="w-4 h-4" /> Reviews
+              </span>
+            </div>
             <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
               Select your situation to see what RagAdvise can do for you.
             </p>
