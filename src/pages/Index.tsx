@@ -114,7 +114,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right: app screenshot */}
-          <div className="flex-1 w-full max-w-lg lg:max-w-none hidden sm:flex items-center justify-center">
+          <div className="flex-1 w-full max-w-lg lg:max-w-none flex items-center justify-center">
             <img
               src={heroDashboard}
               alt="RagAdvise dashboard — AI business assistant in action"
