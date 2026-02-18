@@ -1,8 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import googleLogo from "@/assets/logos/google.png";
-import slackLogo from "@/assets/logos/slack.png";
-import outlookLogo from "@/assets/logos/outlook.png";
-import zapierLogo from "@/assets/logos/zapier.png";
 import heroDashboard from "@/assets/hero-app-screenshot.png";
 import { Button } from "@/components/ui/button";
 import { Play, Calendar } from "lucide-react";
@@ -118,41 +115,14 @@ const HeroSection = () => {
 
           {/* Right: app screenshot */}
           <div className="flex-1 w-full max-w-lg lg:max-w-none hidden sm:flex items-center justify-center">
-            <div className="relative w-full">
-              {/* Floating integration icons — behind the main image */}
-              <div className="absolute top-[2%] right-[4%] z-0 flex flex-col gap-3" style={{ animation: "heroFloat1 4s ease-in-out infinite" }}>
-                <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center p-1.5">
-                  <img src={slackLogo} alt="Slack" className="w-full h-full object-contain" />
-                </div>
-                <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center p-2">
-                  <img src={outlookLogo} alt="Outlook" className="w-full h-full object-contain" />
-                </div>
-                <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center p-2" style={{ animation: "heroFloat2 5s ease-in-out infinite" }}>
-                  <img src={zapierLogo} alt="Zapier" className="w-full h-full object-contain" />
-                </div>
-              </div>
-
-              {/* Main image on top */}
-              <img
-                src={heroDashboard}
-                alt="RagAdvise dashboard — AI business assistant in action"
-                className="relative z-10 w-full h-auto object-contain drop-shadow-xl"
-                style={{ mixBlendMode: "multiply" }}
-                loading="eager"
-              />
-            </div>
+            <img
+              src={heroDashboard}
+              alt="RagAdvise dashboard — AI business assistant in action"
+              className="w-full h-auto object-contain"
+              style={{ mixBlendMode: "multiply" }}
+              loading="eager"
+            />
           </div>
-
-          <style>{`
-            @keyframes heroFloat1 {
-              0%, 100% { transform: translateY(0px); }
-              50% { transform: translateY(-10px); }
-            }
-            @keyframes heroFloat2 {
-              0%, 100% { transform: translateY(0px); }
-              50% { transform: translateY(-14px); }
-            }
-          `}</style>
         </div>
       </div>
     </section>
