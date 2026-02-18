@@ -119,7 +119,7 @@ const HeroSection = () => {
               src={heroDashboard}
               alt="RagAdvise dashboard — AI business assistant in action"
               className="w-full h-auto object-contain"
-              style={{ mixBlendMode: "multiply" }}
+              style={{ mixBlendMode: "multiply", opacity: 0.85 }}
               loading="eager"
             />
           </div>
