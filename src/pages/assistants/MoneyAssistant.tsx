@@ -238,18 +238,18 @@ const whoDescribesYou = [
 const rotatingMoneyActions = ["tracks", "categorizes", "flags waste", "finds savings", "keeps you on budget", "optimizes bills", "spots overspending", "recommends next steps"];
 
 const moneyPrompts = [
-  "Log a receipt for $86.42 from Home Depot for supplies.",
-  "Categorize the $129.00 Stripe charge as Software and mark it recurring.",
-  "Reconcile yesterday's transactions and flag anything unrecognized.",
-  "Create an invoice for Angie: $750 for February social content, net 15.",
-  "Send a payment reminder to Angie for invoice #104, due Friday.",
-  "Find subscriptions I can cancel and estimate monthly savings.",
-  "Spot hidden fees in the last 30 days and show where they came from.",
-  "Create a budget for March with a $2,500 expense cap and weekly targets.",
-  "Forecast cash flow for the next 30 days based on recent income and bills.",
-  "Set a rule: categorize any Canva charge as Marketing.",
-  "Prepare a monthly summary for January: income, expenses, profit, top categories.",
-  "Estimate quarterly taxes based on the last 60 days of revenue and expenses.",
+  "Send invoice to Angie for $750",
+  "Payment reminder: invoice #104",
+  "Log receipt: $86.42 from Home Depot",
+  "Categorize $129 Stripe charge as Software",
+  "Find subscriptions I can cancel",
+  "Flag hidden fees in the last 30 days",
+  "Forecast cash flow for next 30 days",
+  "Budget for March: $2,500 cap",
+  "Reconcile yesterday's transactions",
+  "Estimate quarterly taxes from last 60 days",
+  "Monthly summary for January",
+  "Set rule: Canva = Marketing",
 ];
 
 const MoneyPromptBox = () => {
