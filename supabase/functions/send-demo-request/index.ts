@@ -82,25 +82,31 @@ const handler = async (req: Request): Promise<Response> => {
         "Authorization": `Bearer ${SENDGRID_API_KEY}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
+        body: JSON.stringify({
         personalizations: [
           {
             to: [{ email: email }],
             bcc: [{ email: "ty@ragadvise.com" }],
-            subject: "We received your demo request - RagAdvise",
+            subject: "Quick favor before your RagAdvise demo",
           },
         ],
-        from: { email: "ty@ragadvise.com", name: "RagAdvise" },
-        reply_to: { email: "ty@ragadvise.com", name: "RagAdvise" },
+        from: { email: "ty@ragadvise.com", name: "Ty at RagAdvise" },
+        reply_to: { email: "ty@ragadvise.com", name: "Ty" },
         content: [
           {
             type: "text/html",
             value: `
-              <h1>Thanks for your interest, ${name}!</h1>
-              <p>We've received your demo request and will be in touch within 24 hours to schedule a time that works for you.</p>
-              <p>In the meantime, feel free to explore our website to learn more about how RagAdvise can help your business.</p>
-              <hr>
-              <p>Best regards,<br>The RagAdvise Team</p>
+              <p>Hi ${name},</p>
+              <p>Ty here. I lead product at RagAdvise.</p>
+              <p>Thanks for requesting a demo. Grab a time on my calendar here:</p>
+              <p><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Vc2tRDJbXVkABapDVg-1GqKNFE4qDGKAX0KgG9OCGeq4nTqUqZet64riYuWCANnjgZXei5YV9" style="background-color:#4F46E5;color:#ffffff;padding:12px 24px;text-decoration:none;border-radius:6px;display:inline-block;font-weight:600;">Schedule your personalized demo</a></p>
+              <p>To make this demo about your business (and not a generic walkthrough), can you hit reply with:</p>
+              <p><strong>1) Which assistant are you most interested in right now?</strong><br>
+              Conversation, Task, Money, Customer, or Website Voice</p>
+              <p><strong>2) Do you have a website or link I can review?</strong><br>
+              (Website, booking page, Google Business Profile, or anything customers see)</p>
+              <p>The more you share up front, the more I can tailor the demo and save you time during the call.</p>
+              <p>Best,<br>Ty<br>Head of Product, RagAdvise</p>
             `,
           },
         ],
