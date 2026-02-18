@@ -505,7 +505,13 @@ const MoneyAssistant = () => {
         {/* Which Describes You */}
         <section className="py-16 md:py-20">
           <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Which describes you?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Which describes you?</h2>
+            <p className="text-center text-muted-foreground mb-4">Get organized with an AI business assistant that handles:</p>
+            <div className="flex flex-wrap gap-2 justify-center mb-10 text-sm">
+              {["💳 Expense tracking", "📊 P&L statements", "🧾 Invoice creation", "💰 Tax prep", "📈 Financial reports"].map((pill) => (
+                <span key={pill} className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">{pill}</span>
+              ))}
+            </div>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {whoDescribesYou.map((item) => (
                 <Card key={item.title} className="border-primary/20">
