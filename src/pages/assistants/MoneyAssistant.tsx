@@ -233,6 +233,12 @@ const whoDescribesYou = [
     title: "Drowning in receipts",
     desc: "You're spending hours categorizing expenses and still don't know your real profit margins. Automate it and get your time back.",
   },
+  {
+    icon: null,
+    title: "Get organized with an AI business assistant that handles:",
+    desc: null,
+    pills: ["💳 Expense tracking", "📊 P&L statements", "🧾 Invoice creation", "💰 Tax prep", "📈 Financial reports"],
+  },
 ];
 
 const rotatingMoneyActions = ["tracks", "categorizes", "flags waste", "finds savings", "keeps you on budget", "optimizes bills", "spots overspending", "recommends next steps"];
@@ -408,15 +414,8 @@ const MoneyAssistant = () => {
                 <MoneyPromptBox />
 
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Cut 13 hours a month from money management and eliminate up to 30% in hidden fees and charges. Get organized with an AI business assistant that handles:
+                  Cut 13 hours a month from money management and eliminate up to 30% in hidden fees and charges.
                 </p>
-                <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm">
-                  <span className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">💳 Expense tracking</span>
-                  <span className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">📊 P&L statements</span>
-                  <span className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">🧾 Invoice creation</span>
-                  <span className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">💰 Tax prep</span>
-                  <span className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">📈 Financial reports</span>
-                </div>
                 <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                     <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
@@ -507,13 +506,20 @@ const MoneyAssistant = () => {
         <section className="py-16 md:py-20">
           <div className="container">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Which describes you?</h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {whoDescribesYou.map((item) => (
                 <Card key={item.title} className="border-primary/20">
                   <CardContent className="p-8 text-center">
-                    <span className="text-5xl mb-4 block">{item.icon}</span>
+                    {item.icon && <span className="text-5xl mb-4 block">{item.icon}</span>}
                     <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.desc}</p>
+                    {item.desc && <p className="text-muted-foreground">{item.desc}</p>}
+                    {item.pills && (
+                      <div className="mt-4 flex flex-wrap gap-2 justify-center text-sm">
+                        {item.pills.map((pill) => (
+                          <span key={pill} className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">{pill}</span>
+                        ))}
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
