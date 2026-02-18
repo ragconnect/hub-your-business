@@ -99,7 +99,7 @@ const handler = async (req: Request): Promise<Response> => {
               <p>Hi ${name},</p>
               <p>Ty here. I lead product at RagAdvise.</p>
               <p>Thanks for requesting a demo. Grab a time on my calendar here:</p>
-              <p><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Vc2tRDJbXVkABapDVg-1GqKNFE4qDGKAX0KgG9OCGeq4nTqUqZet64riYuWCANnjgZXei5YV9" style="background-color:#4F46E5;color:#ffffff;padding:12px 24px;text-decoration:none;border-radius:6px;display:inline-block;font-weight:600;">Schedule your personalized demo</a></p>
+              <p><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Vc2tRDJbXVkABapDVg-1GqKNFE4qDGKAX0KgG9OCGeq4nTqUqZet64riYuWCANnjgZXei5YV9" style="background-color:#1a9e6e;color:#ffffff;padding:12px 24px;text-decoration:none;border-radius:6px;display:inline-block;font-weight:600;">Schedule your personalized demo</a></p>
               <p>To make this demo about your business (and not a generic walkthrough), can you hit reply with:</p>
               <p><strong>1) Which assistant are you most interested in right now?</strong><br>
               Conversation, Task, Money, Customer, or Website Voice</p>
