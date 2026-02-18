@@ -116,12 +116,10 @@ const HeroSection = () => {
           {/* Right: app screenshot */}
           <div className="flex-1 w-full max-w-lg lg:max-w-none hidden sm:flex items-center justify-center">
             <div className="relative w-full">
-              {/* Soft glow behind image */}
-              <div className="absolute inset-8 rounded-full bg-primary/20 blur-3xl -z-10" />
               <img
                 src={heroDashboard}
                 alt="RagAdvise dashboard — AI business assistant in action"
-                className="w-full h-auto object-contain drop-shadow-2xl"
+                className="w-full h-auto object-contain drop-shadow-xl"
                 loading="eager"
               />
             </div>
