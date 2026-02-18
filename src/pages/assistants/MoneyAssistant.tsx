@@ -238,18 +238,18 @@ const whoDescribesYou = [
 const rotatingMoneyActions = ["tracks", "categorizes", "flags waste", "finds savings", "keeps you on budget", "optimizes bills", "spots overspending", "recommends next steps"];
 
 const moneyPrompts = [
-  "Send invoice to Angie for $750",
-  "Payment reminder: invoice #104",
-  "Log receipt: $86.42 from Home Depot",
-  "Categorize $129 Stripe charge as Software",
-  "Find subscriptions I can cancel",
-  "Flag hidden fees in the last 30 days",
-  "Forecast cash flow for next 30 days",
-  "Budget for March: $2,500 cap",
-  "Reconcile yesterday's transactions",
-  "Estimate quarterly taxes from last 60 days",
-  "Monthly summary for January",
-  "Set rule: Canva = Marketing",
+  "Invoice Angie $750",
+  "Reminder: invoice #104",
+  "Log $86.42 Home Depot",
+  "Categorize $129 Stripe",
+  "Find subscriptions to cut",
+  "Flag hidden fees",
+  "Forecast next 30 days",
+  "Budget March $2,500",
+  "Reconcile yesterday",
+  "Estimate Q taxes",
+  "January summary",
+  "Canva = Marketing rule",
 ];
 
 const MoneyPromptBox = () => {
@@ -300,7 +300,7 @@ const MoneyPromptBox = () => {
           <Send className="w-4 h-4" />
         </button>
       </div>
-      <div className="mt-3 flex flex-wrap gap-2 justify-center">
+      <div className="mt-3 flex flex-nowrap gap-2 justify-center overflow-x-auto pb-1 scrollbar-none">
         {moneyPrompts.slice(0, 4).map((prompt) => (
           <button
             key={prompt}
