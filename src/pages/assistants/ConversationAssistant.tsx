@@ -96,6 +96,80 @@ const faqs = [
 
 const rotatingWords = ["email", "phone", "text", "review", "social"];
 
+const conversationPrompts = [
+  "Reply to the missed call from John",
+  "Send a follow-up to yesterday's leads",
+  "Respond to our Google review from Sarah",
+  "Answer the Facebook DM about pricing",
+  "Handle after-hours calls this week",
+  "Send appointment reminders to clients",
+  "Reply to all unread emails today",
+  "Message customers about our new offer",
+];
+
+const ConversationPromptBox = () => {
+  const [chatValue, setChatValue] = useState("");
+  const [promptIndex, setPromptIndex] = useState(0);
+  const [isPromptAnimating, setIsPromptAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsPromptAnimating(true);
+      setTimeout(() => {
+        setPromptIndex((prev) => (prev + 1) % conversationPrompts.length);
+        setIsPromptAnimating(false);
+      }, 300);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const saveAndRedirect = async (text: string) => {
+    if (!text.trim()) return;
+    try {
+      await supabase.from("chat_prompt_submissions").insert({ prompt_text: text.trim(), page: "conversation-assistant" });
+    } catch (_) {}
+    window.location.href = "https://my.ragadvise.com/signup";
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") saveAndRedirect(chatValue);
+  };
+
+  return (
+    <div className="mt-8 max-w-lg mx-auto">
+      <p className="text-sm font-medium text-muted-foreground mb-3">Over 10K businesses have cut response time by 40%:</p>
+      <div className="relative flex items-center rounded-xl border-2 border-primary/30 bg-background shadow-lg hover:border-primary/50 transition-colors">
+        <input
+          type="text"
+          value={chatValue}
+          onChange={(e) => setChatValue(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder={conversationPrompts[promptIndex]}
+          className="flex-1 h-14 px-4 bg-transparent text-base outline-none placeholder:text-muted-foreground/60 placeholder:transition-opacity placeholder:duration-300"
+        />
+        <button
+          onClick={() => saveAndRedirect(chatValue)}
+          className="mr-2 p-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          aria-label="Send"
+        >
+          <Send className="w-4 h-4" />
+        </button>
+      </div>
+      <div className="mt-3 flex flex-nowrap gap-2 justify-center overflow-x-auto pb-1 scrollbar-none">
+        {conversationPrompts.slice(0, 4).map((prompt) => (
+          <button
+            key={prompt}
+            onClick={() => setChatValue(prompt)}
+            className="text-xs px-3 py-1.5 rounded-full border bg-muted/50 text-muted-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-colors"
+          >
+            {prompt}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const ConversationAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -244,7 +318,10 @@ const ConversationAssistant = () => {
                     <Star className="w-4 h-4" /> Reviews
                   </span>
                 </div>
-                <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
+                {/* Chat-like input box */}
+                <ConversationPromptBox />
+
+                <div className="mt-6 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                     <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                       <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
