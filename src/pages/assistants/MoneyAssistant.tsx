@@ -237,6 +237,79 @@ const whoDescribesYou = [
 
 const rotatingMoneyActions = ["tracks", "categorizes", "flags waste", "finds savings", "keeps you on budget", "optimizes bills", "spots overspending", "recommends next steps"];
 
+const moneyPrompts = [
+  "Log last week's expenses for me",
+  "Send invoice to Sarah for $1,200",
+  "Show me where I'm overspending",
+  "Categorize my restaurant receipts",
+  "Find subscriptions I can cancel",
+  "Prepare my Q1 P&L report",
+  "Flag any unusual charges this month",
+];
+
+const MoneyPromptBox = () => {
+  const [chatValue, setChatValue] = useState("");
+  const [promptIndex, setPromptIndex] = useState(0);
+  const [isPromptAnimating, setIsPromptAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsPromptAnimating(true);
+      setTimeout(() => {
+        setPromptIndex((prev) => (prev + 1) % moneyPrompts.length);
+        setIsPromptAnimating(false);
+      }, 300);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const saveAndRedirect = async (text: string) => {
+    if (!text.trim()) return;
+    try {
+      await supabase.from("chat_prompt_submissions").insert({ prompt_text: text.trim(), page: "money-assistant" });
+    } catch (_) {}
+    window.location.href = "https://my.ragadvise.com/signup";
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") saveAndRedirect(chatValue);
+  };
+
+  return (
+    <div className="mt-8 max-w-lg mx-auto">
+      <p className="text-sm font-medium text-muted-foreground mb-3">Tell me what you need help with</p>
+      <div className="relative flex items-center rounded-xl border-2 border-primary/30 bg-background shadow-lg hover:border-primary/50 transition-colors">
+        <input
+          type="text"
+          value={chatValue}
+          onChange={(e) => setChatValue(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder={moneyPrompts[promptIndex]}
+          className="flex-1 h-14 px-4 bg-transparent text-base outline-none placeholder:text-muted-foreground/60 placeholder:transition-opacity placeholder:duration-300"
+        />
+        <button
+          onClick={() => saveAndRedirect(chatValue)}
+          className="mr-2 p-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          aria-label="Send"
+        >
+          <Send className="w-4 h-4" />
+        </button>
+      </div>
+      <div className="mt-3 flex flex-wrap gap-2 justify-center">
+        {moneyPrompts.slice(0, 4).map((prompt) => (
+          <button
+            key={prompt}
+            onClick={() => setChatValue(prompt)}
+            className="text-xs px-3 py-1.5 rounded-full border bg-muted/50 text-muted-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-colors"
+          >
+            {prompt}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const MoneyAssistant = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -330,6 +403,9 @@ const MoneyAssistant = () => {
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
                   Now you can instantly lower your business's expenses and ensure its money is organized daily
                 </h1>
+                {/* Chat-like input box */}
+                <MoneyPromptBox />
+
                 <p className="mt-6 text-xl text-muted-foreground">
                   Cut 13 hours a month from money management and eliminate up to 30% in hidden fees and charges. Get organized with an AI business assistant that handles:
                 </p>
