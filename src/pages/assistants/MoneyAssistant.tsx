@@ -238,18 +238,14 @@ const whoDescribesYou = [
 const rotatingMoneyActions = ["tracks", "categorizes", "flags waste", "finds savings", "keeps you on budget", "optimizes bills", "spots overspending", "recommends next steps"];
 
 const moneyPrompts = [
-  "Invoice Angie $750",
-  "Reminder: invoice #104",
-  "Log $86.42 Home Depot",
-  "Categorize $129 Stripe",
-  "Find subscriptions to cut",
-  "Flag hidden fees",
-  "Forecast next 30 days",
-  "Budget March $2,500",
-  "Reconcile yesterday",
-  "Estimate Q taxes",
-  "January summary",
-  "Canva = Marketing rule",
+  "Add this receipt to Home Depot",
+  "Log $86 from CVS to Supplies",
+  "Invoice Sarah for $1,200",
+  "Send reminder for invoice #104",
+  "What did I spend on ads last month?",
+  "Flag anything over $200 this week",
+  "Cancel subscriptions I haven't used",
+  "How much did we pay Fiverr in Q2?",
 ];
 
 const MoneyPromptBox = () => {
