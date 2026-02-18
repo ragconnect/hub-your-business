@@ -458,17 +458,17 @@ const MoneyAssistant = () => {
         {/* GPS Callout + Inline Contact */}
         <section className="py-8 border-y bg-muted/30">
           <div className="container">
-            <div className="max-w-5xl mx-auto grid md:grid-cols-[1fr,auto] gap-8 items-center">
+            <div className="max-w-5xl mx-auto flex flex-col gap-4">
               <div className="flex items-start gap-4">
-                <Compass className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                <Compass className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-lg">RagAdvise is your GPS for business.</p>
-                  <p className="text-muted-foreground mt-1">
+                  <p className="font-semibold text-base">RagAdvise is your GPS for business.</p>
+                  <p className="text-muted-foreground text-sm mt-0.5">
                     You're looking at the Money Assistant, but it's built to work as part of a connected suite of assistants. If you like this, you'll love how the whole system runs your business end-to-end.
                   </p>
                 </div>
               </div>
-              <form onSubmit={handleDemoSubmit} className="flex flex-col sm:flex-row items-end gap-2 min-w-0 sm:min-w-[420px]">
+              <form onSubmit={handleDemoSubmit} className="flex flex-col sm:flex-row items-end gap-2">
                 <div className="flex-1 w-full">
                   <Label htmlFor="gps-name" className="text-xs">Name</Label>
                   <Input
