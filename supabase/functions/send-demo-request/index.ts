@@ -1,6 +1,9 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const SENDGRID_API_KEY = Deno.env.get("SENDGRID_API_KEY");
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -25,6 +28,17 @@ const handler = async (req: Request): Promise<Response> => {
     const { name, email, company, message }: DemoRequestPayload = await req.json();
 
     console.log("Received demo request:", { name, email, company, message });
+
+    // Save lead to database
+    const adminClient = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+    const { error: dbError } = await adminClient
+      .from("demo_requests")
+      .insert({ name, email, company: company || null, message: message || null });
+    if (dbError) {
+      console.error("Failed to save demo request to DB:", dbError);
+    } else {
+      console.log("Demo request saved to database.");
+    }
 
     if (!SENDGRID_API_KEY) {
       console.error("SENDGRID_API_KEY is not set");
