@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import googleLogo from "@/assets/logos/google.png";
+import heroDashboard from "@/assets/hero-dashboard-1.png";
 import { Button } from "@/components/ui/button";
 import { Play, Calendar } from "lucide-react";
 import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
@@ -71,41 +72,60 @@ const HeroSection = () => {
     <section className="relative pt-8 md:pt-12 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
       <ScrollingCharacterBg />
       <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-            Starting today, AI handles the busywork across your business
-          </h1>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Turn everyday business moments into finished work—faster replies, smoother follow‑through, and fewer things slipping through the cracks.
-          </p>
-          <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto">
-            <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-              <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
-                <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                Sign up with Google
-              </a>
-            </Button>
-            <DemoRequestModal>
-              <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                <Calendar className="mr-2 h-4 w-4" />
-                Schedule Demo & Free Setup
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          {/* Left: text + CTA */}
+          <div className="flex-1 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+            <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
+              Starting today, AI handles the busywork across your business
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Turn everyday business moments into finished work—faster replies, smoother follow‑through, and fewer things slipping through the cracks.
+            </p>
+            <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto lg:mx-0">
+              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+                  Sign up with Google
+                </a>
               </Button>
-            </DemoRequestModal>
-            <div className="flex items-center gap-3 mt-1">
-              <div className="flex-1 border-t" />
-              <span className="text-xs text-muted-foreground">OR</span>
-              <div className="flex-1 border-t" />
+              <DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
+              <div className="flex items-center gap-3 mt-1">
+                <div className="flex-1 border-t" />
+                <span className="text-xs text-muted-foreground">OR</span>
+                <div className="flex-1 border-t" />
+              </div>
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-sm">
+                <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                <span className="text-muted-foreground">No credit card required</span>
+                <span className="text-muted-foreground">·</span>
+                <VideoModal>
+                  <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
+                    <Play className="w-3 h-3" fill="currentColor" />
+                    Watch Demo
+                  </button>
+                </VideoModal>
+              </div>
             </div>
-            <div className="flex items-center justify-center gap-2 text-sm">
-              <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
-              <span className="text-muted-foreground">No credit card required</span>
-              <span className="text-muted-foreground">·</span>
-              <VideoModal>
-                <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
-                  <Play className="w-3 h-3" fill="currentColor" />
-                  Watch Demo
-                </button>
-              </VideoModal>
+          </div>
+
+          {/* Right: app screenshot */}
+          <div className="flex-1 w-full max-w-2xl lg:max-w-none hidden sm:block">
+            <div className="relative">
+              {/* Glow backdrop */}
+              <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-3xl scale-105 -z-10" />
+              <div className="rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 ring-1 ring-border">
+                <img
+                  src={heroDashboard}
+                  alt="RagAdvise dashboard — AI business assistant in action"
+                  className="w-full h-auto object-cover object-top"
+                  loading="eager"
+                />
+              </div>
             </div>
           </div>
         </div>
