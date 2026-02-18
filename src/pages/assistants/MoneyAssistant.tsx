@@ -402,7 +402,7 @@ const MoneyAssistant = () => {
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
                 <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-                  AI ensures money is organized daily and instantly lowers your business's expenses.
+                  Ensure your money is organized daily and instantly lowers your business expenses.
                 </h1>
                 {/* Chat-like input box */}
                 <MoneyPromptBox />
