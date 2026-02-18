@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import googleLogo from "@/assets/logos/google.png";
-import heroDashboard from "@/assets/hero-dashboard-1.png";
+import heroDashboard from "@/assets/hero-app-screenshot.png";
 import { Button } from "@/components/ui/button";
 import { Play, Calendar } from "lucide-react";
 import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
@@ -114,18 +114,16 @@ const HeroSection = () => {
           </div>
 
           {/* Right: app screenshot */}
-          <div className="flex-1 w-full max-w-2xl lg:max-w-none hidden sm:block">
-            <div className="relative">
-              {/* Glow backdrop */}
-              <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-3xl scale-105 -z-10" />
-              <div className="rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 ring-1 ring-border">
-                <img
-                  src={heroDashboard}
-                  alt="RagAdvise dashboard — AI business assistant in action"
-                  className="w-full h-auto object-cover object-top"
-                  loading="eager"
-                />
-              </div>
+          <div className="flex-1 w-full max-w-lg lg:max-w-none hidden sm:flex items-center justify-center">
+            <div className="relative w-full">
+              {/* Soft glow behind image */}
+              <div className="absolute inset-8 rounded-full bg-primary/20 blur-3xl -z-10" />
+              <img
+                src={heroDashboard}
+                alt="RagAdvise dashboard — AI business assistant in action"
+                className="w-full h-auto object-contain drop-shadow-2xl"
+                loading="eager"
+              />
             </div>
           </div>
         </div>
