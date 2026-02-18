@@ -233,12 +233,6 @@ const whoDescribesYou = [
     title: "Drowning in receipts",
     desc: "You're spending hours categorizing expenses and still don't know your real profit margins. Automate it and get your time back.",
   },
-  {
-    icon: null,
-    title: "Get organized with an AI business assistant that handles:",
-    desc: null,
-    pills: ["💳 Expense tracking", "📊 P&L statements", "🧾 Invoice creation", "💰 Tax prep", "📈 Financial reports"],
-  },
 ];
 
 const rotatingMoneyActions = ["tracks", "categorizes", "flags waste", "finds savings", "keeps you on budget", "optimizes bills", "spots overspending", "recommends next steps"];
@@ -512,20 +506,13 @@ const MoneyAssistant = () => {
                 <span key={pill} className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">{pill}</span>
               ))}
             </div>
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {whoDescribesYou.map((item) => (
                 <Card key={item.title} className="border-primary/20">
                   <CardContent className="p-8 text-center">
-                    {item.icon && <span className="text-5xl mb-4 block">{item.icon}</span>}
+                    <span className="text-5xl mb-4 block">{item.icon}</span>
                     <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                    {item.desc && <p className="text-muted-foreground">{item.desc}</p>}
-                    {item.pills && (
-                      <div className="mt-4 flex flex-wrap gap-2 justify-center text-sm">
-                        {item.pills.map((pill) => (
-                          <span key={pill} className="inline-flex items-center gap-1 bg-muted px-3 py-1.5 rounded-full">{pill}</span>
-                        ))}
-                      </div>
-                    )}
+                    <p className="text-muted-foreground">{item.desc}</p>
                   </CardContent>
                 </Card>
               ))}
