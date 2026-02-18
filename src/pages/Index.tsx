@@ -76,7 +76,7 @@ const HeroSection = () => {
           {/* Left: text + CTA */}
           <div className="flex-1 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
             <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-              Entrepreneurs: AI instantly handles the busywork—so you move faster.
+              Entrepreneurs: Let AI instantly handle the busywork—so you move faster.
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
               Turn everyday business moments into finished work—faster replies, smoother follow‑through, and fewer things slipping through the cracks.
