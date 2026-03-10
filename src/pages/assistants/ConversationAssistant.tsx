@@ -274,7 +274,7 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  AI Business Assistant to handle all{" "}
+                  Stop missing leads and forgetting customers. Your AI receptionist answers{" "}
                   <span
                     className={`inline-block transition-all duration-300 ${
                       isAnimating
@@ -284,7 +284,7 @@ const ConversationAssistant = () => {
                   >
                     {rotatingWords[wordIndex]}
                   </span>
-                  {" "}communication for your business.
+                  {" "}and messages them instantly.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Be up and running in under 60 seconds with a business phone number + AI that handles calls, texts, and emails 24/7, qualifies customers, and texts you the summary.
