@@ -278,7 +278,7 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Never miss a customer again. Get a business phone number with an AI receptionist built in—answering calls day and night.
+                  Never miss a customer again. Get a business phone number with an AI receptionist built in.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Your AI voice receptionist answers customer calls & emails, then stores the data and messages you instantly. Takes less than 60 seconds to set up.
