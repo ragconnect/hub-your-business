@@ -92,6 +92,10 @@ const faqs = [
     q: "Can I try it before committing?",
     a: "Yes. 7-day free trial with full access to all features. No credit card required to start.",
   },
+  {
+    q: "What is the first 30 minutes free program?",
+    a: "When you sign up, your first 30 minutes of AI receptionist call time are completely free—no credit card required. That means your AI phone assistant will answer real customer calls, take messages, and handle FAQs at no cost for the first 30 minutes of total call time. It's our way of letting you experience the service risk-free before choosing a plan.",
+  },
 ];
 
 const rotatingWords = ["phone", "email"];
@@ -256,7 +260,7 @@ const ConversationAssistant = () => {
       </Helmet>
 
       <div className="w-full bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
-        <p>First 30 minutes free with our AI receptionist (Phone Assistant). <a href="#pricing" className="underline">Learn more</a></p>
+        <p>First 30 minutes free with our AI receptionist (Phone Assistant). <a href="https://my.ragadvise.com/signup" className="underline">Learn more</a></p>
       </div>
       <Header />
 
