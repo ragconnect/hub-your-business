@@ -260,7 +260,7 @@ const ConversationAssistant = () => {
       </Helmet>
 
       <div className="w-full bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
-        <p>First 30 minutes free with our AI receptionist (Phone Assistant). <a href="https://accounts.google.com/o/oauth2/v2/auth" className="underline">Learn more</a></p>
+        <p>First 30 minutes free with our AI receptionist (Phone Assistant). <a href="https://my.ragadvise.com/signup" className="underline">Learn more</a></p>
       </div>
       <Header />
 
