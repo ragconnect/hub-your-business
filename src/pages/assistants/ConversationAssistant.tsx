@@ -288,17 +288,7 @@ const ConversationAssistant = () => {
                   {" "}communication for your business.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Most teams reduce time spent on{" "}
-                  <span
-                    className={`inline-block transition-all duration-300 font-semibold text-foreground ${
-                      isAnimating
-                        ? "opacity-0 translate-y-2"
-                        : "opacity-100 translate-y-0"
-                    }`}
-                  >
-                    {rotatingWords[wordIndex]}s
-                  </span>
-                  {" "}by 40%.
+                  AI voice receptionist to support customer calls 24/7
                 </p>
                 {/* Chat-like input box */}
                 <ConversationPromptBox />
