@@ -274,7 +274,7 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Be up and running in under 60 seconds. Your AI voice receptionist answers customer{" "}
+                  Your AI voice receptionist answers customer{" "}
                   <span
                     className={`inline-block transition-all duration-300 ${
                       isAnimating
