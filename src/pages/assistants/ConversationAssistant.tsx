@@ -158,17 +158,6 @@ const ConversationPromptBox = () => {
           <Send className="w-4 h-4" />
         </button>
       </div>
-      <div className="mt-3 flex flex-nowrap gap-2 justify-center overflow-x-auto pb-1 scrollbar-none">
-        {conversationPrompts.slice(0, 4).map((prompt) => (
-          <button
-            key={prompt}
-            onClick={() => setChatValue(prompt)}
-            className="text-xs px-3 py-1.5 rounded-full border bg-muted/50 text-muted-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-colors"
-          >
-            {prompt}
-          </button>
-        ))}
-      </div>
     </div>
   );
 };
