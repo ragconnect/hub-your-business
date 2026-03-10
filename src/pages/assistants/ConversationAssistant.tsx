@@ -287,7 +287,7 @@ const ConversationAssistant = () => {
                   {" "}communication for your business.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  AI voice receptionist to support customer calls 24/7
+                  In under 60 seconds, set up an AI voice receptionist to support customer calls 24/7.
                 </p>
                 {/* Chat-like input box */}
                 <ConversationPromptBox />
