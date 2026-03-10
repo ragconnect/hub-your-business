@@ -274,17 +274,7 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Your AI voice receptionist answers customer{" "}
-                  <span
-                    className={`inline-block transition-all duration-300 ${
-                      isAnimating
-                        ? "opacity-0 translate-y-2"
-                        : "opacity-100 translate-y-0"
-                    }`}
-                  >
-                    {rotatingWords[wordIndex]}
-                  </span>
-                  {" "}then stores the data and messages you instantly.
+                  Get a business phone number with an AI receptionist built in—answering calls day and night, so you never miss a customer.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Your AI voice receptionist answers customer calls & emails, then stores the data and messages you instantly. Takes less than 60 seconds to set up.
