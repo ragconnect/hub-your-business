@@ -274,7 +274,7 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Your AI voice receptionist answers customer{" "}
+                  Stop missing customers! Your AI receptionist answers{" "}
                   <span
                     className={`inline-block transition-all duration-300 ${
                       isAnimating
@@ -284,7 +284,7 @@ const ConversationAssistant = () => {
                   >
                     {rotatingWords[wordIndex]}
                   </span>
-                  {" "}&amp; emails, then stores the data and messages you instantly.
+                  {" "}and messages them instantly.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Your AI voice receptionist answers customer calls &amp; emails, then stores the data and messages you instantly.
