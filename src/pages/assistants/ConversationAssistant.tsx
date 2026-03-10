@@ -94,7 +94,7 @@ const faqs = [
   },
 ];
 
-const rotatingWords = ["email", "phone", "text", "review", "social"];
+const rotatingWords = ["phone", "email"];
 
 const conversationPrompts = [
   "Answer \"How much does this cost?\" and book a consult",
