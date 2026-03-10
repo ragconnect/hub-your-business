@@ -287,7 +287,7 @@ const ConversationAssistant = () => {
                   {" "}then stores the data and messages you instantly.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Be up and running in under 60 seconds. Your AI voice receptionist answers customer calls &amp; emails, then stores the data and messages you instantly.
+                  Your AI voice receptionist answers customer calls & emails, then stores the data and messages you instantly. Takes less than 60 seconds to set up.
                 </p>
                 {/* Chat-like input box */}
                 <ConversationPromptBox />
