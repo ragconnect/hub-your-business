@@ -256,7 +256,9 @@ const ConversationAssistant = () => {
         <link rel="canonical" href={siteUrl} />
       </Helmet>
 
-      <OfferBanner />
+      <div className="w-full bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
+        <p>Get your first 30 minutes free for AI receptionist to handle calls <a href="#pricing" className="underline">Learn More</a></p>
+      </div>
       <Header />
 
       <main>
