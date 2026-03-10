@@ -287,7 +287,7 @@ const ConversationAssistant = () => {
                   {" "}and messages them instantly.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Be up and running in under 60 seconds with a business phone number + AI that handles calls, texts, and emails 24/7, qualifies customers, and texts you the summary.
+                  Your AI voice receptionist answers customer calls &amp; emails, then stores the data and messages you instantly.
                 </p>
                 {/* Chat-like input box */}
                 <ConversationPromptBox />
