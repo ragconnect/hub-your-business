@@ -256,7 +256,7 @@ const ConversationAssistant = () => {
       </Helmet>
 
       <div className="w-full bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
-        <p>Get your first 30 minutes free for AI receptionist to handle calls <a href="#pricing" className="underline">Learn More</a></p>
+        <p>First 30 minutes free with our AI receptionist (Phone Assistant). <a href="#pricing" className="underline">Learn more</a></p>
       </div>
       <Header />
 
