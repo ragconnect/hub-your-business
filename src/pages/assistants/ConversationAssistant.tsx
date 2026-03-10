@@ -281,7 +281,7 @@ const ConversationAssistant = () => {
                   Never miss a customer again. Get a business phone number with an AI receptionist built in.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Your AI voice receptionist answers customer calls & emails, then stores the data and messages you instantly. Takes less than 60 seconds to set up.
+                  Your AI voice receptionist answers customers all day and night, then stores the data. It can manage up to 50 customer calls at once. Takes less than 60 seconds to set up.
                 </p>
                 {/* Chat-like input box */}
                 <ConversationPromptBox />
