@@ -92,6 +92,10 @@ const faqs = [
     q: "Can I try it before committing?",
     a: "Yes. 7-day free trial with full access to all features. No credit card required to start.",
   },
+  {
+    q: "What is the first 30 minutes free program?",
+    a: "When you sign up, your first 30 minutes of AI receptionist call time are completely free—no credit card required. That means your AI phone assistant will answer real customer calls, take messages, and handle FAQs at no cost for the first 30 minutes of total call time. It's our way of letting you experience the service risk-free before choosing a plan.",
+  },
 ];
 
 const rotatingWords = ["phone", "email"];
