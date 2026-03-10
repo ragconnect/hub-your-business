@@ -97,14 +97,13 @@ const faqs = [
 const rotatingWords = ["email", "phone", "text", "review", "social"];
 
 const conversationPrompts = [
-  "Reply to the missed call from John",
-  "Send a follow-up to yesterday's leads",
-  "Respond to our Google review from Sarah",
-  "Answer the Facebook DM about pricing",
-  "Handle after-hours calls this week",
-  "Send appointment reminders to clients",
-  "Reply to all unread emails today",
-  "Message customers about our new offer",
+  "Law Offices – Answer \"How much does this cost?\" and book a consult",
+  "Law Offices – Answer calls about traffic tickets and book a lawyer call",
+  "HVAC – Answer \"Do you service my area?\" and book a visit",
+  "Dental Office – Book a new patient visit and email me the details",
+  "Plumber – Ask where the leak is and have them text photos",
+  "Auto Shop – Give a price range and book a time to come in",
+  "Auto Shop – Ask for year/make/model and what's wrong",
 ];
 
 const ConversationPromptBox = () => {
