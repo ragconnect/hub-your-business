@@ -269,11 +269,11 @@ const ConversationAssistant = () => {
                 >
                   Never miss a customer again. Get a business phone number with an AI receptionist built in.
                 </h1>
+                {/* Chat-like input box */}
+                <ConversationPromptBox />
                 <p className="mt-6 text-xl text-muted-foreground">
                   Your AI voice receptionist answers calls 24/7, captures the details, and can handle up to 50 calls at once. Set up in under 60 seconds.
                 </p>
-                {/* Chat-like input box */}
-                <ConversationPromptBox />
 
                 <div className="mt-6 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
