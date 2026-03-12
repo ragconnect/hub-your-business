@@ -271,9 +271,9 @@ const ConversationAssistant = () => {
                 <p className="mt-6 text-xl text-muted-foreground">
                   Your AI voice receptionist answers calls 24/7, captures the details, and can handle up to 50 calls at once. Set up in under 60 seconds.
                 </p>
-                <p className="mt-6 text-sm font-medium text-muted-foreground">Over 10K businesses have cut response time by 40%. What should your AI receptionist do and say when customers call?</p>
                 {/* Chat-like input box */}
                 <ConversationPromptBox />
+                <p className="mt-4 text-sm font-medium text-muted-foreground">Over 10K businesses have cut response time by 40%. What should your AI receptionist do and say when customers call?</p>
 
                 <div className="mt-6 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
