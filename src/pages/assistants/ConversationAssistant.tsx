@@ -140,7 +140,6 @@ const ConversationPromptBox = () => {
 
   return (
     <div className="mt-8 max-w-lg mx-auto">
-      <p className="text-sm font-medium text-muted-foreground mb-3">Over 10K businesses have cut response time by 40%. What should your AI receptionist do and say when customers call?</p>
       <div className="relative flex items-center rounded-xl border-2 border-primary/30 bg-background shadow-lg hover:border-primary/50 transition-colors">
         <input
           type="text"
@@ -267,13 +266,14 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                  Never miss a customer again. Get a business phone number with an AI receptionist built in.
+                   Never miss a customer again. Get a business phone number with an AI receptionist built in.
                 </h1>
-                {/* Chat-like input box */}
-                <ConversationPromptBox />
                 <p className="mt-6 text-xl text-muted-foreground">
                   Your AI voice receptionist answers calls 24/7, captures the details, and can handle up to 50 calls at once. Set up in under 60 seconds.
                 </p>
+                <p className="mt-6 text-sm font-medium text-muted-foreground">Over 10K businesses have cut response time by 40%. What should your AI receptionist do and say when customers call?</p>
+                {/* Chat-like input box */}
+                <ConversationPromptBox />
 
                 <div className="mt-6 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
