@@ -69,6 +69,23 @@ const dentalPrompts = [
   "Schedule a follow-up for a root canal patient",
 ];
 
+const SectionCTA = () => (
+  <div className="mt-10 flex flex-col gap-3 max-w-md mx-auto">
+    <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+        <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+        Sign up with Google
+      </a>
+    </Button>
+    <DemoRequestModal>
+      <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+        <Calendar className="mr-2 h-4 w-4" />
+        Schedule Demo & Free Setup
+      </Button>
+    </DemoRequestModal>
+  </div>
+);
+
 const DentistPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
