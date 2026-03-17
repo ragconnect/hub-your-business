@@ -146,7 +146,7 @@ const DentistPage = () => {
                 AI for dental patient interaction—across every channel
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
-                RagAdvise gives dental offices <strong className="text-foreground">one phone number for calls (direct or automated)</strong> and a <strong className="text-foreground">voice chat box for your website or app</strong>—so you capture leads, answer questions, and book appointments faster.
+                RagAdvise gives dental offices <strong className="text-foreground">one phone number for calls (direct & automated by AI assistant)</strong> and a <strong className="text-foreground">voice chat box for your website or app</strong>—so you capture leads, answer questions, and book appointments faster.
               </p>
 
               {/* Prompt Box */}
