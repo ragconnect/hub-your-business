@@ -73,6 +73,7 @@ const DentistPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [promptIndex, setPromptIndex] = useState(0);
   const [promptValue, setPromptValue] = useState("");
   const { toast } = useToast();
 
