@@ -182,6 +182,7 @@ const DentistPage = () => {
                 </div>
               </div>
 
+              <div className="mt-6 flex flex-col gap-3 max-w-md mx-auto">
                 <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                   <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                     <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
