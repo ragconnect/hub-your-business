@@ -110,7 +110,7 @@ const Header = () => {
             </NavigationMenuList>
           </NavigationMenu>
           <a href="/#testimonials" className="hover:text-foreground transition-colors">Stories</a>
-          <a href="/#who" className="hover:text-foreground transition-colors">Who is This For</a>
+          
           <a href="/#compare" className="hover:text-foreground transition-colors">Compare</a>
           <a href="/#faq" className="hover:text-foreground transition-colors">FAQ</a>
           <a href="https://ragadvise.framer.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Blog</a>
@@ -161,13 +161,6 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Stories
-              </a>
-              <a 
-                href="/#who" 
-                className="text-lg hover:text-primary transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Who is This For
               </a>
               <a 
                 href="/#compare" 
