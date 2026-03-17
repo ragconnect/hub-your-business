@@ -69,6 +69,23 @@ const dentalPrompts = [
   "Schedule a follow-up for a root canal patient",
 ];
 
+const SectionCTA = () => (
+  <div className="mt-10 flex flex-col gap-3 max-w-md mx-auto">
+    <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+        <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
+        Sign up with Google
+      </a>
+    </Button>
+    <DemoRequestModal>
+      <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+        <Calendar className="mr-2 h-4 w-4" />
+        Schedule Demo & Free Setup
+      </Button>
+    </DemoRequestModal>
+  </div>
+);
+
 const DentistPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -289,10 +306,9 @@ const DentistPage = () => {
                 </div>
               ))}
             </div>
+            <SectionCTA />
           </div>
         </section>
-
-        {/* How it works 1-2-3 */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -344,10 +360,9 @@ const DentistPage = () => {
                 </div>
               ))}
             </div>
+            <SectionCTA />
           </div>
         </section>
-
-        {/* Improve every week */}
         <section className="py-16 md:py-24">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -381,10 +396,9 @@ const DentistPage = () => {
                 </div>
               </div>
             </div>
+            <SectionCTA />
           </div>
         </section>
-
-        {/* Channels */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -450,10 +464,9 @@ const DentistPage = () => {
                 </Card>
               ))}
             </div>
+            <SectionCTA />
           </div>
         </section>
-
-        {/* Implementation guarantee */}
         <section className="py-16 md:py-24">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
@@ -476,10 +489,9 @@ const DentistPage = () => {
                 </Card>
               ))}
             </div>
+            <SectionCTA />
           </div>
         </section>
-
-        {/* AI in dentistry—without the usual barriers */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
@@ -505,10 +517,9 @@ const DentistPage = () => {
                 </div>
               ))}
             </div>
+            <SectionCTA />
           </div>
         </section>
-
-        {/* Patient Journey Example */}
         <section className="py-16 md:py-24">
           <div className="container max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
@@ -530,10 +541,9 @@ const DentistPage = () => {
                 </div>
               ))}
             </div>
+            <SectionCTA />
           </div>
         </section>
-
-        {/* Integrations */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -556,10 +566,9 @@ const DentistPage = () => {
                 </span>
               ))}
             </div>
+            <SectionCTA />
           </div>
         </section>
-
-        {/* Our Team / Free Setup */}
         <section className="py-16 md:py-24">
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -619,6 +628,7 @@ const DentistPage = () => {
                 </AccordionItem>
               ))}
             </Accordion>
+            <SectionCTA />
           </div>
         </section>
 
