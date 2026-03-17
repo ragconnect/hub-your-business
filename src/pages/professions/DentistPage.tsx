@@ -628,6 +628,7 @@ const DentistPage = () => {
                 </AccordionItem>
               ))}
             </Accordion>
+            <SectionCTA />
           </div>
         </section>
 
