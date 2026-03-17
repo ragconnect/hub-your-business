@@ -150,9 +150,6 @@ const DentistPage = () => {
               <p className="mt-4 text-base text-muted-foreground">
                 RagAdvise gives dental offices <strong className="text-foreground">one phone number for calls (direct or automated)</strong> and a <strong className="text-foreground">voice chat box for your website or app</strong>—so you capture leads, answer questions, and book appointments faster.
               </p>
-              <p className="mt-3 text-sm text-muted-foreground italic">
-                Built by ex‑Meta and WebMD employees with love. Built on over 1 million hours of medical patient interaction data across website, phone, video, and email.
-              </p>
 
               <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                 <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
@@ -178,6 +175,9 @@ const DentistPage = () => {
                     </button>
                   </VideoModal>
                 </div>
+                <p className="mt-4 text-sm text-muted-foreground italic">
+                  Built by ex‑Meta and WebMD employees with love. Built on over 1 million hours of medical patient interaction data across website, phone, video, and email.
+                </p>
               </div>
             </div>
           </div>
