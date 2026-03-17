@@ -175,6 +175,9 @@ const DentistPage = () => {
                     </button>
                   </VideoModal>
                 </div>
+                <p className="mt-4 text-sm text-muted-foreground italic">
+                  Built by ex‑Meta and WebMD employees with love. Built on over 1 million hours of medical patient interaction data across website, phone, video, and email.
+                </p>
               </div>
             </div>
           </div>
