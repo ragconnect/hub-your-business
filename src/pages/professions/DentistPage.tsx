@@ -145,9 +145,6 @@ const DentistPage = () => {
               >
                 AI for dental patient interaction—across every channel
               </h1>
-              <p className="mt-6 text-xl text-muted-foreground">
-                Capture every lead and book more appointments with an AI phone line and voice-enabled website chat—24/7.
-              </p>
               <p className="mt-4 text-base text-muted-foreground">
                 RagAdvise gives dental offices <strong className="text-foreground">one phone number for calls (direct or automated)</strong> and a <strong className="text-foreground">voice chat box for your website or app</strong>—so you capture leads, answer questions, and book appointments faster.
               </p>
