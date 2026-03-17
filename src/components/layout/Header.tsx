@@ -36,6 +36,14 @@ const assistants = [
   },
 ];
 
+const professions = [
+  {
+    title: "Dentist",
+    href: "/professions/dentist",
+    description: "AI receptionist & website voice built for dental offices.",
+  },
+];
+
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
