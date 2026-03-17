@@ -360,10 +360,9 @@ const DentistPage = () => {
                 </div>
               ))}
             </div>
+            <SectionCTA />
           </div>
         </section>
-
-        {/* Improve every week */}
         <section className="py-16 md:py-24">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
