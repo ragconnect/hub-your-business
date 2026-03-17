@@ -163,13 +163,6 @@ const Header = () => {
                 Stories
               </a>
               <a 
-                href="/#who" 
-                className="text-lg hover:text-primary transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Who is This For
-              </a>
-              <a 
                 href="/#compare" 
                 className="text-lg hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
