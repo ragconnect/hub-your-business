@@ -566,10 +566,9 @@ const DentistPage = () => {
                 </span>
               ))}
             </div>
+            <SectionCTA />
           </div>
         </section>
-
-        {/* Our Team / Free Setup */}
         <section className="py-16 md:py-24">
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
