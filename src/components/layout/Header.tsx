@@ -142,7 +142,19 @@ const Header = () => {
                   {assistant.title}
                 </Link>
               ))}
-              <a 
+              <div className="border-t pt-4 mt-2">
+                <p className="text-sm font-medium text-muted-foreground mb-2">Professions</p>
+                {professions.map((profession) => (
+                  <Link
+                    key={profession.title}
+                    to={profession.href}
+                    className="text-lg hover:text-primary transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {profession.title}
+                  </Link>
+                ))}
+              </div>
                 href="/#testimonials" 
                 className="text-lg hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
