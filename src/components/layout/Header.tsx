@@ -155,6 +155,7 @@ const Header = () => {
                   </Link>
                 ))}
               </div>
+              <a 
                 href="/#testimonials" 
                 className="text-lg hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
