@@ -1016,15 +1016,15 @@ const ConversationAssistant = () => {
                       <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                         <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                           <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                          Sign up with Google
+                          Sign up with Google & Get 30 Minutes Free
                         </a>
                       </Button>
-                      <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background" asChild>
-                        <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
-                          <Clock className="mr-1 h-4 w-4" />
-                          Get 30 min Free
-                        </a>
-                      </Button>
+                      <DemoRequestModal>
+                        <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          Schedule Demo & Free Setup
+                        </Button>
+                      </DemoRequestModal>
                       <div className="flex items-center justify-center gap-2 text-sm mt-1">
                         <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                         <span className="text-muted-foreground">No credit card required</span>
