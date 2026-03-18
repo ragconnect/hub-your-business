@@ -267,7 +267,9 @@ const SiteAssistant = () => {
         <link rel="canonical" href={siteUrl} />
       </Helmet>
 
-      <OfferBanner />
+      <div className="w-full bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
+        <p>First 30 minutes free with our AI voice assistant (Website Voice). <a href="https://my.ragadvise.com/signup" className="underline">Learn more</a></p>
+      </div>
       <Header />
 
       <main>
