@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
-import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import { Clock } from "lucide-react";
 import googleLogo from "@/assets/logos/google.png";
 
 const CTABand: React.FC = () => {
@@ -19,15 +18,15 @@ const CTABand: React.FC = () => {
             <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
               <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                 <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                Sign up with Google or email
+                Sign up with Google
               </a>
             </Button>
-            <DemoRequestModal>
-              <Button size="lg" variant="outline" className="w-full h-14 text-base font-semibold rounded-lg">
-                <Calendar className="mr-2 h-4 w-4" />
-                Schedule Demo & Free Setup
-              </Button>
-            </DemoRequestModal>
+            <Button size="lg" variant="outline" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
+              <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                <Clock className="mr-1 h-4 w-4" />
+                Get 30 min Free
+              </a>
+            </Button>
           </div>
         </div>
       </div>
