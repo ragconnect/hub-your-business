@@ -77,12 +77,12 @@ const SectionCTA = () => (
         Sign up with Google
       </a>
     </Button>
-    <DemoRequestModal>
-      <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-        <Calendar className="mr-2 h-4 w-4" />
-        Schedule Demo & Free Setup
-      </Button>
-    </DemoRequestModal>
+    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background" asChild>
+      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+        <Clock className="mr-1 h-4 w-4" />
+        Get 30 min Free
+      </a>
+    </Button>
   </div>
 );
 
@@ -201,15 +201,15 @@ const DentistPage = () => {
                 <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                   <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                     <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                    Start with 30 min free
+                    Sign up with Google
                   </a>
                 </Button>
-                <DemoRequestModal>
-                  <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Demo & Free Setup
-                  </Button>
-                </DemoRequestModal>
+                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background" asChild>
+                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                    <Clock className="mr-1 h-4 w-4" />
+                    Get 30 min Free
+                  </a>
+                </Button>
                 <div className="flex items-center justify-center gap-2 text-sm mt-1">
                   <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                   <span className="text-muted-foreground">No credit card required</span>
@@ -675,15 +675,15 @@ const DentistPage = () => {
               <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                 <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                  Start Free Trial
+                  Sign up with Google
                 </a>
               </Button>
-              <DemoRequestModal>
-                <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg bg-transparent border-2 border-white text-white hover:bg-white/10">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Schedule Demo & Free Setup
-                </Button>
-              </DemoRequestModal>
+              <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg bg-transparent border-2 border-white text-white hover:bg-white/10" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                  <Clock className="mr-1 h-4 w-4" />
+                  Get 30 min Free
+                </a>
+              </Button>
             </div>
           </div>
         </section>

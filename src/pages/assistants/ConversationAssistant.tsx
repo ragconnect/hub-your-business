@@ -282,12 +282,12 @@ const ConversationAssistant = () => {
                       Signup with Google & Get AI Receptionist
                     </a>
                   </Button>
-                  <DemoRequestModal>
-                    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo & Free Setup
-                    </Button>
-                  </DemoRequestModal>
+                  <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background" asChild>
+                    <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                      <Clock className="mr-1 h-4 w-4" />
+                      Get 30 min Free
+                    </a>
+                  </Button>
                   <div className="flex items-center gap-3 mt-1">
                     <div className="flex-1 border-t" />
                     <span className="text-xs text-muted-foreground">OR</span>
@@ -925,12 +925,12 @@ const ConversationAssistant = () => {
                           Sign up with Google
                         </a>
                       </Button>
-                      <DemoRequestModal>
-                        <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                          <Calendar className="mr-2 h-4 w-4" />
-                          Schedule Demo & Free Setup
-                        </Button>
-                      </DemoRequestModal>
+                      <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background" asChild>
+                        <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                          <Clock className="mr-1 h-4 w-4" />
+                          Get 30 min Free
+                        </a>
+                      </Button>
                       <div className="flex items-center justify-center gap-2 text-sm mt-1">
                         <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                         <span className="text-muted-foreground">No credit card required</span>
@@ -1020,12 +1020,12 @@ const ConversationAssistant = () => {
                           Sign up with Google
                         </a>
                       </Button>
-                      <DemoRequestModal>
-                        <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                          <Calendar className="mr-2 h-4 w-4" />
-                          Schedule Demo & Free Setup
-                        </Button>
-                      </DemoRequestModal>
+                      <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background" asChild>
+                        <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                          <Clock className="mr-1 h-4 w-4" />
+                          Get 30 min Free
+                        </a>
+                      </Button>
                       <div className="flex items-center justify-center gap-2 text-sm mt-1">
                         <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                         <span className="text-muted-foreground">No credit card required</span>
@@ -1609,12 +1609,12 @@ const ConversationAssistant = () => {
                   Sign up with Google or email
                 </a>
               </Button>
-              <DemoRequestModal>
-                <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg bg-transparent border-2 border-white text-white hover:bg-white/10">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Schedule Demo & Free Setup
-                </Button>
-              </DemoRequestModal>
+              <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg bg-transparent border-2 border-white text-white hover:bg-white/10" asChild>
+                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                  <Clock className="mr-1 h-4 w-4" />
+                  Get 30 min Free
+                </a>
+              </Button>
             </div>
           </div>
         </section>
