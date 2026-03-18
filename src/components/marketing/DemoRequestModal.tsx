@@ -90,6 +90,7 @@ const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children, page }) =
           email: result.data.email,
           company: result.data.company || undefined,
           message: result.data.message || undefined,
+          page: page || window.location.pathname,
         },
       });
 
