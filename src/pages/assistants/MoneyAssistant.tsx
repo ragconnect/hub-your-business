@@ -831,31 +831,23 @@ const MoneyAssistant = () => {
           </div>
         </section>
 
-        {/* Our Team */}
+        {/* Free Setup */}
         <section className="py-16 md:py-24">
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1">
-                <img src={teamPhoto} alt="The RagAdvise team" className="rounded-2xl shadow-xl w-full" />
-              </div>
-
-              <div className="order-1 lg:order-2">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Team Will Become Your Team</h2>
-                <p className="text-xl text-muted-foreground mb-4">
-                  We're more than a tool you'll love using. We're people you'll love working with.
-                </p>
-                <p className="text-lg text-muted-foreground mb-4">We have a plan to help you succeed.</p>
-                <p className="text-muted-foreground mb-8">
-                  And that's to not give up till your AI assistant is managing your finances smoothly. Our customers say working with us is easy. This is why they trust us with their business finances.
-                </p>
-                <DemoRequestModal>
-                  <Button size="lg">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Demo & Free Setup
-                  </Button>
-                </DemoRequestModal>
-              </div>
-            </div>
+          <div className="container max-w-4xl text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Team Will Become Your Team</h2>
+            <p className="text-xl text-muted-foreground mb-4">
+              We're more than a tool you'll love using. We're people you'll love working with.
+            </p>
+            <p className="text-lg text-muted-foreground mb-4">We have a plan to help you succeed.</p>
+            <p className="text-muted-foreground mb-8">
+              And that's to not give up till your AI assistant is managing your finances smoothly. Our customers say working with us is easy. This is why they trust us with their business finances.
+            </p>
+            <DemoRequestModal>
+              <Button size="lg">
+                <Calendar className="mr-2 h-4 w-4" />
+                Schedule Demo & Free Setup
+              </Button>
+            </DemoRequestModal>
           </div>
         </section>
 
