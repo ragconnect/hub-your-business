@@ -16,6 +16,7 @@ interface DemoRequestPayload {
   email: string;
   company?: string;
   message?: string;
+  page?: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
