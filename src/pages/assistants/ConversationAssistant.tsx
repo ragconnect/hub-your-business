@@ -48,7 +48,6 @@ import {
   BookOpen,
   Globe as GlobeIcon,
 } from "lucide-react";
-import teamPhoto from "@/assets/team-photo.jpg";
 import taskManagementPreview from "@/assets/task-management-preview.png";
 import googleLogo from "@/assets/logos/google.png";
 import testimonialMaria from "@/assets/testimonials/testimonial-maria.jpg";
@@ -1512,62 +1511,48 @@ const ConversationAssistant = () => {
           </div>
         </section>
 
-        {/* Our Team */}
+        {/* Free Setup */}
         <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left - Team Photo */}
-              <div className="order-2 lg:order-1">
-                <img
-                  src={teamPhoto}
-                  alt="The RagAdvise team"
-                  className="rounded-2xl shadow-xl w-full"
-                />
-              </div>
-
-              {/* Right - Text Content */}
-              <div className="order-1 lg:order-2">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Free Personalized Setup—No $2,500 Fee
-                </h2>
-                <p className="text-xl text-muted-foreground mb-4">
-                  Vapi, Intercom, RingCentral, and other platforms charge upwards of <strong className="text-foreground">$2,500</strong> for full personalized setup across email and phone.
-                </p>
-                <p className="text-lg text-muted-foreground mb-4">
-                  We believe non-technical business owners deserve AI—without the high cost.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  That's why our support engineers will <strong className="text-foreground">demo the product and configure your entire setup for free</strong>. No setup fee. No technical expertise required.
-                </p>
-                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-8">
-                  <p className="text-sm font-medium mb-2">What you get in your free setup session:</p>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>30-minute personalized demo with a support engineer</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Complete configuration of your AI assistant</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Phone, email, and messaging setup included</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Training tailored to your business and industry</span>
-                    </li>
-                  </ul>
-                </div>
-                <DemoRequestModal>
-                  <Button size="lg">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Your Free Setup
-                  </Button>
-                </DemoRequestModal>
-              </div>
+          <div className="container max-w-4xl text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Free Personalized Setup—No $2,500 Fee
+            </h2>
+            <p className="text-xl text-muted-foreground mb-4">
+              Vapi, Intercom, RingCentral, and other platforms charge upwards of <strong className="text-foreground">$2,500</strong> for full personalized setup across email and phone.
+            </p>
+            <p className="text-lg text-muted-foreground mb-4">
+              We believe non-technical business owners deserve AI—without the high cost.
+            </p>
+            <p className="text-muted-foreground mb-6">
+              That's why our support engineers will <strong className="text-foreground">demo the product and configure your entire setup for free</strong>. No setup fee. No technical expertise required.
+            </p>
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-8 max-w-lg mx-auto text-left">
+              <p className="text-sm font-medium mb-2">What you get in your free setup session:</p>
+              <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>30-minute personalized demo with a support engineer</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>Complete configuration of your AI assistant</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>Phone, email, and messaging setup included</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>Training tailored to your business and industry</span>
+                </li>
+              </ul>
             </div>
+            <DemoRequestModal>
+              <Button size="lg">
+                <Calendar className="mr-2 h-4 w-4" />
+                Schedule Your Free Setup
+              </Button>
+            </DemoRequestModal>
           </div>
         </section>
 

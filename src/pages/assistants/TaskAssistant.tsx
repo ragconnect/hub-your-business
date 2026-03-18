@@ -47,7 +47,6 @@ import {
   Rocket,
   Building,
 } from "lucide-react";
-import teamPhoto from "@/assets/team-photo.jpg";
 import googleLogo from "@/assets/logos/google.png";
 import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
 import logoCreativeStudio from "@/assets/testimonials/logo-creative-studio.png";
@@ -1208,60 +1207,48 @@ const TaskAssistant = () => {
           </div>
         </section>
 
-        {/* Our Team / Free Setup */}
+        {/* Free Setup */}
         <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1">
-                <img
-                  src={teamPhoto}
-                  alt="The RagAdvise team"
-                  className="rounded-2xl shadow-xl w-full"
-                />
-              </div>
-              
-              <div className="order-1 lg:order-2">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Free Personalized Setup—No $2,500 Fee
-                </h2>
-                <p className="text-xl text-muted-foreground mb-4">
-                  Vapi, Intercom, RingCentral, and other platforms charge upwards of <strong className="text-foreground">$2,500</strong> for full personalized setup.
-                </p>
-                <p className="text-lg text-muted-foreground mb-4">
-                  We believe every team deserves AI—without the high cost.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  That's why our support engineers will <strong className="text-foreground">demo the product and configure your entire setup for free</strong>. No setup fee. No technical expertise required.
-                </p>
-                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-8">
-                  <p className="text-sm font-medium mb-2">What you get in your free setup session:</p>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>30-minute personalized demo with a support engineer</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Complete configuration of your Task Assistant</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Calendar and meeting platform integration</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>Training tailored to your team's workflow</span>
-                    </li>
-                  </ul>
-                </div>
-                <DemoRequestModal>
-                  <Button size="lg">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Your Free Setup
-                  </Button>
-                </DemoRequestModal>
-              </div>
+          <div className="container max-w-4xl text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Free Personalized Setup—No $2,500 Fee
+            </h2>
+            <p className="text-xl text-muted-foreground mb-4">
+              Vapi, Intercom, RingCentral, and other platforms charge upwards of <strong className="text-foreground">$2,500</strong> for full personalized setup.
+            </p>
+            <p className="text-lg text-muted-foreground mb-4">
+              We believe every team deserves AI—without the high cost.
+            </p>
+            <p className="text-muted-foreground mb-6">
+              That's why our support engineers will <strong className="text-foreground">demo the product and configure your entire setup for free</strong>. No setup fee. No technical expertise required.
+            </p>
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-8 max-w-lg mx-auto text-left">
+              <p className="text-sm font-medium mb-2">What you get in your free setup session:</p>
+              <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>30-minute personalized demo with a support engineer</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>Complete configuration of your Task Assistant</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>Calendar and meeting platform integration</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>Training tailored to your team's workflow</span>
+                </li>
+              </ul>
             </div>
+            <DemoRequestModal>
+              <Button size="lg">
+                <Calendar className="mr-2 h-4 w-4" />
+                Schedule Your Free Setup
+              </Button>
+            </DemoRequestModal>
           </div>
         </section>
 
