@@ -32,7 +32,7 @@ interface DemoRequestModalProps {
   page?: string;
 }
 
-const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
+const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children, page }) => {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<"form" | "calendar">("form");
   const [isSubmitting, setIsSubmitting] = useState(false);
