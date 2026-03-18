@@ -160,7 +160,7 @@ const DentistPage = () => {
                 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
-                AI for dental patient interactions—across every channel
+                Vibe sales for Dental offices use AI to manage and close more patients as they call or visit your site.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
                 RagAdvise gives dental offices <strong className="text-foreground">one phone number for calls (direct & automated by AI assistant)</strong> and a <strong className="text-foreground">voice chat box for your website or app</strong>—so you capture leads, answer questions, and book appointments faster.
