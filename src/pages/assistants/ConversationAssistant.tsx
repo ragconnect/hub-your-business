@@ -1020,12 +1020,12 @@ const ConversationAssistant = () => {
                           Sign up with Google
                         </a>
                       </Button>
-                      <DemoRequestModal>
-                        <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                          <Calendar className="mr-2 h-4 w-4" />
-                          Schedule Demo & Free Setup
-                        </Button>
-                      </DemoRequestModal>
+                      <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background" asChild>
+                        <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                          <Clock className="mr-1 h-4 w-4" />
+                          Get 30 min Free
+                        </a>
+                      </Button>
                       <div className="flex items-center justify-center gap-2 text-sm mt-1">
                         <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                         <span className="text-muted-foreground">No credit card required</span>
