@@ -29,9 +29,10 @@ type DemoRequestForm = z.infer<typeof demoRequestSchema>;
 
 interface DemoRequestModalProps {
   children: React.ReactNode;
+  page?: string;
 }
 
-const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
+const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children, page }) => {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<"form" | "calendar">("form");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -89,6 +90,7 @@ const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
           email: result.data.email,
           company: result.data.company || undefined,
           message: result.data.message || undefined,
+          page: page || window.location.pathname,
         },
       });
 

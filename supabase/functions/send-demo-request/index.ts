@@ -16,6 +16,7 @@ interface DemoRequestPayload {
   email: string;
   company?: string;
   message?: string;
+  page?: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -25,15 +26,15 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, company, message }: DemoRequestPayload = await req.json();
+    const { name, email, company, message, page }: DemoRequestPayload = await req.json();
 
-    console.log("Received demo request:", { name, email, company, message });
+    console.log("Received demo request:", { name, email, company, message, page });
 
     // Save lead to database
     const adminClient = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
     const { error: dbError } = await adminClient
       .from("demo_requests")
-      .insert({ name, email, company: company || null, message: message || null });
+      .insert({ name, email, company: company || null, message: message || null, page: page || null });
     if (dbError) {
       console.error("Failed to save demo request to DB:", dbError);
     } else {
