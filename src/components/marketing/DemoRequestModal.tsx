@@ -29,6 +29,7 @@ type DemoRequestForm = z.infer<typeof demoRequestSchema>;
 
 interface DemoRequestModalProps {
   children: React.ReactNode;
+  page?: string;
 }
 
 const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ children }) => {
