@@ -279,54 +279,7 @@ const DentistPage = () => {
           </div>
         </section>
 
-        {/* Built for the medical front desk */}
-        <section className="py-16 md:py-24">
-          <div className="container max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Built for the medical front desk and call staff (without hiring)
-            </h2>
-            <div className="mt-10 space-y-6">
-              {[
-                {
-                  icon: Phone,
-                  title: "Answer every call",
-                  desc: "During peak hours and after-hours with a professional phone number and existing phone device. For direct calls with your human team, get recording and calls logged.",
-                },
-                {
-                  icon: Globe,
-                  title: "Add voice-enabled website chat",
-                  desc: "So patients can talk instead of type or searching your website (FAQs, lead capture, booking requests).",
-                },
-                {
-                  icon: Calendar,
-                  title: "Book and confirm appointments",
-                  desc: "With the right provider + visit type.",
-                },
-                {
-                  icon: UserCheck,
-                  title: "Capture complete new-patient details",
-                  desc: "Like insurance, gender/age, reason for visiting, existing complications (so everything is logged like a real rep).",
-                },
-                {
-                  icon: RefreshCw,
-                  title: "Handle repeat questions instantly",
-                  desc: "Insurance types accepted, pricing ranges & co-pay, location, hours, gender & age of doctors, financing options, and it improves automatically.",
-                },
-              ].map(({ icon: Icon, title, desc }, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">{title}</h3>
-                    <p className="text-muted-foreground text-sm mt-1">{desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <SectionCTA />
-          </div>
-        </section>
+        {/* How it works */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -374,6 +327,55 @@ const DentistPage = () => {
                         </li>
                       ))}
                     </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <SectionCTA />
+          </div>
+        </section>
+
+        {/* Built for the medical front desk */}
+        <section className="py-16 md:py-24">
+          <div className="container max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Built for the medical front desk and call staff (without hiring)
+            </h2>
+            <div className="mt-10 space-y-6">
+              {[
+                {
+                  icon: Phone,
+                  title: "Answer every call",
+                  desc: "During peak hours and after-hours with a professional phone number and existing phone device. For direct calls with your human team, get recording and calls logged.",
+                },
+                {
+                  icon: Globe,
+                  title: "Add voice-enabled website chat",
+                  desc: "So patients can talk instead of type or searching your website (FAQs, lead capture, booking requests).",
+                },
+                {
+                  icon: Calendar,
+                  title: "Book and confirm appointments",
+                  desc: "With the right provider + visit type.",
+                },
+                {
+                  icon: UserCheck,
+                  title: "Capture complete new-patient details",
+                  desc: "Like insurance, gender/age, reason for visiting, existing complications (so everything is logged like a real rep).",
+                },
+                {
+                  icon: RefreshCw,
+                  title: "Handle repeat questions instantly",
+                  desc: "Insurance types accepted, pricing ranges & co-pay, location, hours, gender & age of doctors, financing options, and it improves automatically.",
+                },
+              ].map(({ icon: Icon, title, desc }, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">{title}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{desc}</p>
                   </div>
                 </div>
               ))}
