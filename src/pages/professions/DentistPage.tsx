@@ -259,7 +259,37 @@ const DentistPage = () => {
           </div>
         </section>
 
-        <LogoMarquee />
+        {/* Dental Industry Leaders Marquee */}
+        <section aria-labelledby="dental-logos-title" className="border-t bg-muted/10">
+          <div className="container py-8 md:py-10">
+            <div className="text-center">
+              <h2 id="dental-logos-title" className="text-sm font-medium text-muted-foreground">Built for industry leaders</h2>
+            </div>
+            <div className="group relative mt-6 overflow-hidden">
+              <div className="flex w-max items-center gap-12 md:gap-16 animate-marquee will-change-transform">
+                {[...Array(2)].flatMap((_, setIdx) => [
+                  { name: "Aspen Dental" },
+                  { name: "Bupa Dental Care" },
+                  { name: "Heartland Dental" },
+                  { name: "dentalcorp" },
+                  { name: "Pacific Dental Services" },
+                  { name: "Mydentist" },
+                  { name: "123Dentist" },
+                  { name: "Smile Brands" },
+                  { name: "Dental Corporation" },
+                  { name: "Portman Dental Care" },
+                ].map((item, idx) => (
+                  <div key={`${item.name}-${setIdx}-${idx}`} className="select-none inline-flex items-center gap-2">
+                    <Stethoscope className="size-4 text-muted-foreground/70" aria-hidden="true" />
+                    <span className="text-lg md:text-xl font-semibold tracking-[0.18em] uppercase text-muted-foreground/70 group-hover:text-muted-foreground transition-colors">
+                      {item.name}
+                    </span>
+                  </div>
+                )))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Built for the medical front desk */}
         <section className="py-16 md:py-24">
