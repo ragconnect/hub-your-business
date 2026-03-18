@@ -268,7 +268,7 @@ const ConversationAssistant = () => {
                    Increase conversions by 3X with an AI 1-800 number that automatically manages customers.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
-                  Your AI voice receptionist answers calls 24/7, captures the details, and can handle up to 50 calls at once. Set up in under 60 seconds.
+                  AI captures the details based on your current forms or applications, customizable to sound & respond just like you, and can handle up to 50 calls at once. Set up in under 60 seconds.
                 </p>
                 {/* Chat-like input box */}
                 <ConversationPromptBox />
