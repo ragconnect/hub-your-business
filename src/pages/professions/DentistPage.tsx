@@ -156,7 +156,7 @@ const DentistPage = () => {
                 We help Dental teams close and manage 3X as many patients as they call-in or visit your website
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
-                RagAdvise gives dental offices <strong className="text-foreground">one phone number for calls (direct & automated by AI)</strong> and a <strong className="text-foreground">voice chat box for your website or app</strong>—so you capture patient details, answer questions, and book appointments faster.
+                Dental offices get <strong className="text-foreground">one phone number for calls (direct & automated by AI)</strong> and a <strong className="text-foreground">voice chat box for your website or app</strong>—so you capture patient details, answer questions, and book appointments faster all within HIPAA laws.
               </p>
 
               {/* Prompt Box */}
