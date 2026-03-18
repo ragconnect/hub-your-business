@@ -266,7 +266,7 @@ const ConversationAssistant = () => {
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                   style={{ fontFamily: "'Caprasimo', serif" }}
                 >
-                   Get a phone number with an AI receptionist built in enabling you to close and manage 3X as many customers.
+                   Increase conversions by 3X with an AI toll free phone number that automatically manages customers.
                 </h1>
                 <p className="mt-6 text-xl text-muted-foreground">
                   Your AI voice receptionist answers calls 24/7, captures the details, and can handle up to 50 calls at once. Set up in under 60 seconds.
