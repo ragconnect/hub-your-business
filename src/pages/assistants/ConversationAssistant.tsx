@@ -1591,15 +1591,15 @@ const ConversationAssistant = () => {
               <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                 <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                  Sign up with Google or email
+                  Sign up with Google & Get 30 Minutes Free
                 </a>
               </Button>
-              <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg bg-transparent border-2 border-white text-white hover:bg-white/10" asChild>
-                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
-                  <Clock className="mr-1 h-4 w-4" />
-                  Get 30 min Free
-                </a>
-              </Button>
+              <DemoRequestModal>
+                <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg border-2 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Demo & Free Setup
+                </Button>
+              </DemoRequestModal>
             </div>
           </div>
         </section>
