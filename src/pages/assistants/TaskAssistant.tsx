@@ -340,7 +340,7 @@ const TaskAssistant = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative pt-16 md:pt-24 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
+        <section className="relative pt-2 md:pt-4 lg:pt-2 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
           <ScrollingCharacterBg />
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
