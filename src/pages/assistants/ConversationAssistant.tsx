@@ -494,7 +494,7 @@ const ConversationAssistant = () => {
                     <Button size="sm" className="w-full" asChild>
                       <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
                         <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
-                        Sign up with Google
+                        Sign up with Google & Get 30 Minutes Free
                       </a>
                     </Button>
                     <Button size="sm" variant="outline" className="w-full" asChild>
