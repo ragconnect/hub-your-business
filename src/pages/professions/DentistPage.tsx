@@ -12,7 +12,6 @@ import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 import VideoModal from "@/components/marketing/VideoModal";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import googleLogo from "@/assets/logos/google.png";
-import teamPhoto from "@/assets/team-photo.jpg";
 import {
   Accordion,
   AccordionContent,

@@ -40,7 +40,6 @@ import {
   X,
   Rocket,
 } from "lucide-react";
-import teamPhoto from "@/assets/team-photo.jpg";
 import googleLogo from "@/assets/logos/google.png";
 import testimonial1 from "@/assets/testimonials/money-testimonial-1.jpg";
 import testimonial2 from "@/assets/testimonials/money-testimonial-2.jpg";

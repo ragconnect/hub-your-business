@@ -47,7 +47,6 @@ import {
   Rocket,
   Building,
 } from "lucide-react";
-import teamPhoto from "@/assets/team-photo.jpg";
 import googleLogo from "@/assets/logos/google.png";
 import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
 import logoCreativeStudio from "@/assets/testimonials/logo-creative-studio.png";

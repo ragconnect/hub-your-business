@@ -48,7 +48,6 @@ import {
   BookOpen,
   Globe as GlobeIcon,
 } from "lucide-react";
-import teamPhoto from "@/assets/team-photo.jpg";
 import taskManagementPreview from "@/assets/task-management-preview.png";
 import googleLogo from "@/assets/logos/google.png";
 import testimonialMaria from "@/assets/testimonials/testimonial-maria.jpg";
