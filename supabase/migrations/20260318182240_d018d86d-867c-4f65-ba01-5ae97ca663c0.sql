@@ -1,0 +1,1 @@
+ALTER TABLE public.demo_requests ADD COLUMN page text DEFAULT null;
