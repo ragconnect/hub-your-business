@@ -172,6 +172,9 @@ const LawyerPage = () => {
               <p className="mt-2 text-sm font-semibold text-foreground">
                 Across phone, website, and video calls
               </p>
+              <p className="mt-3 text-base italic text-primary/80 font-medium">
+                Because your next customer is only a nudge away
+              </p>
 
               {/* Prompt Box */}
               <div className="mt-8 max-w-lg mx-auto">
