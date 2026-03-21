@@ -63,11 +63,14 @@ const faqs = [
 ];
 
 const legalPrompts = [
-  "Answer calls and qualify potential PI cases",
-  "Capture new client details and schedule a consult",
-  "Handle after-hours intake for family law inquiries",
-  "Follow up with a prospect who hasn't booked yet",
-  "Route immigration questions to the right attorney",
+  "Answer calls and qualify potential PI cases, then schedule a callback",
+  "Collect intake for DUI citations (citation #, court date, location), then route to me",
+  "Ask what charges they're facing and whether court is already scheduled",
+  "If someone calls after-hours, collect intake and book the earliest consult time",
+  "Text missed calls within 2 minutes, collect case details, and offer consult times",
+  "Call clients 24 hours before court and confirm they can attend (log YES/NO)",
+  "Follow up with unresponsive leads on Day 1 / Day 3 / Day 7 until they book or opt out",
+  "For family law leads, ask urgency (custody/safety) and route high urgency to me",
 ];
 
 const SectionCTA = () => (
