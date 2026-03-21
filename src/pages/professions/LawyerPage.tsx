@@ -164,17 +164,13 @@ const LawyerPage = () => {
                 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
-                Turn prospects into booked cases—across phone, website, web calls, and email
+                Turn cold leads into closed clients and manage customers faster as you scale.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
-                Reggie makes follow‑through automatic everywhere prospects reach you.{" "}
-                <strong className="text-foreground">Phone</strong> (direct or AI‑managed): capture the inquiry, log details, update client status, and send the follow‑up that gets them to schedule.{" "}
-                <strong className="text-foreground">Website</strong>: turn visitors into qualified consult requests.{" "}
-                <strong className="text-foreground">Web/video calls</strong>: keep notes, next steps, and reminders tied to the same client timeline.{" "}
-                <strong className="text-foreground">Email</strong>: turn messages into a tracked client record with a next step.
+                Reggie helps you convert new inquiries and manage clients across every interaction point—so follow‑ups don't slip and cases don't go cold.
               </p>
-              <p className="mt-2 text-sm text-muted-foreground italic">
-                So if the right client is just a nudge away, they don't slip through.
+              <p className="mt-2 text-sm font-semibold text-foreground">
+                Across phone, website, and video calls
               </p>
 
               {/* Prompt Box */}
