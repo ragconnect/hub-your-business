@@ -147,8 +147,8 @@ const Header = () => {
                   {assistant.title}
                 </Link>
               ))}
-              <div className="border-t pt-4 mt-2">
-                <p className="text-sm font-medium text-muted-foreground mb-2">Professions</p>
+              <div className="border-t pt-4 mt-2 flex flex-col gap-4">
+                <p className="text-sm font-medium text-muted-foreground mb-0">Professions</p>
                 {professions.map((profession) => (
                   <Link
                     key={profession.title}
