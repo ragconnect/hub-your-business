@@ -12,6 +12,7 @@ import MoneyAssistant from "./pages/assistants/MoneyAssistant";
 import TaskAssistant from "./pages/assistants/TaskAssistant";
 import SiteAssistant from "./pages/assistants/SiteAssistant";
 import DentistPage from "./pages/professions/DentistPage";
+import LawyerPage from "./pages/professions/LawyerPage";
 
 const queryClient = new QueryClient();
 
