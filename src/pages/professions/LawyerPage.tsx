@@ -164,16 +164,13 @@ const LawyerPage = () => {
                 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
-                Turn cold leads into closed clients and manage customers faster as you scale.
+                Manage customers faster as you scale and turn cold leads into clients because most sales are only a nudge away.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
                 Reggie helps you convert new inquiries and manage clients across every interaction point—so follow‑ups don't slip and cases don't go cold.
               </p>
               <p className="mt-2 text-sm font-semibold text-foreground">
                 Across phone, website, and video calls
-              </p>
-              <p className="mt-3 text-base italic text-primary/80 font-medium">
-                Because your next customer is only a nudge away
               </p>
 
               {/* Prompt Box */}
