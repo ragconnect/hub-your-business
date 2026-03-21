@@ -42,6 +42,11 @@ const professions = [
     href: "/professions/dentist",
     description: "AI receptionist & website voice built for dental offices.",
   },
+  {
+    title: "Lawyer & Solicitor",
+    href: "/professions/lawyer",
+    description: "Turn prospects into booked cases with AI intake & follow‑through.",
+  },
 ];
 
 const Header = () => {
