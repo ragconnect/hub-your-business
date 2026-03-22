@@ -161,16 +161,13 @@ const LawyerPage = () => {
             <div className="max-w-2xl mx-auto text-center">
               <h1
                 id="hero-title"
-                className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
-                Your next customer is only a Nudge away.
+                Your next customer is only a Nudge away. Reggie stores details, manages, and follows‑up faster than you can, turning new leads into customers quickly.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
-                Reggie stores details, manages, and follows-up faster than you can, turning new leads into customers quickly.
-              </p>
-              <p className="mt-2 text-sm font-semibold text-foreground">
-                Across phone, website, and video calls
+                Across each touch point you can have him answer customers &amp; interact, store the details, and follow up just like you would do it.
               </p>
 
               {/* Prompt Box */}
