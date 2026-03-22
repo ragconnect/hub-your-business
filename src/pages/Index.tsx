@@ -75,12 +75,9 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Left: text + CTA */}
           <div className="flex-1 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
-            <h1 id="hero-title" className="text-4xl md:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-              Entrepreneurs: Let AI instantly handle the busywork—so you move faster.
+            <h1 id="hero-title" className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
+              Your next customer is just a Nudge away. Reggie answers website voice chats and inbound calls 24/7, books appointments, and manages follow-ups fast—so busy lawyers never lose customers.
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Turn everyday business moments into finished work—faster replies, smoother follow‑through, and fewer things slipping through the cracks.
-            </p>
             <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto lg:mx-0">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                 <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
