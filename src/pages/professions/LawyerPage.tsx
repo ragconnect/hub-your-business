@@ -159,16 +159,16 @@ const LawyerPage = () => {
           <ScrollingCharacterBg />
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
-              <p className="text-base text-muted-foreground">
-                Reggie <span className="text-green-600 font-semibold">stores</span> details, <span className="text-green-600 font-semibold">manages</span>, and follows-up faster than you can, turning new leads into customers quickly.
-              </p>
               <h1
                 id="hero-title"
-                className="mt-2 text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
+                className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
                 Your next customer is only a Nudge away.
               </h1>
+              <p className="mt-4 text-base text-muted-foreground">
+                Reggie stores details, manages, and follows-up faster than you can, turning new leads into customers quickly.
+              </p>
               <p className="mt-2 text-sm font-semibold text-foreground">
                 Across phone, website, and video calls
               </p>
