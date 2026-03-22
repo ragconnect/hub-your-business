@@ -164,11 +164,8 @@ const LawyerPage = () => {
                 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
-                Your next customer is only a Nudge away.
+                Your next customer is only a Nudge away. Across each touch point, Reggie answers customers & interacts, stores the details, and follows up—just like you would—turning new leads into customers quickly.
               </h1>
-              <p className="mt-4 text-base text-muted-foreground">
-                Reggie stores details, manages, and follows-up faster than you can, turning new leads into customers quickly.
-              </p>
               <p className="mt-2 text-sm font-semibold text-foreground">
                 Across phone, website, and video calls
               </p>
