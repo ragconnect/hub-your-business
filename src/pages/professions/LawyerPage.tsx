@@ -236,6 +236,38 @@ const LawyerPage = () => {
           </div>
         </section>
 
+        {/* Legal firms we work with */}
+        <section className="border-t bg-muted/10">
+          <div className="container py-10 md:py-14">
+            <h2 className="text-sm font-medium text-muted-foreground text-center">Trusted by law firms & legal teams</h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  name: "Carter & Associates",
+                  use: "Schedule legal callbacks automatically after missed intake calls",
+                },
+                {
+                  name: "Meridian Law Group",
+                  use: "Identify frustrated clients early and escalate before complaints",
+                },
+                {
+                  name: "Beacon Legal",
+                  use: "Continuously engage clients when cases are moving slow to retain trust",
+                },
+                {
+                  name: "Summit Defense Partners",
+                  use: "Automate follow-ups on stalled consultations to close more retainers",
+                },
+              ].map(({ name, use }) => (
+                <div key={name} className="rounded-xl border bg-card p-5 shadow-sm">
+                  <h3 className="text-base font-semibold tracking-tight">{name}</h3>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{use}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Built for legal professionals */}
         <section className="py-16 md:py-24">
           <div className="container max-w-4xl">
