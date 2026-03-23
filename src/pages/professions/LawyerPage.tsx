@@ -167,7 +167,7 @@ const LawyerPage = () => {
                 AI customer assistant that helps law firms manage inbound cases and book more faster.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
-                Across touch-points we answer questions, write down the important details, and help customers schedule—so you can focus on your current clients while RagAdvise handles new calls, messages, and follow-ups.
+                Answer "Do you service my area?", "Can I get a ballpark estimate?", and "Are you licensed & insured?" across website and phone—then send personalized follow‑ups like "Can you share photos?" and "What's next after I request an estimate?" Store customer details, recognize repeat callers, and close the right jobs faster across phone calls and website visits.
               </p>
 
               {/* Prompt Box */}
