@@ -47,6 +47,11 @@ const professions = [
     href: "/professions/lawyer",
     description: "Turn prospects into booked cases with AI intake & follow‑through.",
   },
+  {
+    title: "General Contractors & Builders",
+    href: "/professions/builder",
+    description: "Capture leads, book estimates & follow up for construction teams.",
+  },
 ];
 
 const Header = () => {
