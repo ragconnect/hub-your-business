@@ -65,14 +65,9 @@ const faqs = [
 ];
 
 const builderPrompts = [
-  "Answer after-hours calls and collect project details for a roof repair estimate",
-  "Ask callers about leak location, roof age, and timeline, then schedule a site visit",
-  "Text missed calls within 2 minutes and capture project scope",
-  "Route emergency storm-damage calls to the on-call crew immediately",
-  "Follow up with unresponsive leads on Day 1, Day 3, and Day 7",
-  "Qualify leads by zip code and route residential vs. commercial separately",
-  "Collect insurance carrier and adjuster info for storm claims intake",
-  "Answer 'What areas do you service?' and book an estimate appointment",
+  "How much does it cost?",
+  "What times can you come?",
+  "Do you renovate bathrooms?",
 ];
 
 const SectionCTA = () => (
@@ -200,17 +195,6 @@ const BuilderPage = () => {
                   >
                     <Send className="w-4 h-4" />
                   </button>
-                </div>
-                <div className="mt-3 flex flex-wrap gap-2 justify-center">
-                  {["How much does it cost?", "What times can you come?", "Do you renovate bathrooms?"].map((q) => (
-                    <button
-                      key={q}
-                      onClick={() => setPromptValue(q)}
-                      className="px-3 py-1.5 text-xs rounded-full border border-primary/30 bg-primary/5 text-foreground hover:bg-primary/10 hover:border-primary/50 transition-colors"
-                    >
-                      {q}
-                    </button>
-                  ))}
                 </div>
               </div>
 
