@@ -81,6 +81,9 @@ const HeroSection = () => {
             <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
               Handle "Do you price match?" and send personalized follow‑ups like "What's next after booking?" in seconds, across up to 50 clients at once.
             </p>
+            <p className="mt-3 text-sm md:text-base font-semibold text-foreground">
+              Across phone, website, video-calls, and email
+            </p>
             <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto lg:mx-0">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                 <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
