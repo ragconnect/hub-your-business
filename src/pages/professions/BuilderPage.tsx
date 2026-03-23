@@ -166,7 +166,7 @@ const BuilderPage = () => {
                 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
-                Close and manage up to 3× more leads with an AI customer assistant supporting your construction teams across all customer calls or website visits.
+                Close and manage up to 3× more leads with an AI customer assistant supporting your inbound calls & website visits.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
                 Get one phone number for calls (direct or automated) and a voice chat box for your website—so you capture leads, answer questions, qualify projects, and turn estimates into jobs faster.
