@@ -170,7 +170,7 @@ const BuilderPage = () => {
                 Close and manage up to 3× more leads with an AI customer assistant supporting your inbound calls & website visits.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
-                Answer "Do you service my area?", "Can I get a ballpark estimate?" across website and phone—then send personalized follow‑ups. Store customer details, recognize repeat callers, and close the right jobs faster across customers.
+                Answer "Do you service my area?" or "Can I get a ballpark estimate?" then send personalized follow‑ups. Store customer details, recognize repeat callers, and turn leads into jobs faster.
               </p>
 
               {/* Prompt Box */}
