@@ -196,17 +196,6 @@ const BuilderPage = () => {
                     <Send className="w-4 h-4" />
                   </button>
                 </div>
-                <div className="mt-3 flex flex-wrap gap-2 justify-center">
-                  {["How much does it cost?", "What times can you come?", "Do you renovate bathrooms?"].map((q) => (
-                    <button
-                      key={q}
-                      onClick={() => setPromptValue(q)}
-                      className="px-3 py-1.5 text-xs rounded-full border border-primary/30 bg-primary/5 text-foreground hover:bg-primary/10 hover:border-primary/50 transition-colors"
-                    >
-                      {q}
-                    </button>
-                  ))}
-                </div>
               </div>
 
               <p className="mt-3 text-sm font-semibold text-foreground">
