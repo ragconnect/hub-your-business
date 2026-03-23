@@ -480,7 +480,7 @@ const LawyerPage = () => {
                 </ul>
               </div>
               <div className="rounded-xl border bg-card p-6">
-                <h3 className="text-lg font-semibold mb-3">RagAdvise does intake. We do intake + follow‑through.</h3>
+                <h3 className="text-lg font-semibold mb-3"><h3 className="text-lg font-semibold mb-3">Others do intake. RagAdvise does intake + follow‑through.</h3></h3>
                 <p className="text-sm text-muted-foreground mb-3">
                   Many tools help you answer. RagAdvise helps you close—by making "what happens next" automatic.
                 </p>
