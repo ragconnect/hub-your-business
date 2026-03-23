@@ -164,7 +164,7 @@ const LawyerPage = () => {
                 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
-                Answer clients' legal questions and store case details twice as fast. Scale the firm while we manage the customer backend.
+                AI customer assistant that helps law firms manage inbound cases and book more faster.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
                 Across touch-points we answer questions, write down the important details, and help customers schedule—so you can focus on your current clients while RagAdvise handles new calls, messages, and follow-ups.
