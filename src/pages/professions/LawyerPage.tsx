@@ -164,7 +164,7 @@ const LawyerPage = () => {
                 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
-                For most law firms, Reggie will answer clients and store case details twice as fast. Scale the firm while he manages the customer backend.
+                For most law firms, RagAdvise will answer clients and store case details twice as fast. Scale the firm while he manages the customer backend.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
                 Across each touch point you can have him answer customers &amp; interact, store the details, and follow up just like you would do it.
@@ -259,7 +259,7 @@ const LawyerPage = () => {
                 {
                   icon: Target,
                   title: "Shorten the close cycle",
-                  desc: "Most leads take 7–30 touch points to close. Reggie helps you make that shorter—and ensures you never forget your touch points.",
+                  desc: "Most leads take 7–30 touch points to close. RagAdvise helps you make that shorter—and ensures you never forget your touch points.",
                 },
               ].map(({ icon: Icon, title, desc }, i) => (
                 <div key={i} className="flex items-start gap-4">
@@ -286,7 +286,7 @@ const LawyerPage = () => {
                 <div>
                   <p className="font-semibold text-base">RagAdvise is your GPS for business.</p>
                   <p className="text-muted-foreground text-sm mt-0.5">
-                    Reggie doesn't just answer questions—he tells you where each prospect is in the journey, what's missing, and what to do next so you actually get them booked.
+                    RagAdvise doesn't just answer questions—he tells you where each prospect is in the journey, what's missing, and what to do next so you actually get them booked.
                   </p>
                 </div>
               </div>
@@ -368,7 +368,7 @@ const LawyerPage = () => {
                   items: [
                     "Add the phone number to Google Business Profile and your website",
                     "Send prospects your email (and use it on directories + signatures)",
-                    "Send traffic to your website (ads, SEO, referrals) knowing Reggie will capture + follow up",
+                    "Send traffic to your website (ads, SEO, referrals) knowing RagAdvise will capture + follow up",
                   ],
                 },
               ].map(({ num, title, items }) => (
@@ -404,17 +404,17 @@ const LawyerPage = () => {
               {[
                 {
                   icon: Eye,
-                  title: "Reggie records and logs interactions",
+                  title: "RagAdvise records and logs interactions",
                   desc: "Across phone, website, web calls, and email—everything in one timeline.",
                 },
                 {
                   icon: Send,
-                  title: "Reggie auto follows up",
+                  title: "RagAdvise auto follows up",
                   desc: "With your go‑ahead / approval mode to get the prospect to the next step.",
                 },
                 {
                   icon: Target,
-                  title: "You refine how Reggie interacts",
+                  title: "You refine how RagAdvise interacts",
                   desc: "Adjust tone, qualification questions, routing, and \"do‑not‑answer\" rules.",
                 },
               ].map(({ icon: Icon, title, desc }, i) => (
@@ -433,11 +433,11 @@ const LawyerPage = () => {
           </div>
         </section>
 
-        {/* Reggie, from RagAdvise */}
+        {/* RagAdvise, from RagAdvise */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Reggie, from RagAdvise
+              RagAdvise, from RagAdvise
             </h2>
             <div className="mt-10 space-y-8">
               <div>
@@ -480,13 +480,13 @@ const LawyerPage = () => {
                 </ul>
               </div>
               <div className="rounded-xl border bg-card p-6">
-                <h3 className="text-lg font-semibold mb-3">Reggie does intake. We do intake + follow‑through.</h3>
+                <h3 className="text-lg font-semibold mb-3">RagAdvise does intake. We do intake + follow‑through.</h3>
                 <p className="text-sm text-muted-foreground mb-3">
                   Many tools help you answer. RagAdvise helps you close—by making "what happens next" automatic.
                 </p>
                 <ul className="space-y-1.5">
                   {[
-                    "Reggie: helps with intake",
+                    "RagAdvise: helps with intake",
                     "RagAdvise: intake + client timeline + status updates + follow‑ups + human escalation",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -622,8 +622,8 @@ const LawyerPage = () => {
                 "They ask your AI questions — and the context is stored automatically.",
                 "You call them back and immediately see what they need.",
                 "You do a web/video call to build confidence — notes and key details are captured automatically.",
-                "Reggie follows up after the call with the next step.",
-                "You email them again with Reggie's help.",
+                "RagAdvise follows up after the call with the next step.",
+                "You email them again with RagAdvise's help.",
                 "They become a client — in ~7 touch points (instead of 7–30+ with missed follow‑ups).",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4">
@@ -758,7 +758,7 @@ const LawyerPage = () => {
                 {
                   icon: Scale,
                   title: "Professional tone aligned to your firm",
-                  desc: "Reggie speaks the way your firm does.",
+                  desc: "RagAdvise speaks the way your firm does.",
                 },
               ].map(({ icon: Icon, title, desc }, i) => (
                 <div key={i} className="flex items-start gap-4">
