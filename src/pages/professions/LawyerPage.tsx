@@ -486,7 +486,7 @@ const LawyerPage = () => {
                 </p>
                 <ul className="space-y-1.5">
                   {[
-                    "RagAdvise: helps with intake",
+                    "Others: help with intake only",
                     "RagAdvise: intake + client timeline + status updates + follow‑ups + human escalation",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
