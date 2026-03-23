@@ -68,6 +68,12 @@ const builderPrompts = [
   "How much does it cost?",
   "What times can you come?",
   "Do you renovate bathrooms?",
+  "My roof is leaking, can you help?",
+  "Do you offer free estimates?",
+  "How soon can you start?",
+  "Do you handle insurance claims?",
+  "Can you fix water damage?",
+  "What areas do you service?",
 ];
 
 const SectionCTA = () => (
