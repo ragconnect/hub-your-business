@@ -170,7 +170,7 @@ const BuilderPage = () => {
                 Close and manage up to 3× more leads with an AI customer assistant supporting your inbound calls & website visits.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
-                Get one phone number for calls (direct or automated) and a voice chat box for your website—so you capture leads, answer questions, qualify projects, and turn estimates into jobs faster.
+                Answer "Do you service my area?", "Can I get a ballpark estimate?" across website and phone—then send personalized follow‑ups. Store customer details, recognize repeat callers, and close the right jobs faster across customers.
               </p>
 
               {/* Prompt Box */}
