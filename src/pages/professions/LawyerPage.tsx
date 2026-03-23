@@ -286,7 +286,7 @@ const LawyerPage = () => {
                 <div>
                   <p className="font-semibold text-base">RagAdvise is your GPS for business.</p>
                   <p className="text-muted-foreground text-sm mt-0.5">
-                    RagAdvise doesn't just answer questions—he tells you where each prospect is in the journey, what's missing, and what to do next so you actually get them booked.
+                    RagAdvise doesn't just answer questions—it tells you where each prospect is in the journey, what's missing, and what to do next so you actually get them booked. where each prospect is in the journey, what's missing, and what to do next so you actually get them booked.
                   </p>
                 </div>
               </div>
