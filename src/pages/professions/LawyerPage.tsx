@@ -437,7 +437,7 @@ const LawyerPage = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              RagAdvise, from RagAdvise
+              RagAdvise
             </h2>
             <div className="mt-10 space-y-8">
               <div>
