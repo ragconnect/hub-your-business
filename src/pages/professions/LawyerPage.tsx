@@ -236,34 +236,35 @@ const LawyerPage = () => {
           </div>
         </section>
 
-        {/* Legal firms we work with */}
-        <section className="border-t bg-muted/10">
-          <div className="container py-10 md:py-14">
-            <h2 className="text-sm font-medium text-muted-foreground text-center">Trusted by law firms & legal teams</h2>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                {
-                  name: "Carter & Associates",
-                  use: "Schedule legal callbacks automatically after missed intake calls",
-                },
-                {
-                  name: "Meridian Law Group",
-                  use: "Identify frustrated clients early and escalate before complaints",
-                },
-                {
-                  name: "Beacon Legal",
-                  use: "Continuously engage clients when cases are moving slow to retain trust",
-                },
-                {
-                  name: "Summit Defense Partners",
-                  use: "Automate follow-ups on stalled consultations to close more retainers",
-                },
-              ].map(({ name, use }) => (
-                <div key={name} className="rounded-xl border bg-card p-5 shadow-sm">
-                  <h3 className="text-base font-semibold tracking-tight">{name}</h3>
-                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{use}</p>
-                </div>
-              ))}
+        {/* Legal firms marquee */}
+        <section aria-labelledby="legal-logos-title" className="border-t bg-muted/10">
+          <div className="container py-8 md:py-10">
+            <div className="text-center">
+              <h2 id="legal-logos-title" className="text-sm font-medium text-muted-foreground">Trusted by law firms & legal teams</h2>
+            </div>
+            <div className="group relative mt-6 overflow-hidden">
+              <div className="flex w-max items-center gap-12 md:gap-16 animate-marquee will-change-transform">
+                {[...Array(2)].flatMap((_, setIdx) => [
+                  { name: "Carter & Associates", use: "Schedule legal callbacks" },
+                  { name: "Meridian Law Group", use: "Identify angry clients" },
+                  { name: "Beacon Legal", use: "Engage during slow cases" },
+                  { name: "Summit Defense Partners", use: "Automate follow-ups" },
+                  { name: "Whitfield Family Law", use: "Intake form automation" },
+                  { name: "Ironclad Litigation", use: "Client identification" },
+                  { name: "Crestview Legal", use: "Cross-channel engagement" },
+                  { name: "Harborstone Law", use: "Personalized outreach" },
+                ].map((item, idx) => (
+                  <div key={`${item.name}-${setIdx}-${idx}`} className="select-none inline-flex items-center gap-2">
+                    <Scale className="size-4 text-muted-foreground/70" aria-hidden="true" />
+                    <span className="text-lg md:text-xl font-semibold tracking-[0.18em] uppercase text-muted-foreground/70 group-hover:text-muted-foreground transition-colors">
+                      {item.name}
+                    </span>
+                    <span className="text-[10px] text-muted-foreground/50 lowercase tracking-normal">
+                      {item.use}
+                    </span>
+                  </div>
+                )))}
+              </div>
             </div>
           </div>
         </section>
