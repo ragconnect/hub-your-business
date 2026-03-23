@@ -79,10 +79,10 @@ const HeroSection = () => {
               RagAdvise is your customer management AI—answering questions and following up automatically. Your next customer is just a Nudge away.
             </h1>
             <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
-              Handle "Do you price match?" and send personalized follow‑ups like "What's next after booking with me?" Store customers' data, quickly identify customers, and close at the right time. Get started in under 60 seconds.
+              Handle "Do you price match?" and send personalized follow‑ups like "What's next after booking with me?" Store customers' data, quickly identify customers, and close at the right time.
             </p>
             <p className="mt-3 text-sm md:text-base font-semibold text-foreground">
-              Across phone, website, video-calls, and email
+              Across phone, website, video-calls, and email. Get started in under 60 seconds.
             </p>
             <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto lg:mx-0">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
