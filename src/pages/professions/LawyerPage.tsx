@@ -433,7 +433,7 @@ const LawyerPage = () => {
           </div>
         </section>
 
-        {/* RagAdvise, from RagAdvise */}
+        {/* RagAdvise */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
