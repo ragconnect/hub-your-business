@@ -13,6 +13,7 @@ import TaskAssistant from "./pages/assistants/TaskAssistant";
 import SiteAssistant from "./pages/assistants/SiteAssistant";
 import DentistPage from "./pages/professions/DentistPage";
 import LawyerPage from "./pages/professions/LawyerPage";
+import BuilderPage from "./pages/professions/BuilderPage";
 
 const queryClient = new QueryClient();
 
