@@ -167,7 +167,7 @@ const LawyerPage = () => {
                 For most law firms, RagAdvise will answer clients and store case details twice as fast. Scale the firm while it manages the customer backend.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
-                Across each touch point Across each touch point you can have RagAdvise answer customers &amp; interact, store the details, and follow up just like you would do it. customers &amp; interact, store the details, and follow up just like you would do it.
+                Across each touch point you can have RagAdvise answer customers &amp; interact, store the details, and follow up just like you would do it.
               </p>
 
               {/* Prompt Box */}
