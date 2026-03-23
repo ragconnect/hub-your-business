@@ -72,9 +72,7 @@ const HeroSection = () => {
     <section className="relative pt-2 md:pt-4 lg:pt-2 pb-8 md:pb-16 lg:pb-10 overflow-hidden" aria-labelledby="hero-title">
       <ScrollingCharacterBg />
       <div className="container relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-          {/* Left: text + CTA */}
-          <div className="flex-1 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
             <h1 id="hero-title" className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
               RagAdvise is your customer management AI—answering questions and following up automatically. Your next customer is just a Nudge away.
             </h1>
@@ -84,7 +82,7 @@ const HeroSection = () => {
             <p className="mt-3 text-sm md:text-base font-semibold text-foreground">
               Across phone, website, video-calls, and email. Get started in under 60 seconds.
             </p>
-            <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto lg:mx-0">
+            <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md w-full">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
                 <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
@@ -102,7 +100,7 @@ const HeroSection = () => {
                 <span className="text-xs text-muted-foreground">OR</span>
                 <div className="flex-1 border-t" />
               </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2 text-sm">
+              <div className="flex items-center justify-center gap-2 text-sm">
                 <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                 <span className="text-muted-foreground">No credit card required</span>
                 <span className="text-muted-foreground">·</span>
@@ -114,18 +112,6 @@ const HeroSection = () => {
                 </VideoModal>
               </div>
             </div>
-          </div>
-
-          {/* Right: app screenshot */}
-          <div className="flex-1 w-full max-w-lg lg:max-w-none flex items-center justify-center">
-            <img
-              src={heroDashboard}
-              alt="RagAdvise dashboard — AI business assistant in action"
-              className="w-full h-auto object-contain"
-              style={{ mixBlendMode: "multiply" }}
-              loading="eager"
-            />
-          </div>
         </div>
       </div>
     </section>
