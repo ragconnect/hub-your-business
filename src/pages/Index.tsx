@@ -74,7 +74,7 @@ const HeroSection = () => {
       <div className="container relative z-10">
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
             <h1 id="hero-title" className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-              RagAdvise is your customer management AI—answering questions and following up automatically. Your next customer is just a Nudge away.
+              RagAdvise is your customer management AI to increase conversions and manage customers. Your next customer is just a Nudge away.
             </h1>
             <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
               Handle "Do you price match?" and send personalized follow‑ups like "What's next after booking with me?" Store customers' data, quickly identify customers, and close at the right time.
