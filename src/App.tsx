@@ -13,6 +13,7 @@ import TaskAssistant from "./pages/assistants/TaskAssistant";
 import SiteAssistant from "./pages/assistants/SiteAssistant";
 import DentistPage from "./pages/professions/DentistPage";
 import LawyerPage from "./pages/professions/LawyerPage";
+import BuilderPage from "./pages/professions/BuilderPage";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/assistants/site" element={<SiteAssistant />} />
             <Route path="/professions/dentist" element={<DentistPage />} />
             <Route path="/professions/lawyer" element={<LawyerPage />} />
+            <Route path="/professions/builder" element={<BuilderPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
