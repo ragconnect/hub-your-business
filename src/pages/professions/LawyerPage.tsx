@@ -204,7 +204,7 @@ const LawyerPage = () => {
                 Across phone, website, video calls, and email
               </p>
               <p className="mt-2 text-xs text-muted-foreground max-w-md mx-auto">
-                Includes 1-800 with AI receptionist, AI chatbot with speaking capabilities, customer logging and taking cross-web calls, and customer identification and personalization across email.
+                Includes 1-800 with AI receptionist, AI chatbot with speaking capabilities, customer note taking across web-calls, and customer identification and personalization across email.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 max-w-md mx-auto">
