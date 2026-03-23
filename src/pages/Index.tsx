@@ -76,7 +76,7 @@ const HeroSection = () => {
           {/* Left: text + CTA */}
           <div className="flex-1 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
             <h1 id="hero-title" className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-              Your next customer is just a Nudge away. RagAdvise is your customer AI—answering questions and following up automatically, leading to 3x as many customers.
+              Increase customers by 3x, RagAdvise is your customer AI—answering questions and following up automatically. Your next customer is just a Nudge away.
             </h1>
             <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
               Handle "Do you price match?" and send personalized follow‑ups like "What's next after booking?" in seconds, across up to 50 clients at once.
