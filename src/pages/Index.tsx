@@ -76,10 +76,10 @@ const HeroSection = () => {
           {/* Left: text + CTA */}
           <div className="flex-1 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
             <h1 id="hero-title" className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Caprasimo', serif" }}>
-              Your next customer is just a Nudge away. Reggie answers website voice chats and inbound calls 24/7, books appointments, and manages follow-ups fast—so busy lawyers never lose customers.
+              Your next customer is just a Nudge away. RagAdvise is your customer AI—answering questions and following up automatically, leading to 3x as many customers.
             </h1>
             <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
-              Increase conversions 3× with an AI 1‑800 number + website voice that automatically manages patient calls and website visits, then follows up with multiple touches. It can handle up to 50 customers at once and is live in under 60 seconds.
+              Handle "Do you price match?" and send personalized follow‑ups like "What's next after booking?" in seconds, across up to 50 clients at once.
             </p>
             <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md mx-auto lg:mx-0">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
