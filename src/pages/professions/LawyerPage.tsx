@@ -813,18 +813,6 @@ const LawyerPage = () => {
           </div>
         </section>
 
-        {/* Pricing */}
-        <PricingCompact
-          page="lawyer"
-          traditionalCosts={[
-            { label: "Receptionist/intake specialist", cost: "$3,000–4,500/month" },
-            { label: "Answering service", cost: "$200–500/month" },
-            { label: "CRM / case management", cost: "$50–300/month" },
-            { label: "Follow-up automation", cost: "$100–300/month" },
-          ]}
-          traditionalTotal="$3,350–5,600/month"
-          savingsLabel="RagAdvise = 20–50× cheaper"
-        />
 
         {/* FAQ */}
         <section className="py-16 md:py-24 bg-muted/30">
