@@ -314,41 +314,11 @@ const LawyerPage = () => {
           </div>
         </section>
 
-        {/* GPS Callout */}
-        <section className="py-8 border-y bg-muted/30">
-          <div className="container">
-            <div className="max-w-5xl mx-auto flex flex-col gap-4">
-              <div className="flex items-start gap-4">
-                <Compass className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-base">RagAdvise is your GPS for business.</p>
-                  <p className="text-muted-foreground text-sm mt-0.5">
-                    RagAdvise doesn't just answer questions—it tells you where each prospect is in the journey, what's missing, and what to do next so you actually get them booked. where each prospect is in the journey, what's missing, and what to do next so you actually get them booked.
-                  </p>
-                </div>
-              </div>
-              <form onSubmit={handleDemoSubmit} className="flex flex-col sm:flex-row items-end gap-2">
-                <div className="flex-1 w-full">
-                  <Label htmlFor="gps-name" className="text-xs">Name</Label>
-                  <Input id="gps-name" type="text" placeholder="Jane Smith" value={name} onChange={(e) => setName(e.target.value)} maxLength={100} className="h-9 text-sm" />
-                </div>
-                <div className="flex-1 w-full">
-                  <Label htmlFor="gps-email" className="text-xs">Email</Label>
-                  <Input id="gps-email" type="email" placeholder="partner@lawfirm.com" value={email} onChange={(e) => setEmail(e.target.value)} maxLength={255} className="h-9 text-sm" />
-                </div>
-                <Button type="submit" size="sm" className="h-9 whitespace-nowrap" disabled={isSubmitting}>
-                  {isSubmitting ? "..." : <><Send className="mr-1 h-3 w-3" />Schedule Demo & Free Setup</>}
-                </Button>
-              </form>
-            </div>
-          </div>
-        </section>
-
         {/* Legal Industry Marquee */}
-        <section aria-labelledby="legal-logos-title" className="border-t bg-muted/10">
+        <section aria-labelledby="legal-logos-title-2" className="border-t bg-muted/10">
           <div className="container py-8 md:py-10">
             <div className="text-center">
-              <h2 id="legal-logos-title" className="text-sm font-medium text-muted-foreground">Built for service businesses</h2>
+              <h2 id="legal-logos-title-2" className="text-sm font-medium text-muted-foreground">Built for service businesses</h2>
             </div>
             <div className="group relative mt-6 overflow-hidden">
               <div className="flex w-max items-center gap-12 md:gap-16 animate-marquee will-change-transform">
@@ -369,6 +339,36 @@ const LawyerPage = () => {
                   </div>
                 )))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* GPS Callout */}
+        <section className="py-8 border-y bg-muted/30">
+          <div className="container">
+            <div className="max-w-5xl mx-auto flex flex-col gap-4">
+              <div className="flex items-start gap-4">
+                <Compass className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-base">RagAdvise is your GPS for business.</p>
+                  <p className="text-muted-foreground text-sm mt-0.5">
+                    RagAdvise doesn't just answer questions—it tells you where each prospect is in the journey, what's missing, and what to do next so you actually get them booked.
+                  </p>
+                </div>
+              </div>
+              <form onSubmit={handleDemoSubmit} className="flex flex-col sm:flex-row items-end gap-2">
+                <div className="flex-1 w-full">
+                  <Label htmlFor="gps-name" className="text-xs">Name</Label>
+                  <Input id="gps-name" type="text" placeholder="Jane Smith" value={name} onChange={(e) => setName(e.target.value)} maxLength={100} className="h-9 text-sm" />
+                </div>
+                <div className="flex-1 w-full">
+                  <Label htmlFor="gps-email" className="text-xs">Email</Label>
+                  <Input id="gps-email" type="email" placeholder="partner@lawfirm.com" value={email} onChange={(e) => setEmail(e.target.value)} maxLength={255} className="h-9 text-sm" />
+                </div>
+                <Button type="submit" size="sm" className="h-9 whitespace-nowrap" disabled={isSubmitting}>
+                  {isSubmitting ? "..." : <><Send className="mr-1 h-3 w-3" />Schedule Demo & Free Setup</>}
+                </Button>
+              </form>
             </div>
           </div>
         </section>
