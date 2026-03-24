@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import PricingCompact from "@/components/marketing/PricingCompact";
 import VideoModal from "@/components/marketing/VideoModal";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import googleLogo from "@/assets/logos/google.png";
@@ -620,6 +621,19 @@ const DentistPage = () => {
             <SectionCTA />
           </div>
         </section>
+
+        {/* Pricing */}
+        <PricingCompact
+          page="dentist"
+          traditionalCosts={[
+            { label: "Front-desk staff", cost: "$2,500–3,500/month" },
+            { label: "Answering service", cost: "$200–500/month" },
+            { label: "Patient CRM", cost: "$100–300/month" },
+            { label: "Recall / follow-up system", cost: "$50–200/month" },
+          ]}
+          traditionalTotal="$2,850–4,500/month"
+          savingsLabel="RagAdvise = 15–50× cheaper"
+        />
 
         {/* FAQ */}
         <section className="py-16 md:py-24 bg-muted/30">
