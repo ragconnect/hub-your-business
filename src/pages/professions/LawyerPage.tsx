@@ -674,47 +674,56 @@ const LawyerPage = () => {
           </div>
         </section>
 
-        {/* How it works lifecycle */}
+        {/* How it works (simple 1-2-3) */}
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              How it works (simple lifecycle)
+              How it works (simple 1–2–3)
             </h2>
             <div className="space-y-10">
               {[
                 {
                   num: "1",
-                  title: "Capture",
-                  desc: "A call comes in, a website visitor asks a question, or an email arrives.",
+                  title: "Set up your channels (phone, website, email) — free setup included",
+                  items: [
+                    "Get a business phone number (new or keep your existing)",
+                    "Add the website snippet so visitors can reach you instantly",
+                    "Connect your email so follow‑ups and intake don't get stuck in someone's inbox",
+                  ],
                 },
                 {
                   num: "2",
-                  title: "Identify / create client",
-                  desc: "Returning inquiry? Match by phone/email. New inquiry? Create a client profile automatically.",
+                  title: "Test it in real life",
+                  items: [
+                    "Call your number (direct or AI‑managed)",
+                    "Visit your website and ask a question",
+                    "Send a test email",
+                  ],
                 },
                 {
                   num: "3",
-                  title: "Understand + summarize",
-                  desc: "Matter type, urgency, jurisdiction, key facts, and the best next step.",
+                  title: "Put it everywhere prospects look",
+                  items: [
+                    "Add the phone number to Google Business Profile and your website",
+                    "Send prospects your email (and use it on directories + signatures)",
+                    "Send traffic to your website (ads, SEO, referrals) knowing RagAdvise will capture + follow up",
+                  ],
                 },
-                {
-                  num: "4",
-                  title: "Log to the timeline",
-                  desc: "Store the summary (and transcript/recording when available) under that client.",
-                },
-                {
-                  num: "5",
-                  title: "Follow through automatically",
-                  desc: "Send the follow‑up, request missing info, propose consult times, and escalate high‑intent matters to a human.",
-                },
-              ].map(({ num, title, desc }) => (
+              ].map(({ num, title, items }) => (
                 <div key={num} className="flex gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg flex-shrink-0">
                     {num}
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold">{title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
+                    <ul className="mt-2 space-y-1.5">
+                      {items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               ))}
