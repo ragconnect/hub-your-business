@@ -421,6 +421,63 @@ const LawyerPage = () => {
           </div>
         </section>
 
+        {/* Simple case journey */}
+        <section className="py-16 md:py-24">
+          <div className="container max-w-3xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+              A simple case journey (example)
+            </h2>
+            <div className="space-y-4">
+              {[
+                "A potential client sees you on Google, a legal database/directory, or social media.",
+                "They search you online and go to your website.",
+                "They ask your AI questions — and the context is stored automatically.",
+                "You call them back and immediately see what they need.",
+                "You do a web/video call to build confidence — notes and key details are captured automatically.",
+                "RagAdvise follows up after the call with the next step.",
+                "You email them again with RagAdvise's help.",
+                "They become a client — in ~7 touch points (instead of 7–30+ with missed follow‑ups).",
+              ].map((step, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-sm font-semibold text-primary">
+                    {i + 1}
+                  </div>
+                  <p className="text-muted-foreground pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+            <SectionCTA />
+          </div>
+        </section>
+
+        {/* Implementation guarantee */}
+        <section className="py-16 md:py-24 bg-muted/30">
+          <div className="container max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+              Implementation guarantee
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: Shield, title: "No contracts", desc: "Cancel anytime" },
+                { icon: Headphones, title: "Free setup and support", desc: "Go live quickly without guesswork" },
+                { icon: Zap, title: "Direct engineering support", desc: "Fast help when you need it" },
+                { icon: Users, title: "Custom integrations", desc: "Connect the tools your firm already uses" },
+              ].map(({ icon: Icon, title, desc }, i) => (
+                <Card key={i} className="text-center border-0 shadow-lg">
+                  <CardContent className="pt-8 pb-6 px-6">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold mb-1">{title}</h3>
+                    <p className="text-sm text-muted-foreground">{desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <SectionCTA />
+          </div>
+        </section>
+
         {/* What happens after you go live */}
         <section className="py-16 md:py-24">
           <div className="container max-w-4xl">
@@ -507,7 +564,7 @@ const LawyerPage = () => {
                 </ul>
               </div>
               <div className="rounded-xl border bg-card p-6">
-                <h3 className="text-lg font-semibold mb-3"><h3 className="text-lg font-semibold mb-3">Others do intake. RagAdvise does intake + follow‑through.</h3></h3>
+                <h3 className="text-lg font-semibold mb-3">Others do intake. RagAdvise does intake + follow‑through.</h3>
                 <p className="text-sm text-muted-foreground mb-3">
                   Many tools help you answer. RagAdvise helps you close—by making "what happens next" automatic.
                 </p>
@@ -580,36 +637,8 @@ const LawyerPage = () => {
           </div>
         </section>
 
-        {/* Implementation guarantee */}
-        <section className="py-16 md:py-24">
-          <div className="container max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
-              Implementation guarantee
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: Shield, title: "No contracts", desc: "Cancel anytime" },
-                { icon: Headphones, title: "Free setup and support", desc: "Go live quickly without guesswork" },
-                { icon: Zap, title: "Direct engineering support", desc: "Fast help when you need it" },
-                { icon: Users, title: "Custom integrations", desc: "Connect the tools your firm already uses" },
-              ].map(({ icon: Icon, title, desc }, i) => (
-                <Card key={i} className="text-center border-0 shadow-lg">
-                  <CardContent className="pt-8 pb-6 px-6">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="font-semibold mb-1">{title}</h3>
-                    <p className="text-sm text-muted-foreground">{desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <SectionCTA />
-          </div>
-        </section>
-
         {/* AI for lawyers without barriers */}
-        <section className="py-16 md:py-24 bg-muted/30">
+        <section className="py-16 md:py-24">
           <div className="container max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
               AI for lawyers—without the usual barriers
@@ -629,35 +658,6 @@ const LawyerPage = () => {
                     <h3 className="font-semibold">{title}</h3>
                     <p className="text-sm text-muted-foreground mt-1">{desc}</p>
                   </div>
-                </div>
-              ))}
-            </div>
-            <SectionCTA />
-          </div>
-        </section>
-
-        {/* Simple case journey */}
-        <section className="py-16 md:py-24">
-          <div className="container max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
-              A simple case journey (example)
-            </h2>
-            <div className="space-y-4">
-              {[
-                "A potential client sees you on Google, a legal database/directory, or social media.",
-                "They search you online and go to your website.",
-                "They ask your AI questions — and the context is stored automatically.",
-                "You call them back and immediately see what they need.",
-                "You do a web/video call to build confidence — notes and key details are captured automatically.",
-                "RagAdvise follows up after the call with the next step.",
-                "You email them again with RagAdvise's help.",
-                "They become a client — in ~7 touch points (instead of 7–30+ with missed follow‑ups).",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-sm font-semibold text-primary">
-                    {i + 1}
-                  </div>
-                  <p className="text-muted-foreground pt-1">{step}</p>
                 </div>
               ))}
             </div>
