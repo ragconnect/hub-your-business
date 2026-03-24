@@ -270,50 +270,6 @@ const LawyerPage = () => {
           </div>
         </section>
 
-        {/* Built for legal professionals */}
-        <section className="py-16 md:py-24">
-          <div className="container max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Built for legal professionals and solicitors
-            </h2>
-            <div className="mt-10 space-y-6">
-              {[
-                {
-                  icon: Calendar,
-                  title: "Automatically schedule call backs",
-                  desc: "From your website or phone (intake → qualification → booking).",
-                },
-                {
-                  icon: FileText,
-                  title: "Capture details across channels",
-                  desc: "Customer details + key notes during web/video calls and across emails—tied to the same client timeline.",
-                },
-                {
-                  icon: RefreshCw,
-                  title: "Automatically follow up when prospects go ghost",
-                  desc: "So leads don't stall.",
-                },
-                {
-                  icon: Target,
-                  title: "Shorten the close cycle",
-                  desc: "Most leads take 7–30 touch points to close. RagAdvise helps you make that shorter—and ensures you never forget your touch points.",
-                },
-              ].map(({ icon: Icon, title, desc }, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">{title}</h3>
-                    <p className="text-muted-foreground text-sm mt-1">{desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <SectionCTA />
-          </div>
-        </section>
-
         {/* Legal Industry Marquee */}
         <section aria-labelledby="legal-logos-title-2" className="border-t bg-muted/10">
           <div className="container py-8 md:py-10">
