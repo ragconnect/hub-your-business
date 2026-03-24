@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import PricingCompact from "@/components/marketing/PricingCompact";
 import VideoModal from "@/components/marketing/VideoModal";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
 import googleLogo from "@/assets/logos/google.png";
