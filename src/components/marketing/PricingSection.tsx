@@ -7,6 +7,18 @@ import googleLogo from "@/assets/logos/google.png";
 
 const plans = [
   {
+    name: "Free",
+    price: "Free",
+    period: "",
+    features: [
+      "30 minutes included",
+      "Phone & website voice",
+      "AI website chat",
+      "No credit card required",
+    ],
+    highlight: false,
+  },
+  {
     name: "Individual Assistant",
     price: "$16",
     period: "/month",
@@ -57,7 +69,7 @@ const PricingSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
           {plans.map(({ name, price, period, features, highlight }) => (
             <Card 
               key={name} 
