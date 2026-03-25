@@ -164,8 +164,6 @@ const Index = () => {
         {/* Compare */}
         <ComparisonCompact />
 
-        {/* Testimonials */}
-        <Testimonials />
 
         {/* CTA Band */}
         <CTABand />
