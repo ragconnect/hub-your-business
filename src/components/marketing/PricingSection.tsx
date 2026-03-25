@@ -7,6 +7,18 @@ import googleLogo from "@/assets/logos/google.png";
 
 const plans = [
   {
+    name: "Free",
+    price: "Free",
+    period: "",
+    features: [
+      "30 minutes included",
+      "Phone & website voice",
+      "AI website chat",
+      "No credit card required",
+    ],
+    highlight: false,
+  },
+  {
     name: "Individual Assistant",
     price: "$16",
     period: "/month",
