@@ -69,7 +69,7 @@ const PricingSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
           {plans.map(({ name, price, period, features, highlight }) => (
             <Card 
               key={name} 
