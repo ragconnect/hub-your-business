@@ -99,42 +99,19 @@ const PricingCompact: React.FC<PricingCompactProps> = ({
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-bold mb-4 flex items-center gap-2">
-                    <Check className="w-5 h-5 text-primary" />
-                    What's included:
-                  </h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    {included.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm">
-                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6">
-                  <h4 className="font-bold mb-4 flex items-center gap-2 text-destructive">
-                    <X className="w-5 h-5" />
-                    Building it yourself:
-                  </h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    {traditionalCosts.map((item, i) => (
-                      <li key={i} className="text-sm">
-                        {item.label}: <span className="line-through">{item.cost}</span>
-                      </li>
-                    ))}
-                    <li className="font-bold pt-2 border-t border-destructive/20 text-sm">
-                      Total: <span className="line-through">{traditionalTotal}</span>
+              <div>
+                <h4 className="font-bold mb-4 flex items-center gap-2">
+                  <Check className="w-5 h-5 text-primary" />
+                  What's included:
+                </h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  {included.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      {item}
                     </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="mt-8 p-4 bg-primary/10 rounded-xl text-center">
-                <p className="text-lg font-bold text-primary">{savingsLabel}</p>
+                  ))}
+                </ul>
               </div>
 
               <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
