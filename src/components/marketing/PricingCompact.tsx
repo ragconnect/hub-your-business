@@ -47,12 +47,56 @@ const PricingCompact: React.FC<PricingCompactProps> = ({
           Everything you need for less than the cost of one tool.
         </p>
 
-        <Card className="border-primary/20">
-          <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <div className="text-5xl font-bold text-primary mb-2">
-                $16
-                <span className="text-xl font-normal text-muted-foreground">/month</span>
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {/* Free tier */}
+          <Card className="border-primary/20">
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="text-5xl font-bold text-primary mb-2">
+                  Free
+                </div>
+                <p className="text-lg text-muted-foreground">
+                  30 minutes included
+                </p>
+              </div>
+              <ul className="space-y-2 text-muted-foreground">
+                {[
+                  "Phone & website voice",
+                  "AI website chat",
+                  "No credit card required",
+                  "Get started in 60 seconds",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6">
+                <Button size="lg" className="w-full h-12 text-sm font-semibold rounded-lg" asChild>
+                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                    <img src={googleLogo} alt="" className="w-6 h-6 bg-white rounded-full p-0.5" />
+                    Sign up Free
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* $16/month tier */}
+          <Card className="border-primary/20 ring-2 ring-primary/20 relative">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
+              Most Popular
+            </div>
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="text-5xl font-bold text-primary mb-2">
+                  $16
+                  <span className="text-xl font-normal text-muted-foreground">/month</span>
+                </div>
+                <p className="text-lg text-muted-foreground">
+                  Complete AI business assistant
+                </p>
               </div>
               <p className="text-lg text-muted-foreground">
                 Complete AI business assistant
