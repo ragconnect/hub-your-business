@@ -541,6 +541,7 @@ const CustomerAssistant = () => {
                     "Website voice/chat (capture + qualify + schedule)",
                     "Email (turn messages into a tracked customer + next step)",
                     "Web/video calls (notes + action items + follow‑ups)",
+                    "Invoicing (auto-generate and send invoices from customer interactions)",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />{item}
