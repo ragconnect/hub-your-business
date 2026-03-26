@@ -167,7 +167,7 @@ const CustomerAssistant = () => {
                 AI Customer Management squeezes more out of marketing, guaranteeing visitors move down the funnel faster.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
-                Get more than 100 people on your website or talk to at least 10 a month, agentic AI can help you win more business in just 7 days. It answers calls, talks to visitors on your site, replies to messages, and starts with one click. 30 Minutes Free.
+                Get more than 100 people on your website or talk to at least 10 a month, agentic AI can help you win more business in just 7 days. It answers calls, talks to visitors on your site, replies to messages. Easy to use start in 60 seconds. 30 Minutes Free.
               </p>
 
               {/* Prompt Box */}
