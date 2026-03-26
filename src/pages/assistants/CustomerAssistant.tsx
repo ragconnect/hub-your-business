@@ -311,7 +311,7 @@ const CustomerAssistant = () => {
                 {
                   num: "1",
                   title: "Capture",
-                  desc: "A call comes in, a website visitor asks a question, or an email arrives.",
+                  desc: "A call comes in, a website visitor asks a question, an email arrives, or video call starts.",
                 },
                 {
                   num: "2",
