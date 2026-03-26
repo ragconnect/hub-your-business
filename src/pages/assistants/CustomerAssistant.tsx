@@ -269,34 +269,6 @@ const CustomerAssistant = () => {
           </div>
         </section>
 
-        {/* Service businesses marquee */}
-        <section aria-labelledby="customer-logos-title-2" className="border-t bg-muted/10">
-          <div className="container py-8 md:py-10">
-            <div className="text-center">
-              <h2 id="customer-logos-title-2" className="text-sm font-medium text-muted-foreground">Built for service businesses</h2>
-            </div>
-            <div className="group relative mt-6 overflow-hidden">
-              <div className="flex w-max items-center gap-12 md:gap-16 animate-marquee will-change-transform">
-                {[...Array(2)].flatMap((_, setIdx) => [
-                  { name: "City Auto Dealers" },
-                  { name: "Prime Plumbing" },
-                  { name: "GreenLeaf Realty" },
-                  { name: "Swift HVAC" },
-                  { name: "Peak Landscaping" },
-                  { name: "Starline Movers" },
-                  { name: "Sunset Spa" },
-                ].map((item, idx) => (
-                  <div key={`${item.name}-${setIdx}-${idx}`} className="select-none inline-flex items-center gap-2">
-                    <Users className="size-4 text-muted-foreground/70" aria-hidden="true" />
-                    <span className="text-lg md:text-xl font-semibold tracking-[0.18em] uppercase text-muted-foreground/70 group-hover:text-muted-foreground transition-colors">
-                      {item.name}
-                    </span>
-                  </div>
-                )))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* GPS Callout */}
         <section className="py-8 border-y bg-muted/30">
