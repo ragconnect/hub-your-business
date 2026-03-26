@@ -47,15 +47,15 @@ const PricingCompact: React.FC<PricingCompactProps> = ({
           Everything you need for less than the cost of one tool.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Free tier */}
           <Card className="border-primary/20">
-            <CardContent className="p-8">
+            <CardContent className="p-6">
               <div className="text-center mb-6">
-                <div className="text-5xl font-bold text-primary mb-2">
+                <div className="text-3xl font-bold text-primary mb-2">
                   Free
                 </div>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   30 minutes included
                 </p>
               </div>
@@ -73,9 +73,9 @@ const PricingCompact: React.FC<PricingCompactProps> = ({
                 ))}
               </ul>
               <div className="mt-6">
-                <Button size="lg" className="w-full h-12 text-sm font-semibold rounded-lg" asChild>
-                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
-                    <img src={googleLogo} alt="" className="w-6 h-6 bg-white rounded-full p-0.5" />
+                <Button size="lg" className="w-full h-12 text-xs font-semibold rounded-lg" asChild>
+                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                    <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
                     Sign up Free
                   </a>
                 </Button>
@@ -88,43 +88,108 @@ const PricingCompact: React.FC<PricingCompactProps> = ({
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
               Most Popular
             </div>
-            <CardContent className="p-8">
+            <CardContent className="p-6">
               <div className="text-center mb-6">
-                <div className="text-5xl font-bold text-primary mb-2">
+                <div className="text-3xl font-bold text-primary mb-2">
                   $16
-                  <span className="text-xl font-normal text-muted-foreground">/month</span>
+                  <span className="text-lg font-normal text-muted-foreground">/mo</span>
                 </div>
-                <p className="text-lg text-muted-foreground">
-                  Complete AI business assistant
+                <p className="text-sm text-muted-foreground">
+                  Complete AI assistant
                 </p>
               </div>
-
-              <div>
-                <h4 className="font-bold mb-4 flex items-center gap-2">
-                  <Check className="w-5 h-5 text-primary" />
-                  What's included:
-                </h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  {included.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm">
-                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
-                <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
-                    <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                    Sign up with Google & Get 30 Minutes Free
+              <ul className="space-y-2 text-muted-foreground">
+                {included.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6">
+                <Button size="lg" className="w-full h-12 text-xs font-semibold rounded-lg" asChild>
+                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                    <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                    Sign up with Google
                   </a>
                 </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Business Scaling tier */}
+          <Card className="border-primary/20">
+            <CardContent className="p-6">
+              <div className="text-center mb-6">
+                <div className="text-3xl font-bold text-primary mb-2">
+                  $75
+                  <span className="text-lg font-normal text-muted-foreground">/mo</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Up to 15 team members
+                </p>
+              </div>
+              <ul className="space-y-2 text-muted-foreground">
+                {[
+                  "600 min AI calls/month (10 hrs)",
+                  "Unlimited domestic calls",
+                  "10 phone numbers",
+                  "All assistants (throttled)",
+                  "500 tasks/month",
+                  "250 transactions/month",
+                  "25 GB storage",
+                  "Priority support",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6">
+                <Button size="lg" className="w-full h-12 text-xs font-semibold rounded-lg" asChild>
+                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                    <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                    Sign up with Google
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Enterprise tier */}
+          <Card className="border-primary/20">
+            <CardContent className="p-6">
+              <div className="text-center mb-6">
+                <div className="text-3xl font-bold text-primary mb-2">
+                  Enterprise
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Custom pricing
+                </p>
+              </div>
+              <ul className="space-y-2 text-muted-foreground">
+                {[
+                  "100+ hours AI calls/month",
+                  "Unlimited domestic & international",
+                  "Unlimited phone numbers",
+                  "All assistants unlimited",
+                  "Unlimited tasks & transactions",
+                  "Unlimited storage",
+                  "Custom SLA",
+                  "Dedicated 24/7 support",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6">
                 <DemoRequestModal page={page}>
-                  <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Demo & Free Setup
+                  <Button size="lg" className="w-full h-12 text-xs font-semibold rounded-lg">
+                    <Calendar className="mr-1 h-4 w-4" />
+                    Contact Sales
                   </Button>
                 </DemoRequestModal>
               </div>
