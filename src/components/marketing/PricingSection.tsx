@@ -98,7 +98,7 @@ const PricingSection: React.FC = () => {
                 </ul>
                 <Button 
                   className="w-full h-12 text-sm font-semibold" 
-                  variant={highlight ? "default" : "outline"}
+                  variant="default"
                   asChild
                 >
                   <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
