@@ -151,7 +151,6 @@ const CustomerAssistant = () => {
       <div className="w-full bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
         <p>AI customer management across voice and chat touchpoints. Start Free 30 Minutes — <a href="https://my.ragadvise.com/signup" className="underline">Get started</a></p>
       </div>
-      </div>
       <Header />
 
       <main>
