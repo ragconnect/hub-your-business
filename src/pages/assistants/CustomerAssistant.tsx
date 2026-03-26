@@ -164,7 +164,7 @@ const CustomerAssistant = () => {
                 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
-                Show customers the human side of your brand & start converting more phone calls and website traffic.
+                Start converting more phone calls and website traffic by showing customers the human side of your brand.
               </h1>
               <p className="mt-4 text-base text-muted-foreground">
                 Get more than 100 people on your website or talk to at least 10 a month, agentic AI can help you win more business in just 7 days. It answers calls, talks to visitors on your site, replies to messages. Easy to use start in 60 seconds. 30 Minutes Free.
