@@ -92,6 +92,12 @@ const PricingCompact: React.FC<PricingCompactProps> = ({
               <div className="text-center mb-6">
                 <div className="text-5xl font-bold text-primary mb-2">
                   $16
+                  <span className="text-xl font-normal text-muted-foreground">/month</span>
+                </div>
+                <p className="text-lg text-muted-foreground">
+                  Complete AI business assistant
+                </p>
+              </div>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
