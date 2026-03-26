@@ -11,6 +11,7 @@ import ConversationAssistant from "./pages/assistants/ConversationAssistant";
 import MoneyAssistant from "./pages/assistants/MoneyAssistant";
 import TaskAssistant from "./pages/assistants/TaskAssistant";
 import SiteAssistant from "./pages/assistants/SiteAssistant";
+import CustomerAssistant from "./pages/assistants/CustomerAssistant";
 import DentistPage from "./pages/professions/DentistPage";
 import LawyerPage from "./pages/professions/LawyerPage";
 import BuilderPage from "./pages/professions/BuilderPage";
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/assistants/money" element={<MoneyAssistant />} />
             <Route path="/assistants/task" element={<TaskAssistant />} />
             <Route path="/assistants/site" element={<SiteAssistant />} />
+            <Route path="/assistants/customer" element={<CustomerAssistant />} />
             <Route path="/professions/dentist" element={<DentistPage />} />
             <Route path="/professions/lawyer" element={<LawyerPage />} />
             <Route path="/professions/builder" element={<BuilderPage />} />
