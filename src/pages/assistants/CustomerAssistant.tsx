@@ -310,7 +310,7 @@ const CustomerAssistant = () => {
               {[
                 {
                   num: "1",
-                  title: "Capture",
+                  title: "Agentic AI Supports You With Customers or Manages Them",
                   desc: "A call comes in, a website visitor asks a question, an email arrives, or video call starts.",
                 },
                 {
