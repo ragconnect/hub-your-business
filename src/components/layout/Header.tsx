@@ -34,6 +34,11 @@ const assistants = [
     href: "/assistants/site",
     description: "Voice-first AI that converts website visitors 24/7.",
   },
+  {
+    title: "Customer Assistant",
+    href: "/assistants/customer",
+    description: "AI that moves visitors down the funnel faster across all channels.",
+  },
 ];
 
 const professions = [
