@@ -512,7 +512,7 @@ const CustomerAssistant = () => {
               <div>
                 <h3 className="text-xl font-semibold flex items-center gap-2">
                   <Phone className="w-5 h-5 text-primary" />
-                  Phone-first (works from the very first call)
+                  Voice-first (site, phone, internal, web)
                 </h3>
                 <p className="text-muted-foreground text-sm mt-2">
                   It starts the moment someone calls your business—whether the call is direct to your team or AI‑managed.
