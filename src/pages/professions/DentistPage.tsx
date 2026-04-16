@@ -145,74 +145,41 @@ const DentistPage = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative pt-2 md:pt-4 lg:pt-2 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
-          <ScrollingCharacterBg />
-          <div className="container relative z-10">
-            <div className="max-w-2xl mx-auto text-center">
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden" aria-labelledby="hero-title">
+          {/* Dark background image */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80"
+              alt=""
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </div>
+
+          <div className="container relative z-10 py-24 md:py-32">
+            <div className="max-w-3xl mx-auto text-center">
               <h1
                 id="hero-title"
-                className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
-                We help Dental teams close and manage 3X as many patients as they call-in or visit your website
+                We help Dental teams close 3X more patients.
               </h1>
-              <p className="mt-4 text-base text-muted-foreground">
-                Dental offices get <strong className="text-foreground">one phone number for calls (direct & automated by AI)</strong> and a <strong className="text-foreground">voice chat box for your website or app</strong>—so you capture patient details, answer questions, and book appointments faster all within HIPAA laws.
+              <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+                One AI phone number and a voice chat box for your website—capture details, answer questions, and book appointments 24/7.
               </p>
 
-              {/* Prompt Box */}
-              <div className="mt-8 max-w-lg mx-auto">
-                <div className="relative flex items-center rounded-xl border-2 border-primary/30 bg-background shadow-lg hover:border-primary/50 transition-colors">
-                  <input
-                    type="text"
-                    id="dental-prompt"
-                    value={promptValue}
-                    onChange={(e) => setPromptValue(e.target.value)}
-                    onKeyDown={async (e) => {
-                      if (e.key === "Enter" && promptValue.trim()) {
-                        try { await supabase.from("chat_prompt_submissions").insert({ prompt_text: promptValue.trim(), page: "dentist" }); } catch (_) {}
-                        window.location.href = "https://my.ragadvise.com/signup";
-                      }
-                    }}
-                    placeholder={dentalPrompts[promptIndex]}
-                    className="flex-1 h-14 px-4 bg-transparent text-base outline-none placeholder:text-muted-foreground/60 placeholder:transition-opacity placeholder:duration-300"
-                  />
-                  <button
-                    onClick={async () => {
-                      if (!promptValue.trim()) return;
-                      try { await supabase.from("chat_prompt_submissions").insert({ prompt_text: promptValue.trim(), page: "dentist" }); } catch (_) {}
-                      window.location.href = "https://my.ragadvise.com/signup";
-                    }}
-                    className="mr-2 p-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-                    aria-label="Send"
-                  >
-                    <Send className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-
-              <div className="mt-6 flex flex-col gap-3 max-w-md mx-auto">
-                <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
-                    <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                    Signup with Google & Get 30 Minutes Free
+              <div className="mt-10">
+                <Button size="lg" className="h-14 px-10 text-lg font-semibold rounded-full bg-white text-black hover:bg-white/90" asChild>
+                  <a href="https://my.ragadvise.com/signup">
+                    Get started
                   </a>
                 </Button>
-                <div className="flex items-center justify-center gap-2 text-sm mt-1">
-                  <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
-                  <span className="text-muted-foreground">No credit card required</span>
-                  <span className="text-muted-foreground">·</span>
-                  <VideoModal>
-                    <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
-                      <Play className="w-3 h-3" fill="currentColor" />
-                      Watch Demo
-                    </button>
-                  </VideoModal>
-                </div>
-                <p className="mt-4 text-sm text-muted-foreground italic">
-                  Built by ex‑Meta and WebMD employees with love. Built on over 1 million hours of medical patient interaction data across website, phone, video, and email.
-                </p>
               </div>
+
+              <p className="mt-6 text-sm text-white/60 italic">
+                Built by ex‑Meta and WebMD employees. 30 minutes free—no credit card required.
+              </p>
             </div>
           </div>
         </section>
