@@ -182,9 +182,32 @@ const DentistPage = () => {
               </p>
             </div>
 
-            {/* Video embed */}
+            {/* Tabbed video section */}
             <div className="mt-12 max-w-4xl mx-auto w-full">
-              <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+              {/* Pill tabs */}
+              <div className="flex justify-center gap-2 flex-wrap mb-6">
+                {[
+                  { icon: Phone, label: "Phone Answering" },
+                  { icon: Globe, label: "Website Voice" },
+                  { icon: Calendar, label: "Appointments" },
+                  { icon: Eye, label: "Review Management" },
+                ].map((tab, i) => (
+                  <button
+                    key={tab.label}
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all border ${
+                      i === 0
+                        ? "bg-white text-black border-white shadow-md"
+                        : "bg-white/10 text-white/80 border-white/20 hover:bg-white/20 hover:text-white"
+                    }`}
+                  >
+                    <tab.icon className="w-4 h-4" />
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Video */}
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10" style={{ paddingBottom: '56.25%' }}>
                 <iframe
                   src="https://www.loom.com/embed/b2351a9a592b483c9438d36b5e516e51"
                   frameBorder="0"
