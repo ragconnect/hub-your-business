@@ -161,7 +161,7 @@ const DentistPage = () => {
               <h1
                 id="hero-title"
                 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-wide text-white leading-[1.1]"
-                style={{ fontFamily: "'DM Serif Display', serif" }}
+                style={{ fontFamily: "'General Sans', sans-serif" }}
               >
                 We help Dental teams close 3X more patients.
               </h1>
