@@ -149,7 +149,7 @@ const DentistPage = () => {
           {/* Dark background image */}
           <div className="absolute inset-0 z-0">
             <img
-              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80"
+              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1920&q=80"
               alt=""
               className="w-full h-full object-cover"
             />
