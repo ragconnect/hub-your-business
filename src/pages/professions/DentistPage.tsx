@@ -160,7 +160,7 @@ const DentistPage = () => {
             <div className="max-w-3xl mx-auto text-center">
               <h1
                 id="hero-title"
-                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-wide text-white leading-[1.1]"
                 style={{ fontFamily: "'Caprasimo', serif" }}
               >
                 We help Dental teams close 3X more patients.
