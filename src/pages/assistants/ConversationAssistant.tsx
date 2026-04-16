@@ -675,7 +675,7 @@ const ConversationAssistant = () => {
 
             {/* Row 3: Reviews & Automation */}
             <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-6">
-              {/* Review Management */}
+              {/* Email Follow Up */}
               <Card className="border-0 shadow-lg h-full flex flex-col">
                 <CardContent className="p-6 flex flex-col flex-1">
                   <div className="flex items-start gap-3 mb-4">
@@ -683,8 +683,8 @@ const ConversationAssistant = () => {
                       <Star className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold">Review Management</h3>
-                      <p className="text-sm text-muted-foreground">Build reputation automatically</p>
+                      <h3 className="text-xl font-bold">Email Follow Up</h3>
+                      <p className="text-sm text-muted-foreground">Automate follow-up sequences</p>
                     </div>
                   </div>
                   <ul className="space-y-2 mb-4 flex-1">
@@ -874,7 +874,7 @@ const ConversationAssistant = () => {
                           <li>• Business email + AI responses</li>
                           <li>• Text, SMS & social messaging</li>
                           <li>• Website chat</li>
-                          <li>• Review management</li>
+                          <li>• Email follow up</li>
                           <li>• Unlimited calls, emails, messages</li>
                         </ul>
                       </div>
@@ -965,7 +965,7 @@ const ConversationAssistant = () => {
                           <li>• AI email responses + keep your email</li>
                           <li>• AI text & social messaging</li>
                           <li>• Website chat with AI</li>
-                          <li>• Review management</li>
+                          <li>• Email follow up</li>
                           <li>• Unlimited volume across all channels</li>
                         </ul>
                       </div>
@@ -1364,7 +1364,7 @@ const ConversationAssistant = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-3 px-3 font-medium">Review Management</td>
+                    <td className="py-3 px-3 font-medium">Email Follow Up</td>
                     <td className="text-center py-3 px-3 bg-primary/5">
                       <Check className="h-5 w-5 text-green-500 mx-auto" />
                     </td>
