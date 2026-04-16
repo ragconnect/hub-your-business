@@ -138,7 +138,7 @@ const DentistPage = () => {
         <link rel="canonical" href={siteUrl} />
       </Helmet>
 
-      <div className="w-full fixed top-0 left-0 right-0 z-[60] bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
+      <div className="w-full bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
         <p>Start with 30 minutes of RagAdvise free—AI phone answering and website voice. <a href="https://my.ragadvise.com/signup" className="underline">Get started</a></p>
       </div>
       <Header />
