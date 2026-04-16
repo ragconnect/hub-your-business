@@ -190,7 +190,7 @@ const DentistPage = () => {
                   { icon: Phone, label: "Phone Answering" },
                   { icon: Globe, label: "Website Voice" },
                   { icon: Calendar, label: "Appointments" },
-                  { icon: Eye, label: "Review Management" },
+                  { icon: Eye, label: "Email Follow Up" },
                 ].map((tab, i) => (
                   <button
                     key={tab.label}
