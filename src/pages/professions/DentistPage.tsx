@@ -181,6 +181,19 @@ const DentistPage = () => {
                 Built by ex‑Meta and WebMD employees. 30 minutes free—no credit card required.
               </p>
             </div>
+
+            {/* Video embed */}
+            <div className="mt-12 max-w-4xl mx-auto w-full">
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src="https://www.loom.com/embed/b2351a9a592b483c9438d36b5e516e51"
+                  frameBorder="0"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                  title="RagAdvise Dental Demo"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
