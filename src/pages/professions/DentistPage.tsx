@@ -145,155 +145,41 @@ const DentistPage = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5" aria-labelledby="hero-title">
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden" aria-labelledby="hero-title">
+          {/* Dark background image */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1920&q=80"
+              alt=""
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </div>
 
-          <div className="container relative z-10 py-16 md:py-24 lg:py-32">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left: Text stack */}
-              <div className="text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm text-primary font-medium mb-6">
-                  <Phone className="w-3.5 h-3.5" />
-                  AI phone + website voice for dental teams
-                </div>
+          <div className="container relative z-10 py-24 md:py-32">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1
+                id="hero-title"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-wide text-white leading-[1.1]"
+                style={{ fontFamily: "'DM Serif Display', serif" }}
+              >
+                We help Dental teams close 3X more patients.
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+                One AI phone number and a voice chat box for your website—capture details, answer questions, and book appointments 24/7.
+              </p>
 
-                <h1
-                  id="hero-title"
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-foreground leading-[1.1]"
-                  style={{ fontFamily: "'DM Serif Display', serif" }}
-                >
-                  We help Dental teams close{" "}
-                  <span className="text-primary">3X</span> more patients.
-                </h1>
-
-                <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
-                  One AI phone number and a voice chat box for your website—capture details, answer questions, and book appointments 24/7.
-                </p>
-
-                <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                  <Button size="lg" className="h-14 px-8 text-base font-semibold rounded-xl" asChild>
-                    <a href="https://my.ragadvise.com/signup">
-                      Get started
-                    </a>
-                  </Button>
-                  <DemoRequestModal>
-                    <Button size="lg" variant="outline" className="h-14 px-8 text-base font-semibold rounded-xl border-2">
-                      Book a Demo
-                    </Button>
-                  </DemoRequestModal>
-                </div>
-
-                <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 justify-center lg:justify-start text-sm text-muted-foreground">
-                  <span className="inline-flex items-center gap-1.5">
-                    <Check className="w-4 h-4 text-primary" />
-                    No credit card required
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <Clock className="w-4 h-4 text-primary" />
-                    30 minutes free
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <Shield className="w-4 h-4 text-primary" />
-                    HIPAA compliant
-                  </span>
-                </div>
-
-                <p className="mt-4 text-xs text-muted-foreground/70 italic max-w-md mx-auto lg:mx-0">
-                  Built by ex‑Meta and WebMD employees. Over 1M hours of medical patient interaction data.
-                </p>
+              <div className="mt-10">
+                <Button size="lg" className="h-14 px-10 text-lg font-semibold rounded-full bg-white text-black hover:bg-white/90" asChild>
+                  <a href="https://my.ragadvise.com/signup">
+                    Get started
+                  </a>
+                </Button>
               </div>
 
-              {/* Right: Product preview / video frame */}
-              <div className="relative mx-auto lg:mx-0 max-w-lg w-full">
-                <div className="rounded-2xl border border-border/60 bg-card shadow-2xl shadow-primary/5 overflow-hidden">
-                  {/* Browser chrome */}
-                  <div className="flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border/60">
-                    <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-400/80" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
-                      <div className="w-3 h-3 rounded-full bg-green-400/80" />
-                    </div>
-                    <div className="flex-1 mx-3">
-                      <div className="h-6 rounded-md bg-background border border-border/40 flex items-center px-3">
-                        <span className="text-xs text-muted-foreground/60 truncate">ragadvise.com/dental-assistant</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Mock product UI */}
-                  <div className="p-5 bg-background space-y-4">
-                    {/* Call log header */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <Phone className="w-4 h-4 text-primary" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-semibold text-foreground">Live Call Log</p>
-                          <p className="text-xs text-muted-foreground">Today · 3 new patients</p>
-                        </div>
-                      </div>
-                      <span className="inline-flex items-center gap-1 text-xs font-medium text-green-600 bg-green-50 dark:bg-green-900/20 dark:text-green-400 px-2 py-1 rounded-full">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                        Live
-                      </span>
-                    </div>
-
-                    {/* Mock call entries */}
-                    {[
-                      { name: "Sarah M.", type: "New Patient Inquiry", time: "2 min ago", status: "Booked" },
-                      { name: "James R.", type: "Insurance Question", time: "8 min ago", status: "Answered" },
-                      { name: "Lisa K.", type: "Emergency Call", time: "15 min ago", status: "Routed" },
-                    ].map((call, i) => (
-                      <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-muted/30 border border-border/30">
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-sm font-semibold text-primary">
-                            {call.name.charAt(0)}
-                          </div>
-                          <div>
-                            <p className="text-sm font-medium text-foreground">{call.name}</p>
-                            <p className="text-xs text-muted-foreground">{call.type}</p>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                            call.status === "Booked" ? "bg-primary/10 text-primary" :
-                            call.status === "Routed" ? "bg-orange-100 text-orange-600 dark:bg-orange-900/20 dark:text-orange-400" :
-                            "bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400"
-                          }`}>{call.status}</span>
-                          <p className="text-xs text-muted-foreground mt-0.5">{call.time}</p>
-                        </div>
-                      </div>
-                    ))}
-
-                    {/* Website voice widget mock */}
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-primary/5 border border-primary/20">
-                      <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
-                        <Globe className="w-4 h-4 text-primary-foreground" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-sm font-medium text-foreground">Website Voice Active</p>
-                        <p className="text-xs text-muted-foreground">12 visitors talking today</p>
-                      </div>
-                      <div className="flex gap-0.5">
-                        {[3, 5, 4, 6, 3, 5, 7, 4, 6, 5].map((h, i) => (
-                          <div key={i} className="w-1 rounded-full bg-primary/60" style={{ height: `${h * 3}px` }} />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating badge */}
-                <div className="absolute -bottom-3 -left-3 md:-left-6 bg-card border border-border/60 rounded-xl px-4 py-2.5 shadow-lg flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-primary" />
-                  <div>
-                    <p className="text-xs font-semibold text-foreground">47 appointments</p>
-                    <p className="text-[10px] text-muted-foreground">booked this week</p>
-                  </div>
-                </div>
-              </div>
+              <p className="mt-6 text-sm text-white/60 italic">
+                Built by ex‑Meta and WebMD employees. 30 minutes free—no credit card required.
+              </p>
             </div>
           </div>
         </section>
