@@ -132,7 +132,7 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <a href="https://my.ragadvise.com" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
+          <a href="https://my.ragadvise.com/demo/home" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
           <Button asChild className="rounded-full">
             <a href="https://my.ragadvise.com/signup" aria-label="Get Started">Get Started</a>
           </Button>
@@ -200,7 +200,7 @@ const Header = () => {
                 Blog
               </a>
               <div className="flex flex-col gap-3 mt-4 pt-6 border-t">
-                <a href="https://my.ragadvise.com" className="text-lg hover:text-primary transition-colors">
+                <a href="https://my.ragadvise.com/demo/home" className="text-lg hover:text-primary transition-colors">
                   Sign in
                 </a>
                 <Button asChild className="w-full">
