@@ -64,7 +64,7 @@ const Header = () => {
   const location = useLocation();
   const authUrl =
     location.pathname === "/assistants/site"
-      ? "https://my.ragadvise.com/site-assistant"
+      ? "https://my.ragadvise.com/demo/site-assistant?tab=site-assistant&subtab=settings"
       : location.pathname === "/assistants/conversation"
       ? "https://my.ragadvise.com/demo/phone-settings?tab=phone-settings&subtab=purchase-number"
       : "https://my.ragadvise.com/demo/home";
