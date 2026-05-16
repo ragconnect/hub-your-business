@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/ragadvise_logo_full.png";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -61,7 +61,10 @@ const professions = [
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const location = useLocation();
+  const authUrl = location.pathname === "/assistants/site"
+    ? "https://my.ragadvise.com/site-assistant"
+    : "https://my.ragadvise.com/demo/home";
   return (
     <header className="w-full py-3 relative z-50" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <div className="container">
@@ -132,9 +135,9 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <a href="https://my.ragadvise.com/demo/home" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
+          <a href={authUrl} className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
           <Button asChild className="rounded-full">
-            <a href="https://my.ragadvise.com/demo/home" aria-label="Get Started">Get Started</a>
+            <a href={authUrl} aria-label="Get Started">Get Started</a>
           </Button>
         </div>
         
@@ -200,11 +203,11 @@ const Header = () => {
                 Blog
               </a>
               <div className="flex flex-col gap-3 mt-4 pt-6 border-t">
-                <a href="https://my.ragadvise.com/demo/home" className="text-lg hover:text-primary transition-colors">
+                <a href={authUrl} className="text-lg hover:text-primary transition-colors">
                   Sign in
                 </a>
                 <Button asChild className="w-full">
-                  <a href="https://my.ragadvise.com/demo/home">Sign Up</a>
+                  <a href={authUrl}>Sign Up</a>
                 </Button>
               </div>
             </nav>
