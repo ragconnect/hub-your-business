@@ -61,7 +61,10 @@ const professions = [
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const location = useLocation();
+  const authUrl = location.pathname === "/assistants/site"
+    ? "https://my.ragadvise.com/site-assistant"
+    : "https://my.ragadvise.com/demo/home";
   return (
     <header className="w-full py-3 relative z-50" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <div className="container">
