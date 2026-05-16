@@ -268,7 +268,7 @@ const SiteAssistant = () => {
       </Helmet>
 
       <div className="w-full bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
-        <p>First 30 minutes free with our AI voice assistant (Website Voice). <a href="https://my.ragadvise.com/demo/home" className="underline">Learn more</a></p>
+        <p>First 30 minutes free with our AI voice assistant (Website Voice). <a href="https://my.ragadvise.com/site-assistant" className="underline">Learn more</a></p>
       </div>
       <Header />
 
@@ -311,7 +311,7 @@ const SiteAssistant = () => {
                 </div>
                 <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                    <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                    <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                       <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                       Sign up with Google & Get 30 Minutes Free
                     </a>
@@ -328,7 +328,7 @@ const SiteAssistant = () => {
                     <div className="flex-1 border-t" />
                   </div>
                   <div className="flex items-center justify-center gap-2 text-sm">
-                    <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                    <a href="https://my.ragadvise.com/site-assistant" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                     <span className="text-muted-foreground">No credit card required</span>
                     <span className="text-muted-foreground">·</span>
                     <VideoModal>
@@ -443,7 +443,7 @@ const SiteAssistant = () => {
             </div>
             <div className="mt-8 flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>
@@ -506,7 +506,7 @@ const SiteAssistant = () => {
             </div>
             <div className="mt-8 flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>
@@ -573,7 +573,7 @@ const SiteAssistant = () => {
 
             <div className="mt-10 flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>
@@ -623,7 +623,7 @@ const SiteAssistant = () => {
             </div>
             <div className="mt-10 flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>
@@ -637,7 +637,7 @@ const SiteAssistant = () => {
             </div>
             <div className="mt-10 flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>
@@ -723,7 +723,7 @@ const SiteAssistant = () => {
 
                     <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                       <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                        <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                        <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                           <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                           Sign up with Google & Get 30 Minutes Free
                         </a>
@@ -735,7 +735,7 @@ const SiteAssistant = () => {
                         </Button>
                       </DemoRequestModal>
                       <div className="flex items-center justify-center gap-2 text-sm mt-1">
-                        <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                        <a href="https://my.ragadvise.com/site-assistant" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                         <span className="text-muted-foreground">No credit card required</span>
                       </div>
                     </div>
@@ -791,7 +791,7 @@ const SiteAssistant = () => {
 
                     <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                       <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                        <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                        <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                           <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                           Sign up with Google & Get 30 Minutes Free
                         </a>
@@ -803,7 +803,7 @@ const SiteAssistant = () => {
                         </Button>
                       </DemoRequestModal>
                       <div className="flex items-center justify-center gap-2 text-sm mt-1">
-                        <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                        <a href="https://my.ragadvise.com/site-assistant" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                         <span className="text-muted-foreground">No credit card required</span>
                       </div>
                     </div>
@@ -848,7 +848,7 @@ const SiteAssistant = () => {
             </p>
             <div className="flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>
@@ -883,7 +883,7 @@ const SiteAssistant = () => {
             </Accordion>
             <div className="mt-10 flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>
@@ -910,7 +910,7 @@ const SiteAssistant = () => {
             </p>
             <div className="flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/site-assistant" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>
