@@ -101,13 +101,13 @@ const PricingSection: React.FC = () => {
                   variant="default"
                   asChild
                 >
-                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                  <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-2">
                     <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
                     Sign up with Google & Get 30 Minutes Free
                   </a>
                 </Button>
                 <p className="text-xs text-center mt-2">
-                  <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                  <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                   {" "}<span className="text-muted-foreground">No credit card required</span>
                 </p>
               </CardContent>

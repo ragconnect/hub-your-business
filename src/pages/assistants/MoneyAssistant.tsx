@@ -269,7 +269,7 @@ const MoneyPromptBox = () => {
     try {
       await supabase.from("chat_prompt_submissions").insert({ prompt_text: text.trim(), page: "money-assistant" });
     } catch (_) {}
-    window.location.href = "https://my.ragadvise.com/signup";
+    window.location.href = "https://my.ragadvise.com/demo/home";
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -412,7 +412,7 @@ const MoneyAssistant = () => {
                 </p>
                 <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
                   <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                    <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                    <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
                       <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                       Sign up with Google & Get 30 Minutes Free
                     </a>
@@ -429,7 +429,7 @@ const MoneyAssistant = () => {
                     <div className="flex-1 border-t" />
                   </div>
                   <div className="flex items-center justify-center gap-2 text-sm">
-                    <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                    <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                     <span className="text-muted-foreground">No credit card required</span>
                     <span className="text-muted-foreground">·</span>
                     <VideoModal>
@@ -561,13 +561,13 @@ const MoneyAssistant = () => {
                     </div>
                     <div className="flex flex-col gap-2 mt-4">
                       <Button size="sm" className="w-full" asChild>
-                        <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                        <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-2">
                           <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
                           Sign up with Google & Get 30 Minutes Free
                         </a>
                       </Button>
                       <Button size="sm" variant="outline" className="w-full" asChild>
-                        <a href="https://my.ragadvise.com/signup">
+                        <a href="https://my.ragadvise.com/demo/home">
                           <feature.icon className="mr-2 h-4 w-4" />
                           {feature.cta}
                         </a>
@@ -716,7 +716,7 @@ const MoneyAssistant = () => {
             </p>
             <div className="mt-8 flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>

@@ -66,7 +66,7 @@ const WhyChooseRagAdvise: React.FC = () => {
 
         <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
           <Button size="lg" className="h-14 text-base font-semibold rounded-lg flex-1" asChild>
-            <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+            <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
               <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
               Sign up with Google & Get 30 Minutes Free
             </a>

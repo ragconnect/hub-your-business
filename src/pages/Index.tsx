@@ -84,7 +84,7 @@ const HeroSection = () => {
             </p>
             <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md w-full">
               <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>
@@ -101,7 +101,7 @@ const HeroSection = () => {
                 <div className="flex-1 border-t" />
               </div>
               <div className="flex items-center justify-center gap-2 text-sm">
-                <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                 <span className="text-muted-foreground">No credit card required</span>
                 <span className="text-muted-foreground">·</span>
                 <VideoModal>

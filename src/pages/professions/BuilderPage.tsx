@@ -80,7 +80,7 @@ const builderPrompts = [
 const SectionCTA = () => (
   <div className="mt-10 flex flex-col gap-3 max-w-md mx-auto">
     <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+      <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
         <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
         Sign up with Google & Get 30 Minutes Free
       </a>
@@ -153,7 +153,7 @@ const BuilderPage = () => {
       </Helmet>
 
       <div className="w-full bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
-        <p>Start with 30 minutes of RagAdvise free—AI phone answering (live or automated) and website voice. <a href="https://my.ragadvise.com/signup" className="underline">Get started</a></p>
+        <p>Start with 30 minutes of RagAdvise free—AI phone answering (live or automated) and website voice. <a href="https://my.ragadvise.com/demo/home" className="underline">Get started</a></p>
       </div>
       <Header />
 
@@ -185,7 +185,7 @@ const BuilderPage = () => {
                     onKeyDown={async (e) => {
                       if (e.key === "Enter" && promptValue.trim()) {
                         try { await supabase.from("chat_prompt_submissions").insert({ prompt_text: promptValue.trim(), page: "builder" }); } catch (_) {}
-                        window.location.href = "https://my.ragadvise.com/signup";
+                        window.location.href = "https://my.ragadvise.com/demo/home";
                       }
                     }}
                     placeholder={builderPrompts[promptIndex]}
@@ -195,7 +195,7 @@ const BuilderPage = () => {
                     onClick={async () => {
                       if (!promptValue.trim()) return;
                       try { await supabase.from("chat_prompt_submissions").insert({ prompt_text: promptValue.trim(), page: "builder" }); } catch (_) {}
-                      window.location.href = "https://my.ragadvise.com/signup";
+                      window.location.href = "https://my.ragadvise.com/demo/home";
                     }}
                     className="mr-2 p-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
                     aria-label="Send"
@@ -214,7 +214,7 @@ const BuilderPage = () => {
 
               <div className="mt-6 flex flex-col gap-3 max-w-md mx-auto">
                 <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                  <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
                     <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                     Sign up with Google & Get 30 Minutes Free
                   </a>
@@ -226,7 +226,7 @@ const BuilderPage = () => {
                   </Button>
                 </DemoRequestModal>
                 <div className="flex items-center justify-center gap-2 text-sm mt-1">
-                  <a href="https://my.ragadvise.com/signup" className="text-primary font-medium hover:underline">Sign up free with email.</a>
+                  <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
                   <span className="text-muted-foreground">No credit card required</span>
                   <span className="text-muted-foreground">·</span>
                   <VideoModal>
@@ -704,7 +704,7 @@ const BuilderPage = () => {
             </p>
             <div className="mt-8 flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Sign up with Google & Get 30 Minutes Free
                 </a>
