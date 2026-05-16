@@ -16,13 +16,13 @@ const CTABand: React.FC = () => {
           </p>
           <div className="mt-6 flex flex-col gap-3 justify-center max-w-md mx-auto">
             <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-              <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+              <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
                 <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                 Sign up with Google & Get 30 Minutes Free
               </a>
             </Button>
             <Button size="lg" variant="outline" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-              <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+              <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-2">
                 <Clock className="mr-1 h-4 w-4" />
                 Get 30 min Free
               </a>

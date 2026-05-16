@@ -74,7 +74,7 @@ const PricingCompact: React.FC<PricingCompactProps> = ({
               </ul>
               <div className="mt-6">
                 <Button size="lg" className="w-full h-12 text-xs font-semibold rounded-lg" asChild>
-                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                  <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-2">
                     <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
                     Sign up Free
                   </a>
@@ -108,7 +108,7 @@ const PricingCompact: React.FC<PricingCompactProps> = ({
               </ul>
               <div className="mt-6">
                 <Button size="lg" className="w-full h-12 text-xs font-semibold rounded-lg" asChild>
-                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                  <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-2">
                     <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
                     Sign up with Google
                   </a>
@@ -148,7 +148,7 @@ const PricingCompact: React.FC<PricingCompactProps> = ({
               </ul>
               <div className="mt-6">
                 <Button size="lg" className="w-full h-12 text-xs font-semibold rounded-lg" asChild>
-                  <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-2">
+                  <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-2">
                     <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
                     Sign up with Google
                   </a>

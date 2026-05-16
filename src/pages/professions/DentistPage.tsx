@@ -72,7 +72,7 @@ const dentalPrompts = [
 const SectionCTA = () => (
   <div className="mt-10 flex flex-col gap-3 max-w-md mx-auto">
     <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-      <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+      <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
         <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
         Signup with Google & Get 30 Minutes Free
       </a>
@@ -139,7 +139,7 @@ const DentistPage = () => {
       </Helmet>
 
       <div className="w-full bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
-        <p>Start with 30 minutes of RagAdvise free—AI phone answering and website voice. <a href="https://my.ragadvise.com/signup" className="underline">Get started</a></p>
+        <p>Start with 30 minutes of RagAdvise free—AI phone answering and website voice. <a href="https://my.ragadvise.com/demo/home" className="underline">Get started</a></p>
       </div>
       <Header />
 
@@ -171,7 +171,7 @@ const DentistPage = () => {
 
               <div className="mt-10">
                 <Button size="lg" className="h-14 px-10 text-lg font-semibold rounded-full bg-white text-black hover:bg-white/90" asChild>
-                  <a href="https://my.ragadvise.com/signup">
+                  <a href="https://my.ragadvise.com/demo/home">
                     Get started
                   </a>
                 </Button>
@@ -667,7 +667,7 @@ const DentistPage = () => {
             </p>
             <div className="mt-8 flex flex-col gap-3 justify-center max-w-md mx-auto">
               <Button size="lg" variant="secondary" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/signup" className="flex items-center justify-center gap-3">
+                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
                   <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
                   Signup with Google & Get 30 Minutes Free
                 </a>

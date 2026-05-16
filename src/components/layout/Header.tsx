@@ -134,7 +134,7 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-3">
           <a href="https://my.ragadvise.com/demo/home" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
           <Button asChild className="rounded-full">
-            <a href="https://my.ragadvise.com/signup" aria-label="Get Started">Get Started</a>
+            <a href="https://my.ragadvise.com/demo/home" aria-label="Get Started">Get Started</a>
           </Button>
         </div>
         
@@ -204,7 +204,7 @@ const Header = () => {
                   Sign in
                 </a>
                 <Button asChild className="w-full">
-                  <a href="https://my.ragadvise.com/signup">Sign Up</a>
+                  <a href="https://my.ragadvise.com/demo/home">Sign Up</a>
                 </Button>
               </div>
             </nav>
