@@ -66,7 +66,7 @@ const Header = () => {
     location.pathname === "/assistants/site"
       ? "https://my.ragadvise.com/site-assistant"
       : location.pathname === "/assistants/conversation"
-      ? "https://my.ragadvise.com/phone-settings"
+      ? "https://my.ragadvise.com/demo/phone-settings?tab=phone-settings&subtab=purchase-number"
       : "https://my.ragadvise.com/demo/home";
   return (
     <header className="w-full py-3 relative z-50" style={{ fontFamily: "'DM Sans', sans-serif" }}>
