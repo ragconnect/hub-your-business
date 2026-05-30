@@ -343,7 +343,7 @@ const TaskAssistant = () => {
           <ScrollingCharacterBg />
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto text-center">
-                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Bree Serif', serif" }}>
                   Get things done instantly, with a simple chat that turns{" "}
                   <span
                     className={`inline-block transition-all duration-300 ${

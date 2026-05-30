@@ -166,7 +166,7 @@ const BuilderPage = () => {
               <h1
                 id="hero-title"
                 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                style={{ fontFamily: "'Bree Serif', serif" }}
               >
                 Close and manage up to 3× more leads with an AI customer assistant supporting your inbound calls & website visits.
               </h1>

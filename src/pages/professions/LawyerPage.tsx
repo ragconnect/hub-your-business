@@ -163,7 +163,7 @@ const LawyerPage = () => {
               <h1
                 id="hero-title"
                 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                style={{ fontFamily: "'Bree Serif', serif" }}
               >
                 AI customer assistant that helps law firms manage inbound cases and book more faster.
               </h1>
