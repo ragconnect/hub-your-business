@@ -69,7 +69,7 @@ const Header = () => {
       ? "https://my.ragadvise.com/demo/phone-settings?tab=phone-settings&subtab=purchase-number"
       : "https://my.ragadvise.com/demo/home";
   return (
-    <header className="w-full py-3 relative z-50" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <header className="w-full py-3 relative z-50" style={{ fontFamily: "'Inter', sans-serif" }}>
       <div className="container">
         <div className="flex h-14 items-center justify-between bg-background/90 backdrop-blur-md rounded-full px-6 shadow-lg border border-border/50">
         <Link to="/" className="flex items-center">
