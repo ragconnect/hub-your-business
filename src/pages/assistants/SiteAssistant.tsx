@@ -284,7 +284,7 @@ const SiteAssistant = () => {
                 <h1
                   id="hero-title"
                   className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-primary"
-                  style={{ fontFamily: "'Bree Serif', serif" }}
+                  style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   Turn website traffic into 3× more conversions—feel confident in minutes with AI voice
                 </h1>
