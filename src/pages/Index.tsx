@@ -1,14 +1,9 @@
 import { Helmet } from "react-helmet-async";
-import googleLogo from "@/assets/logos/google.png";
-import heroDashboard from "@/assets/hero-app-screenshot-new.png";
 import { Button } from "@/components/ui/button";
-import { Play, Calendar } from "lucide-react";
-import ScrollingCharacterBg from "@/components/marketing/ScrollingCharacterBg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Header from "@/components/layout/Header";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
-import Testimonials from "@/components/marketing/Testimonials";
 import SixAssistants from "@/components/marketing/SixAssistants";
 import WhyChooseRagAdvise from "@/components/marketing/WhyChooseRagAdvise";
 import HowItWorks from "@/components/marketing/HowItWorks";
@@ -17,101 +12,126 @@ import CTABand from "@/components/marketing/CTABand";
 import FAQ from "@/components/marketing/FAQ";
 import IntegrationsShowcase from "@/components/marketing/IntegrationsShowcase";
 import OfferBanner from "@/components/marketing/OfferBanner";
-import VideoModal from "@/components/marketing/VideoModal";
-import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
 import ComparisonCompact from "@/components/marketing/ComparisonCompact";
 
-const rotatingInlines = ["customer support", "invoicing", "meeting notes"];
-const rotatingExamples = [
-  'Turn "missed call" into "callback booked + summary sent"',
-  'Turn "meeting" into "notes + action items assigned"',
-  'Turn "invoice request" into "invoice drafted + follow-up scheduled"',
-  'Turn "angry customer email" into "calm reply + escalation routed"',
+import personaVoice from "@/assets/hero/persona-voice.jpg";
+import personaChat from "@/assets/hero/persona-chat.jpg";
+import personaPhone from "@/assets/hero/persona-phone.jpg";
+import personaEmail from "@/assets/hero/persona-email.jpg";
+
+const AUTH_URL = "https://my.ragadvise.com/demo/home";
+
+const personas = [
+  { src: personaVoice, label: "voice · live", rotate: "-6deg", translateY: "0px" },
+  { src: personaChat, label: "chat · acme", rotate: "-2deg", translateY: "16px" },
+  { src: personaPhone, label: "phone · 0:42", rotate: "3deg", translateY: "8px" },
+  { src: personaEmail, label: "email · sent", rotate: "7deg", translateY: "24px" },
 ];
 
 const HeroSection = () => {
-  const [inlineIndex, setInlineIndex] = useState(0);
-  const [exampleIndex, setExampleIndex] = useState(0);
-  const [isInlineAnimating, setIsInlineAnimating] = useState(false);
-  const [isExampleAnimating, setIsExampleAnimating] = useState(false);
+  const [prompt, setPrompt] = useState("");
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsInlineAnimating(true);
-      setTimeout(() => {
-        setInlineIndex((prev) => (prev + 1) % rotatingInlines.length);
-        setIsInlineAnimating(false);
-      }, 300);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsExampleAnimating(true);
-      setTimeout(() => {
-        setExampleIndex((prev) => (prev + 1) % rotatingExamples.length);
-        setIsExampleAnimating(false);
-      }, 300);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
-
-  const AnimatedWord = ({ text, animating }: { text: string; animating: boolean }) => (
-    <span
-      className={`inline-block transition-all duration-300 ${
-        animating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-      }`}
-    >
-      {text}
-    </span>
-  );
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const url = prompt.trim()
+      ? `${AUTH_URL}?prompt=${encodeURIComponent(prompt.trim())}`
+      : AUTH_URL;
+    window.location.href = url;
+  };
 
   return (
-    <section className="relative pt-2 md:pt-4 lg:pt-2 pb-8 md:pb-16 lg:pb-10 overflow-hidden" aria-labelledby="hero-title">
-      <ScrollingCharacterBg />
-      <div className="container relative z-10">
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-            <h1 id="hero-title" className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Bree Serif', serif" }}>
-              Increase conversions in 9 days with an AI assistant that engages leads and customers on calls and website chat.
-            </h1>
-            <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
-              Handle "Do you price match?" and send personalized follow‑ups like "What's next after booking with me?" Store customers' data, quickly identify customers, and close at the right time.
-            </p>
-            <p className="mt-3 text-sm md:text-base font-semibold text-foreground">
-              Across phone, website, video-calls, and email. Get started in under 60 seconds.
-            </p>
-            <div className="relative z-10 mt-6 flex flex-col gap-3 max-w-md w-full">
-              <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
-                  <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                  Sign up with Google & Get 30 Minutes Free
-                </a>
-              </Button>
-              <DemoRequestModal>
-                <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Schedule Demo & Free Setup
-                </Button>
-              </DemoRequestModal>
-              <div className="flex items-center gap-3 mt-1">
-                <div className="flex-1 border-t" />
-                <span className="text-xs text-muted-foreground">OR</span>
-                <div className="flex-1 border-t" />
+    <section
+      className="relative overflow-hidden bg-background"
+      aria-labelledby="hero-title"
+    >
+      {/* Radial lime glow */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-[600px] opacity-60"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 0%, hsl(var(--primary) / 0.18), transparent 70%)",
+        }}
+      />
+
+      <div className="container relative z-10 pt-10 md:pt-16 pb-16 md:pb-24">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+          <p className="text-xs md:text-sm font-mono tracking-[0.2em] uppercase text-primary">
+            One Assistant · Every Surface
+          </p>
+
+          <h1
+            id="hero-title"
+            className="mt-6 text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-foreground"
+            style={{ fontFamily: "'Bree Serif', serif" }}
+          >
+            Answer my customers on{" "}
+            <span className="relative inline-block">
+              every surface.
+              <span className="absolute -right-2 top-1 bottom-1 w-[3px] bg-primary animate-pulse" />
+            </span>
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
+            Describe what your customers need. RagAdvise handles it across every
+            surface they already use — instantly.
+          </p>
+
+          {/* Prompt input */}
+          <form
+            onSubmit={handleSubmit}
+            className="mt-10 w-full max-w-2xl flex items-center gap-2 rounded-2xl border border-border bg-card/80 backdrop-blur p-2 pl-5 shadow-lg"
+          >
+            <input
+              type="text"
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              placeholder="Ask RagAdvise to handle anything…"
+              className="flex-1 bg-transparent border-0 outline-none text-base text-foreground placeholder:text-muted-foreground py-3"
+              aria-label="Ask RagAdvise"
+            />
+            <Button
+              type="submit"
+              size="lg"
+              className="rounded-xl h-12 px-6 font-semibold"
+            >
+              Create
+            </Button>
+          </form>
+
+          <p className="mt-3 text-xs text-muted-foreground">
+            No credit card required · Get 30 minutes free
+          </p>
+
+          {/* Persona card stack */}
+          <div className="mt-16 md:mt-20 w-full flex justify-center items-end gap-3 md:gap-5">
+            {personas.map((p, i) => (
+              <div
+                key={i}
+                className="relative w-32 sm:w-40 md:w-48 lg:w-56 rounded-2xl overflow-hidden border border-border bg-card shadow-2xl transition-transform duration-500 hover:!translate-y-0 hover:!rotate-0"
+                style={{
+                  transform: `rotate(${p.rotate}) translateY(${p.translateY})`,
+                }}
+              >
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img
+                    src={p.src}
+                    alt=""
+                    width={512}
+                    height={768}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute bottom-0 inset-x-0 flex items-center justify-between px-3 py-2 bg-gradient-to-t from-black/80 to-transparent">
+                  <span className="font-mono text-[10px] md:text-xs text-foreground/90 tracking-wide">
+                    {p.label}
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary))]" />
+                </div>
               </div>
-              <div className="flex items-center justify-center gap-2 text-sm">
-                <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
-                <span className="text-muted-foreground">No credit card required</span>
-                <span className="text-muted-foreground">·</span>
-                <VideoModal>
-                  <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
-                    <Play className="w-3 h-3" fill="currentColor" />
-                    Watch Demo
-                  </button>
-                </VideoModal>
-              </div>
-            </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
