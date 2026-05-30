@@ -263,7 +263,7 @@ const ConversationAssistant = () => {
                 <h1
                   id="hero-title"
                   className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary"
-                  style={{ fontFamily: "'Caprasimo', serif" }}
+                  style={{ fontFamily: "'Bree Serif', serif" }}
                 >
                    Increase conversions by 3X with an AI 1-800 number that automatically manages customers.
                 </h1>

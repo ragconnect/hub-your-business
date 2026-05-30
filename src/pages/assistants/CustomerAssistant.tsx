@@ -162,7 +162,7 @@ const CustomerAssistant = () => {
               <h1
                 id="hero-title"
                 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary"
-                style={{ fontFamily: "'Caprasimo', serif" }}
+                style={{ fontFamily: "'Bree Serif', serif" }}
               >
                 Start converting more phone calls and website traffic by showing customers the human side of your brand.
               </h1>

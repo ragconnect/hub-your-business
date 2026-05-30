@@ -63,9 +63,16 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			fontFamily: {
+				display: ["'Bree Serif'", 'serif'],
+				sans: ["Inter", 'sans-serif'],
+				mono: ["'JetBrains Mono'", 'monospace'],
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)'
+			},
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {

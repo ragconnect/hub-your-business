@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,88 +10,103 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* RagAdvise — Lime on Ink */
+    --background: 180 11% 95%;       /* paper #EFF3F3 */
+    --foreground: 0 0% 9%;           /* ink #171717 */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 9%;
 
-    /* Brand: mint-teal */
-    --primary: 164 72% 38%;
-    --primary-foreground: 160 100% 98%;
+    /* Primary = Signal Lime, on ink text */
+    --primary: 73 84% 70%;           /* #D5F372 */
+    --primary-foreground: 0 0% 9%;   /* ink */
 
-    /* Subtle brand-tinted surfaces */
-    --secondary: 164 45% 92%;
-    --secondary-foreground: 164 72% 18%;
+    --secondary: 0 0% 9%;            /* ink as inverse accent */
+    --secondary-foreground: 73 84% 70%;
 
-    --muted: 210 33% 96%;
-    --muted-foreground: 215 16% 46%;
+    --muted: 180 11% 92%;
+    --muted-foreground: 110 3% 43%;  /* stone #6B726B */
 
-    --accent: 200 92% 92%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 70 72% 88%;            /* lime-wash #EEF7C9 */
+    --accent-foreground: 0 0% 9%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 348 100% 66%;     /* danger #FF5470 */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 164 72% 38%;
+    --border: 180 11% 87%;           /* border-lt #DBE3E3 */
+    --input: 180 11% 87%;
+    --ring: 73 84% 70%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 164 72% 38%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 164 72% 38%;
+    /* Brand extras */
+    --ra-lime: 73 84% 70%;
+    --ra-lime-deep: 75 50% 56%;
+    --ra-lime-wash: 70 72% 88%;
+    --ra-pitch: 0 0% 5%;
+    --ra-ink: 0 0% 9%;
+    --ra-slate: 100 3% 14%;
+    --ra-paper: 180 11% 95%;
+    --ra-ash: 100 3% 62%;
+    --ra-stone: 110 3% 43%;
+    --ra-border-dk: 100 4% 19%;
+    --ra-violet: 250 100% 68%;
+    --ra-coral: 6 100% 67%;
+    --ra-success: 150 65% 54%;
+    --ra-warning: 42 89% 63%;
+    --ra-info: 199 94% 67%;
+    --primary-glow: 73 84% 78%;
 
-    /* Extras */
-    --primary-glow: 164 75% 55%;
+    --sidebar-background: 180 11% 95%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 73 84% 70%;
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 70 72% 88%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 180 11% 87%;
+    --sidebar-ring: 73 84% 70%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 9%;           /* ink */
+    --foreground: 180 11% 95%;       /* paper */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 100 3% 14%;              /* slate */
+    --card-foreground: 180 11% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 100 3% 14%;
+    --popover-foreground: 180 11% 95%;
 
-    /* Brand in dark */
-    --primary: 164 70% 45%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 73 84% 70%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 164 25% 16%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 100 3% 14%;
+    --secondary-foreground: 73 84% 70%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 100 3% 14%;
+    --muted-foreground: 100 3% 62%;  /* ash */
 
-    --accent: 190 30% 18%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 100 4% 19%;
+    --accent-foreground: 73 84% 70%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 348 100% 66%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 164 70% 45%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 164 70% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 164 70% 45%;
+    --border: 100 4% 19%;            /* border-dk */
+    --input: 100 4% 19%;
+    --ring: 73 84% 70%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 180 11% 95%;
+    --sidebar-primary: 73 84% 70%;
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 100 4% 19%;
+    --sidebar-accent-foreground: 73 84% 70%;
+    --sidebar-border: 100 4% 19%;
+    --sidebar-ring: 73 84% 70%;
   }
 }
 
@@ -101,7 +115,8 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
+  html, body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
 }
