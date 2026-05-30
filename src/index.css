@@ -10,34 +10,34 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* RagAdvise — Lime on Ink */
-    --background: 180 11% 95%;       /* paper #EFF3F3 */
-    --foreground: 0 0% 9%;           /* ink #171717 */
+    /* RagAdvise — Lime on Ink (ink-canvas default) */
+    --background: 0 0% 9%;            /* ink #171717 */
+    --foreground: 180 11% 95%;        /* paper #EFF3F3 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card: 100 3% 14%;               /* slate #232623 */
+    --card-foreground: 180 11% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover: 100 3% 14%;
+    --popover-foreground: 180 11% 95%;
 
-    /* Primary = Signal Lime, on ink text */
-    --primary: 73 84% 70%;           /* #D5F372 */
-    --primary-foreground: 0 0% 9%;   /* ink */
+    /* Primary = Signal Lime, with ink text on top */
+    --primary: 73 84% 70%;            /* #D5F372 */
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 0 0% 9%;            /* ink as inverse accent */
+    --secondary: 100 3% 14%;          /* raised dark card */
     --secondary-foreground: 73 84% 70%;
 
-    --muted: 180 11% 92%;
-    --muted-foreground: 110 3% 43%;  /* stone #6B726B */
+    --muted: 100 3% 14%;
+    --muted-foreground: 100 3% 62%;   /* ash #9BA199 */
 
-    --accent: 70 72% 88%;            /* lime-wash #EEF7C9 */
-    --accent-foreground: 0 0% 9%;
+    --accent: 100 4% 19%;
+    --accent-foreground: 73 84% 70%;
 
-    --destructive: 348 100% 66%;     /* danger #FF5470 */
+    --destructive: 348 100% 66%;      /* danger #FF5470 */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 180 11% 87%;           /* border-lt #DBE3E3 */
-    --input: 180 11% 87%;
+    --border: 100 4% 19%;             /* hairline on dark #2E322E */
+    --input: 100 4% 19%;
     --ring: 73 84% 70%;
 
     --radius: 0.5rem;
@@ -50,9 +50,11 @@ All colors MUST be HSL.
     --ra-ink: 0 0% 9%;
     --ra-slate: 100 3% 14%;
     --ra-paper: 180 11% 95%;
+    --ra-white: 0 0% 100%;
     --ra-ash: 100 3% 62%;
     --ra-stone: 110 3% 43%;
     --ra-border-dk: 100 4% 19%;
+    --ra-border-lt: 180 11% 87%;
     --ra-violet: 250 100% 68%;
     --ra-coral: 6 100% 67%;
     --ra-success: 150 65% 54%;
@@ -60,15 +62,16 @@ All colors MUST be HSL.
     --ra-info: 199 94% 67%;
     --primary-glow: 73 84% 78%;
 
-    --sidebar-background: 180 11% 95%;
-    --sidebar-foreground: 0 0% 9%;
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 180 11% 95%;
     --sidebar-primary: 73 84% 70%;
     --sidebar-primary-foreground: 0 0% 9%;
-    --sidebar-accent: 70 72% 88%;
-    --sidebar-accent-foreground: 0 0% 9%;
-    --sidebar-border: 180 11% 87%;
+    --sidebar-accent: 100 4% 19%;
+    --sidebar-accent-foreground: 73 84% 70%;
+    --sidebar-border: 100 4% 19%;
     --sidebar-ring: 73 84% 70%;
   }
+
 
   .dark {
     --background: 0 0% 9%;           /* ink */
