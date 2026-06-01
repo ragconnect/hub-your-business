@@ -48,6 +48,7 @@ import {
   Building2,
 } from "lucide-react";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
+import AssistantHero from "@/components/marketing/AssistantHero";
 import googleLogo from "@/assets/logos/google.png";
 
 const oldWayProblems = [
