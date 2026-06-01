@@ -96,14 +96,11 @@ const HeroSection = () => {
 
           <h1
             id="hero-title"
-            className="mt-6 text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-foreground"
+            className="mt-6 text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-foreground min-h-[2.4em] md:min-h-[2.4em]"
             style={{ fontFamily: "'Bree Serif', serif" }}
           >
-            Answer my customers on{" "}
-            <span className="relative inline-block">
-              every surface.
-              <span className="absolute -right-2 top-1 bottom-1 w-[3px] bg-primary animate-pulse" />
-            </span>
+            <span>{typed}</span>
+            <span className="inline-block w-[3px] md:w-[4px] h-[0.85em] align-[-0.1em] ml-1 bg-primary animate-pulse" />
           </h1>
 
           <p className="mt-8 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
