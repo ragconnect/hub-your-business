@@ -156,86 +156,20 @@ const CustomerAssistant = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative pt-2 md:pt-4 lg:pt-2 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
-          <ScrollingCharacterBg />
-          <div className="container relative z-10">
-            <div className="max-w-2xl mx-auto text-center">
-              <h1
-                id="hero-title"
-                className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-primary"
-                style={{ fontFamily: "'Bree Serif', serif" }}
-              >
-                Start converting more phone calls and website traffic by showing customers the human side of your brand.
-              </h1>
-              <p className="mt-4 text-base text-muted-foreground">
-                Get more than 100 people on your website or talk to at least 10 a month, agentic AI can help you win more business in just 7 days. It answers calls, talks to visitors on your site, replies to messages. Easy to use start in 60 seconds. 30 Minutes Free.
-              </p>
-
-              {/* Prompt Box */}
-              <div className="mt-8 max-w-lg mx-auto">
-                <div className="relative flex items-center rounded-xl border-2 border-primary/30 bg-background shadow-lg hover:border-primary/50 transition-colors">
-                  <input
-                    type="text"
-                    id="customer-prompt"
-                    value={promptValue}
-                    onChange={(e) => setPromptValue(e.target.value)}
-                    onKeyDown={async (e) => {
-                      if (e.key === "Enter" && promptValue.trim()) {
-                        try { await supabase.from("chat_prompt_submissions").insert({ prompt_text: promptValue.trim(), page: "customer" }); } catch (_) {}
-                        window.location.href = "https://my.ragadvise.com/demo/home";
-                      }
-                    }}
-                    placeholder={customerPrompts[promptIndex]}
-                    className="flex-1 h-14 px-4 bg-transparent text-base outline-none placeholder:text-muted-foreground/60 placeholder:transition-opacity placeholder:duration-300"
-                  />
-                  <button
-                    onClick={async () => {
-                      if (!promptValue.trim()) return;
-                      try { await supabase.from("chat_prompt_submissions").insert({ prompt_text: promptValue.trim(), page: "customer" }); } catch (_) {}
-                      window.location.href = "https://my.ragadvise.com/demo/home";
-                    }}
-                    className="mr-2 p-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-                    aria-label="Send"
-                  >
-                    <Send className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-              <p className="mt-3 text-sm font-semibold text-foreground">
-                Across phone, website, video calls, and email
-              </p>
-              <p className="mt-2 text-xs text-muted-foreground max-w-md mx-auto">
-                Includes 1-800 with AI receptionist, AI chatbot with speaking capabilities, customer note taking across web-calls, and customer identification and personalization across email.
-              </p>
-
-              <div className="mt-6 flex flex-col gap-3 max-w-md mx-auto">
-                <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                  <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
-                    <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                    Sign up with Google & Get 30 Minutes Free
-                  </a>
-                </Button>
-                <DemoRequestModal page="customer">
-                  <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Demo & Free Setup
-                  </Button>
-                </DemoRequestModal>
-                <div className="flex items-center justify-center gap-2 text-sm mt-1">
-                  <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
-                  <span className="text-muted-foreground">No credit card required</span>
-                  <span className="text-muted-foreground">·</span>
-                  <VideoModal>
-                    <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
-                      <Play className="w-3 h-3" fill="currentColor" />
-                      Watch Demo
-                    </button>
-                  </VideoModal>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <AssistantHero
+          eyebrow="Customer Assistant · The Human Side of AI"
+          rotatingPhrases={[
+            "Give my brand a face customers remember.",
+            "Convert more website visitors into calls.",
+            "Talk to every visitor like a person.",
+            "Turn cold traffic into warm leads.",
+          ]}
+          subtitle="Agentic AI that answers calls, talks to website visitors, and replies to messages — showing the human side of your brand across every channel."
+          promptPlaceholder="What should we say to your next visitor?"
+          ctaUrl="https://my.ragadvise.com/demo/home"
+          pageKey="customer"
+          demoModalPage="customer"
+        />
 
         {/* Trusted by businesses marquee */}
         <section aria-labelledby="customer-logos-title" className="border-t bg-muted/10">
