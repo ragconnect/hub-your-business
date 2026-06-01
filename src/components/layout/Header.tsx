@@ -15,7 +15,7 @@ import {
 
 const assistants = [
   {
-    title: "Conversation Assistant",
+    title: "Phone Assistant",
     href: "/assistants/conversation",
     description: "AI that handles calls, emails, texts, and social messages 24/7.",
   },
