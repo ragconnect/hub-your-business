@@ -61,6 +61,7 @@ import financeImg from "@/assets/stories/story-finance.jpg";
 import hospitalityImg from "@/assets/stories/story-hospitality.jpg";
 import warehouseImg from "@/assets/stories/story-warehouse.jpg";
 import taskDashboardImg from "@/assets/task-management-dashboard.png";
+import AssistantHero from "@/components/marketing/AssistantHero";
 
 const taskTestimonials = [
   {
