@@ -275,74 +275,19 @@ const SiteAssistant = () => {
 
       <main>
         {/* Hero */}
-        <section
-          className="relative pt-2 md:pt-4 lg:pt-2 pb-16 md:pb-24 overflow-hidden"
-          aria-labelledby="hero-title"
-        >
-          <ScrollingCharacterBg />
-          <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-                <h1
-                  id="hero-title"
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-primary"
-                  style={{ fontFamily: "'Bree Serif', serif" }}
-                >
-                  Turn website traffic into 3× more conversions—feel confident in minutes with AI voice
-                </h1>
-                <p className="mt-6 text-xl text-muted-foreground">
-                  Make your site speak and respond like your{" "}
-                  <span
-                    className={`inline-block transition-all duration-300 font-semibold text-foreground ${
-                      isAnimating
-                        ? "opacity-0 translate-y-2"
-                        : "opacity-100 translate-y-0"
-                    }`}
-                  >
-                    {rotatingRoles[roleIndex]}
-                  </span>
-                  {" "}- with a voice-enabled website assistant that:
-                </p>
-                <div className="mt-3 flex flex-wrap gap-3 justify-center text-sm font-medium text-foreground">
-                  <span>💬 Answers questions</span>
-                  <span>🎯 Qualifies visitors</span>
-                  <span>✉️ Captures leads</span>
-                  <span>📅 Drives bookings/callbacks</span>
-                  <span>🧾 Creates support requests</span>
-                  <span>📝 Records & logs calls</span>
-                </div>
-                <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
-                  <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                    <a href="https://my.ragadvise.com/demo/site-assistant?tab=site-assistant&subtab=settings" className="flex items-center justify-center gap-3">
-                      <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                      Sign up with Google & Get 30 Minutes Free
-                    </a>
-                  </Button>
-                  <DemoRequestModal>
-                    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo & Free Setup
-                    </Button>
-                  </DemoRequestModal>
-                  <div className="flex items-center gap-3 mt-1">
-                    <div className="flex-1 border-t" />
-                    <span className="text-xs text-muted-foreground">OR</span>
-                    <div className="flex-1 border-t" />
-                  </div>
-                  <div className="flex items-center justify-center gap-2 text-sm">
-                    <a href="https://my.ragadvise.com/demo/site-assistant?tab=site-assistant&subtab=settings" className="text-primary font-medium hover:underline">Sign up free with email.</a>
-                    <span className="text-muted-foreground">No credit card required</span>
-                    <span className="text-muted-foreground">·</span>
-                    <VideoModal>
-                      <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
-                        <Play className="w-3 h-3" fill="currentColor" />
-                        Watch Demo
-                      </button>
-                    </VideoModal>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </section>
+        <AssistantHero
+          eyebrow="Website Voice · Your Site, Out Loud"
+          rotatingPhrases={[
+            "Make my website actually talk to visitors.",
+            "Qualify leads while they're still browsing.",
+            "Book a callback before they bounce.",
+            "Sound like a real person, 24/7.",
+          ]}
+          subtitle="A voice-enabled website assistant that answers questions, qualifies visitors, captures leads, and drives bookings — turning traffic into 3× more conversions."
+          promptPlaceholder="What should your site say to visitors?"
+          ctaUrl="https://my.ragadvise.com/demo/site-assistant?tab=site-assistant&subtab=settings"
+          pageKey="site"
+        />
 
         {/* GPS Callout + Inline Contact */}
         <section className="py-8 border-y bg-muted/30">
