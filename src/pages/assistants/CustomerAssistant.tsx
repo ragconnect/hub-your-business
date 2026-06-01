@@ -12,6 +12,7 @@ import DemoRequestModal from "@/components/marketing/DemoRequestModal";
 import PricingCompact from "@/components/marketing/PricingCompact";
 import VideoModal from "@/components/marketing/VideoModal";
 import googleLogo from "@/assets/logos/google.png";
+import AssistantHero from "@/components/marketing/AssistantHero";
 import {
   Accordion,
   AccordionContent,
