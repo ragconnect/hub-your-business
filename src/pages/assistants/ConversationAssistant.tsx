@@ -57,6 +57,7 @@ import logoMariasKitchen from "@/assets/testimonials/logo-marias-kitchen.png";
 import logoRapidPlumb from "@/assets/testimonials/logo-rapid-plumb.png";
 import logoVitalBalance from "@/assets/testimonials/logo-vital-balance.png";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
+import AssistantHero from "@/components/marketing/AssistantHero";
 
 const faqs = [
   {
