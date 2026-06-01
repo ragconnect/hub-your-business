@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "@/components/layout/Header";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
@@ -29,8 +29,42 @@ const personas = [
   { src: personaEmail, label: "email · sent", rotate: "7deg", translateY: "24px" },
 ];
 
+const ROTATING_PHRASES = [
+  "Reply wherever my customers show up.",
+  "Turn every question into a great answer.",
+  "Give my brand a face and a voice.",
+  "Answer my customers on every surface.",
+];
+
 const HeroSection = () => {
   const [prompt, setPrompt] = useState("");
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [typed, setTyped] = useState("");
+  const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">("typing");
+
+  useEffect(() => {
+    const current = ROTATING_PHRASES[phraseIndex];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === "typing") {
+      if (typed.length < current.length) {
+        timeout = setTimeout(() => setTyped(current.slice(0, typed.length + 1)), 55);
+      } else {
+        timeout = setTimeout(() => setPhase("pausing"), 1800);
+      }
+    } else if (phase === "pausing") {
+      timeout = setTimeout(() => setPhase("deleting"), 600);
+    } else {
+      if (typed.length > 0) {
+        timeout = setTimeout(() => setTyped(current.slice(0, typed.length - 1)), 25);
+      } else {
+        setPhraseIndex((i) => (i + 1) % ROTATING_PHRASES.length);
+        setPhase("typing");
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [typed, phase, phraseIndex]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,14 +96,11 @@ const HeroSection = () => {
 
           <h1
             id="hero-title"
-            className="mt-6 text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-foreground"
+            className="mt-6 text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-foreground min-h-[2.4em] md:min-h-[2.4em]"
             style={{ fontFamily: "'Bree Serif', serif" }}
           >
-            Answer my customers on{" "}
-            <span className="relative inline-block">
-              every surface.
-              <span className="absolute -right-2 top-1 bottom-1 w-[3px] bg-primary animate-pulse" />
-            </span>
+            <span>{typed}</span>
+            <span className="inline-block w-[3px] md:w-[4px] h-[0.85em] align-[-0.1em] ml-1 bg-primary animate-pulse" />
           </h1>
 
           <p className="mt-8 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
