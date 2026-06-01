@@ -29,8 +29,42 @@ const personas = [
   { src: personaEmail, label: "email · sent", rotate: "7deg", translateY: "24px" },
 ];
 
+const ROTATING_PHRASES = [
+  "Reply wherever my customers show up.",
+  "Turn every question into a great answer.",
+  "Give my brand a face and a voice.",
+  "Answer my customers on every surface.",
+];
+
 const HeroSection = () => {
   const [prompt, setPrompt] = useState("");
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [typed, setTyped] = useState("");
+  const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">("typing");
+
+  useEffect(() => {
+    const current = ROTATING_PHRASES[phraseIndex];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === "typing") {
+      if (typed.length < current.length) {
+        timeout = setTimeout(() => setTyped(current.slice(0, typed.length + 1)), 55);
+      } else {
+        timeout = setTimeout(() => setPhase("pausing"), 1800);
+      }
+    } else if (phase === "pausing") {
+      timeout = setTimeout(() => setPhase("deleting"), 600);
+    } else {
+      if (typed.length > 0) {
+        timeout = setTimeout(() => setTyped(current.slice(0, typed.length - 1)), 25);
+      } else {
+        setPhraseIndex((i) => (i + 1) % ROTATING_PHRASES.length);
+        setPhase("typing");
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [typed, phase, phraseIndex]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
