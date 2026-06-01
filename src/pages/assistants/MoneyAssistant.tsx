@@ -49,6 +49,7 @@ import logoPeakAccounting from "@/assets/testimonials/logo-peak-accounting.png";
 import logoBudgetBros from "@/assets/testimonials/logo-budget-bros.png";
 import logoSunriseBakery from "@/assets/testimonials/logo-sunrise-bakery.png";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
+import AssistantHero from "@/components/marketing/AssistantHero";
 
 const features = [
   {
@@ -397,52 +398,19 @@ const MoneyAssistant = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative pt-2 md:pt-4 lg:pt-2 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
-          <ScrollingCharacterBg />
-          <div className="container relative z-10">
-            <div className="max-w-2xl mx-auto text-center">
-                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Bree Serif', serif" }}>
-                  Ensure your money is organized daily and instantly lower your business expenses.
-                </h1>
-                {/* Chat-like input box */}
-                <MoneyPromptBox />
-
-                <p className="mt-6 text-xl text-muted-foreground">
-                  Cut 13 hours a month from money management and eliminate up to 30% in hidden fees and charges.
-                </p>
-                <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
-                  <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                    <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
-                      <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                      Sign up with Google & Get 30 Minutes Free
-                    </a>
-                  </Button>
-                  <DemoRequestModal>
-                    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo & Free Setup
-                    </Button>
-                  </DemoRequestModal>
-                  <div className="flex items-center gap-3 mt-1">
-                    <div className="flex-1 border-t" />
-                    <span className="text-xs text-muted-foreground">OR</span>
-                    <div className="flex-1 border-t" />
-                  </div>
-                  <div className="flex items-center justify-center gap-2 text-sm">
-                    <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
-                    <span className="text-muted-foreground">No credit card required</span>
-                    <span className="text-muted-foreground">·</span>
-                    <VideoModal>
-                      <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
-                        <Play className="w-3 h-3" fill="currentColor" />
-                        Watch Demo
-                      </button>
-                    </VideoModal>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </section>
+        <AssistantHero
+          eyebrow="Money Assistant · Organized Daily"
+          rotatingPhrases={[
+            "Catch the fees hiding in your statements.",
+            "Know your numbers without opening a spreadsheet.",
+            "Get my books reconciled while I sleep.",
+            "Turn receipts into deductions automatically.",
+          ]}
+          subtitle="Cut 13 hours a month from money management and eliminate up to 30% in hidden fees and charges."
+          promptPlaceholder="Ask: what did I spend on ads last month?"
+          ctaUrl="https://my.ragadvise.com/demo/home"
+          pageKey="money"
+        />
 
         {/* GPS Callout + Inline Contact */}
         <section className="py-8 border-y bg-muted/30">

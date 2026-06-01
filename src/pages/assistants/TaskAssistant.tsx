@@ -61,6 +61,7 @@ import financeImg from "@/assets/stories/story-finance.jpg";
 import hospitalityImg from "@/assets/stories/story-hospitality.jpg";
 import warehouseImg from "@/assets/stories/story-warehouse.jpg";
 import taskDashboardImg from "@/assets/task-management-dashboard.png";
+import AssistantHero from "@/components/marketing/AssistantHero";
 
 const taskTestimonials = [
   {
@@ -339,74 +340,19 @@ const TaskAssistant = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative pt-2 md:pt-4 lg:pt-2 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-title">
-          <ScrollingCharacterBg />
-          <div className="container relative z-10">
-            <div className="max-w-2xl mx-auto text-center">
-                <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-primary" style={{ fontFamily: "'Bree Serif', serif" }}>
-                  Get things done instantly, with a simple chat that turns{" "}
-                  <span
-                    className={`inline-block transition-all duration-300 ${
-                      isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-                    }`}
-                  >
-                    {rotatingInputs[inputIndex]}
-                  </span>
-                  {" "}into assigned work task.
-                </h1>
-
-                {/* Chat-like input box */}
-                <ChatPromptBox />
-
-                <p className="mt-6 text-xl text-muted-foreground">
-                   AI turns the things your team says and agrees to into clear, trackable work.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-3 justify-center text-sm text-muted-foreground">
-                  <span>📝 Tasks</span>
-                  <span>•</span>
-                  <span>📋 Kanban board</span>
-                  <span>•</span>
-                  <span>✅ Action items from meetings</span>
-                  <span>•</span>
-                  <span>👥 Assign owners</span>
-                  <span>•</span>
-                  <span>⏰ Due dates</span>
-                  <span>•</span>
-                  <span>🎙️ Records meetings & takes notes</span>
-                </div>
-                <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
-                  <Button size="lg" className="w-full h-14 text-base font-semibold rounded-lg" asChild>
-                    <a href="https://my.ragadvise.com/demo/home" className="flex items-center justify-center gap-3">
-                      <img src={googleLogo} alt="" className="w-7 h-7 bg-white rounded-full p-0.5" />
-                      Sign up with Google & Get 30 Minutes Free
-                    </a>
-                  </Button>
-                  <DemoRequestModal>
-                    <Button variant="outline" size="lg" className="w-full h-14 text-base font-semibold rounded-lg bg-background">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      Schedule Demo & Free Setup
-                    </Button>
-                  </DemoRequestModal>
-                  <div className="flex items-center gap-3 mt-1">
-                    <div className="flex-1 border-t" />
-                    <span className="text-xs text-muted-foreground">OR</span>
-                    <div className="flex-1 border-t" />
-                  </div>
-                  <div className="flex items-center justify-center gap-2 text-sm">
-                    <a href="https://my.ragadvise.com/demo/home" className="text-primary font-medium hover:underline">Sign up free with email.</a>
-                    <span className="text-muted-foreground">No credit card required</span>
-                    <span className="text-muted-foreground">·</span>
-                    <VideoModal>
-                      <button className="inline-flex items-center gap-1 text-primary font-medium hover:underline cursor-pointer">
-                        <Play className="w-3 h-3" fill="currentColor" />
-                        Watch Demo
-                      </button>
-                    </VideoModal>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </section>
+        <AssistantHero
+          eyebrow="Task Assistant · Chat to Done"
+          rotatingPhrases={[
+            "Turn what we agreed to into action items.",
+            "Capture every decision from every meeting.",
+            "Assign owners and due dates instantly.",
+            "Get things done with a simple chat.",
+          ]}
+          subtitle="AI turns the things your team says and agrees to into clear, trackable work — tasks, kanban, action items, owners, and due dates."
+          promptPlaceholder="Ask: turn yesterday's meeting into tasks"
+          ctaUrl="https://my.ragadvise.com/demo/home"
+          pageKey="task"
+        />
 
         {/* GPS Callout + Inline Contact */}
         <section className="py-8 border-y bg-muted/30">
