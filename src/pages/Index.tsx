@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { Calendar } from "lucide-react";
 
 import Header from "@/components/layout/Header";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
@@ -14,6 +15,9 @@ import IntegrationsShowcase from "@/components/marketing/IntegrationsShowcase";
 import OfferBanner from "@/components/marketing/OfferBanner";
 import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
 import ComparisonCompact from "@/components/marketing/ComparisonCompact";
+import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import googleLogo from "@/assets/logos/google.png";
+
 
 const AUTH_URL = "https://my.ragadvise.com/demo/home";
 
@@ -71,8 +75,8 @@ const ROTATING_PHRASES = [
 ];
 
 const HeroSection = () => {
-  const [prompt, setPrompt] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
+
   const [typed, setTyped] = useState("");
   const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">("typing");
 
@@ -100,13 +104,7 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [typed, phase, phraseIndex]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const url = prompt.trim()
-      ? `${AUTH_URL}?prompt=${encodeURIComponent(prompt.trim())}`
-      : AUTH_URL;
-    window.location.href = url;
-  };
+
 
   return (
     <section
@@ -137,36 +135,32 @@ const HeroSection = () => {
             <span className="inline-block w-[3px] md:w-[4px] h-[0.85em] align-[-0.1em] ml-1 bg-primary animate-pulse" />
           </h1>
 
-          <p className="mt-8 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
-            Describe what your customers need. RagAdvise handles it across every
-            surface they already use — instantly.
+          <p className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
+            RagAdvise gives every customer-facing surface — phone, chat, email, voice — a single trained assistant that already sounds like your business.
           </p>
 
-          {/* Prompt input */}
-          <form
-            onSubmit={handleSubmit}
-            className="mt-10 w-full max-w-2xl flex items-center gap-2 rounded-2xl border border-border bg-card/80 backdrop-blur p-2 pl-5 shadow-lg"
-          >
-            <input
-              type="text"
-              value={prompt}
-              onChange={(e) => setPrompt(e.target.value)}
-              placeholder="Ask RagAdvise to handle anything…"
-              className="flex-1 bg-transparent border-0 outline-none text-base text-foreground placeholder:text-muted-foreground py-3"
-              aria-label="Ask RagAdvise"
-            />
-            <Button
-              type="submit"
-              size="lg"
-              className="rounded-xl h-12 px-6 font-semibold"
-            >
-              Create
-            </Button>
-          </form>
+          {/* Surface chips */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+            {[
+              { label: "Phone Sales", active: true },
+              { label: "Email", active: false },
+              { label: "Chat", active: false },
+              { label: "Voice Notes", active: false },
+              { label: "Web", active: false },
+            ].map((c) => (
+              <span
+                key={c.label}
+                className={`px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider border ${
+                  c.active
+                    ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_hsl(var(--primary)/0.4)]"
+                    : "bg-card/60 text-muted-foreground border-border"
+                }`}
+              >
+                {c.label}
+              </span>
+            ))}
+          </div>
 
-          <p className="mt-3 text-xs text-muted-foreground">
-            No credit card required · Get 30 minutes free
-          </p>
 
           {/* Persona card stack */}
           <div className="mt-16 md:mt-20 w-full flex justify-center items-end gap-3 md:gap-5">
@@ -217,6 +211,25 @@ const HeroSection = () => {
           <p className="mt-6 text-center font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground">
             Your AI assistant · pick a face, any surface
           </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center gap-3">
+            <Button size="lg" className="h-12 px-5 rounded-xl text-sm font-semibold" asChild>
+              <a href={AUTH_URL} className="flex items-center gap-2">
+                <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                Sign up with Google & Get 30 Minutes Free
+              </a>
+            </Button>
+            <DemoRequestModal page="home">
+              <Button variant="outline" size="lg" className="h-12 px-5 rounded-xl text-sm font-semibold bg-background">
+                <Calendar className="mr-2 h-4 w-4" />
+                Book a Demo
+              </Button>
+            </DemoRequestModal>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            No credit card required · 30 minutes free
+          </p>
+
         </div>
       </div>
     </section>
