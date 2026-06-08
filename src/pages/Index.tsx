@@ -217,6 +217,25 @@ const HeroSection = () => {
           <p className="mt-6 text-center font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground">
             Your AI assistant · pick a face, any surface
           </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center gap-3">
+            <Button size="lg" className="h-12 px-5 rounded-xl text-sm font-semibold" asChild>
+              <a href={AUTH_URL} className="flex items-center gap-2">
+                <img src={googleLogo} alt="" className="w-5 h-5 bg-white rounded-full p-0.5" />
+                Sign up with Google & Get 30 Minutes Free
+              </a>
+            </Button>
+            <DemoRequestModal page="home">
+              <Button variant="outline" size="lg" className="h-12 px-5 rounded-xl text-sm font-semibold bg-background">
+                <Calendar className="mr-2 h-4 w-4" />
+                Book a Demo
+              </Button>
+            </DemoRequestModal>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            No credit card required · 30 minutes free
+          </p>
+
         </div>
       </div>
     </section>
