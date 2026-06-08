@@ -15,18 +15,52 @@ import OfferBanner from "@/components/marketing/OfferBanner";
 import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
 import ComparisonCompact from "@/components/marketing/ComparisonCompact";
 
-import personaVoice from "@/assets/hero/persona-voice.jpg";
-import personaChat from "@/assets/hero/persona-chat.jpg";
-import personaPhone from "@/assets/hero/persona-phone.jpg";
-import personaEmail from "@/assets/hero/persona-email.jpg";
-
 const AUTH_URL = "https://my.ragadvise.com/demo/home";
 
-const personas = [
-  { src: personaVoice, label: "voice · live", rotate: "-6deg", translateY: "0px" },
-  { src: personaChat, label: "chat · acme", rotate: "-2deg", translateY: "16px" },
-  { src: personaPhone, label: "phone · 0:42", rotate: "3deg", translateY: "8px" },
-  { src: personaEmail, label: "email · sent", rotate: "7deg", translateY: "24px" },
+type Persona = {
+  src: string;
+  type: "video" | "image";
+  name: string;
+  role: string;
+  rotate: string;
+  translateY: string;
+  lead?: boolean;
+};
+
+const personas: Persona[] = [
+  {
+    src: "https://pub-5da904f04ed24c6f8d5b29e27aca24c1.r2.dev/avatar-presets/6e6349fb-d588-4e0f-a373-7c7cd06d1b58/video-1780653626416-5872.mp4",
+    type: "video",
+    name: "Marcus",
+    role: "Sales",
+    rotate: "-6deg",
+    translateY: "0px",
+  },
+  {
+    src: "https://pub-5da904f04ed24c6f8d5b29e27aca24c1.r2.dev/avatars/7/1779144998708-2875.jpg",
+    type: "image",
+    name: "Jo",
+    role: "Success",
+    rotate: "-2deg",
+    translateY: "16px",
+  },
+  {
+    src: "https://pub-5da904f04ed24c6f8d5b29e27aca24c1.r2.dev/avatar-videos/7/1779901175750-6643.mp4",
+    type: "video",
+    name: "Theo",
+    role: "Concierge",
+    rotate: "0deg",
+    translateY: "-8px",
+    lead: true,
+  },
+  {
+    src: "https://pub-5da904f04ed24c6f8d5b29e27aca24c1.r2.dev/avatar-videos/7/1780017993679-5735.mp4",
+    type: "video",
+    name: "Kami",
+    role: "Support",
+    rotate: "7deg",
+    translateY: "24px",
+  },
 ];
 
 const ROTATING_PHRASES = [
@@ -139,36 +173,55 @@ const HeroSection = () => {
             {personas.map((p, i) => (
               <div
                 key={i}
-                className="relative w-32 sm:w-40 md:w-48 lg:w-56 rounded-2xl overflow-hidden border border-border bg-card shadow-2xl transition-transform duration-500 hover:!translate-y-0 hover:!rotate-0"
+                className={`relative w-32 sm:w-40 md:w-48 lg:w-56 rounded-[18px] overflow-hidden bg-card shadow-2xl transition-transform duration-500 hover:!translate-y-[-5px] hover:!rotate-0 ${
+                  p.lead ? "ring-2 ring-primary shadow-[0_0_40px_hsl(var(--primary)/0.35)]" : "border border-border"
+                }`}
                 style={{
                   transform: `rotate(${p.rotate}) translateY(${p.translateY})`,
                 }}
               >
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img
-                    src={p.src}
-                    alt=""
-                    width={512}
-                    height={768}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="aspect-[3/4] overflow-hidden bg-black">
+                  {p.type === "video" ? (
+                    <video
+                      src={p.src}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <img
+                      src={p.src}
+                      alt={p.name}
+                      width={512}
+                      height={768}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  )}
                 </div>
-                <div className="absolute bottom-0 inset-x-0 flex items-center justify-between px-3 py-2 bg-gradient-to-t from-black/80 to-transparent">
-                  <span className="font-mono text-[10px] md:text-xs text-foreground/90 tracking-wide">
-                    {p.label}
-                  </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary))]" />
+                {p.lead && (
+                  <div className="absolute top-2 left-2 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_hsl(var(--primary))]" />
+                    <span className="font-mono text-[9px] md:text-[10px] font-semibold tracking-wider text-primary uppercase">Live</span>
+                  </div>
+                )}
+                <div className="absolute bottom-0 inset-x-0 px-3 py-2 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+                  <div className="text-xs md:text-sm font-semibold text-white leading-tight">{p.name}</div>
+                  <div className="font-mono text-[9px] md:text-[10px] uppercase tracking-wider text-white/60">{p.role}</div>
                 </div>
               </div>
             ))}
           </div>
+          <p className="mt-6 text-center font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            Your AI assistant · pick a face, any surface
+          </p>
         </div>
       </div>
     </section>
   );
 };
-
 
 const Index = () => {
   const siteUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : 'https://ragadvise.com/';
