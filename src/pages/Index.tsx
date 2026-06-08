@@ -15,18 +15,52 @@ import OfferBanner from "@/components/marketing/OfferBanner";
 import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
 import ComparisonCompact from "@/components/marketing/ComparisonCompact";
 
-import personaVoice from "@/assets/hero/persona-voice.jpg";
-import personaChat from "@/assets/hero/persona-chat.jpg";
-import personaPhone from "@/assets/hero/persona-phone.jpg";
-import personaEmail from "@/assets/hero/persona-email.jpg";
-
 const AUTH_URL = "https://my.ragadvise.com/demo/home";
 
-const personas = [
-  { src: personaVoice, label: "voice · live", rotate: "-6deg", translateY: "0px" },
-  { src: personaChat, label: "chat · acme", rotate: "-2deg", translateY: "16px" },
-  { src: personaPhone, label: "phone · 0:42", rotate: "3deg", translateY: "8px" },
-  { src: personaEmail, label: "email · sent", rotate: "7deg", translateY: "24px" },
+type Persona = {
+  src: string;
+  type: "video" | "image";
+  name: string;
+  role: string;
+  rotate: string;
+  translateY: string;
+  lead?: boolean;
+};
+
+const personas: Persona[] = [
+  {
+    src: "https://pub-5da904f04ed24c6f8d5b29e27aca24c1.r2.dev/avatar-presets/6e6349fb-d588-4e0f-a373-7c7cd06d1b58/video-1780653626416-5872.mp4",
+    type: "video",
+    name: "Marcus",
+    role: "Sales",
+    rotate: "-6deg",
+    translateY: "0px",
+  },
+  {
+    src: "https://pub-5da904f04ed24c6f8d5b29e27aca24c1.r2.dev/avatars/7/1779144998708-2875.jpg",
+    type: "image",
+    name: "Jo",
+    role: "Success",
+    rotate: "-2deg",
+    translateY: "16px",
+  },
+  {
+    src: "https://pub-5da904f04ed24c6f8d5b29e27aca24c1.r2.dev/avatar-videos/7/1779901175750-6643.mp4",
+    type: "video",
+    name: "Theo",
+    role: "Concierge",
+    rotate: "0deg",
+    translateY: "-8px",
+    lead: true,
+  },
+  {
+    src: "https://pub-5da904f04ed24c6f8d5b29e27aca24c1.r2.dev/avatar-videos/7/1780017993679-5735.mp4",
+    type: "video",
+    name: "Kami",
+    role: "Support",
+    rotate: "7deg",
+    translateY: "24px",
+  },
 ];
 
 const ROTATING_PHRASES = [
