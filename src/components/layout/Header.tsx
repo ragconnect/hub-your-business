@@ -73,7 +73,7 @@ const Header = () => {
       <div className="container">
         <div className="flex h-14 items-center justify-between bg-background/90 backdrop-blur-md rounded-full px-6 shadow-lg border border-border/50">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="RagAdvise Logo" className="h-36 -my-10 mix-blend-multiply" />
+          <img src={logo} alt="RagAdvise Logo" className="h-8 md:h-9 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
