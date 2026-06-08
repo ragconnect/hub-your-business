@@ -217,11 +217,8 @@ const HeroSection = () => {
           <p className="mt-6 text-center font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground">
             Your AI assistant · pick a face, any surface
           </p>
-        </div>
-      </div>
-    </section>
-  );
-};
+
+
 
 
 const Index = () => {
