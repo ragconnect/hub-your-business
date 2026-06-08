@@ -104,7 +104,7 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [typed, phase, phraseIndex]);
 
-  };
+
 
   return (
     <section
