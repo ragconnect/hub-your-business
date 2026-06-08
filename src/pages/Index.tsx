@@ -75,8 +75,8 @@ const ROTATING_PHRASES = [
 ];
 
 const HeroSection = () => {
-  const [prompt, setPrompt] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
+
   const [typed, setTyped] = useState("");
   const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">("typing");
 
