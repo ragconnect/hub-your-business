@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { Calendar } from "lucide-react";
 
 import Header from "@/components/layout/Header";
 import LogoMarquee from "@/components/marketing/LogoMarquee";
@@ -14,6 +15,9 @@ import IntegrationsShowcase from "@/components/marketing/IntegrationsShowcase";
 import OfferBanner from "@/components/marketing/OfferBanner";
 import WhoIsThisFor from "@/components/marketing/WhoIsThisFor";
 import ComparisonCompact from "@/components/marketing/ComparisonCompact";
+import DemoRequestModal from "@/components/marketing/DemoRequestModal";
+import googleLogo from "@/assets/logos/google.png";
+
 
 const AUTH_URL = "https://my.ragadvise.com/demo/home";
 
