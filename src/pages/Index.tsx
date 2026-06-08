@@ -173,30 +173,50 @@ const HeroSection = () => {
             {personas.map((p, i) => (
               <div
                 key={i}
-                className="relative w-32 sm:w-40 md:w-48 lg:w-56 rounded-2xl overflow-hidden border border-border bg-card shadow-2xl transition-transform duration-500 hover:!translate-y-0 hover:!rotate-0"
+                className={`relative w-32 sm:w-40 md:w-48 lg:w-56 rounded-[18px] overflow-hidden bg-card shadow-2xl transition-transform duration-500 hover:!translate-y-[-5px] hover:!rotate-0 ${
+                  p.lead ? "ring-2 ring-primary shadow-[0_0_40px_hsl(var(--primary)/0.35)]" : "border border-border"
+                }`}
                 style={{
                   transform: `rotate(${p.rotate}) translateY(${p.translateY})`,
                 }}
               >
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img
-                    src={p.src}
-                    alt=""
-                    width={512}
-                    height={768}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="aspect-[3/4] overflow-hidden bg-black">
+                  {p.type === "video" ? (
+                    <video
+                      src={p.src}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <img
+                      src={p.src}
+                      alt={p.name}
+                      width={512}
+                      height={768}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  )}
                 </div>
-                <div className="absolute bottom-0 inset-x-0 flex items-center justify-between px-3 py-2 bg-gradient-to-t from-black/80 to-transparent">
-                  <span className="font-mono text-[10px] md:text-xs text-foreground/90 tracking-wide">
-                    {p.label}
-                  </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary))]" />
+                {p.lead && (
+                  <div className="absolute top-2 left-2 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_hsl(var(--primary))]" />
+                    <span className="font-mono text-[9px] md:text-[10px] font-semibold tracking-wider text-primary uppercase">Live</span>
+                  </div>
+                )}
+                <div className="absolute bottom-0 inset-x-0 px-3 py-2 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+                  <div className="text-xs md:text-sm font-semibold text-white leading-tight">{p.name}</div>
+                  <div className="font-mono text-[9px] md:text-[10px] uppercase tracking-wider text-white/60">{p.role}</div>
                 </div>
               </div>
             ))}
           </div>
+          <p className="mt-6 text-center font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            Your AI assistant · pick a face, any surface
+          </p>
         </div>
       </div>
     </section>
