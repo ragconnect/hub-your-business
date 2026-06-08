@@ -104,12 +104,6 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [typed, phase, phraseIndex]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const url = prompt.trim()
-      ? `${AUTH_URL}?prompt=${encodeURIComponent(prompt.trim())}`
-      : AUTH_URL;
-    window.location.href = url;
   };
 
   return (
